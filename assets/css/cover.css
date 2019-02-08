@@ -6,7 +6,8 @@
 a,
 a:focus,
 a:hover {
-  color: #fff;
+  color: #353e60;
+  font-weight: bold;
 }
 
 /* Custom default button */
@@ -27,12 +28,15 @@ a:hover {
 html,
 body {
   height: 100%;
-  background-color: #333;
+  /*background-color: #171c20;*/
+  /*background-image: url("../img/photo.jpg");*/
+  /*background-size: cover;*/
 }
 body {
-  color: #fff;
+  /*color: #fff;*/
+  color: #353e60;
   text-align: center;
-  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+  /*text-shadow: 0 1px 3px rgba(0,0,0,.5);*/
 }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
@@ -94,6 +98,9 @@ body {
   color: #fff;
   border-bottom-color: #fff;
 }
+  .site-wrapper-inner {
+    padding: 35px;
+  }
 
 @media (min-width: 768px) {
   .masthead-brand {
@@ -124,7 +131,7 @@ body {
 
 .mastfoot {
   color: #999; /* IE8 proofing */
-  color: rgba(255,255,255,.5);
+  /*color: rgba(255,255,255,.5);*/
 }
 
 
@@ -139,12 +146,13 @@ body {
     top: 0;
   }
   .mastfoot {
-    position: fixed;
+    /*position: fixed;*/
     bottom: 0;
   }
   /* Start the vertical centering */
   .site-wrapper-inner {
     vertical-align: middle;
+    padding: 25px;
   }
   /* Handle the widths */
   .masthead,
@@ -158,6 +166,6 @@ body {
   .masthead,
   .mastfoot,
   .cover-container {
-    width: 700px;
+    width: 1000px;
   }
 }

@@ -5,11 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
+    <meta name="description" content="Молодежный эмоциональный театр">
     <meta name="author" content="">
-    {#<link rel="icon" href="../../favicon.ico">#}
+    <link rel="icon" href="{{ asset('build/img/logo.png') }}">
 
-    <title>Cover Template for Bootstrap</title>
+    <title>Молодежный эмоциональный театр</title>
+    <meta property="og:site_name" content="МЭТЛУГ"/>
+    <meta property="og:title" content="Молодежный эмоциональный театр МЭТЛУГ"/>
+    <meta property="og:url" content="http://metlug.lena.ekreative.com/"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:description" content="С Днем Рождения!!!"/>
 
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('build/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -21,8 +26,8 @@
     <link href="{{ asset('build/css/cover.css') }}" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    {#<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->#}
-    {#<script src="../../assets/js/ie-emulation-modes-warning.js"></script>#}
+    <!--[if lt IE 9]><script src="{{ asset('build/js/ie8-responsive-file-warning.js') }}"></script><![endif]-->
+    <script src="{{ asset('build/js/ie-emulation-modes-warning.js') }}"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -37,29 +42,36 @@
             <div class="cover-container">
 
                 <div class="masthead clearfix">
-                    <div class="inner">
-                        <h3 class="masthead-brand">Cover</h3>
-                        <nav>
-                            <ul class="nav masthead-nav">
-                                <li class="active"><a href="#">Home</a></li>
-                                <li><a href="#">Features</a></li>
-                                <li><a href="#">Contact</a></li>
-                            </ul>
-                        </nav>
-                    </div>
                 </div>
+                <div class="clearfix"></div>
 
                 <div class="inner cover">
-                    <h1 class="cover-heading">Cover your page.</h1>
-                    <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
-                    <p class="lead">
-                        <a href="#" class="btn btn-lg btn-default">Learn more</a>
-                    </p>
+                    <div class="row">
+                        <img class="col-xs-12" src="{{ asset('build/img/photo.jpg') }}" alt="">
+                        <div class="col-xs-12">
+                            <h1 class="cover-heading"> Радость..! Удовольствие не работает - но одну .. ночку!..</h1>
+                            <p class="lead text-left" style="text-indent: 1.5em;"> Новоселье - всегда радость! Особенно для театра, который с недавних пор, обрёл новую для себя - виртуальную жизнь. Дорогие мэтлуговцы - всех наших друзей мы сюда тоже причисляем - это наш новый дом! А к переездам МЭТЛУГУ не привыкать!</p>
+                            <p class="lead text-left" style="text-indent: 1.5em;">Нынче февраль... И для встречи есть повод! 8 февраля, как "хлопья со двора к оконной раме", слетаются мэтлуговцы, чтобы поздравить свой театр с днем рождения! Сколько гениальных идей и "программных текстов" создавалось в твоих недрах, МЭТЛУГ! И сейчас, ты своим существованием доказываешь истину, что театр - это не стены. Твое живое трепетное сердце бъётся. Бъётся!!! Вне времени и пространства... Создавая своё пространство, заполняя собой время... Многая лета, МЭТЛУГ! Сохрани и запомни всё!</p>
+                            <p class="lead text-left" style="text-indent: 1.5em;">И ещё добавляет приятности, что день рождения театра совпадает с днем рождения его ведущей актрисы. В этом году тем более - у Ирины Савчишиной - юбилей! Твой бенефис, Ирина, в день рождения театра, взрастившего тебя, как творческую личность, пусть даст тебе новый толчок и выведет на новый виток! С днём рождения, Ириночка! Тебе слово...</p>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="inner cover">
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <div id="player" class="embed-responsive-item"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 text-left">
+                            <p class="lead"></p>
+                            <p class="lead text-left" style="text-indent: 1.5em;">Далі буде...</p>
+                            <p class="lead text-left" style="text-indent: 1.5em;">Агов! "Наши театральные люди", ваши аплодисменты (комментарии, сейчас их можно оставить под видео
+                                <a href="https://www.youtube.com/watch?v=y7JLC4NgS_w" title="Оставить комментарий">здесь</a>) сделают этот день!</p>
+                        </div>
+                    </div>
                 </div>
-
                 <div class="mastfoot">
                     <div class="inner">
-                        <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+                        <p>&copy1996-2019</p>
                     </div>
                 </div>
 
@@ -74,8 +86,34 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="{{ asset('build/css/jquery.min.js') }}"><\/script>')</script>
-    <script src="{{ asset('build/css/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('build/js/bootstrap.min.js') }}"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    {#<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>#}
+    <script src="{{ asset('build/js/ie10-viewport-bug-workaround.js') }}"></script>
+    <script>
+        // 2. This code loads the IFrame Player API code asynchronously.
+        var tag = document.createElement('script');
+
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        // 3. This function creates an <iframe> (and YouTube player)
+        //    after the API code downloads.
+        var player;
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+                height: '460',
+                width: '258',
+                videoId: 'y7JLC4NgS_w',
+                playerVars: {
+                    showinfo: 1,
+                    modestbranding: 1,
+                    iv_load_policy: 3,
+                    fs: 0,
+                    rel: 0
+                }
+            });
+        }
+    </script>
 </body>
 </html>
