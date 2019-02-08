@@ -10,8 +10,6 @@ let gulp = require('gulp'),
 
 let SASS_INCLUDE_PATHS = [
   './node_modules/bootstrap/scss',
-  './node_modules/bootstrap-select/sass',
-  './node_modules/bootstrap-datepicker/dist/css'
 ]
 
 function handleError (err) {
