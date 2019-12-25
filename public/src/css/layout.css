@@ -1,0 +1,27 @@
+/*
+ * Base structure
+ */
+
+html,
+body {
+    background: url(../img/tmb_55423_5597.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    /*overflow: hidden;*/
+}
+body {
+    color: #000;
+    text-align: center;
+    font-family: Lato, serif;
+    font-weight: 500;
+    margin: 0;
+    overflow: hidden;
+}
+iframe {
+    position: inherit;
+    margin-top: 25%;
+    max-height: 435px;
+    max-width: 900px;
+}
