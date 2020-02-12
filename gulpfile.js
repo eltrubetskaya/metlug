@@ -32,12 +32,6 @@ gulp.task('css', function () {
     .pipe(gulp.dest('./public/build/css'))
 })
 
-gulp.task('node-css', function () {
-  return gulp.src('./node_modules/startbootstrap-agency/css/*.css')
-    .pipe(plumber({errorHandler: handleError}))
-    .pipe(gulp.dest('./public/build/css'))
-})
-
 gulp.task('node-bootstrap-css', function () {
   return gulp.src('./node_modules/startbootstrap-agency/vendor/bootstrap/css/*.css')
     .pipe(plumber({errorHandler: handleError}))
@@ -115,6 +109,6 @@ gulp.task('watch', ['styles', 'js'], function () {
   gulp.watch('./assets/img/*', ['images'])
 })
 
-gulp.task( 'default', ['node-images', 'node-libs-js', 'node-js','node-fontawesome-css', 'node-css', 'node-bootstrap-css', 'libs-js', 'styles', 'css', 'js', 'images', 'fonts'], function () {
+gulp.task( 'default', ['node-images', 'node-libs-js', 'node-js','node-fontawesome-css', 'node-bootstrap-css', 'libs-js', 'styles', 'css', 'js', 'images', 'fonts'], function () {
 
 })
