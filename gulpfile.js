@@ -32,6 +32,24 @@ gulp.task('css', function () {
     .pipe(gulp.dest('./public/build/css'))
 })
 
+gulp.task('node-css', function () {
+  return gulp.src('./node_modules/startbootstrap-agency/css/*.css')
+    .pipe(plumber({errorHandler: handleError}))
+    .pipe(gulp.dest('./public/build/css'))
+})
+
+gulp.task('node-bootstrap-css', function () {
+  return gulp.src('./node_modules/startbootstrap-agency/vendor/bootstrap/css/*.css')
+    .pipe(plumber({errorHandler: handleError}))
+    .pipe(gulp.dest('./public/build/css'))
+})
+
+gulp.task('node-fontawesome-css', function () {
+  return gulp.src('./node_modules/startbootstrap-agency/vendor/fontawesome-free/css/*.css')
+    .pipe(plumber({errorHandler: handleError}))
+    .pipe(gulp.dest('./public/build/css'))
+})
+
 gulp.task('fonts', function () {
   return gulp.src('./assets/fonts/*')
     .pipe(plumber({errorHandler: handleError}))
@@ -40,6 +58,15 @@ gulp.task('fonts', function () {
 
 gulp.task('js', function () {
   return gulp.src('./assets/js/*.js')
+    .pipe(plumber({errorHandler: handleError}))
+    .pipe(sourcemaps.init())
+    .pipe(babel({compact: true}))
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest('./public/build/js'))
+})
+
+gulp.task('node-js', function () {
+  return gulp.src('./node_modules/startbootstrap-agency/js/*.js')
     .pipe(plumber({errorHandler: handleError}))
     .pipe(sourcemaps.init())
     .pipe(babel({compact: true}))
@@ -58,12 +85,28 @@ gulp.task('libs-js', function () {
     .pipe(gulp.dest('./public/build/js'))
 })
 
+gulp.task('node-libs-js', function () {
+  return gulp.src([
+    'node_modules/startbootstrap-agency/vendor/jquery/jquery.min.js',
+    'node_modules/startbootstrap-agency/vendor/bootstrap/js/bootstrap.min.js',
+    'node_modules/startbootstrap-agency/vendor/jquery-easing/jquery.easing.min.js',
+  ])
+    .pipe(plumber({errorHandler: handleError}))
+    .pipe(concat('node-libs.js'))
+    .pipe(gulp.dest('./public/build/js'))
+})
+
 gulp.task('images', function () {
   gulp.src('assets/images/*')
     .pipe(imagemin())
     .pipe(gulp.dest('./public/build/img'))
-}
-)
+})
+
+gulp.task('node-images', function () {
+  gulp.src('node_modules/startbootstrap-agency/img/**/*')
+    .pipe(imagemin())
+    .pipe(gulp.dest('./public/build/img'))
+})
 
 gulp.task('watch', ['styles', 'js'], function () {
   gulp.watch('./assets/scss/**/*.scss', ['styles'])
@@ -72,6 +115,6 @@ gulp.task('watch', ['styles', 'js'], function () {
   gulp.watch('./assets/img/*', ['images'])
 })
 
-gulp.task('default', ['libs-js', 'styles', 'css', 'js', 'images', 'fonts'], function () {
+gulp.task( 'default', ['node-images', 'node-libs-js', 'node-js','node-fontawesome-css', 'node-css', 'node-bootstrap-css', 'libs-js', 'styles', 'css', 'js', 'images', 'fonts'], function () {
 
 })
