@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class DefaultController extends AbstractController
 {
     /**
-     * @Route("/")
+     * @Route("/", name="homepage")
      */
     public function index()
     {
@@ -17,12 +17,20 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("/page/{title}")
+     * @Route("/page/{title}", name="app_page_view")
      */
     public function view(Request $request)
     {
         $title = $request->get('title');
+        $pages = [
+            '08-02-2019',
+            '24-04-2019',
+            '25-12-2019',
+        ];
+        if (in_array($title, $pages, true)) {
+            return $this->render($title . '.html.twig');
+        }
 
-        return $this->render($title . '.html.twig');
+        return $this->redirect($this->generateUrl('homepage'));
     }
 }
