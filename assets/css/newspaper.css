@@ -25,9 +25,6 @@ p{
 
 }
 
-.headerobjectswrapper{
-}
-
 .subhead{
     text-transform: uppercase;
     border-bottom: 2px solid #2f2f2f;
@@ -246,7 +243,14 @@ p{
 /*MEDIAQUERIES*/
 @media only all and (max-width: 1300px) {
     .weatherforcastbox{
-        display: none;
+        position: relative;
+        width: 90%;
+        left: 0;
+        border: 3px double #2f2f2f;
+        padding: 10px 15px 10px 15px;
+        line-height: 20px;
+        display: inline-block;
+        margin: 0 0 20px 0;
     }
 
 }
