@@ -1,23 +1,16 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="windows-1251">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="robots" content="index,follow" />
+{% extends 'base.html.twig' %}
+
+{% block title %}С юбилеем Станиславвичи!{% endblock %}
+
+{% block stylesheets %}
     <link href="{{asset('src/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('build/css/bootstrap-theme.css')}}" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic|Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{{asset('build/css/newspaper.css')}}">
-    <title>Театр "МЭТЛУГ"</title>
-    <meta property="og:title" content='С юбилеем Станиславвичи!'/>
-    <link rel="icon" href="{{ asset('build/img/logo.png') }}">
-    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="{{ asset('build/js/jquery.easing.1.3.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('build/js/script.js') }}"></script>
-</head>
-<body>
+{% endblock %}
+
+{% block body %}
+
 <div class="container-fluid">
     <main class="row">
         <div class="head">
@@ -102,6 +95,10 @@
     </main>
     <footer class="row"></footer>
 </div>
-<script type="text/javascript" src="{{ asset('build/js/bootstrap.min.js') }}"></script>
-</body>
-</html>
+
+{% endblock body %}
+
+{% block javascripts %}
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="{{ asset('build/js/bootstrap.min.js') }}"></script>
+{% endblock %}

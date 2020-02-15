@@ -23,9 +23,10 @@ class DefaultController extends AbstractController
     {
         $title = $request->get('title');
         $pages = [
-            '08-02-2019',
-            '24-04-2019',
             '25-12-2019',
+            '24-04-2019',
+            '27-03-2019',
+            '08-02-2019',
         ];
         if (in_array($title, $pages, true)) {
             return $this->render($title . '.html.twig');
