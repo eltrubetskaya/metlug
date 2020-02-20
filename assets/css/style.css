@@ -1,0 +1,52 @@
+*{
+    margin:0;
+    padding:0;
+}
+body {
+    text-align: center;
+    background: #4f3722 url('../img/darkcurtain.jpg') repeat-x;
+}
+img{
+    border: none;
+}
+#content {
+    background-color: white;
+    border-radius: 10px;
+    opacity: 0.8;
+    margin-top: 5px;
+    padding: 10px;
+}
+#content p {
+    text-indent: 1.5em;
+    text-align: justify;
+}
+.leftcurtain{
+    width: 50%;
+    height: 745px;
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    z-index: 5;
+}
+.rightcurtain{
+    width: 51%;
+    height: 745px;
+    right: 0px;
+    top: 0px;
+    position: absolute;
+    z-index: 6;
+}
+.rightcurtain img, .leftcurtain img{
+    width: 100%;
+    height: 100%;
+}
+.logo{
+    margin: 0px auto;
+    margin-top: 150px;
+}
+.rope{
+    position: absolute;
+    top: -40px;
+    left: 91%;
+    z-index: 10;
+}

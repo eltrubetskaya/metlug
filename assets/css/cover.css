@@ -99,7 +99,7 @@ body {
   border-bottom-color: #fff;
 }
   .site-wrapper-inner {
-    padding: 35px;
+    padding-top: 35px;
   }
 
 @media (min-width: 768px) {

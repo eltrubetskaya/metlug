@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Радость..! Удовольствие не работает - но одну .. ночку!..{% endblock %}
+
+{% block stylesheets %}
+    <!-- Bootstrap core CSS -->
+    <link href="{{ asset('src/css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{{ asset('build/css/cover.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+<div class="site-wrapper">
+    <div class="site-wrapper-inner">
+        <div class="cover-container">
+            <div class="inner cover">
+                <div class="row">
+                    <img class="col-xs-12" style="margin: auto" src="{{ asset('build/img/photo.jpg') }}" alt="">
+                    <div class="col-xs-12">
+                        <h1 class="cover-heading"> Радость..! Удовольствие не работает - но одну .. ночку!..</h1>
+                        <p class="lead text-left" style="text-indent: 1.5em;"> Новоселье - всегда радость! Особенно для театра, который с недавних пор, обрёл новую для себя - виртуальную жизнь. Дорогие мэтлуговцы - всех наших друзей мы сюда тоже причисляем - это наш новый дом! А к переездам МЭТЛУГУ не привыкать!</p>
+                        <p class="lead text-left" style="text-indent: 1.5em;">Нынче февраль... И для встречи есть повод! 8 февраля, как "хлопья со двора к оконной раме", слетаются мэтлуговцы, чтобы поздравить свой театр с днем рождения! Сколько гениальных идей и "программных текстов" создавалось в твоих недрах, МЭТЛУГ! И сейчас, ты своим существованием доказываешь истину, что театр - это не стены. Твое живое трепетное сердце бъётся. Бъётся!!! Вне времени и пространства... Создавая своё пространство, заполняя собой время... Многая лета, МЭТЛУГ! Сохрани и запомни всё!</p>
+                        <p class="lead text-left" style="text-indent: 1.5em;">И ещё добавляет приятности, что день рождения театра совпадает с днем рождения его ведущей актрисы. В этом году тем более - у Ирины Савчишиной - юбилей! Твой бенефис, Ирина, в день рождения театра, взрастившего тебя, как творческую личность, пусть даст тебе новый толчок и выведет на новый виток! С днём рождения, Ириночка! Тебе слово...</p>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="col-xs-12">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/Py53-kj9gd0?showinfo=1&modestbranding=1&rel=0&fs=0&iv_load_policy=3" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="col-xs-12 text-left">
+                        <p class="lead"></p>
+                        <p class="lead text-left" style="text-indent: 1.5em;">Далі буде...</p>
+                        <p class="lead text-left" style="text-indent: 1.5em;">Агов! "Наши театральные люди", ваши аплодисменты (комментарии, сейчас их можно оставить под видео
+                            <a target="_blank" href="https://www.youtube.com/watch?v=Py53-kj9gd0" title="Оставить комментарий">здесь</a>) сделают этот день!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mastfoot">
+                <div class="inner">
+                    <p>&copy1996-{{"now"|date("Y")}}</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+{% endblock body %}
