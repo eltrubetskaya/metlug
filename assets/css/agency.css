@@ -252,6 +252,15 @@ header.masthead .intro-text .intro-heading {
   opacity: 0;
   background: red;
 }
+.user_name{
+  font-size:14px;
+  font-weight: bold;
+}
+.comments-list .media{
+  border-top: 1px dotted #ccc;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
 
 #portfolio .portfolio-item .portfolio-link .portfolio-hover:hover {
   opacity: 1;
