@@ -43,6 +43,10 @@ h2 {
     position: absolute;
     top: -150px;
 }
+.paper-5 {
+    position: fixed;
+    top: 5px;
+}
 @media only screen and (max-width: 1190px) {
     .wrapper {
         top: auto;
@@ -58,6 +62,16 @@ h2 {
     }
     .ml1 {
         padding-top: 220px !important;
+    }
+    .ml9 {
+        position: absolute !important;
+        top: auto;
+        margin-top: 100px;
+    }
+    .paper-5 {
+        position: relative;
+        top: auto;
+        margin-top: 100px;
     }
 }
 @media only screen and (max-width: 960px) {
