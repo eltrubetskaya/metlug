@@ -2,7 +2,7 @@
  * Base structure
  */
 /* indie-flower-regular - latin */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@1,600;1,700&family=Bellota:ital,wght@1,700&family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Caveat:wght@400;700&family=Marck+Script&family=Neucha&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@1,600;1,700&family=Cormorant+Infant:ital,wght@1,600&family=Bellota:ital,wght@1,700&family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Caveat:wght@400;700&family=Marck+Script&family=Neucha&display=swap');
 
 html,
     body {
@@ -90,6 +90,16 @@ h2 {
         margin-left: 215px !important;
         top: 245px !important;
     }
+    .paper-10 {
+        position: relative !important;
+        top: 50px !important;
+        margin-top: 100px;
+    }
+    .ml10 {
+        position: absolute !important;
+        margin-top: 200px !important;
+        margin-left: 250px !important;
+    }
 }
 @media only screen and (max-width: 960px) {
     .tearoff {
@@ -172,8 +182,8 @@ p:hover {
 .ml6 {
     position: relative;
     font-weight: 900;
-    font-size: 2em;
-    padding-top: 160px;
+    font-size: 1.75em;
+    padding-top: 150px;
     font-family: 'Balsamiq Sans', cursive;
 }
 
@@ -347,4 +357,34 @@ p:hover {
 .ml16 .letter {
     display: inline-block;
     line-height: 1em;
+}
+.paper-10 {
+    position: fixed;
+    top: -50px;
+    padding-left: 32px;
+}
+.ml10 {
+    font-weight: 600;
+    font-size: 1.5em;
+    position: fixed;
+    top: 20px;
+    font-family: 'Cormorant Infant', serif;
+    transform: rotate(3deg);
+    max-width: 250px;
+    margin-left: 82px;
+}
+
+.ml10 .text-wrapper {
+    position: relative;
+    display: inline-block;
+    padding-top: 0.2em;
+    padding-right: 0.05em;
+    padding-bottom: 0.1em;
+    overflow: hidden;
+}
+
+.ml10 .letter {
+    display: inline-block;
+    line-height: 1em;
+    transform-origin: 0 0;
 }

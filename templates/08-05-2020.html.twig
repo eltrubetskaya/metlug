@@ -32,7 +32,7 @@
         <div class="row">
             <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 col-xs-12 wrapper-paper">
                 <div style="position: absolute">
-                    <img width="612px" src="{{ asset('build/img/paper_3.png') }}" alt="">
+                    <img width="512px" src="{{ asset('build/img/paper_3.png') }}" alt="">
                 </div>
                 <h3 class="ml6">
                   <span class="text-wrapper">
@@ -86,7 +86,18 @@
                     <small><i class="fas fa-mobile-alt"></i><span> +(380) 2LS-SH09 </span></small>
                 </h3>
             </div>
-            <div class="col-xl-3 col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+            <div class="col-xl-3 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="paper-10">
+                    <img width="350px" src="{{ asset('build/img/paper_10.png') }}" alt="">
+                </div>
+                <h3 class="ml10">
+                  <span class="text-wrapper">
+                    <span class="letters">"Чип и Дейл спешат на помощь": лечим людей и телефоны</span>
+                  </span>
+                      <i class="fas fa-mobile-alt"></i><span> +(380) LU0-SH1XXX </span><br>
+                      <i class="fas fa-mobile-alt"></i><span> +(380) 99E-L06TRU </span><br><br>
+                </h3>
+            </div>
             <div class="col-xl-3 col-lg-12 col-md-12 col-sm-12 col-xs-12 wrapper-paper">
                 <div class="paper-5">
                     <img width="500px" src="{{ asset('build/img/paper_8.png') }}" alt="">
@@ -382,6 +393,23 @@
                 delay: (el, i) => 30 * i
             }).add({
             targets: '.ml16',
+            opacity: 0,
+            duration: 1000,
+            easing: "easeOutExpo",
+            delay: 1000
+        });
+        // Wrap every letter in a span
+        var textWrapper7 = document.querySelector('.ml10 .letters');
+        textWrapper7.innerHTML = textWrapper7.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+        anime.timeline({loop: true})
+            .add({
+                targets: '.ml10 .letter',
+                rotateY: [-90, 0],
+                duration: 1300,
+                delay: (el, i) => 45 * i
+            }).add({
+            targets: '.ml10',
             opacity: 0,
             duration: 1000,
             easing: "easeOutExpo",
