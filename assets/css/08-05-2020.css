@@ -2,7 +2,7 @@
  * Base structure
  */
 /* indie-flower-regular - latin */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@1,600;1,700&family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Caveat:wght@400;700&family=Marck+Script&family=Neucha&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@1,600;1,700&family=Bellota:ital,wght@1,700&family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Caveat:wght@400;700&family=Marck+Script&family=Neucha&display=swap');
 
 html,
     body {
@@ -68,10 +68,27 @@ h2 {
         top: auto;
         margin-top: 100px;
     }
+    .ml7 {
+        margin-top: 100px !important;
+    }
     .paper-5 {
         position: relative;
         top: auto;
         margin-top: 100px;
+    }
+
+    .paper-3 {
+        top: auto !important;
+    }
+    .paper-6 {
+        position: relative !important;
+        bottom: auto !important;
+        margin-top: 100px;
+        margin-left: 0 !important;
+    }
+    .ml16 {
+        margin-left: 215px !important;
+        top: 245px !important;
     }
 }
 @media only screen and (max-width: 960px) {
@@ -87,7 +104,7 @@ h2 {
     text-align: center;
     font-weight: 700;
     width: 480px;
-    min-height: 500px;
+    min-height: 440px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -224,8 +241,9 @@ p:hover {
     font-size: 2.25em;
     font-family: 'Montserrat Alternates', sans-serif;
     transform: rotate(10deg);
-    padding: 120px 30px;
-    max-width: 370px;
+    padding: 0 30px;
+    max-width: 330px;
+    margin-top: -130px;
 }
 .ml7 .text-wrapper {
     position: relative;
@@ -299,6 +317,34 @@ p:hover {
 
 .ml9 .letter {
     transform-origin: 50% 100%;
+    display: inline-block;
+    line-height: 1em;
+}
+.paper-3 {
+    position: absolute;
+    top: -235px;
+}
+.paper-6 {
+    position: absolute;
+    bottom: -90px;
+    z-index: 8;
+    margin-left: -70px;
+}
+.ml16 {
+    padding: 40px 0;
+    font-weight: 700;
+    font-size: 2em;
+    text-transform: uppercase;
+    overflow: hidden;
+    max-width: 290px;
+    font-family: 'Balsamiq Sans', cursive;
+    transform: rotate(-7deg);
+    z-index: 25;
+    position: absolute;
+    bottom: 0;
+}
+
+.ml16 .letter {
     display: inline-block;
     line-height: 1em;
 }

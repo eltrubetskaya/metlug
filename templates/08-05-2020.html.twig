@@ -36,7 +36,7 @@
                 </div>
                 <h3 class="ml6">
                   <span class="text-wrapper">
-                    <span>Доставка счастья надом!</span> <br><i class="fas fa-mobile-alt"></i><span class="letters"> +1 (VA5) LE8-88RY </span>
+                    <span>Доставка счастья надом!</span> <br><span class="letters"> @kapa.com </span>
                   </span>
                 </h3>
             </div>
@@ -45,7 +45,7 @@
                     <div class="tearoff">
                         <div class="j_tiket">
                             <h1>Объявление</h1>
-                            <h2>Что каждому из нас дала Лариса</h2>
+                            <h2>Что тебе дала Лариса ?</h2>
                         </div>
                         <p data-toggle="modal" data-target="#modal_1">Савча</p>
                         <p data-toggle="modal" data-target="#modal_2">Сухомята</p>
@@ -72,8 +72,11 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 col-xs-12 wrapper-paper">
-                <div style="position: absolute">
+
+        </div>
+        <div class="row">
+            <div class="col-xl-3 col-lg-12 col-md-12 col-sm-12 col-xs-12 wrapper-paper">
+                <div class="paper-3">
                     <img width="450px" src="{{ asset('build/img/paper_5.png') }}" alt="">
                 </div>
                 <h3 class="ml7">
@@ -83,7 +86,7 @@
                     <small><i class="fas fa-mobile-alt"></i><span> +(380) 2LS-SH09 </span></small>
                 </h3>
             </div>
-            <div class="col-xl-2 col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+            <div class="col-xl-3 col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
             <div class="col-xl-3 col-lg-12 col-md-12 col-sm-12 col-xs-12 wrapper-paper">
                 <div class="paper-5">
                     <img width="500px" src="{{ asset('build/img/paper_8.png') }}" alt="">
@@ -101,7 +104,7 @@
                 <h3 class="ml1">
                   <span class="text-wrapper">
                     <span class="line line1"></span>
-                    <span class="letters">Джип-туры "По горам, по морям"</span>
+                    <span class="letters">Пешие прогулки   "По горам, по морям"</span>
                     <span class="line line2"></span>
                   </span>
                     <br><br><br>
@@ -109,6 +112,18 @@
                         <i class="fas fa-mobile-alt"></i><span> +7 (K87) SA9-VIR089 </span><br>
                         <i class="fas fa-mobile-alt"></i><span> +7 (YZZ) TSH-4533KO </span>
                     </small>
+                </h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-2 col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+            <div class="col-xl-3 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div  class="paper-6" >
+                    <img width="450px" src="{{ asset('build/img/paper_9.png') }}" alt="">
+                </div>
+                <h3 class="ml16">Школа актёрского мастерства
+                    <br>
+                    <i class="fas fa-mobile-alt"></i><span> +7(ALL) AOY-K1XY </span>
                 </h3>
             </div>
         </div>
@@ -349,6 +364,24 @@
                 delay: (el, i) => 45 * (i+1)
             }).add({
             targets: '.ml9',
+            opacity: 0,
+            duration: 1000,
+            easing: "easeOutExpo",
+            delay: 1000
+        });
+        // Wrap every letter in a span
+        var textWrapper6 = document.querySelector('.ml16');
+        textWrapper6.innerHTML = textWrapper6.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+        anime.timeline({loop: true})
+            .add({
+                targets: '.ml16 .letter',
+                translateY: [-100,0],
+                easing: "easeOutExpo",
+                duration: 1400,
+                delay: (el, i) => 30 * i
+            }).add({
+            targets: '.ml16',
             opacity: 0,
             duration: 1000,
             easing: "easeOutExpo",
