@@ -5,77 +5,25 @@
     <div class="container">
         <div class="intro-text">
             <div class="intro-lead-in text-uppercase">
-                <img width="200" class="img-fluid" src="{{ asset('build/img/t_1.png') }}" alt="">
+                <img width="280" class="img-fluid" src="{{ asset('build/img/t_1.png') }}" alt="">
             </div>
             <div class="intro-heading text-uppercase">
-                <a class="js-scroll-trigger" href="#portfolio"><img width="250" src="{{ 'build/img/logo_2.png' }}" alt="Logo" class="img-fluid"></a>
+                <a class="js-scroll-trigger" href="#portfolio"><img width="330" src="{{ 'build/img/logo_2.png' }}" alt="Logo" class="img-fluid"></a>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Services -->
-{#<section class="page-section d-sm-none d-md-block d-none " id="services">#}
-    {#<div class="container">#}
-        {#<div class="row">#}
-            {#<div class="col-lg-12 text-center">#}
-                {#                <h2 class="section-heading text-uppercase">Services</h2>#}
-                {#<table border=0 CELLPADDING=0 CELLSPACING=0 align="center">#}
-                    {#<tr>#}
-                        {#<td width="137" bgcolor="#fed136"> <img SRC="{{ asset('build/img/sc_01.gif') }}" WIDTH=137 HEIGHT=76></td>#}
-                        {#<td width="328"> <img SRC="{{ asset('build/img/sc_02.gif') }}" WIDTH=328 HEIGHT=76></td>#}
-                        {#<td width="135" bgcolor="#fed136"> <IMG SRC="{{ asset('build/img/sc_03.gif') }}" WIDTH=135 HEIGHT=76></td>#}
-                    {#</tr>#}
-                    {#<tr>#}
-                        {#<td valign="bottom" align="left" bgcolor="#fed136"><IMG SRC="{{ asset('build/img/t_i.gif') }}" WIDTH=129 HEIGHT=138 alt="тезисы из сценария" border="0"></td>#}
-                        {#<td> <IMG SRC="{{ asset('build/img/sc_05.gif') }}" WIDTH=328 HEIGHT=149></td>#}
-                        {#<td align="right" valign="bottom" bgcolor="#fed136">#}
-                            {#<IMG SRC="{{ asset('build/img/f_i.gif') }}" WIDTH=122 HEIGHT=134 alt="фотографии" border="0"></td>#}
-                    {#</tr>#}
-                    {#<tr>#}
 
-                        {#<td bgcolor="#fed136"> <IMG SRC="{{ asset('build/img/sc_07.gif') }}" WIDTH=137 HEIGHT=145></td>#}
-                        {#<td> <IMG SRC="{{ asset('build/img/sc_08.gif') }}" WIDTH=328 HEIGHT=145></td>#}
-                        {#<td bgcolor="#fed136"> <IMG SRC="{{ asset('build/img/sc_09.gif') }}" WIDTH=135 HEIGHT=145></td>#}
-                    {#</tr>#}
-                {#</table>#}
-            {#</div>#}
-        {#</div>#}
-        {#        <div class="row text-center">#}
-        {#            <div class="col-md-4">#}
-        {#          <span class="fa-stack fa-4x">#}
-        {#            <i class="fas fa-circle fa-stack-2x text-primary"></i>#}
-        {#            <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>#}
-        {#          </span>#}
-        {#                <h4 class="service-heading">E-Commerce</h4>#}
-        {#                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>#}
-        {#            </div>#}
-        {#            <div class="col-md-4">#}
-        {#          <span class="fa-stack fa-4x">#}
-        {#            <i class="fas fa-circle fa-stack-2x text-primary"></i>#}
-        {#            <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>#}
-        {#          </span>#}
-        {#                <h4 class="service-heading">Responsive Design</h4>#}
-        {#                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>#}
-        {#            </div>#}
-        {#            <div class="col-md-4">#}
-        {#          <span class="fa-stack fa-4x">#}
-        {#            <i class="fas fa-circle fa-stack-2x text-primary"></i>#}
-        {#            <i class="fas fa-lock fa-stack-1x fa-inverse"></i>#}
-        {#          </span>#}
-        {#                <h4 class="service-heading">Web Security</h4>#}
-        {#                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>#}
-        {#            </div>#}
-        {#        </div>#}
-    {#</div>#}
-{#</section>#}
+<!-- Services Section -->
+{#{% include('services.html.twig') %}#}
 
 <!-- Portfolio Grid -->
 <section class="bg-light page-section" id="portfolio">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2 class="section-heading text-uppercase">News</h2>
+                <h2 class="section-heading text-uppercase">Инсталляции</h2>
                 {#<h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>#}
             </div>
         </div>
@@ -306,156 +254,11 @@
     </div>
 </section>
 
-<!-- About -->
-<section class="page-section" id="about">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h2 class="section-heading text-uppercase">About</h2>
-                {#<h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>#}
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <ul class="timeline">
-                    <li>
-                        <div class="timeline-image">
-                            <img class="rounded-circle img-fluid" src="{{ asset('build/img/about/1.jpg') }}" alt="">
-                        </div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h4>1993-1994</h4>
-                                <h4 class="subheading"></h4>
-                            </div>
-                            <div class="timeline-body">
-                                <p class="text-muted">Молодежный эмоциональный театр Луганска "МЭТЛУГ" создан в 1993 году, как "ЛТЦДЮМ" (Луганский Театральный Центр Детей и Юношества им. Маяковского) по инициативе актеров и режиссеров Московского театра п/р В. Спесивцева братьев Шевцовых (ныне режиссеры "МЭТЛУГ"). В 1994 году театр, при поручительстве Управления молодежной политики Луганской облгосадминистрации (во главе с Валерием Филипповым) , на основе выпускников творческих ВУЗов страны, уже как "МЭТЛУГ" получил театральное помещение малой сцены города в качестве своего стационара. Стремительно объединив творческие порывы журналистов, художников, поэтов, музыкантов и бизнесменов, молодежный театр смог не только осуществить в течение семи лет тринадцать театральных постановок, но и сориентироваться в театральном эксперименте по поводу способа сценического существования и принципа театральной постановки на основе неких эмоциональных всплесков. </p>
-                            </div>
-                        </div>
-                    </li>
-                    {#<li class="timeline-inverted">#}
-                        {#<div class="timeline-image">#}
-                            {#<img class="rounded-circle img-fluid" src="{{ asset('build/img/about/2.jpg') }}" alt="">#}
-                        {#</div>#}
-                        {#<div class="timeline-panel">#}
-                            {#<div class="timeline-heading">#}
-                                {#<h4>March 2011</h4>#}
-                                {#<h4 class="subheading">An Agency is Born</h4>#}
-                            {#</div>#}
-                            {#<div class="timeline-body">#}
-                                {#<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>#}
-                            {#</div>#}
-                        {#</div>#}
-                    {#</li>#}
-                    {#<li>#}
-                        {#<div class="timeline-image">#}
-                            {#<img class="rounded-circle img-fluid" src="{{ asset('build/img/about/3.jpg') }}" alt="">#}
-                        {#</div>#}
-                        {#<div class="timeline-panel">#}
-                            {#<div class="timeline-heading">#}
-                                {#<h4>December 2012</h4>#}
-                                {#<h4 class="subheading">Transition to Full Service</h4>#}
-                            {#</div>#}
-                            {#<div class="timeline-body">#}
-                                {#<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>#}
-                            {#</div>#}
-                        {#</div>#}
-                    {#</li>#}
-                    <li class="timeline-inverted">
-                        <div class="timeline-image">
-                            <img class="rounded-circle img-fluid" src="{{ asset('build/img/online.png') }}" alt="">
-                        </div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h4>Июнь 2016</h4>
-                                <h4 class="subheading">Offline to online</h4>
-                            </div>
-                            <div class="timeline-body">
-                                <p class="text-muted">Tеатр обрёл новую для себя - виртуальную жизнь.</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="timeline-inverted">
-                        <div class="timeline-image">
-                            <h4>Be Part
-                                <br>Of Our
-                                <br>Story!</h4>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
+<!-- About Section -->
+{#{% include('about.html.twig') %}#}
 
 <!-- Team -->
-<section class="bg-light page-section" id="team">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h2 class="section-heading text-uppercase">СЦЕНИЧЕСКИЕ ЛЮДИ</h2>
-                <h3 class="section-subheading text-muted">с удовольствием представляет своих сегодняшних людей:</h3>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-4">
-                <div class="team-member">
-                    <img class="mx-auto rounded-circle" src="{{ asset('build/img/irina_suhomyatnikova.jpeg') }}" alt="">
-                    <h4>Ирина Сухомятникова</h4>
-                    <p class="text-muted">
-                        "...где все ...существуют... это наркотик"
-                        "...что наивнее и примитивнее солнца, но как оно далеко..."
-                        Выпускница Луганского Высшего Училища Культуры (ЛВУК).
-                        Актриса, педагог детско- юношеской студии.
-                        В театре "МЭТЛУГ" с декабря 1994 года.</p>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="team-member">
-                    <img class="mx-auto rounded-circle" src="{{ asset('build/img/lara.jpg') }}" alt="">
-                    <h4>Шевцова Лариса Сергеевна</h4>
-                    <p class="text-muted">пройдя все этапы создания и становления
-                        "МЭТЛУГ" в качестве директора, инициатора
-                        и идейного вдохновителя, а так же
-                        с благодарностью вспоминая всех друзей,
-                        врагов, сподвижников и расслабленных</p>
-                    {#<ul class="list-inline social-buttons">#}
-                        {#<li class="list-inline-item">#}
-                            {#<a href="#">#}
-                                {#<i class="fab fa-twitter"></i>#}
-                            {#</a>#}
-                        {#</li>#}
-                        {#<li class="list-inline-item">#}
-                            {#<a href="#">#}
-                                {#<i class="fab fa-facebook-f"></i>#}
-                            {#</a>#}
-                        {#</li>#}
-                        {#<li class="list-inline-item">#}
-                            {#<a href="#">#}
-                                {#<i class="fab fa-linkedin-in"></i>#}
-                            {#</a>#}
-                        {#</li>#}
-                    {#</ul>#}
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="team-member">
-                    <img class="mx-auto rounded-circle" src="{{ asset('build/img/team/3.jpg') }}" alt="">
-                    <h4>Ирина Савчишина</h4>
-                    <p class="text-muted">"...прежде всего работа- кайф... это чувство... суета"
-                        "...дышали бы- так ведь нет- задыхаются..."
-                        Выпускница Луганского Высшего Училища Культуры (ЛВУК).
-                        Актриса, педагог детско- юношеской студии.
-                        В театре "МЭТЛУГ" с декабря 1994 года.</p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-8 mx-auto text-center">
-                {#<p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>#}
-            </div>
-        </div>
-    </div>
-</section>
+{% include('team.html.twig') %}
 
 <!-- Contact -->
 <section class="page-section" id="contact">
@@ -507,12 +310,12 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-4">
-                <span class="copyright"> &copy; МЭТЛУГ 1994-{{"now"|date("Y")}}</span>
+                <span class="copyright"> &copy; МЭТЛУГ 1995-{{"now"|date("Y")}}</span>
             </div>
             <div class="col-md-4">
                 <ul class="list-inline social-buttons">
                     <li class="list-inline-item">
-                        <a href="https://www.youtube.com/channel/UCiq3o9MMI6CsE7Tug1AY5Ew/videos" title="Youtube">
+                        <a href="https://www.youtube.com/channel/UCiq3o9MMI6CsE7Tug1AY5Ew/videos" title="Youtube Театр МЭТЛУГ" target="_blank">
                             <i class="fab fa-youtube"></i>
                         </a>
                     </li>
