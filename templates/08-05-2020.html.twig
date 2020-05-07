@@ -29,21 +29,45 @@
                 {#</div>#}
             {#</div>#}
         {#</div>#}
-        <div class="row wrapper">
-            <div class="col-md-4">
-                <div class="tearoff">
-                    <div class="j_tiket">
-                        <h1>Объявление</h1>
-                        <h2>Что каждому из нас дала Лариса</h2>
-                    </div>
-                    <p data-toggle="modal" data-target="#modal_1">Савча</p>
-                    <p data-toggle="modal" data-target="#modal_2">Сухомята</p>
-                    <p data-toggle="modal" data-target="#modal_3">Лена Коломина</p>
-                    <p data-toggle="modal" data-target="#modal_5">А. Круглова</p>
-                    <p data-toggle="modal" data-target="#modal_4">Таня Шевченко</p>
-                    <p data-toggle="modal" data-target="#modal_6">Людочка</p>
-                    <p data-toggle="modal" data-target="#modal_7">Лена Трубецкая</p>
+        <div class="row">
+            <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 col-xs-12 wrapper-paper">
+                <div style="position: absolute">
+                    <img width="712px" src="{{ asset('build/img/paper_3.png') }}" alt="">
                 </div>
+                <h3 class="ml6">
+                  <span class="text-wrapper">
+                    <span>Доставка счастья надом!</span> <br><i class="fas fa-mobile-alt"></i><span class="letters"> +1 (VA5) LE8-88RY </span>
+                  </span>
+                </h3>
+            </div>
+            <div class="col-xl-5 col-lg-12 col-md-12 col-sm-12 col-xs-12 wrapper-center">
+                <div class="col-md-12 wrapper">
+                    <div class="tearoff">
+                        <div class="j_tiket">
+                            <h1>Объявление</h1>
+                            <h2>Что каждому из нас дала Лариса</h2>
+                        </div>
+                        <p data-toggle="modal" data-target="#modal_1">Савча</p>
+                        <p data-toggle="modal" data-target="#modal_2">Сухомята</p>
+                        <p data-toggle="modal" data-target="#modal_3">Лена Коломина</p>
+                        <p data-toggle="modal" data-target="#modal_5">А. Круглова</p>
+                        <p data-toggle="modal" data-target="#modal_4">Таня Шевченко</p>
+                        <p data-toggle="modal" data-target="#modal_6">Людочка</p>
+                        <p data-toggle="modal" data-target="#modal_7">Лена Трубецкая</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-12  col-md-12 col-sm-12 col-xs-12 wrapper-paper">
+                <div style="position: absolute">
+                    <img width="350px" src="{{ asset('build/img/paper_4.png') }}" alt="">
+                </div>
+                <h3 class="ml11">
+                  <span class="text-wrapper">
+                      <i class="fas fa-mobile-alt"></i><span> +(380) 95I-R17SU9 </span><br>
+                      <i class="fas fa-mobile-alt"></i><span> +(380) 99E-L06TRU </span><br><br>
+                    <span class="letters">Поездки по все Украине</span>
+                  </span>
+                </h3>
             </div>
         </div>
     </div>
@@ -159,9 +183,67 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <img width="100%" src="{{ asset('build/img/modal_7.png') }}" alt="">
+                    <img width="100%" src="{{ asset('build/img/word_art.png') }}" alt="">
                 </div>
             </div>
         </div>
     </div>
 {% endblock body %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+    <script>
+        // Wrap every letter in a span
+        var textWrapper = document.querySelector('.ml6 .letters');
+        textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+        anime.timeline({loop: true})
+            .add({
+                targets: '.ml6 .letter',
+                translateY: ["1.1em", 0],
+                translateZ: 0,
+                duration: 750,
+                delay: (el, i) => 50 * i
+            }).add({
+            targets: '.ml6',
+            opacity: 0,
+            duration: 1000,
+            easing: "easeOutExpo",
+            delay: 1000
+        });
+        // Wrap every letter in a span
+        var textWrapper2 = document.querySelector('.ml11 .letters');
+        textWrapper2.innerHTML = textWrapper2.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>");
+
+        anime.timeline({loop: true})
+            .add({
+                targets: '.ml11 .line',
+                scaleY: [0,1],
+                opacity: [0.5,1],
+                easing: "easeOutExpo",
+                duration: 700
+            })
+            .add({
+                targets: '.ml11 .line',
+                translateX: [0, document.querySelector('.ml11 .letters').getBoundingClientRect().width + 10],
+                easing: "easeOutExpo",
+                duration: 700,
+                delay: 100
+            }).add({
+            targets: '.ml11 .letter',
+            opacity: [0,1],
+            easing: "easeOutExpo",
+            duration: 600,
+            offset: '-=775',
+            delay: (el, i) => 34 * (i+1)
+        }).add({
+            targets: '.ml11',
+            opacity: 0,
+            duration: 1000,
+            easing: "easeOutExpo",
+            delay: 1000
+        });
+    </script>
+{% endblock %}
