@@ -2,19 +2,18 @@
  * Base structure
  */
 /* indie-flower-regular - latin */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@1,600;1,700&family=Cormorant+Infant:ital,wght@1,600&family=Bellota:ital,wght@1,700&family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Caveat:wght@400;700&family=Marck+Script&family=Neucha&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@1,600;1,700&family=Cormorant+Infant:ital,wght@1,600&family=Bellota:ital,wght@1,700&family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ruslan+Display&family=Caveat:wght@400;700&family=Marck+Script&family=Neucha&display=swap');
 
 html,
     body {
-    background: url(../img/wood_texture_fence_knothole_old_wood_texture_wooden_wooden_texture-554367.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+    background-image: url(../img/wood_texture_fence_knothole_old_wood_texture_wooden_wooden_texture-554367.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100vh;
     color: #000;
     text-align: center;
-    font-weight: 400;
     margin: 0;
+    overflow: hidden;
+    height: 100vh;
 }
 
 h1, h2, h3, h4, h5 {
@@ -48,6 +47,9 @@ h2 {
     top: 5px;
 }
 @media only screen and (max-width: 1190px) {
+    body {
+        overflow: auto;
+    }
     .wrapper {
         top: auto;
         position: relative;
@@ -70,6 +72,7 @@ h2 {
     }
     .ml7 {
         margin-top: 100px !important;
+        margin-left: 0  !important;
     }
     .paper-5 {
         position: relative;
@@ -87,8 +90,8 @@ h2 {
         margin-left: 0 !important;
     }
     .ml16 {
-        margin-left: 215px !important;
-        top: 245px !important;
+        margin-left: 150px !important;
+        top: 180px !important;
     }
     .paper-10 {
         position: relative !important;
@@ -98,6 +101,15 @@ h2 {
     .ml10 {
         position: absolute !important;
         margin-top: 200px !important;
+        margin-left: 250px !important;
+    }
+    .paper-11 {
+        position: relative !important;
+        top: 50px !important;
+    }
+    .ml4 {
+        position: absolute !important;
+        margin-top: -290px !important;
         margin-left: 250px !important;
     }
 }
@@ -203,7 +215,7 @@ p:hover {
 .wrapper-paper {
     display: flex;
     justify-content: center;
-    min-height: 400px;
+    min-height: 300px;
     z-index: 1;
 }
 .ml11 {
@@ -252,8 +264,9 @@ p:hover {
     font-family: 'Montserrat Alternates', sans-serif;
     transform: rotate(10deg);
     padding: 0 30px;
-    max-width: 330px;
-    margin-top: -130px;
+    max-width: 370px;
+    margin-top: -195px;
+    margin-left: -75px;
 }
 .ml7 .text-wrapper {
     position: relative;
@@ -332,13 +345,17 @@ p:hover {
 }
 .paper-3 {
     position: absolute;
-    top: -235px;
+    top: -285px;
 }
 .paper-6 {
     position: absolute;
-    bottom: -90px;
+    bottom: -185px;
     z-index: 8;
-    margin-left: -70px;
+}
+.paper-11 {
+    position: absolute;
+    bottom: -300px;
+    z-index: 12;
 }
 .ml16 {
     padding: 40px 0;
@@ -352,6 +369,8 @@ p:hover {
     z-index: 25;
     position: absolute;
     bottom: 0;
+    top: -150px;
+    left: 85px;
 }
 
 .ml16 .letter {
@@ -387,4 +406,23 @@ p:hover {
     display: inline-block;
     line-height: 1em;
     transform-origin: 0 0;
+}
+.ml4 {
+    position: absolute;
+    font-weight: 400;
+    font-size: 1.5em;
+    z-index: 15;
+    max-width: 350px;
+    font-family: 'Ruslan Display', cursive;
+    margin-left: 115px;
+    transform: rotate(5deg);
+    margin-top: -65px;
+}
+.ml4 .letters {
+    position: absolute;
+    margin: auto;
+    left: 0;
+    top: 0.3em;
+    right: 0;
+    opacity: 0;
 }

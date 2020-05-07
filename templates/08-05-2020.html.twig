@@ -57,7 +57,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-3 col-lg-12  col-md-12 col-sm-12 col-xs-12 wrapper-paper">
+            <div class="col-xl-3 col-lg-12  col-md-12 col-sm-12 col-xs-12 wrapper-paper" style="min-height: 400px;">
                 <div style="position: absolute">
                     <img width="350px" src="{{ asset('build/img/paper_4.png') }}" alt="">
                 </div>
@@ -77,7 +77,7 @@
         <div class="row">
             <div class="col-xl-3 col-lg-12 col-md-12 col-sm-12 col-xs-12 wrapper-paper">
                 <div class="paper-3">
-                    <img width="450px" src="{{ asset('build/img/paper_5.png') }}" alt="">
+                    <img width="400px" src="{{ asset('build/img/paper_5.png') }}" alt="">
                 </div>
                 <h3 class="ml7">
                   <span class="text-wrapper">
@@ -127,7 +127,6 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-xl-2 col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
             <div class="col-xl-3 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div  class="paper-6" >
                     <img width="450px" src="{{ asset('build/img/paper_9.png') }}" alt="">
@@ -135,6 +134,16 @@
                 <h3 class="ml16">Школа актёрского мастерства
                     <br>
                     <i class="fas fa-mobile-alt"></i><span> +7(ALL) AOY-K1XY </span>
+                </h3>
+            </div>
+            <div class="col-xl-3 col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+            <div class="col-xl-3 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div  class="paper-11" >
+                    <img width="450px" src="{{ asset('build/img/paper_11.png') }}" alt="">
+                </div>
+                <h3 class="ml4">
+                    <span class="letters letters-1">Эксплуатирую природу детей в своих инсталляциях</span>
+                    <span class="letters letters-2"> +7(ALN)358-KOL5</span>
                 </h3>
             </div>
         </div>
@@ -406,7 +415,7 @@
             .add({
                 targets: '.ml10 .letter',
                 rotateY: [-90, 0],
-                duration: 1300,
+                duration: 300,
                 delay: (el, i) => 45 * i
             }).add({
             targets: '.ml10',
@@ -414,6 +423,45 @@
             duration: 1000,
             easing: "easeOutExpo",
             delay: 1000
+        });
+        var ml4 = {};
+        ml4.opacityIn = [0,1];
+        ml4.scaleIn = [0.2, 1];
+        ml4.scaleOut = 3;
+        ml4.durationIn = 1000;
+        ml4.durationOut = 1000;
+        ml4.delay = 1000;
+
+        anime.timeline({loop: true})
+            .add({
+                targets: '.ml4 .letters-1',
+                opacity: ml4.opacityIn,
+                scale: ml4.scaleIn,
+                duration: ml4.durationIn
+            }).add({
+            targets: '.ml4 .letters-1',
+            opacity: 0,
+            scale: ml4.scaleOut,
+            duration: ml4.durationOut,
+            easing: "easeInExpo",
+            delay: ml4.delay
+        }).add({
+            targets: '.ml4 .letters-2',
+            opacity: ml4.opacityIn,
+            scale: ml4.scaleIn,
+            duration: ml4.durationIn
+        }).add({
+            targets: '.ml4 .letters-2',
+            opacity: 0,
+            scale: ml4.scaleOut,
+            duration: ml4.durationOut,
+            easing: "easeInExpo",
+            delay: ml4.delay
+        }).add({
+            targets: '.ml4',
+            opacity: 0,
+            duration: 1000,
+            delay: 500
         });
     </script>
 {% endblock %}
