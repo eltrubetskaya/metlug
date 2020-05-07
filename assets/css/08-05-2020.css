@@ -1,0 +1,107 @@
+/*
+ * Base structure
+ */
+/* indie-flower-regular - latin */
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Caveat:wght@400;700&family=Marck+Script&display=swap');
+
+html,
+    body {
+    background: url(../img/wood_texture_fence_knothole_old_wood_texture_wooden_wooden_texture-554367.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: #000;
+    text-align: center;
+    font-weight: 400;
+    margin: 0;
+    overflow: hidden;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Caveat', cursive;
+}
+h1 {
+    text-decoration: underline;
+}
+
+.wrapper {
+    padding: 1.5rem;
+}
+
+.tearoff {
+    width: 500px;
+    -webkit-filter: drop-shadow(1px 1px 2px hsla(0, 0%, 0%, .25));
+}
+
+.j_tiket {
+    background-color: #fff;
+    float: left;
+    font-size: 1.5em/10.4;
+    text-align: center;
+    font-weight: 700;
+    width: 300px;
+    min-height: 300px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+p {
+    background-color: #fff;
+    background-clip: padding-box;
+    border-left: 3px dotted #fff;
+    float: right;
+    margin-bottom: .15em;
+    text-align: center;
+    padding: 5px 0;
+    position: relative;
+    width: 197px;
+    font-family: 'Caveat', cursive;
+}
+
+p:hover {
+    animation: tearoff 1s both;
+    cursor: default;
+    transform-origin: 0 100%;
+    z-index: 10;
+    -webkit-filter: drop-shadow(1px 1px 2px hsla(0, 0%, 0%, .25));
+}
+
+@keyframes tearoff {
+    50% {
+        left: 0;
+    }
+    60% {
+        transform: rotate(5deg);
+    }
+    100% {
+        left: 1.5em;
+    }
+}
+#block-first img {
+    width: 100%;
+}
+#block-first {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.color-white {
+    color: #fff;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.color-red {
+    color: red;
+}
+#title {
+    font-family: 'Balsamiq Sans', cursive;
+    text-decoration: none;
+}
+#title-l {
+    font-family: 'Marck Script', cursive;
+    text-decoration: none;
+}

@@ -1,0 +1,167 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Что каждому из нас дала Лариса{% endblock %}
+
+    {% block stylesheets %}
+        <link href="{{ asset('build/css/all.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('build/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('build/css/08-05-2020.css') }}" rel="stylesheet" type="text/css" />
+    {% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+        {#<div class="row wrapper">#}
+            {#<div class="col-md-4" id="block-first">#}
+                {#<div class="col-md-3">#}
+                    {#<img src="{{ asset('build/img/logo.png') }}" alt="">#}
+                {#</div>#}
+                {#<div class="col-md-2 color-white">#}
+                    {#<i class="fas fa-3x fa-plus"></i>#}
+                {#</div>#}
+                {#<div class="col-md-3">#}
+                    {#<img src="{{ asset('build/img/lara.jpg') }}" alt="">#}
+                {#</div>#}
+                {#<div class="col-md-2 color-white">#}
+                    {#<i class="fas fa-3x fa-equals"></i>#}
+                {#</div>#}
+                {#<div class="col-md-2 color-red">#}
+                    {#<i class="fas fa-4x fa-heart"></i>#}
+                {#</div>#}
+            {#</div>#}
+        {#</div>#}
+        <div class="row wrapper">
+            <div class="col-md-4">
+                <div class="tearoff">
+                    <div class="j_tiket">
+                        <h1>Объявление</h1>
+                        <h2>Что каждому из нас дала Лариса</h2>
+                    </div>
+                    <p data-toggle="modal" data-target="#modal_1">Савча</p>
+                    <p data-toggle="modal" data-target="#modal_2">Сухомята</p>
+                    <p data-toggle="modal" data-target="#modal_3">Лена Коломина</p>
+                    <p data-toggle="modal" data-target="#modal_5">А. Круглова</p>
+                    <p data-toggle="modal" data-target="#modal_4">Таня Шевченко</p>
+                    <p data-toggle="modal" data-target="#modal_6">Людочка</p>
+                    <p data-toggle="modal" data-target="#modal_7">Лена Трубецкая</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="modal_1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ирина Савчишина</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img width="100%" src="{{ asset('build/img/modal_1.jpeg') }}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="modal_2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ирина Сухомятникова</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img width="100%" src="{{ asset('build/img/IMG_20200505_182521.jpg') }}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="modal_3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Алёна Коломина</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="embed-responsive embed-responsive-4by3 col-lg-12">
+                        <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/srUFD8RS3OA?rel=0&showinfo=0 " allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="modal_4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Татьяна Шевченко</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="embed-responsive embed-responsive-4by3 col-lg-12">
+                        <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/Cup2yPHmWSk?rel=0&showinfo=0 " allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="modal_5" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Алла Геннадиевна Круглова</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h1 id="title">ВАЛЕРУ</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="modal_6" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Людмила Щеголькова</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h1 id="title-l">Ларисочка, моя дорогая сестричка, хочу обнять и расцеловать в твой замечательный День Рождения! Ты моё ласковое солнышко и самая нежная подруга. Люблю Тебя</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modal_7" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Елена Трубецкая</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img width="100%" src="{{ asset('build/img/modal_7.png') }}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock body %}

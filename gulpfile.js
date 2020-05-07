@@ -39,15 +39,21 @@ gulp.task('node-bootstrap-css', function () {
 })
 
 gulp.task('node-fontawesome-css', function () {
-  return gulp.src('./node_modules/startbootstrap-agency/vendor/fontawesome-free/css/*.css')
+  return gulp.src([
+      './node_modules/startbootstrap-agency/vendor/fontawesome-free/css/*.css',
+      './node_modules/@fortawesome/fontawesome-free/css/all.css',
+  ])
     .pipe(plumber({errorHandler: handleError}))
     .pipe(gulp.dest('./public/build/css'))
 })
 
 gulp.task('fonts', function () {
-  return gulp.src('./assets/fonts/*')
+  return gulp.src([
+      './assets/fonts/*',
+      './node_modules/@fortawesome/fontawesome-free/webfonts/*',
+  ])
     .pipe(plumber({errorHandler: handleError}))
-    .pipe(gulp.dest('./public/build/fonts'))
+    .pipe(gulp.dest('./public/build/webfonts'))
 })
 
 gulp.task('js', function () {
@@ -73,6 +79,7 @@ gulp.task('libs-js', function () {
     'node_modules/jquery/dist/jquery.min.js',
     'node_modules/bootstrap/dist/js/bootstrap.min.js',
     'node_modules/bootstrap-validator/dist/validator.js',
+    'node_modules/@fortawesome/fontawesome-free/js/all.js',
   ])
     .pipe(plumber({errorHandler: handleError}))
     .pipe(concat('libs.js'))
