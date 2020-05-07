@@ -2,7 +2,7 @@
  * Base structure
  */
 /* indie-flower-regular - latin */
-@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Caveat:wght@400;700&family=Marck+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@1,600;1,700&family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Caveat:wght@400;700&family=Marck+Script&display=swap');
 
 html,
     body {
@@ -130,7 +130,7 @@ p:hover {
 .ml6 {
     position: relative;
     font-weight: 900;
-    font-size: 2.5em;
+    font-size: 2em;
     padding-top: 160px;
     font-family: 'Balsamiq Sans', cursive;
 }
@@ -191,4 +191,27 @@ p:hover {
 .wrapper-center {
     min-height: 500px;
     z-index: 10;
+}
+
+.ml7 {
+    position: relative;
+    font-weight: 900;
+    font-size: 2.25em;
+    font-family: 'Montserrat Alternates', sans-serif;
+    transform: rotate(10deg);
+    padding: 120px 30px;
+    max-width: 370px;
+}
+.ml7 .text-wrapper {
+    position: relative;
+    display: inline-block;
+    padding-top: 0.2em;
+    padding-right: 0.05em;
+    padding-bottom: 0.1em;
+    overflow: hidden;
+}
+.ml7 .letter {
+    transform-origin: 0 100%;
+    display: inline-block;
+    line-height: 1em;
 }

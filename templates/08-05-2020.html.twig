@@ -32,7 +32,7 @@
         <div class="row">
             <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 col-xs-12 wrapper-paper">
                 <div style="position: absolute">
-                    <img width="712px" src="{{ asset('build/img/paper_3.png') }}" alt="">
+                    <img width="612px" src="{{ asset('build/img/paper_3.png') }}" alt="">
                 </div>
                 <h3 class="ml6">
                   <span class="text-wrapper">
@@ -67,6 +67,19 @@
                       <i class="fas fa-mobile-alt"></i><span> +(380) 99E-L06TRU </span><br><br>
                     <span class="letters">Поездки по все Украине</span>
                   </span>
+                </h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-3 col-lg-12 col-md-12 col-sm-12 col-xs-12 wrapper-paper">
+                <div style="position: absolute">
+                    <img width="450px" src="{{ asset('build/img/paper_5.png') }}" alt="">
+                </div>
+                <h3 class="ml7">
+                  <span class="text-wrapper">
+                    <span class="letters">Заказ праздничных тортов</span>
+                  </span>
+                    <small><i class="fas fa-mobile-alt"></i><span> +(380) 2LS-SH09 </span></small>
                 </h3>
             </div>
         </div>
@@ -240,6 +253,27 @@
             delay: (el, i) => 34 * (i+1)
         }).add({
             targets: '.ml11',
+            opacity: 0,
+            duration: 1000,
+            easing: "easeOutExpo",
+            delay: 1000
+        });
+        // Wrap every letter in a span
+        var textWrapper3 = document.querySelector('.ml7 .letters');
+        textWrapper3.innerHTML = textWrapper3.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+        anime.timeline({loop: true})
+            .add({
+                targets: '.ml7 .letter',
+                translateY: ["1.1em", 0],
+                translateX: ["0.55em", 0],
+                translateZ: 0,
+                rotateZ: [180, 0],
+                duration: 750,
+                easing: "easeOutExpo",
+                delay: (el, i) => 50 * i
+            }).add({
+            targets: '.ml7',
             opacity: 0,
             duration: 1000,
             easing: "easeOutExpo",
