@@ -90,7 +90,6 @@ h2 {
         margin-left: 0 !important;
     }
     .ml16 {
-        margin-left: 150px !important;
         top: 180px !important;
     }
     .paper-10 {
@@ -101,7 +100,6 @@ h2 {
     .ml10 {
         position: absolute !important;
         margin-top: 200px !important;
-        margin-left: 250px !important;
     }
     .paper-11 {
         position: relative !important;
@@ -109,13 +107,16 @@ h2 {
     }
     .ml4 {
         position: absolute !important;
-        margin-top: -290px !important;
-        margin-left: 250px !important;
+        margin-top: 165px !important;
+        margin-left: -115px !important;
     }
 }
 @media only screen and (max-width: 960px) {
     .tearoff {
         margin-left: auto;
+    }
+    #block-first h3 {
+        font-size: 2em !important;
     }
 }
 
@@ -177,7 +178,7 @@ p:hover {
 }
 #block-first h3 {
     font-weight: 900;
-    font-size: 3.5em;
+    font-size: 3em;
     text-shadow: 1px 1px #d3d3d3;
 }
 
@@ -355,12 +356,12 @@ p:hover {
 }
 .paper-6 {
     position: absolute;
-    bottom: -35px;
+    bottom: 125px;
     z-index: 8;
 }
 .paper-11 {
     position: absolute;
-    bottom: -160px;
+    bottom: -10px;
     z-index: 12;
 }
 .ml16 {
@@ -376,7 +377,6 @@ p:hover {
     position: absolute;
     bottom: 0;
     top: -150px;
-    left: 85px;
 }
 
 .ml16 .letter {
@@ -396,7 +396,6 @@ p:hover {
     font-family: 'Cormorant Infant', serif;
     transform: rotate(3deg);
     max-width: 250px;
-    margin-left: 82px;
 }
 
 .ml10 .text-wrapper {
@@ -420,9 +419,9 @@ p:hover {
     z-index: 15;
     max-width: 350px;
     font-family: 'Ruslan Display', cursive;
-    margin-left: 115px;
+    margin-left: -110px;
     transform: rotate(5deg);
-    margin-top: -65px;
+    margin-top: -35px;
 }
 .ml4 .letters {
     position: absolute;
