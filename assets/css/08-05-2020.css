@@ -175,6 +175,7 @@ p:hover {
     justify-content: center;
     flex-wrap: wrap;
     min-height: 50px;
+    margin-bottom: 150px;
 }
 #block-first h3 {
     font-weight: 900;
