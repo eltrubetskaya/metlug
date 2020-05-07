@@ -167,12 +167,18 @@ p:hover {
     }
 }
 #block-first img {
-    width: 100%;
+    width: 20%;
 }
 #block-first {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    min-height: 50px;
+}
+#block-first h3 {
+    font-weight: 900;
+    font-size: 3.5em;
+    text-shadow: 1px 1px #d3d3d3;
 }
 
 .color-white {
@@ -349,12 +355,12 @@ p:hover {
 }
 .paper-6 {
     position: absolute;
-    bottom: -185px;
+    bottom: -35px;
     z-index: 8;
 }
 .paper-11 {
     position: absolute;
-    bottom: -300px;
+    bottom: -160px;
     z-index: 12;
 }
 .ml16 {
