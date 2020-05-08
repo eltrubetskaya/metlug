@@ -9,16 +9,16 @@
     {% endblock %}
 
 {% block body %}
-    <audio controls autoplay id="playAudio">
-        <source src="{{ asset('audio/Pop-mehanika.mp3') }}" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
     <div class="container-fluid">
         <div class="row">
             <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 col-xs-12 wrapper-paper">
                 <div style="position: absolute">
                     <img width="512px" src="{{ asset('build/img/paper_3.png') }}" alt="">
                 </div>
+                <audio controls autoplay id="playAudio" style="position: fixed; z-index: 10;opacity: 0.8;">
+                    <source src="{{ asset('audio/Pop-mehanika.mp3') }}" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
                 <h3 class="ml6">
                   <span class="text-wrapper">
                     <span>Доставка счастья надом!</span> <br><span class="letters"> @kapa.com </span>
@@ -133,7 +133,7 @@
             <div class="col-xl-5 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="col-md-12 wrapper-paper" id="block-first">
                     <h3>
-                        Кузяка&nbsp;<i class="fas fa-plus"></i>&nbsp;Лариса&nbsp;<i class="fas fa-equals"></i>&nbsp;<img width="300px" src="{{ asset('build/img/heart.png') }}" alt="">
+                        <img src="{{ asset('build/img/logo.png') }}" alt="">&nbsp;<i class="fas fa-plus"></i>&nbsp;Лариса&nbsp;<i class="fas fa-equals"></i>&nbsp;<img width="300px" src="{{ asset('build/img/heart.png') }}" alt="">
                     </h3>
                 </div>
             </div>
