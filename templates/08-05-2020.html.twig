@@ -9,6 +9,10 @@
     {% endblock %}
 
 {% block body %}
+    <audio autoplay id="playAudio">
+        <source src="{{ asset('audio/Pop-mehanika.mp3') }}" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
     <div class="container-fluid">
         <div class="row">
             <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 col-xs-12 wrapper-paper">
@@ -450,5 +454,7 @@
             duration: 1000,
             delay: 500
         });
+        document.getElementById("playAudio").volume = 0.1;
+
     </script>
 {% endblock %}
