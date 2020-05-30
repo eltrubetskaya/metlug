@@ -1,0 +1,31 @@
+<!-- Modal -->
+<div class="modal fade" id="commandModal" tabindex="-1" role="dialog" aria-labelledby="commandModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            {% if app.user %}
+                {{ form_start(form) }}
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">{{ app.user }}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    {{ form_widget(form) }}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">ОТМЕНА</button>
+                    <button type="submit" class="btn btn-secondary">ОСТАВИТЬ КОММЕНТАРИЙ</button>
+                </div>
+                {{ form_end(form) }}
+            {% else %}
+                <a href="{{ path('connect_google_start') }}" class="btn btn-lg btn-primary">
+                    <i class="fab fa-google fa-2x"></i>
+                    <span style="margin-left: 30px;vertical-align: super;font-weight: bold;">
+                            Bойти в систему с помощью Google
+                        </span>
+                </a>
+            {% endif %}
+        </div>
+    </div>
+</div>

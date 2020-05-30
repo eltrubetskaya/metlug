@@ -1,0 +1,119 @@
+<?php
+
+namespace App\Controller;
+
+use App\Entity\Comment;
+use App\Entity\Installation;
+use App\Entity\User;
+use App\Form\CommentType;
+use App\Repository\CommentRepository;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
+
+/**
+ * @Route("/{installationId}/comment")
+ * @ParamConverter("installation", options={"id" = "installationId"})
+ */
+class CommentController extends AbstractController
+{
+    /**
+     * @Route("/", name="comment_index", methods={"GET"})
+     */
+    public function index(CommentRepository $commentRepository, Installation $installation): Response
+    {
+        return $this->render('comment/index.html.twig', [
+            'comments' => $commentRepository->findBy([
+                'installation' => $installation,
+            ]),
+        ]);
+    }
+
+    /**
+     * @Route("/new", name="comment_new", methods={"GET","POST"})
+     * @IsGranted("ROLE_USER")
+     */
+    public function new(Request $request, Installation $installation): Response
+    {
+        /** @var User $user */
+        $user = $this->getUser();
+        $comment = new Comment();
+        $comment
+            ->setUser($user)
+            ->setInstallation($installation)
+        ;
+        $form = $this->createForm(CommentType::class, $comment, [
+            'action' => $this->generateUrl('comment_new', ['installationId' => $installation->getId()]),
+            'method' => Request::METHOD_POST
+        ]);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($comment);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('installation_show', ['title' => $installation->getTitle()]);
+        }
+
+        return $this->render('comment/new.html.twig', [
+            'comment' => $comment,
+            'form' => $form->createView(),
+        ]);
+    }
+
+    /**
+     * @Route("/{id}", name="comment_show", methods={"GET"})
+     */
+    public function show(Comment $comment): Response
+    {
+        return $this->render('comment/show.html.twig', [
+            'comment' => $comment,
+        ]);
+    }
+
+    /**
+     * @Route("/{id}/edit", name="comment_edit", methods={"GET","POST"})
+     * @IsGranted("ROLE_USER")
+     */
+    public function edit(Request $request, Comment $comment, Installation $installation): Response
+    {
+        if ($this->getUser()->getId() !== $comment->getUser()->getId()) {
+            $this->createAccessDeniedException();
+        }
+        $form = $this->createForm(CommentType::class, $comment);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('comment_index', ['installationId' => $installation->getId()]);
+        }
+
+        return $this->render('comment/edit.html.twig', [
+            'comment' => $comment,
+            'form' => $form->createView(),
+        ]);
+    }
+
+    /**
+     * @Route("/{id}", name="comment_delete", methods={"DELETE"})
+     * @IsGranted("ROLE_USER")
+     */
+    public function delete(Request $request, Comment $comment, Installation $installation): Response
+    {
+        if ($this->getUser()->getId() !== $comment->getUser()->getId()) {
+            $this->createAccessDeniedException();
+        }
+        if ($this->isCsrfTokenValid('delete'.$comment->getId(), $request->request->get('_token'))) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->remove($comment);
+            $entityManager->flush();
+        }
+
+        return $this->redirectToRoute('comment_index', ['installationId' => $installation->getId()]);
+    }
+}

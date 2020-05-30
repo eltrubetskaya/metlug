@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+    {% block stylesheets %}
+        <link href="{{ asset('build/css/all.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('build/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('build/css/32-05-2020.css') }}" rel="stylesheet" type="text/css" />
+    {% endblock %}
+
+{% block body %}
+    <div id="icon-plus" data-toggle="modal" data-target="#commandModal">
+        <i class="fas fa-plus fa-2x"></i>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+
+        </div>
+    </div>
+    {{ render(controller('App\\Controller\\CommentController::new', {'installationId': installation.id})) }}
+{% endblock body %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    <script>
+
+    </script>
+{% endblock %}

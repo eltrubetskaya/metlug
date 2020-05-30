@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Installation{% endblock %}
+
+{% block body %}
+    <h1>Installation</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ installation.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ installation.title }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ installation.description }}</td>
+            </tr>
+            <tr>
+                <th>VideoLink</th>
+                <td>{{ installation.videoLink }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('installation_index') }}">back to list</a>
+
+    <a href="{{ path('installation_edit', {'id': installation.id}) }}">edit</a>
+
+    {{ include('installation/_delete_form.html.twig') }}
+{% endblock %}
