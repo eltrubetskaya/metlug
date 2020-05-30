@@ -27,7 +27,8 @@ class DefaultController extends AbstractController
             '24-04-2019',
             '27-03-2019',
             '08-02-2019',
-            '08-05-2020'
+            '08-05-2020',
+            '32-05-2020'
         ];
         if (\in_array($title, $pages, true)) {
             return $this->render($title . '.html.twig');
