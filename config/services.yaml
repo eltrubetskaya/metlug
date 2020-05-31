@@ -25,3 +25,18 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    App\Command\SendInstallationEmailCommand:
+        arguments:
+        - '@router'
+        - '@doctrine'
+        - '@App\Service\MailService'
+        tags:
+        - { name: console.command }
+
+    App\Service\MailService:
+        arguments:
+        - "@session"
+        - "@mailer"
+        - "%env(MAILER_FROM)%"
+        - "@twig"
