@@ -4,6 +4,7 @@ namespace App\Command;
 
 
 use App\Entity\Installation;
+use App\Entity\User;
 use App\Service\MailService;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\Console\Command\Command;
@@ -58,12 +59,29 @@ class SendInstallationEmailCommand extends Command
         $email = $input->getArgument('email');
         $title = $input->getArgument('title');
 
+        /** @var Installation $installation */
+        $installation = $this->doctrine->getRepository(Installation::class)->findOneBy([
+            'title' => $title
+        ]);
         $io = new SymfonyStyle($input, $output);
         if ($email) {
-            /** @var Installation $installation */
-            $installation = $this->doctrine->getRepository(Installation::class)->findOneBy([
-                'title' => $title
-            ]);
+            try {
+                $this->mailService->sendMail($email, $installation->getDescription(), MailService::CREATE_INSTALLATION_TEMPLATE, [
+                    'title' => $installation->getDescription(),
+                    'link' => $this->router->generate('installation_show', [
+                        'title' => $title
+                    ])
+                ]);
+            } catch (\Exception $exception) {
+
+                $io->error('Error: ' . $exception->getMessage());
+            }
+            $io->success('Email was sent.');
+
+            return 0;
+        }
+        $users = $this->doctrine->getRepository(User::class)->findAll();
+        foreach ($users as $user) {
             try {
                 $this->mailService->sendMail($email, $installation->getDescription(), MailService::CREATE_INSTALLATION_TEMPLATE, [
                     'title' => $installation->getDescription(),
