@@ -1,24 +1,46 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 
-{% block title %}{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('build/css/32-05-2020.css') }}" rel="stylesheet" type="text/css" />
+{% endblock %}
 
-    {% block stylesheets %}
-        <link href="{{ asset('build/css/all.css') }}" rel="stylesheet" type="text/css" />
-        <link href="{{ asset('build/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
-        <link href="{{ asset('build/css/32-05-2020.css') }}" rel="stylesheet" type="text/css" />
-    {% endblock %}
-
-{% block body %}
+{% block content %}
     <div id="icon-plus" data-toggle="modal" data-target="#commandModal">
         <i class="fas fa-plus fa-2x"></i>
     </div>
-    <div class="container-fluid">
+    <div id="icon-bucket">
+        <img width="200px" src="{{ asset('build/img/pngwing.png') }}" alt="">
+    </div>
+    <div class="container-fluid" id="installation">
+        <div class="row" style="height: 100px"></div>
         <div class="row">
+            <div class="col-sm-6">
+                <div class="intro-text col-sm-3">
+                    <div class="intro-lead-in text-uppercase">
+                        <img width="100%" class="img-fluid" src="{{ asset('build/img/logo_2.png') }}" alt="">
+                    </div>
+                </div>
 
-        </div>
+                <h1 class="col-sm-12">Угол плача или Угол Перед Лицом Мира</h1>
+
+                <div class="col-sm-12">
+                    {{ render(controller('App\\Controller\\CommentController::index', {'installationId': installation.id})) }}
+                </div>
+            </div>
+            <div class="col-sm-6 col-12">
+                    <h6 class="text-left">
+                        По сложившейся МЭТЛУГовской традиции сегодня, 32 мая, встречаемся "у памятного места " и возлагаем одуванчики!
+                        <br> <br>
+                        Приветствуем и поздравляем тебя, тебя и тебя, наш благосклонный зритель, он же друг, соратник и единомышленник! Эту инсталляцию мы создадим вместе! Именно поэтому твоё талантливое, умное, красивое послание Перед Лицом Мира*  будет очень важным для нас. Чтобы "возложить свой одуванчик" таким образом, нажми на +, подпишись на рассылку и оставь послание. Теперь ты увидишь, как будет развиваться инсталляция! Оставить послание ты можешь в любой момент до следующей инсталляции - 9.07.2020 - д/р Сергея Курехина.
+                        <br><br>
+                        Дуй к нам со своим одуванчиком... и ...Будьмо!
+                    </h6>
+
+            </div>
     </div>
     {{ render(controller('App\\Controller\\CommentController::new', {'installationId': installation.id})) }}
-{% endblock body %}
+{% endblock %}
 
 {% block javascripts %}
     {{ parent() }}

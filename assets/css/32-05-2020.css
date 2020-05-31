@@ -2,17 +2,13 @@
  * Base structure
  */
 /* indie-flower-regular - latin */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@1,600;1,700&family=Cormorant+Infant:ital,wght@1,600&family=Bellota:ital,wght@1,700&family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ruslan+Display&family=Caveat:wght@400;700&family=Marck+Script&family=Neucha&display=swap');
 
 html,
     body {
-    background-image: url(../img/blue_2.jpg);
-    background-repeat: no-repeat;
-    background-size: 100% 100vh;
     color: #000;
     text-align: center;
     margin: 0;
-    overflow: hidden;
-    height: 100vh;
 }
 #icon-plus {
     position: fixed;
@@ -23,9 +19,39 @@ html,
     padding: 20px 24px;
     border-radius: 50%;
     box-shadow: 0 2px 4px rgba(0,0,0,.25);
+    z-index: 1000;
+    opacity: .85;
 }
 #icon-plus:hover {
      color: #fed136;
      background-color: white;
  }
+#installation h1, #installation img{
+    font-family: 'Balsamiq Sans', cursive;
+    text-shadow: 1px 1px #d3d3d3;
+    font-size: 2rem;
+}
+#installation h6{
+    font-family: 'Balsamiq Sans', cursive;
+    text-shadow: 1px 1px #d3d3d3;
+    font-size: 1.1rem;
+    margin-left: 5%;
+    position: fixed;
+}
+#icon-bucket {
+    position: fixed;
+    bottom: -25px;
+    left: 50%;
+}
+#installation {
+    background-image: url(../img/blue_2.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+}
+.comments-list {
+    font-family: 'Balsamiq Sans', cursive;
+    font-weight: 700;
 
+}
