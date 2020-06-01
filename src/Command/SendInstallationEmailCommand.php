@@ -83,7 +83,7 @@ class SendInstallationEmailCommand extends Command
         $users = $this->doctrine->getRepository(User::class)->findAll();
         foreach ($users as $user) {
             try {
-                $this->mailService->sendMail($email, $installation->getDescription(), MailService::CREATE_INSTALLATION_TEMPLATE, [
+                $this->mailService->sendMail($user->getEmail(), $installation->getDescription(), MailService::CREATE_INSTALLATION_TEMPLATE, [
                     'title' => $installation->getDescription(),
                     'link' => $this->router->generate('installation_show', [
                         'title' => $title
