@@ -38,20 +38,60 @@ html,
     margin-left: 5%;
     position: fixed;
 }
-#icon-bucket {
-    position: fixed;
-    bottom: -25px;
-    left: 50%;
-}
-#installation {
-    background-image: url(../img/blue_2.jpg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center center;
-    background-size: cover;
-}
 .comments-list {
     font-family: 'Balsamiq Sans', cursive;
     font-weight: 700;
+    color: #000;
+    margin-top: 50px;
+}
+.header-in h1 {
+    font-family: 'Balsamiq Sans', cursive;
+    color: black;
+    text-shadow: 1px 1px #d3d3d3;
+}
+.header-in h5 {
+    font-family: 'Balsamiq Sans', cursive;
+    color: black;
+    background-color: rgba(255,255,255,0.5);
+    padding: 15px;
+    border-radius: 15px;
+}
+.media {
+    background-color: rgba(255,255,255,0.5);
+    padding: 15px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+.media-heading img {
+    margin-right: 15px;
+}
 
+@media only screen and (min-width: 768px) {
+    .right-title {
+        display: block;
+    }
+    .left-title {
+        display: none;
+    }
+    #icon-bucket {
+        position: fixed;
+        bottom: -20px;
+        left: 50%;
+        z-index: 1000;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .right-title {
+        display: none;
+    }
+    .left-title {
+        display: block;
+    }
+    #icon-bucket {
+        position: fixed;
+        bottom: -20px;
+        left: 0;
+        z-index: 1000;
+    }
 }

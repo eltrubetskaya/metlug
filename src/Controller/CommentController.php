@@ -9,6 +9,7 @@ use App\Form\CommentType;
 use App\Repository\CommentRepository;
 use App\Repository\UserRepository;
 use App\Service\MailService;
+use Doctrine\Common\Collections\Criteria;
 use Psr\Log\LoggerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
@@ -31,7 +32,7 @@ class CommentController extends AbstractController
         return $this->render('comment/index.html.twig', [
             'comments' => $commentRepository->findBy([
                 'installation' => $installation,
-            ]),
+            ], ['createdAt' => Criteria::DESC]),
         ]);
     }
 
