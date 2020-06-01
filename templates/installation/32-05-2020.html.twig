@@ -39,6 +39,7 @@
 
             </div>
     </div>
+    </div>
     {{ render(controller('App\\Controller\\CommentController::new', {'installationId': installation.id})) }}
 {% endblock %}
 
@@ -46,6 +47,9 @@
     {{ parent() }}
 
     <script>
+        if ({{ modalShow }}) {
+            $('#commandModal').modal('show')
+        }
 
     </script>
 {% endblock %}

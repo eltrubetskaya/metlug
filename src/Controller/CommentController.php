@@ -34,17 +34,13 @@ class CommentController extends AbstractController
 
     /**
      * @Route("/new", name="comment_new", methods={"GET","POST"})
-     * @IsGranted("ROLE_USER")
      */
     public function new(Request $request, Installation $installation): Response
     {
         /** @var User $user */
         $user = $this->getUser();
         $comment = new Comment();
-        $comment
-            ->setUser($user)
-            ->setInstallation($installation)
-        ;
+        $comment->setInstallation($installation);
         $form = $this->createForm(CommentType::class, $comment, [
             'action' => $this->generateUrl('comment_new', ['installationId' => $installation->getId()]),
             'method' => Request::METHOD_POST
@@ -52,6 +48,7 @@ class CommentController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $comment->setUser($user);
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($comment);
             $entityManager->flush();

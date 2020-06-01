@@ -14,11 +14,11 @@ class GoogleController extends AbstractController
      * Link to this controller to start the "connect" process
      * @param ClientRegistry $clientRegistry
      *
-     * @Route("/connect/google", name="connect_google_start")
+     * @Route("/connect/google", name="connect_google_start", methods={"GET"})
      *
      * @return RedirectResponse
      */
-    public function connectAction(ClientRegistry $clientRegistry)
+    public function connect(ClientRegistry $clientRegistry)
     {
         return $clientRegistry
             ->getClient('google')
@@ -37,11 +37,11 @@ class GoogleController extends AbstractController
      * @param Request $request
      * @param ClientRegistry $clientRegistry
      *
-     * @Route("/connect/google/check", name="connect_google_check")
+     * @Route("/connect/google/check", name="connect_google_check", methods={"GET"})
      * @return RedirectResponse
      */
-    public function connectCheckAction(Request $request, ClientRegistry $clientRegistry)
+    public function connectCheck(Request $request, ClientRegistry $clientRegistry)
     {
-        return $this->redirectToRoute('app_page_view', ['title' => '32-05-2020', 'modalShow' => true]);
+        return $this->redirectToRoute('installation_show', ['title' => '32-05-2020', 'modalShow' => true]);
     }
 }
