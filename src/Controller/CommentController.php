@@ -7,6 +7,9 @@ use App\Entity\Installation;
 use App\Entity\User;
 use App\Form\CommentType;
 use App\Repository\CommentRepository;
+use App\Repository\UserRepository;
+use App\Service\MailService;
+use Psr\Log\LoggerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -35,7 +38,7 @@ class CommentController extends AbstractController
     /**
      * @Route("/new", name="comment_new", methods={"GET","POST"})
      */
-    public function new(Request $request, Installation $installation): Response
+    public function new(Request $request, Installation $installation, UserRepository $repository, MailService $mailService, LoggerInterface $logger): Response
     {
         /** @var User $user */
         $user = $this->getUser();
@@ -52,6 +55,23 @@ class CommentController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($comment);
             $entityManager->flush();
+            try {
+                $users = $repository->findBy(['subscribed' => true]);
+                foreach ($users as $user) {
+                    if ($comment->getUser()->getEmail() !== $user->getEmail()) {
+                        $mailService->sendMail($user->getEmail(),$installation->getDescription(), MailService::CREATE_COMMENT_TEMPLATE, [
+                            'title' => $installation->getDescription(),
+                            'link' => $this->generateUrl('installation_show', [
+                                'title' => $installation->getTitle()
+                            ]),
+                            'user' => (string) $comment->getUser()
+                        ]);
+                        $logger->info('Email success sent to ' . $user->getEmail());
+                    }
+                }
+            } catch (\Exception $e) {
+                $logger->info('Emails error: ' . $e->getMessage());
+            }
 
             return $this->redirectToRoute('installation_show', ['title' => $installation->getTitle()]);
         }

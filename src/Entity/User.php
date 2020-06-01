@@ -53,6 +53,12 @@ class User implements UserInterface
      */
     private $avatar;
 
+    /**
+     * @var bool
+     *
+     * @ORM\Column(type="boolean", options={"default" = true})
+     */
+    private $subscribed = true;
 
     /**
      * @ORM\Column(type="json")
@@ -68,6 +74,7 @@ class User implements UserInterface
     public function __construct()
     {
         $this->comments = new ArrayCollection();
+        $this->setSubscribed(true);
 
     }
 
@@ -227,5 +234,24 @@ class User implements UserInterface
     public function __toString()
     {
         return $this->getFirstName() . ' ' . $this->getLastName();
+    }
+
+    /**
+     * @return bool
+     */
+    public function isSubscribed(): bool
+    {
+        return $this->subscribed;
+    }
+
+    /**
+     * @param bool $value
+     * @return $this
+     */
+    public function setSubscribed(bool $value)
+    {
+        $this->subscribed = $value;
+
+        return $this;
     }
 }
