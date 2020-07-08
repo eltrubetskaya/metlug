@@ -38,6 +38,18 @@ gulp.task('node-bootstrap-css', function () {
     .pipe(gulp.dest('./public/build/css'))
 })
 
+gulp.task('slick-styles', function () {
+  return gulp.src([
+      './node_modules/slick-carousel/slick/slick.scss',
+    './node_modules/slick-carousel/slick/slick-theme.scss',
+  ])
+    .pipe(plumber({errorHandler: handleError}))
+    .pipe(sourcemaps.init())
+    .pipe(scss({outputStyle: 'compressed', includePaths: SASS_INCLUDE_PATHS}))
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest('./public/build/css'))
+})
+
 gulp.task('node-fontawesome-css', function () {
   return gulp.src([
       './node_modules/startbootstrap-agency/vendor/fontawesome-free/css/*.css',
@@ -51,13 +63,31 @@ gulp.task('fonts', function () {
   return gulp.src([
       './assets/fonts/*',
       './node_modules/@fortawesome/fontawesome-free/webfonts/*',
+      './node_modules/slick-carousel/slick/fonts/*',
   ])
     .pipe(plumber({errorHandler: handleError}))
     .pipe(gulp.dest('./public/build/webfonts'))
 })
 
+gulp.task('slick-fonts', function () {
+  return gulp.src([
+      './node_modules/slick-carousel/slick/fonts/*',
+  ])
+    .pipe(plumber({errorHandler: handleError}))
+    .pipe(gulp.dest('./public/build/css/fonts'))
+})
+
 gulp.task('js', function () {
   return gulp.src('./assets/js/*.js')
+    .pipe(plumber({errorHandler: handleError}))
+    .pipe(sourcemaps.init())
+    .pipe(babel({compact: true}))
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest('./public/build/js'))
+})
+
+gulp.task('slick-js', function () {
+  return gulp.src('./node_modules/slick-carousel/slick/slick.min.js')
     .pipe(plumber({errorHandler: handleError}))
     .pipe(sourcemaps.init())
     .pipe(babel({compact: true}))
@@ -116,6 +146,6 @@ gulp.task('watch', ['styles', 'js'], function () {
   gulp.watch('./assets/img/*', ['images'])
 })
 
-gulp.task( 'default', ['node-images', 'node-libs-js', 'node-js','node-fontawesome-css', 'node-bootstrap-css', 'libs-js', 'styles', 'css', 'js', 'images', 'fonts'], function () {
+gulp.task( 'default', ['node-images', 'node-libs-js', 'node-js','node-fontawesome-css', 'node-bootstrap-css', 'libs-js', 'styles', 'css', 'js', 'images', 'fonts', 'slick-js', 'slick-styles', 'slick-fonts'], function () {
 
 })

@@ -6,9 +6,9 @@
 {% endblock %}
 
 {% block content %}
-    <div id="icon-plus" data-toggle="modal" data-target="#commandModal">
-        <i class="fas fa-plus fa-2x"></i>
-    </div>
+{#    <div id="icon-plus" data-toggle="modal" data-target="#commandModal">#}
+{#        <i class="fas fa-plus fa-2x"></i>#}
+{#    </div>#}
     <div id="icon-bucket">
         <img width="200px" src="{{ asset('build/img/pngwing.png') }}" alt="">
     </div>
@@ -65,9 +65,9 @@
     {{ parent() }}
 
     <script>
-        if ({{ modalShow }}) {
-            $('#commandModal').modal('show')
-        }
+        {#if ({{ modalShow }}) {#}
+        {#    $('#commandModal').modal('show')#}
+        {#}#}
         document.getElementById("playAudio").volume = 0.1;
     </script>
 {% endblock %}

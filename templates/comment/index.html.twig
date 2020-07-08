@@ -4,17 +4,14 @@
             <div class="media-body text-left">
                 <h4 class="media-heading user_name"><img width="40px" class="rounded-circle" src="{{ comment.user.avatar }}" alt=""> {{ comment.user }}</h4>
                 {{ comment.text }}
-                    {#<div style="width: 260px;height: 470px" class="embed-responsive embed-responsive-1by3">#}
-                        {#<iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/DTO5n08tLI4?showinfo=1&modestbranding=1&rel=0&iv_load_policy=3" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>#}
-                    {#</div>#}
             </div>
             <div class="text-right">
                 <p><small>{{ comment.createdAt|date('Y-m-d H:i') }}</small></p>
-                {#{% if comment.user == 'Arthur Yunk' %}#}
-                    {#<div><img width="40px" src="{{ asset('build/img/ananas.png') }}" alt=""></div>#}
-                {#{% else %}#}
-                    <div><img width="40px" src="{{ asset('build/img/dandelion_PNG12853.png') }}" alt=""></div>
-                {#{% endif %}#}
+                {% if comment.installation.category is not null and comment.installation.category.title == '32-may'%}
+                    <div>
+                        <img width="40px" src="{{ asset('build/img/dandelion_PNG12853.png') }}" alt="">
+                    </div>
+                {% endif %}
             </div>
         </div>
         {% endfor %}
