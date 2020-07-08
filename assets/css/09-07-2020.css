@@ -13,7 +13,10 @@ header.masthead {
     background-attachment: scroll;
     background-position: center center;
     background-size: cover;
+    padding-top: 17rem;
+    padding-bottom: 12.5rem;
 }
+
 .slider {
     margin: 0 25px 30px;
     text-align: center;
