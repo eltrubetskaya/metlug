@@ -19,6 +19,7 @@ header.masthead {
     text-align: center;
 }
 .slick-wrapper {
-    background-color: #ddd;
+    background-color: #000;
     margin-top: 25px;
+    padding: 0 5px;
 }

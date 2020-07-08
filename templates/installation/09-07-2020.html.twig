@@ -1,5 +1,5 @@
 {% extends 'layout.html.twig' %}
-
+{% block title %}День памяти Сергея Курехина.{% endblock %}
 {% block stylesheets %}
     {{ parent() }}
     <link href="{{ asset('build/css/32-05-2020.css') }}" rel="stylesheet" type="text/css" />
@@ -41,6 +41,9 @@
                         <img class="mx-auto rounded-circle" src="{{ asset('build/img/irina_suhomyatnikova.jpeg') }}" alt="">
                         <h4 class="service-heading">Ирина Сухомятникова</h4>
                         <p class="text-muted"></p>
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/nTlwf3Dvufk?showinfo=1&modestbranding=1&rel=0&fs=1&iv_load_policy=3" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-12">
@@ -57,6 +60,11 @@
     <!-- Main -->
 <section class="bg-light page-section" id="team">
     <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h3 class="section-subheading text-muted">У театра МЭТЛУГ с участием Сергея Курехина было всего две постановки. Это спектакли "Скот. Тина" (Ш.Перро "Ослиная шкура") в музыке "Воробьиная оратория" (премьера в 1995) и "Н.З. и К" (Ф. Ницше "Так говорил Заратустра") в музыке "Ибливый опоссум" (премьера в 1997). Вспомнить музыку и  спектакли (или познакомиться с ними) можно здесь.</h3>
+            </div>
+        </div>
         <div class="row">
             <div class="col-sm-6 col-12">
                 <div id="carouselIndicators" class="carousel slide" data-ride="carousel">
@@ -92,24 +100,40 @@
                 <div class="slick-wrapper">
                     <div class="slider slick-slider slick-dotted slider-center">
                         <div>
-                            <a href="#" target="_blank">
-                                <img class="d-block" width="200px" src="{{ asset('build/img/sparrow.jpg') }}" data-holder-rendered="true">
+                            <a class="link-audio" onmouseenter="playAudioZima()" href="https://youtu.be/SjFOL_LWwkg?t=180" target="_blank">
+                                <img class="d-block" width="400px" src="{{ asset('build/img/s_1.png') }}" data-holder-rendered="true">
                             </a>
+                            <audio id="playAudio_zima" style="z-index: 10;opacity: 0.75;">
+                                <source src="{{ asset('audio/sergej-kuryohin-zima.mp3') }}" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
                         </div>
                         <div>
-                            <a href="#">
-                                <img class="d-block" width="200px" src="{{ asset('build/img/sparrow_2.jpg') }}" data-holder-rendered="true">
+                            <a class="link-audio" onmouseenter="playAudioVesna()" href="https://youtu.be/SjFOL_LWwkg?t=415" target="_blank">
+                                <img class="d-block" width="400px" src="{{ asset('build/img/s_2.png') }}" data-holder-rendered="true">
                             </a>
+                            <audio id="playAudio_vesna" style="z-index: 10;opacity: 0.75;">
+                                <source src="{{ asset('audio/sergej-kuryohin-vesna.mp3') }}" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
                         </div>
                         <div>
-                            <a href="#">
-                                <img class="d-block" width="200px" src="{{ asset('build/img/sparrow_3.jpg') }}" data-holder-rendered="true">
+                            <a class="link-audio" onmouseenter="playAudioLeto()" href="https://youtu.be/SjFOL_LWwkg?t=1006" target="_blank">
+                                <img class="d-block" width="400px" src="{{ asset('build/img/s_3.png') }}" data-holder-rendered="true">
                             </a>
+                            <audio id="playAudio_leto" style="z-index: 10;opacity: 0.75;">
+                                <source src="{{ asset('audio/sergej-kuryohin-leto.mp3') }}" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
                         </div>
                         <div>
-                            <a href="#">
-                                <img class="d-block" width="200px" src="{{ asset('build/img/leto.jpg') }}" data-holder-rendered="true">
+                            <a class="link-audio" onmouseenter="playAudioOsen()" href="https://youtu.be/SjFOL_LWwkg?t=1730" target="_blank">
+                                <img class="d-block" width="400px" src="{{ asset('build/img/s_4.png') }}" data-holder-rendered="true">
                             </a>
+                            <audio id="playAudio_osen" style="z-index: 10;opacity: 0.75;">
+                                <source src="{{ asset('audio/sergej-kuryohin-osen.mp3') }}" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
                         </div>
                     </div>
                 </div>
@@ -177,7 +201,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h4 class="col-12 text-left">Комментарии:</h4>
+                <h3 class="col-12 section-subheading text-muted text-left">Ну, а после прослушанного и (или) просмотренного, можно запечатлеть в инсталляции свои эмоции, впечатления, ассоциации или воспоминания, нажав на <i class="fa fa-plus"></i>!</h3>
             </div>
         </div>
         {{ render(controller('App\\Controller\\CommentController::index', {'installationId': installation.id})) }}
@@ -206,6 +230,55 @@
             autoplay: true,
             autoplaySpeed: 2000,
         });
+        let zima = document.getElementById("playAudio_zima")
+        let vesna = document.getElementById("playAudio_vesna")
+        let leto = document.getElementById("playAudio_leto")
+        let osen = document.getElementById("playAudio_osen")
 
+        function playAudioZima() {
+            pauseAudioVesna()
+            pauseAudioLeto()
+            pauseAudioOsen()
+            zima.play()
+        }
+        function pauseAudioZima() {
+            zima.pause()
+        }
+
+        function playAudioVesna() {
+            pauseAudioZima()
+            pauseAudioLeto()
+            pauseAudioOsen()
+            vesna.play()
+        }
+        function pauseAudioVesna() {
+            vesna.pause()
+        }
+
+        function playAudioLeto() {
+            pauseAudioZima()
+            pauseAudioVesna()
+            pauseAudioOsen()
+            leto.play()
+        }
+        function pauseAudioLeto() {
+            leto.pause()
+        }
+
+        function playAudioOsen() {
+            pauseAudioZima()
+            pauseAudioLeto()
+            pauseAudioVesna()
+            osen.play()
+        }
+        function pauseAudioOsen() {
+            osen.pause()
+        }
+        $('.link-audio').on('click', function () {
+            pauseAudioOsen()
+            pauseAudioZima()
+            pauseAudioLeto()
+            pauseAudioVesna()
+        })
     </script>
 {% endblock %}
