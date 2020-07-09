@@ -12,6 +12,9 @@
     <div id="icon-plus" data-toggle="modal" data-target="#commandModal">
         <i class="fas fa-plus fa-2x"></i>
     </div>
+    <div id="icon-sound" class="d-none">
+        <i class="fas fa-volume-up"></i>
+    </div>
     <!-- Header -->
     <header class="masthead">
         <div class="container">
@@ -185,22 +188,22 @@
                 <div class="slick-wrapper">
                     <div class="slider slick-slider slick-dotted slider-center">
                         <div>
-                            <a href="https://youtu.be/7fFFz-PDrxM" target="_blank">
+                            <a class="link-audio" href="https://youtu.be/7fFFz-PDrxM?t=1" target="_blank">
                                 <img class="d-block" width="500px" src="{{ asset('build/img/z_1.png') }}" data-holder-rendered="true">
                             </a>
                         </div>
                         <div>
-                            <a href="https://youtu.be/7fFFz-PDrxM?t=346" target="_blank">
+                            <a class="link-audio" href="https://youtu.be/7fFFz-PDrxM?t=346" target="_blank">
                                 <img class="d-block" width="500px" src="{{ asset('build/img/z_2.png') }}" data-holder-rendered="true">
                             </a>
                         </div>
                         <div>
-                            <a href="https://youtu.be/7fFFz-PDrxM?t=800" target="_blank">
+                            <a class="link-audio" href="https://youtu.be/7fFFz-PDrxM?t=800" target="_blank">
                                 <img class="d-block" width="500px" src="{{ asset('build/img/z_3.png') }}" data-holder-rendered="true">
                             </a>
                         </div>
                         <div>
-                            <a href="https://youtu.be/7fFFz-PDrxM?t=1230" target="_blank">
+                            <a class="link-audio" href="https://youtu.be/7fFFz-PDrxM?t=1230" target="_blank">
                                 <img class="d-block" width="500px" src="{{ asset('build/img/z_4.png') }}" data-holder-rendered="true">
                             </a>
                         </div>
@@ -210,22 +213,22 @@
                             </a>
                         </div>
                         <div>
-                            <a href="https://youtu.be/7fFFz-PDrxM?t=1852" target="_blank">
+                            <a class="link-audio" href="https://youtu.be/7fFFz-PDrxM?t=1852" target="_blank">
                                 <img class="d-block" width="500px" src="{{ asset('build/img/z_6.png') }}" data-holder-rendered="true">
                             </a>
                         </div>
                         <div>
-                            <a href="https://youtu.be/7fFFz-PDrxM?t=2274" target="_blank">
+                            <a class="link-audio" href="https://youtu.be/7fFFz-PDrxM?t=2274" target="_blank">
                                 <img class="d-block" width="500px" src="{{ asset('build/img/z_7.png') }}" data-holder-rendered="true">
                             </a>
                         </div>
                         <div>
-                            <a href="https://youtu.be/7fFFz-PDrxM?t=3067" target="_blank">
+                            <a class="link-audio" href="https://youtu.be/7fFFz-PDrxM?t=3067" target="_blank">
                                 <img class="d-block" width="500px" src="{{ asset('build/img/z_8.png') }}" data-holder-rendered="true">
                             </a>
                         </div>
                         <div>
-                            <a href="https://youtu.be/7fFFz-PDrxM?t=3467" target="_blank">
+                            <a class="link-audio" href="https://youtu.be/7fFFz-PDrxM?t=3467" target="_blank">
                                 <img class="d-block" width="500px" src="{{ asset('build/img/z_9.png') }}" data-holder-rendered="true">
                             </a>
                         </div>
@@ -279,6 +282,7 @@
         let osen = document.getElementById("playAudio_osen")
 
         function playAudioZima() {
+            $('#icon-sound').removeClass('d-none')
             pauseAudioVesna()
             pauseAudioLeto()
             pauseAudioOsen()
@@ -289,6 +293,7 @@
         }
 
         function playAudioVesna() {
+            $('#icon-sound').removeClass('d-none')
             pauseAudioZima()
             pauseAudioLeto()
             pauseAudioOsen()
@@ -299,6 +304,7 @@
         }
 
         function playAudioLeto() {
+            $('#icon-sound').removeClass('d-none')
             pauseAudioZima()
             pauseAudioVesna()
             pauseAudioOsen()
@@ -309,6 +315,7 @@
         }
 
         function playAudioOsen() {
+            $('#icon-sound').removeClass('d-none')
             pauseAudioZima()
             pauseAudioLeto()
             pauseAudioVesna()
@@ -318,6 +325,14 @@
             osen.pause()
         }
         $('.link-audio').on('click', function () {
+            $('#icon-sound').addClass('d-none')
+            pauseAudioOsen()
+            pauseAudioZima()
+            pauseAudioLeto()
+            pauseAudioVesna()
+        })
+        $('#icon-sound').on('click', function () {
+            $('#icon-sound').addClass('d-none')
             pauseAudioOsen()
             pauseAudioZima()
             pauseAudioLeto()
