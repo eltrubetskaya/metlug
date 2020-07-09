@@ -42,3 +42,4 @@ header.masthead {
     color: #fed136;
     background-color: white;
 }
+*{ touch-action: none; }

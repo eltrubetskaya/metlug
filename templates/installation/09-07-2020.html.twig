@@ -187,7 +187,7 @@
                 </div>
                 <div class="slick-wrapper">
                     <div class="slider slick-slider slick-dotted slider-center">
-                        <div>
+                        <div class="block-audio">
                             <a class="link-audio" onmouseenter="playAudioOpossum1()" href="https://youtu.be/7fFFz-PDrxM?t=1" target="_blank">
                                 <img class="d-block" width="500px" src="{{ asset('build/img/z_1.png') }}" data-holder-rendered="true">
                             </a>
@@ -305,7 +305,18 @@
         let opossum_3 = document.getElementById("playAudio_opossum_3")
         let opossum_8 = document.getElementById("playAudio_opossum_8")
         let opossum_9 = document.getElementById("playAudio_opossum_9")
-
+        let div = document.querySelector(".block-audio")
+        div.addEventListener("pointerdown",(e)=>{
+            console.log("down")
+            console.log("attempt release implicit capture")
+            div.releasePointerCapture(e.pointerId) // <- Important!
+        })
+        div.addEventListener("pointerenter",(e)=>{
+            console.log("enter")
+        })
+        div.addEventListener("pointerleave",(e)=>{
+            console.log("leave")
+        })
         function playAudioOpossum1() {
             $('#icon-sound').removeClass('d-none')
             pauseAudioOpossum2()
