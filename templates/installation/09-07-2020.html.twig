@@ -223,14 +223,22 @@
                             </a>
                         </div>
                         <div>
-                            <a class="link-audio" href="https://youtu.be/7fFFz-PDrxM?t=3067" target="_blank">
+                            <a class="link-audio" onmouseenter="playAudioOpossum8()" href="https://youtu.be/7fFFz-PDrxM?t=3067" target="_blank">
                                 <img class="d-block" width="500px" src="{{ asset('build/img/z_8.png') }}" data-holder-rendered="true">
                             </a>
+                            <audio id="playAudio_opossum_8" style="z-index: 10;opacity: 0.75;">
+                                <source src="{{ asset('audio/opossum_IX.mp3') }}" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
                         </div>
                         <div>
-                            <a class="link-audio" href="https://youtu.be/7fFFz-PDrxM?t=3467" target="_blank">
+                            <a class="link-audio" onmouseenter="playAudioOpossum9()" href="https://youtu.be/7fFFz-PDrxM?t=3467" target="_blank">
                                 <img class="d-block" width="500px" src="{{ asset('build/img/z_9.png') }}" data-holder-rendered="true">
                             </a>
+                            <audio id="playAudio_opossum_9" style="z-index: 10;opacity: 0.75;">
+                                <source src="{{ asset('audio/Pop-mehanika.mp3') }}" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
                         </div>
                     </div>
                 </div>
@@ -280,9 +288,45 @@
         let vesna = document.getElementById("playAudio_vesna")
         let leto = document.getElementById("playAudio_leto")
         let osen = document.getElementById("playAudio_osen")
+        let opossum_8 = document.getElementById("playAudio_opossum_8")
+        let opossum_9 = document.getElementById("playAudio_opossum_9")
+
+        function playAudioOpossum9() {
+            $('#icon-sound').removeClass('d-none')
+            pauseAudioOpossum8()
+
+            pauseAudioZima()
+            pauseAudioVesna()
+            pauseAudioLeto()
+            pauseAudioOsen()
+
+            opossum_9.play()
+        }
+        function pauseAudioOpossum9() {
+            opossum_9.pause()
+        }
+
+        function playAudioOpossum8() {
+            $('#icon-sound').removeClass('d-none')
+            pauseAudioOpossum9()
+
+            pauseAudioZima()
+            pauseAudioVesna()
+            pauseAudioLeto()
+            pauseAudioOsen()
+
+            opossum_8.play()
+        }
+        function pauseAudioOpossum8() {
+            opossum_8.pause()
+        }
 
         function playAudioZima() {
             $('#icon-sound').removeClass('d-none')
+
+            pauseAudioOpossum8()
+            pauseAudioOpossum9()
+
             pauseAudioVesna()
             pauseAudioLeto()
             pauseAudioOsen()
@@ -294,6 +338,9 @@
 
         function playAudioVesna() {
             $('#icon-sound').removeClass('d-none')
+            pauseAudioOpossum8()
+            pauseAudioOpossum9()
+
             pauseAudioZima()
             pauseAudioLeto()
             pauseAudioOsen()
@@ -305,6 +352,9 @@
 
         function playAudioLeto() {
             $('#icon-sound').removeClass('d-none')
+            pauseAudioOpossum8()
+            pauseAudioOpossum9()
+
             pauseAudioZima()
             pauseAudioVesna()
             pauseAudioOsen()
@@ -316,6 +366,9 @@
 
         function playAudioOsen() {
             $('#icon-sound').removeClass('d-none')
+            pauseAudioOpossum8()
+            pauseAudioOpossum9()
+
             pauseAudioZima()
             pauseAudioLeto()
             pauseAudioVesna()
@@ -326,6 +379,9 @@
         }
         $('.link-audio').on('click', function () {
             $('#icon-sound').addClass('d-none')
+            pauseAudioOpossum8()
+            pauseAudioOpossum9()
+
             pauseAudioOsen()
             pauseAudioZima()
             pauseAudioLeto()
@@ -333,6 +389,9 @@
         })
         $('#icon-sound').on('click', function () {
             $('#icon-sound').addClass('d-none')
+            pauseAudioOpossum8()
+            pauseAudioOpossum9()
+
             pauseAudioOsen()
             pauseAudioZima()
             pauseAudioLeto()
