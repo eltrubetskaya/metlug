@@ -188,37 +188,49 @@
                 <div class="slick-wrapper">
                     <div class="slider slick-slider slick-dotted slider-center">
                         <div>
-                            <a class="link-audio" href="https://youtu.be/7fFFz-PDrxM?t=1" target="_blank">
+                            <a class="link-audio" onmouseenter="playAudioOpossum1()" href="https://youtu.be/7fFFz-PDrxM?t=1" target="_blank">
                                 <img class="d-block" width="500px" src="{{ asset('build/img/z_1.png') }}" data-holder-rendered="true">
                             </a>
+                            <audio id="playAudio_opossum_1" style="z-index: 10;opacity: 0.75;">
+                                <source src="{{ asset('audio/opossum_I.mp3') }}" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
                         </div>
                         <div>
-                            <a class="link-audio" href="https://youtu.be/7fFFz-PDrxM?t=346" target="_blank">
+                            <a class="link-audio" onmouseenter="playAudioOpossum2()" href="https://youtu.be/7fFFz-PDrxM?t=346" target="_blank">
                                 <img class="d-block" width="500px" src="{{ asset('build/img/z_2.png') }}" data-holder-rendered="true">
                             </a>
+                            <audio id="playAudio_opossum_2" style="z-index: 10;opacity: 0.75;">
+                                <source src="{{ asset('audio/sergej-kuryohin-opossum.mp3') }}" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
                         </div>
                         <div>
-                            <a class="link-audio" href="https://youtu.be/7fFFz-PDrxM?t=800" target="_blank">
+                            <a class="link-audio" onmouseenter="playAudioOpossum3()" href="https://youtu.be/7fFFz-PDrxM?t=800" target="_blank">
                                 <img class="d-block" width="500px" src="{{ asset('build/img/z_3.png') }}" data-holder-rendered="true">
                             </a>
+                            <audio id="playAudio_opossum_3" style="z-index: 10;opacity: 0.75;">
+                                <source src="{{ asset('audio/opossum_IV.mp3') }}" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
                         </div>
                         <div>
-                            <a class="link-audio" href="https://youtu.be/7fFFz-PDrxM?t=1230" target="_blank">
+                            <a class="link-audio" onmouseenter="playAudioOpossum4()" href="https://youtu.be/7fFFz-PDrxM?t=1230" target="_blank">
                                 <img class="d-block" width="500px" src="{{ asset('build/img/z_4.png') }}" data-holder-rendered="true">
                             </a>
                         </div>
                         <div>
-                            <a href="https://youtu.be/7fFFz-PDrxM?t=1466" target="_blank">
+                            <a class="link-audio" onmouseenter="playAudioOpossum5()" href="https://youtu.be/7fFFz-PDrxM?t=1466" target="_blank">
                                 <img class="d-block" width="500px" src="{{ asset('build/img/z_5.png') }}" data-holder-rendered="true">
                             </a>
                         </div>
                         <div>
-                            <a class="link-audio" href="https://youtu.be/7fFFz-PDrxM?t=1852" target="_blank">
+                            <a class="link-audio" onmouseenter="playAudioOpossum6()" href="https://youtu.be/7fFFz-PDrxM?t=1852" target="_blank">
                                 <img class="d-block" width="500px" src="{{ asset('build/img/z_6.png') }}" data-holder-rendered="true">
                             </a>
                         </div>
                         <div>
-                            <a class="link-audio" href="https://youtu.be/7fFFz-PDrxM?t=2274" target="_blank">
+                            <a class="link-audio" onmouseenter="playAudioOpossum7()" href="https://youtu.be/7fFFz-PDrxM?t=2274" target="_blank">
                                 <img class="d-block" width="500px" src="{{ asset('build/img/z_7.png') }}" data-holder-rendered="true">
                             </a>
                         </div>
@@ -288,11 +300,174 @@
         let vesna = document.getElementById("playAudio_vesna")
         let leto = document.getElementById("playAudio_leto")
         let osen = document.getElementById("playAudio_osen")
+        let opossum_1 = document.getElementById("playAudio_opossum_1")
+        let opossum_2 = document.getElementById("playAudio_opossum_2")
+        let opossum_3 = document.getElementById("playAudio_opossum_3")
         let opossum_8 = document.getElementById("playAudio_opossum_8")
         let opossum_9 = document.getElementById("playAudio_opossum_9")
 
+        function playAudioOpossum1() {
+            $('#icon-sound').removeClass('d-none')
+            pauseAudioOpossum2()
+            pauseAudioOpossum3()
+            pauseAudioOpossum4()
+            pauseAudioOpossum5()
+            pauseAudioOpossum6()
+            pauseAudioOpossum7()
+            pauseAudioOpossum8()
+            pauseAudioOpossum9()
+
+            pauseAudioZima()
+            pauseAudioVesna()
+            pauseAudioLeto()
+            pauseAudioOsen()
+
+            opossum_1.play()
+        }
+        function pauseAudioOpossum1() {
+            opossum_1.pause()
+        }
+
+        function playAudioOpossum2() {
+            $('#icon-sound').removeClass('d-none')
+            pauseAudioOpossum1()
+            pauseAudioOpossum3()
+            pauseAudioOpossum4()
+            pauseAudioOpossum6()
+            pauseAudioOpossum7()
+            pauseAudioOpossum5()
+            pauseAudioOpossum8()
+            pauseAudioOpossum9()
+
+            pauseAudioZima()
+            pauseAudioVesna()
+            pauseAudioLeto()
+            pauseAudioOsen()
+            opossum_2.currentTime = 346
+            opossum_2.play()
+        }
+        function pauseAudioOpossum2() {
+            opossum_2.pause()
+        }
+        function playAudioOpossum3() {
+            $('#icon-sound').removeClass('d-none')
+            pauseAudioOpossum1()
+            pauseAudioOpossum2()
+            pauseAudioOpossum4()
+            pauseAudioOpossum5()
+            pauseAudioOpossum6()
+            pauseAudioOpossum7()
+            pauseAudioOpossum8()
+            pauseAudioOpossum9()
+
+            pauseAudioZima()
+            pauseAudioVesna()
+            pauseAudioLeto()
+            pauseAudioOsen()
+
+            opossum_3.play()
+        }
+        function pauseAudioOpossum3() {
+            opossum_3.pause()
+        }
+
+        function playAudioOpossum4() {
+            $('#icon-sound').removeClass('d-none')
+            pauseAudioOpossum1()
+            pauseAudioOpossum2()
+            pauseAudioOpossum3()
+            pauseAudioOpossum5()
+            pauseAudioOpossum6()
+            pauseAudioOpossum7()
+            pauseAudioOpossum8()
+            pauseAudioOpossum9()
+
+            pauseAudioZima()
+            pauseAudioVesna()
+            pauseAudioLeto()
+            pauseAudioOsen()
+            opossum_2.currentTime = 1230
+            opossum_2.play()
+        }
+        function pauseAudioOpossum4() {
+            opossum_2.pause()
+        }
+
+        function playAudioOpossum5() {
+            $('#icon-sound').removeClass('d-none')
+            pauseAudioOpossum1()
+            pauseAudioOpossum2()
+            pauseAudioOpossum3()
+            pauseAudioOpossum4()
+            pauseAudioOpossum6()
+            pauseAudioOpossum7()
+            pauseAudioOpossum8()
+            pauseAudioOpossum9()
+
+            pauseAudioZima()
+            pauseAudioVesna()
+            pauseAudioLeto()
+            pauseAudioOsen()
+            opossum_2.currentTime = 1466
+            opossum_2.play()
+        }
+        function pauseAudioOpossum5() {
+            opossum_2.pause()
+        }
+
+        function playAudioOpossum6() {
+            $('#icon-sound').removeClass('d-none')
+            pauseAudioOpossum1()
+            pauseAudioOpossum2()
+            pauseAudioOpossum3()
+            pauseAudioOpossum4()
+            pauseAudioOpossum5()
+            pauseAudioOpossum7()
+            pauseAudioOpossum8()
+            pauseAudioOpossum9()
+
+            pauseAudioZima()
+            pauseAudioVesna()
+            pauseAudioLeto()
+            pauseAudioOsen()
+            opossum_2.currentTime = 1852
+            opossum_2.play()
+        }
+        function pauseAudioOpossum6() {
+            opossum_2.pause()
+        }
+
+        function playAudioOpossum7() {
+            $('#icon-sound').removeClass('d-none')
+            pauseAudioOpossum1()
+            pauseAudioOpossum2()
+            pauseAudioOpossum3()
+            pauseAudioOpossum4()
+            pauseAudioOpossum5()
+            pauseAudioOpossum6()
+            pauseAudioOpossum8()
+            pauseAudioOpossum9()
+
+            pauseAudioZima()
+            pauseAudioVesna()
+            pauseAudioLeto()
+            pauseAudioOsen()
+            opossum_2.currentTime = 2274
+            opossum_2.play()
+        }
+        function pauseAudioOpossum7() {
+            opossum_2.pause()
+        }
+
         function playAudioOpossum9() {
             $('#icon-sound').removeClass('d-none')
+            pauseAudioOpossum1()
+            pauseAudioOpossum2()
+            pauseAudioOpossum3()
+            pauseAudioOpossum4()
+            pauseAudioOpossum5()
+            pauseAudioOpossum6()
+            pauseAudioOpossum7()
             pauseAudioOpossum8()
 
             pauseAudioZima()
@@ -308,6 +483,13 @@
 
         function playAudioOpossum8() {
             $('#icon-sound').removeClass('d-none')
+            pauseAudioOpossum1()
+            pauseAudioOpossum2()
+            pauseAudioOpossum3()
+            pauseAudioOpossum4()
+            pauseAudioOpossum5()
+            pauseAudioOpossum6()
+            pauseAudioOpossum7()
             pauseAudioOpossum9()
 
             pauseAudioZima()
@@ -323,6 +505,13 @@
 
         function playAudioZima() {
             $('#icon-sound').removeClass('d-none')
+            pauseAudioOpossum1()
+            pauseAudioOpossum2()
+            pauseAudioOpossum3()
+            pauseAudioOpossum4()
+            pauseAudioOpossum5()
+            pauseAudioOpossum6()
+            pauseAudioOpossum7()
 
             pauseAudioOpossum8()
             pauseAudioOpossum9()
@@ -338,6 +527,13 @@
 
         function playAudioVesna() {
             $('#icon-sound').removeClass('d-none')
+            pauseAudioOpossum1()
+            pauseAudioOpossum2()
+            pauseAudioOpossum3()
+            pauseAudioOpossum4()
+            pauseAudioOpossum5()
+            pauseAudioOpossum6()
+            pauseAudioOpossum7()
             pauseAudioOpossum8()
             pauseAudioOpossum9()
 
@@ -352,6 +548,13 @@
 
         function playAudioLeto() {
             $('#icon-sound').removeClass('d-none')
+            pauseAudioOpossum1()
+            pauseAudioOpossum2()
+            pauseAudioOpossum3()
+            pauseAudioOpossum4()
+            pauseAudioOpossum5()
+            pauseAudioOpossum6()
+            pauseAudioOpossum7()
             pauseAudioOpossum8()
             pauseAudioOpossum9()
 
@@ -366,6 +569,13 @@
 
         function playAudioOsen() {
             $('#icon-sound').removeClass('d-none')
+            pauseAudioOpossum1()
+            pauseAudioOpossum2()
+            pauseAudioOpossum3()
+            pauseAudioOpossum4()
+            pauseAudioOpossum5()
+            pauseAudioOpossum6()
+            pauseAudioOpossum7()
             pauseAudioOpossum8()
             pauseAudioOpossum9()
 
@@ -379,6 +589,13 @@
         }
         $('.link-audio').on('click', function () {
             $('#icon-sound').addClass('d-none')
+            pauseAudioOpossum1()
+            pauseAudioOpossum2()
+            pauseAudioOpossum3()
+            pauseAudioOpossum4()
+            pauseAudioOpossum5()
+            pauseAudioOpossum6()
+            pauseAudioOpossum7()
             pauseAudioOpossum8()
             pauseAudioOpossum9()
 
@@ -389,6 +606,13 @@
         })
         $('#icon-sound').on('click', function () {
             $('#icon-sound').addClass('d-none')
+            pauseAudioOpossum1()
+            pauseAudioOpossum2()
+            pauseAudioOpossum3()
+            pauseAudioOpossum4()
+            pauseAudioOpossum5()
+            pauseAudioOpossum6()
+            pauseAudioOpossum7()
             pauseAudioOpossum8()
             pauseAudioOpossum9()
 
