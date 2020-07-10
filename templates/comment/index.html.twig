@@ -8,7 +8,7 @@
         <div class="media">
             <div class="media-body text-left">
                 <h4 class="media-heading user_name"><img width="40px" class="rounded-circle" src="{{ avatar }}" alt=""> {{ comment.user }}</h4>
-                {{ comment.text }}
+                {{ comment.text|raw }}
             </div>
             <div class="text-right">
                 <p><small>{{ comment.createdAt|date('Y-m-d H:i') }}</small></p>
