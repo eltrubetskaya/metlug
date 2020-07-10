@@ -1,8 +1,13 @@
  <div class="comments-list">
         {% for comment in comments %}
+            {% if comment.user %}
+                {% set avatar = comment.user.avatar %}
+            {% else %}
+                {% set avatar = asset('src/img/logo.jpg') %}
+            {% endif %}
         <div class="media">
             <div class="media-body text-left">
-                <h4 class="media-heading user_name"><img width="40px" class="rounded-circle" src="{{ comment.user.avatar }}" alt=""> {{ comment.user }}</h4>
+                <h4 class="media-heading user_name"><img width="40px" class="rounded-circle" src="{{ avatar }}" alt=""> {{ comment.user }}</h4>
                 {{ comment.text }}
             </div>
             <div class="text-right">

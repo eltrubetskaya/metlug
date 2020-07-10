@@ -37,6 +37,48 @@ class CommentController extends AbstractController
     }
 
     /**
+     * @Route("/create", name="comment_create", methods={"GET","POST"})
+     */
+    public function create(Request $request, Installation $installation, UserRepository $repository, MailService $mailService, LoggerInterface $logger): Response
+    {
+        $comment = new Comment();
+        $comment->setInstallation($installation);
+        $form = $this->createForm(CommentType::class, $comment, [
+            'action' => $this->generateUrl('comment_new', ['installationId' => $installation->getId()]),
+            'method' => Request::METHOD_POST
+        ]);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($comment);
+            $entityManager->flush();
+            try {
+                $users = $repository->findBy(['subscribed' => true]);
+                foreach ($users as $user) {
+                    $mailService->sendMail($user->getEmail(),$installation->getDescription(), MailService::CREATE_COMMENT_TEMPLATE, [
+                        'title' => $installation->getDescription(),
+                        'link' => $this->generateUrl('installation_show', [
+                            'title' => $installation->getTitle()
+                        ]),
+                        'user' => $comment->getUsername()
+                    ]);
+                    $logger->info('Email success sent to ' . $user->getEmail());
+                }
+            } catch (\Exception $e) {
+                $logger->info('Emails error: ' . $e->getMessage());
+            }
+
+            return $this->redirectToRoute('installation_show', ['title' => $installation->getTitle()]);
+        }
+
+        return $this->render('comment/new.html.twig', [
+            'comment' => $comment,
+            'form' => $form->createView(),
+        ]);
+    }
+
+    /**
      * @Route("/new", name="comment_new", methods={"GET","POST"})
      */
     public function new(Request $request, Installation $installation, UserRepository $repository, MailService $mailService, LoggerInterface $logger): Response
@@ -59,7 +101,7 @@ class CommentController extends AbstractController
             try {
                 $users = $repository->findBy(['subscribed' => true]);
                 foreach ($users as $user) {
-                    if ($comment->getUser()->getEmail() !== $user->getEmail()) {
+                    if ($comment->getUser() && $comment->getUser()->getEmail() !== $user->getEmail()) {
                         $mailService->sendMail($user->getEmail(),$installation->getDescription(), MailService::CREATE_COMMENT_TEMPLATE, [
                             'title' => $installation->getDescription(),
                             'link' => $this->generateUrl('installation_show', [

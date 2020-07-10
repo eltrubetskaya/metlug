@@ -18,6 +18,11 @@ class Comment
     private $id;
 
     /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $username;
+
+    /**
      * @ORM\Column(type="text")
      */
     private $text;
@@ -75,18 +80,18 @@ class Comment
     }
 
     /**
-     * @return User
+     * @return User|null
      */
-    public function getUser(): User
+    public function getUser(): ?User
     {
         return $this->user;
     }
 
     /**
-     * @param User $user
+     * @param User|null $user
      * @return Comment
      */
-    public function setUser(User $user)
+    public function setUser(?User $user)
     {
         $this->user = $user;
 
@@ -107,6 +112,25 @@ class Comment
     public function setInstallation(Installation $installation): Comment
     {
         $this->installation = $installation;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getUsername()
+    {
+        return $this->username;
+    }
+
+    /**
+     * @param null|string $value
+     * @return $this
+     */
+    public function setUsername($value)
+    {
+        $this->username = $value;
 
         return $this;
     }
