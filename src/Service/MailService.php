@@ -13,7 +13,7 @@ use Twig\Error\SyntaxError;
  */
 class MailService
 {
-    public const CREATE_INSTALLATION_TEMPLATE = 'email/new_installation';
+    public const CREATE_INSTALLATION_TEMPLATE = 'email/';
     public const CREATE_COMMENT_TEMPLATE = 'email/new_comment';
 
     /**
