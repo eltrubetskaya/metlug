@@ -11,8 +11,12 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="d-none">{{ form_widget(form.username) }}</div>
-                    {{ form_widget(form.text) }}
+                    <div class="d-none">{{ form_row(form.username) }}</div>
+                    {{ form_row(form.text) }}
+                    <hr>
+
+                    {{ form_row(form.mediaLink) }}
+                    {{ form_row(form.type) }}
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">ОТМЕНА</button>
@@ -36,7 +40,11 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    {{ form_widget(form.text) }}
+                    {{ form_row(form.text) }}
+                    <hr>
+
+                    {{ form_row(form.mediaLink) }}
+                    {{ form_row(form.type) }}
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">ОТМЕНА</button>

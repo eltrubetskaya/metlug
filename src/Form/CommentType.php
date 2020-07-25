@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Comment;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -26,6 +27,21 @@ class CommentType extends AbstractType
                 'attr' => [
                     'placeholder' => 'Оставьте комментарий'
                 ]
+            ])
+            ->add('mediaLink', TextType::class, [
+                'required' => false,
+                'label' => false,
+                'attr' => [
+                    'placeholder' => 'https://...'
+                ],
+                'help' => '<i class="fa fa-info-circle" aria-hidden="true"></i> Вставьте прямую ссылку на видео из youtube или на mp3 файл',
+                'help_html' => true
+            ])
+            ->add('type', ChoiceType::class, [
+                'required' => false,
+                'label' => false,
+                'choices' => Comment::getTypes(true),
+                'placeholder' => '--- Выбрать ---'
             ])
         ;
     }
