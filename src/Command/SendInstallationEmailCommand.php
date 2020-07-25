@@ -64,7 +64,7 @@ class SendInstallationEmailCommand extends Command
             'title' => $title
         ]);
         $io = new SymfonyStyle($input, $output);
-        if ($email) {
+        if ($email && $installation) {
             try {
                 $this->mailService->sendMail($email, $installation->getDescription(), MailService::CREATE_INSTALLATION_TEMPLATE, [
                     'title' => $installation->getDescription(),
