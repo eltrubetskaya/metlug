@@ -63,38 +63,43 @@ class SendInstallationEmailCommand extends Command
         $installation = $this->doctrine->getRepository(Installation::class)->findOneBy([
             'title' => $title
         ]);
-        $io = new SymfonyStyle($input, $output);
-        if ($email && $installation) {
-            try {
-                $this->mailService->sendMail($email, $installation->getDescription(), MailService::CREATE_INSTALLATION_TEMPLATE, [
-                    'title' => $installation->getDescription(),
-                    'link' => $this->router->generate('installation_show', [
-                        'title' => $title
-                    ])
-                ]);
-            } catch (\Exception $exception) {
+        if ($installation) {
+            $io = new SymfonyStyle($input, $output);
+            if ($email) {
+                try {
+                    $this->mailService->sendMail($email, $installation->getDescription(), MailService::CREATE_INSTALLATION_TEMPLATE, [
+                        'title' => $installation->getDescription(),
+                        'link' => $this->router->generate('installation_show', [
+                            'title' => $title
+                        ])
+                    ]);
+                } catch (\Exception $exception) {
 
-                $io->error('Error: ' . $exception->getMessage());
+                    $io->error('Error: ' . $exception->getMessage());
+
+                    return 0;
+                }
+                $io->success('Email was sent.');
+
+                return 0;
+            }
+            $users = $this->doctrine->getRepository(User::class)->findAll();
+            foreach ($users as $user) {
+                try {
+                    $this->mailService->sendMail($user->getEmail(), $installation->getDescription(), MailService::CREATE_INSTALLATION_TEMPLATE . $title, [
+                        'title' => $installation->getDescription(),
+                        'link' => $this->router->generate('installation_show', [
+                            'title' => $title
+                        ])
+                    ]);
+                } catch (\Exception $exception) {
+
+                    $io->error('Error: ' . $exception->getMessage());
+                }
             }
             $io->success('Email was sent.');
-
-            return 0;
         }
-        $users = $this->doctrine->getRepository(User::class)->findAll();
-        foreach ($users as $user) {
-            try {
-                $this->mailService->sendMail($user->getEmail(), $installation->getDescription(), MailService::CREATE_INSTALLATION_TEMPLATE . $title, [
-                    'title' => $installation->getDescription(),
-                    'link' => $this->router->generate('installation_show', [
-                        'title' => $title
-                    ])
-                ]);
-            } catch (\Exception $exception) {
-
-                $io->error('Error: ' . $exception->getMessage());
-            }
-        }
-        $io->success('Email was sent.');
+        $io->error('Installation not found ' . $title);
 
         return 0;
     }
