@@ -30,8 +30,8 @@ header.masthead {
     /*background-attachment: scroll;*/
     /*background-position: center center;*/
     /*background-size: cover;*/
-    padding-top: 7rem;
-    padding-bottom: 7.5rem;
+    padding-top: 14rem;
+    padding-bottom: 5rem;
 
 }
 .title {
@@ -39,6 +39,7 @@ header.masthead {
     opacity: 0.85;
     z-index: 150;
     padding: 30px;
+    border-radius: 10px;
 }
 
 .slider {

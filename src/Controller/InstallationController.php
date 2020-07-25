@@ -3,6 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\Installation;
+use App\Repository\CommentRepository;
+use Doctrine\Common\Collections\Criteria;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -16,11 +18,14 @@ class InstallationController extends AbstractController
     /**
      * @Route("/{title}", name="installation_show", methods={"GET"})
      */
-    public function show(Request $request, Installation $installation): Response
+    public function show(Request $request, CommentRepository $commentRepository, Installation $installation): Response
     {
         return $this->render('installation/'. $installation->getTitle() .'.html.twig', [
             'installation' => $installation,
-            'modalShow' => $request->query->get('modalShow')
+            'modalShow' => $request->query->get('modalShow'),
+            'comments' => $commentRepository->findBy([
+                'installation' => $installation,
+            ], ['createdAt' => Criteria::DESC])
         ]);
     }
 }
