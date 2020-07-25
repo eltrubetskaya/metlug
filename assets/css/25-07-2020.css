@@ -1,0 +1,68 @@
+/*
+ * Base structure
+ */
+/* indie-flower-regular - latin */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@1,600;1,700&family=Cormorant+Infant:ital,wght@1,600&family=Bellota:ital,wght@1,700&family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ruslan+Display&family=Caveat:wght@400;700&family=Marck+Script&family=Neucha&display=swap');
+
+body {
+    background-color: #d3d4d6;
+}
+#bg {
+    position: absolute;
+    left: 0;
+
+    z-index: 100;
+    min-width: 100%;
+    min-height: 100vh;
+}
+.cover {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 0;
+}
+
+header.masthead {
+    text-align: center;
+    color: black;
+    background-image: none;
+    /*background-repeat: no-repeat;*/
+    /*background-attachment: scroll;*/
+    /*background-position: center center;*/
+    /*background-size: cover;*/
+    padding-top: 7rem;
+    padding-bottom: 7.5rem;
+
+}
+.title {
+    background-color: #fff;
+    opacity: 0.85;
+    z-index: 150;
+    padding: 30px;
+}
+
+.slider {
+    margin: 0 25px 30px;
+    text-align: center;
+}
+.slick-wrapper {
+    background-color: #000;
+    margin-top: 25px;
+    padding: 0 5px;
+}
+#icon-sound {
+    position: fixed;
+    top: 5px;
+    right: 20px;
+    color: #fed136;
+    background-color: #000;
+    padding: 11px 14px;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0,0,0,.25);
+    z-index: 2000;
+    opacity: .85;
+}
+#icon-sound:hover {
+    color: #fed136;
+    background-color: white;
+}

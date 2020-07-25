@@ -143,9 +143,8 @@ gulp.task('watch', ['styles', 'js'], function () {
   gulp.watch('./assets/scss/**/*.scss', ['styles'])
   gulp.watch('./assets/css/**/*.css', ['css'])
   gulp.watch('./assets/js/**/*.js', ['js'])
-  gulp.watch('./assets/img/*', ['images'])
 })
 
-gulp.task( 'default', ['node-images', 'node-libs-js', 'node-js','node-fontawesome-css', 'node-bootstrap-css', 'libs-js', 'styles', 'css', 'js', 'images', 'fonts', 'slick-js', 'slick-styles', 'slick-fonts'], function () {
+gulp.task( 'default', ['node-images', 'node-libs-js', 'node-js','node-fontawesome-css', 'node-bootstrap-css', 'libs-js', 'styles', 'css', 'js', 'fonts', 'slick-js', 'slick-styles', 'slick-fonts'], function () {
 
 })
