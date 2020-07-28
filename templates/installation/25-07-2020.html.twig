@@ -204,4 +204,9 @@
 {% block javascripts %}
     {{ parent() }}
     <script src="{{ asset('build/js/slick.min.js') }}"></script>
+    <script>
+        {% if modalShow is defined and modalShow is not null %}
+        $('#commandModal').modal('show')
+        {% endif %}
+    </script>
 {% endblock %}
