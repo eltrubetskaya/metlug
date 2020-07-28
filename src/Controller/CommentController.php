@@ -59,6 +59,14 @@ class CommentController extends AbstractController
                 preg_match('/(http(s|):|)\/\/(www\.|)yout(.*?)\/(embed\/|watch.*?v=|)([a-z_A-Z0-9\-]{11})/i', $link, $results);
                 $comment->setMediaLink($results[6]);
             }
+            /** @var User $logged */
+            $logged = $this->getUser();
+            if ($logged) {
+                $comment
+                    ->setUser($logged)
+                    ->setUsername($logged->getFirstName() . ' ' . $logged->getLastName())
+                ;
+            }
             $entityManager->flush();
             try {
                 $users = $repository->findBy(['subscribed' => true]);
