@@ -44,7 +44,7 @@ class CommentController extends AbstractController
         $comment = new Comment();
         $comment->setInstallation($installation);
         $form = $this->createForm(CommentType::class, $comment, [
-            'action' => $this->generateUrl('comment_new', ['installationId' => $installation->getId()]),
+            'action' => $this->generateUrl('comment_create', ['installationId' => $installation->getId()]),
             'method' => Request::METHOD_POST
         ]);
         $form->handleRequest($request);
@@ -52,6 +52,13 @@ class CommentController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($comment);
+            $entityManager->flush();
+            if ($comment->getType() === Comment::TYPE_VIDEO) {
+                $link = $comment->getMediaLink();
+                parse_str( parse_url( $link, PHP_URL_QUERY ), $vars );
+                preg_match('/(http(s|):|)\/\/(www\.|)yout(.*?)\/(embed\/|watch.*?v=|)([a-z_A-Z0-9\-]{11})/i', $link, $results);
+                $comment->setMediaLink($results[6]);
+            }
             $entityManager->flush();
             try {
                 $users = $repository->findBy(['subscribed' => true]);

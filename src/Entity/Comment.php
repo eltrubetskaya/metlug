@@ -10,6 +10,9 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Comment
 {
+    public const TYPE_AUDIO = 'audio';
+    public const TYPE_VIDEO = 'video';
+
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -26,6 +29,16 @@ class Comment
      * @ORM\Column(type="text")
      */
     private $text;
+
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $type;
+
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $mediaLink;
 
 
     /**
@@ -108,6 +121,7 @@ class Comment
 
     /**
      * @param Installation $installation
+     * @return Comment
      */
     public function setInstallation(Installation $installation): Comment
     {
@@ -133,5 +147,54 @@ class Comment
         $this->username = $value;
 
         return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getMediaLink()
+    {
+        return $this->mediaLink;
+    }
+
+    /**
+     * @param mixed $mediaLink
+     */
+    public function setMediaLink($mediaLink): void
+    {
+        $this->mediaLink = $mediaLink;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * @param mixed $type
+     */
+    public function setType($type): void
+    {
+        $this->type = $type;
+    }
+
+    /**
+     * @param bool $keyAsValue
+     *
+     * @return array
+     */
+    public static function getTypes($keyAsValue = false)
+    {
+        if ($keyAsValue) {
+            return [
+                ucwords(self::TYPE_AUDIO) => self::TYPE_AUDIO,
+                ucwords(self::TYPE_VIDEO) => self::TYPE_VIDEO,
+            ];
+        }
+
+        return [self::TYPE_AUDIO, self::TYPE_VIDEO];
     }
 }
