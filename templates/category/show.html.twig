@@ -6,16 +6,60 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading text-uppercase">Инсталляции</h2>
-                    <h4 class="section-subheading text-muted"><span class="badge badge-secondary">32 Maя</span></h4>
-                    <p></p>
                 </div>
             </div>
-            <div class="row">
-                {% include "category/32-05-2020.html.twig" %}
-                {% include "category/32-05-2019.html.twig" %}
-                {% include "category/32-05-2018.html.twig" %}
-                {% include "category/32-05-2017.html.twig" %}
-            </div>
+            {% if category.title == '32-may' %}
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h4 class="section-subheading text-muted"><span class="badge badge-secondary">32 Maя</span></h4>
+                        <p></p>
+                    </div>
+                    {% include "category/32-05-2020.html.twig" %}
+                    {% include "category/32-05-2019.html.twig" %}
+                    {% include "category/32-05-2018.html.twig" %}
+                    {% include "category/32-05-2017.html.twig" %}
+                </div>
+            {% endif %}
+
+            {% if category.title == 'sergey-kuryokhin' %}
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h4 class="section-subheading text-muted"><span class="badge badge-secondary">Сергей Курёхин</span></h4>
+                        <p></p>
+                    </div>
+                    {% include "category/sergey-kuryokhin.html.twig" %}
+                </div>
+            {% endif %}
+
+            {% if category.title == 'vladimir-vusotskiy' %}
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h4 class="section-subheading text-muted"><span class="badge badge-secondary">Высоцкий В.С.</span></h4>
+                        <p></p>
+                    </div>
+                    {% include "category/vladimir-vusotskiy.html.twig" %}
+                </div>
+            {% endif %}
+
+            {% if category.title == 'world-theatre-day' %}
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h4 class="section-subheading text-muted"><span class="badge badge-secondary">Всемирный День Театра</span></h4>
+                        <p></p>
+                    </div>
+                    {% include "category/world-theatre-day.html.twig" %}
+                </div>
+            {% endif %}
+
+            {% if category.title == 'christmas-eve' %}
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h4 class="section-subheading text-muted"><span class="badge badge-secondary">Сочельник у MЭТёлки</span></h4>
+                        <p></p>
+                    </div>
+                    {% include "category/christmas-eve.html.twig" %}
+                </div>
+            {% endif %}
         </div>
     </section>
     {% include "category/modals.html.twig" %}
