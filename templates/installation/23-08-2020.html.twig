@@ -1,0 +1,190 @@
+{% extends 'layout.html.twig' %}
+{% block title %}Александр Грин. Фантазийное видение.{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('build/css/23-08-2020.css') }}" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block content %}
+
+    <div id="container" class="wrapper">
+        <ul id="scene" class="scene unselectable"
+            data-friction-x="0.1"
+            data-friction-y="0.1"
+            data-scalar-x="25"
+            data-scalar-y="15">
+            <li class="layer" data-depth="0.00"></li>
+            <li class="layer" data-depth="0.10"><div class="background"></div></li>
+            <li class="layer" data-depth="0.10"><div class="light orange b phase-4"></div></li>
+            <li class="layer" data-depth="0.10"><div class="light purple c phase-5"></div></li>
+            <li class="layer" data-depth="0.10"><div class="light orange d phase-3"></div></li>
+            <li class="layer" data-depth="0.30"><div class="wave paint depth-30"></div></li>
+            <li class="layer" data-depth="0.40"><div class="wave plain depth-40"></div></li>
+            <li class="layer" data-depth="0.50"><div class="wave paint depth-50"></div></li>
+            <li class="layer" data-depth="0.60"><div class="wave plain depth-60"></div></li>
+            <li class="layer" data-depth="0.80"><div class="wave plain depth-80"></div></li>
+            <li class="layer" data-depth="1.00"><div class="wave paint depth-100"></div></li>
+            <li class="layer" data-depth="0.15">
+                <ul class="rope depth-10">
+                    <li><img src="{{ asset('src/paralax/images/rope.png') }}" alt="Rope"></li>
+                    <li class="hanger position-2">
+                        <a href="#"><div class="board cloud-2 swing-1"></div></a>
+                    </li>
+                    <li class="hanger position-4">
+                        <a href="#"><div class="board cloud-1 swing-3"></div></a>
+                    </li>
+                    <li class="hanger position-8">
+                        <a href="#"><div class="board birds swing-5"></div></a>
+                    </li>
+                </ul>
+            </li>
+            <li class="layer" data-depth="0.60">
+                <a href="{{ installation.videoLink }}"><div class="lighthouse depth-60"></div></a>
+            </li>
+            {#<li class="layer" data-depth="0.20"><h1 class="title">test<em>.js</em></h1></li>#}
+            {#<li class="layer" data-depth="0.30">#}
+                {#<ul class="rope depth-30">#}
+                    {#<li><img src="{{ asset('src/paralax/images/rope.png') }}" alt="Rope"></li>#}
+                    {#<li class="hanger position-1">#}
+                        {#<div class="board cloud-1 swing-3"></div>#}
+                    {#</li>#}
+                    {#<li class="hanger position-5">#}
+                        {#<div class="board cloud-4 swing-1"></div>#}
+                    {#</li>#}
+                {#</ul>#}
+            {#</li>#}
+            {#<li class="layer" data-depth="0.60">#}
+                {#<ul class="rope depth-60">#}
+                    {#<li><img src="{{ asset('src/paralax/images/rope.png') }}" alt="Rope"></li>#}
+                    {#<li class="hanger position-3">#}
+                        {#<div class="board birds swing-5"></div>#}
+                    {#</li>#}
+                    {#<li class="hanger position-6">#}
+                        {#<div class="board cloud-2 swing-2"></div>#}
+                    {#</li>#}
+                    {#<li class="hanger position-8">#}
+                        {#<div class="board cloud-3 swing-4"></div>#}
+                    {#</li>#}
+                {#</ul>#}
+            {#</li>#}
+        </ul>
+        <div id="about" class="wrapper about hide accelerate d-none">
+            <div class="cell accelerate">
+                <div class="cables center accelerate">
+                    <div class="panel accelerate">
+                        <header>
+                            <h5>Александр Грин.<em> Фантазийное видение.</em></h5>
+                        </header>
+                        <p>Дорогой зритель, без твоего эмойионального восприятия эта фантазия будет не полной. Оставь, пожалуйста, свою бегущую строку по этим волнам.</p>
+
+                        {% if app.user %}
+                            {{ form_start(form) }}
+                                <div class="d-none">{{ form_row(form.username) }}</div>
+                                {{ form_row(form.text) }}
+                                {{ form_row(form.mediaLink) }}
+                                {{ form_row(form.type) }}
+                            <ul class="links">
+                                <li><a>{{ app.user }}</a></li>
+                                <li><a href="#" id="add-comment">ОСТАВИТЬ КОММЕНТАРИЙ</a></li>
+                            </ul>
+                            {{ form_end(form) }}
+                        {% else %}
+                            {{ form_start(form) }}
+                            <div class="form-group">
+                                {{ form_widget(form.username) }}
+                            </div>
+                                {{ form_row(form.text) }}
+
+                                {{ form_row(form.mediaLink) }}
+                                {{ form_row(form.type) }}
+                            <ul class="links">
+                                <li><a href="{{ path('connect_google_start') }}"><i class="fab fa-google"></i><span style="margin-left: 15px;font-weight: bold;">Bойти в Google</span></a></li>
+                                <li><a href="#" id="add-comment">ОСТАВИТЬ КОММЕНТАРИЙ</a></li>
+                            </ul>
+                            {{ form_end(form) }}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button id="toggle" class="toggle i">
+            <div class="cross">
+                <div class="x"></div>
+                <div class="y"></div>
+            </div>
+        </button>
+    </div>
+{% endblock %}
+
+{% block footer %}{% endblock footer %}
+
+{% block javascripts %}
+
+    <!-- Scripts -->
+    <script src="{{ asset('build/js/libraries.min.js') }}"></script>
+    <script src="{{ asset('build/js/jquery.parallax.js') }}"></script>
+    <script>
+
+        // jQuery Selections
+        var $html = $('html'),
+            $container = $('#container'),
+            $toggle = $('#toggle'),
+            $about = $('#about'),
+            $scene = $('#scene');
+
+        // Hide browser menu.
+        (function() {
+            setTimeout(function(){window.scrollTo(0,0);},0);
+        })();
+
+        // Setup FastClick.
+        FastClick.attach(document.body);
+
+        // Add touch functionality.
+        if (Hammer.HAS_TOUCHEVENTS) {
+            $container.hammer({drag_lock_to_axis: true});
+            _.tap($html, 'a,button,[data-tap]');
+        }
+
+        // Add touch or mouse class to html element.
+        $html.addClass(Hammer.HAS_TOUCHEVENTS ? 'touch' : 'mouse');
+
+        // Resize handler.
+        (resize = function() {
+            $scene[0].style.width = window.innerWidth + 'px';
+            $scene[0].style.height = window.innerHeight + 'px';
+        })();
+
+        // Attach window listeners.
+        window.onresize = _.debounce(resize, 200);
+        window.onscroll = _.debounce(resize, 200);
+
+        function showDetails() {
+            $about.removeClass('d-none');
+            setTimeout(function () {
+                $about.removeClass('hide');
+                $toggle.removeClass('i');
+            }, 100)
+        }
+
+        function hideDetails() {
+            setTimeout(function () {
+                $about.addClass('d-none');
+            }, 500)
+            $about.addClass('hide');
+            $toggle.addClass('i');
+        }
+
+        {% if modalShow is defined and modalShow is not null %}
+            showDetails()
+        {% endif %}
+        // Listen for toggle click event.
+        $toggle.on('click', function(event) {
+            $toggle.hasClass('i') ? showDetails() : hideDetails();
+        });
+
+        // Pretty simple huh?
+        $scene.parallax();
+    </script>
+
+{% endblock %}

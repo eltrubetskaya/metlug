@@ -52,4 +52,9 @@ class CommentType extends AbstractType
             'data_class' => Comment::class,
         ]);
     }
+
+    public function getBlockPrefix()
+    {
+        return 'comment';
+    }
 }
