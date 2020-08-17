@@ -15,15 +15,12 @@
             data-scalar-y="15">
             <li class="layer" data-depth="0.00"></li>
             <li class="layer" data-depth="0.10"><div class="background"></div></li>
+            <li class="layer" data-depth="0.20"><h6 class="title">Александр Грин.<em> Фантазийное видение.</em></h6></li>
             <li class="layer" data-depth="0.10"><div class="light orange b phase-4"></div></li>
             <li class="layer" data-depth="0.10"><div class="light purple c phase-5"></div></li>
             <li class="layer" data-depth="0.10"><div class="light orange d phase-3"></div></li>
             <li class="layer" data-depth="0.30"><div class="wave paint depth-30"></div></li>
             <li class="layer" data-depth="0.40"><div class="wave plain depth-40"></div></li>
-            <li class="layer" data-depth="0.50"><div class="wave paint depth-50"></div></li>
-            <li class="layer" data-depth="0.60"><div class="wave plain depth-60"></div></li>
-            <li class="layer" data-depth="0.80"><div class="wave plain depth-80"></div></li>
-            <li class="layer" data-depth="1.00"><div class="wave paint depth-100"></div></li>
             <li class="layer" data-depth="0.15">
                 <ul class="rope depth-10">
                     <li><img src="{{ asset('src/paralax/images/rope.png') }}" alt="Rope"></li>
@@ -41,32 +38,49 @@
             <li class="layer" data-depth="0.60">
                 <a href="{{ installation.videoLink }}"><div class="lighthouse depth-60"></div></a>
             </li>
-            {#<li class="layer" data-depth="0.20"><h1 class="title">test<em>.js</em></h1></li>#}
-            {#<li class="layer" data-depth="0.30">#}
-                {#<ul class="rope depth-30">#}
-                    {#<li><img src="{{ asset('src/paralax/images/rope.png') }}" alt="Rope"></li>#}
-                    {#<li class="hanger position-1">#}
-                        {#<div class="board cloud-1 swing-3"></div>#}
-                    {#</li>#}
-                    {#<li class="hanger position-5">#}
-                        {#<div class="board cloud-4 swing-1"></div>#}
-                    {#</li>#}
-                {#</ul>#}
-            {#</li>#}
-            {#<li class="layer" data-depth="0.60">#}
-                {#<ul class="rope depth-60">#}
-                    {#<li><img src="{{ asset('src/paralax/images/rope.png') }}" alt="Rope"></li>#}
-                    {#<li class="hanger position-3">#}
-                        {#<div class="board birds swing-5"></div>#}
-                    {#</li>#}
-                    {#<li class="hanger position-6">#}
-                        {#<div class="board cloud-2 swing-2"></div>#}
-                    {#</li>#}
-                    {#<li class="hanger position-8">#}
-                        {#<div class="board cloud-3 swing-4"></div>#}
-                    {#</li>#}
-                {#</ul>#}
-            {#</li>#}
+            <li class="layer" data-depth="0.50"><div class="wave paint depth-50"></div></li>
+            <li class="layer" data-depth="0.60"><div class="wave plain depth-60"></div></li>
+            <li class="layer" data-depth="0.70">
+                <div class="light ship-2 swing-5">
+                    <img src="{{ asset('src/img/longren.png') }}" alt="">
+                </div>
+            </li>
+            <li class="layer" data-depth="0.80"><div class="wave plain depth-80"></div></li>
+            <li class="layer" data-depth="0.70">
+                <div class="light ship swing-3">
+                    <img class="img-1" src="{{ asset('src/img/asol-1.png') }}" alt="">
+                    <img class="img-2" src="{{ asset('src/img/asol-2.png') }}" alt="">
+                    <img class="img-3" src="{{ asset('src/img/asol-3.png') }}" alt="">
+                    <img class="img-4" src="{{ asset('src/img/asol-4.png') }}" alt="">
+                </div>
+            </li>
+            <li class="layer" data-depth="0.90"><div class="wave paint depth-90"></div></li>
+
+            <li class="layer"  style="height: 200px" data-depth="0.30">
+                <ul class="rope depth-30">
+                    <li><img src="{{ asset('src/paralax/images/rope.png') }}" alt="Rope"></li>
+                    <li class="hanger position-1">
+                        <div class="board cloud-1 swing-3"></div>
+                    </li>
+                    <li class="hanger position-5">
+                        <div class="board cloud-4 swing-1"></div>
+                    </li>
+                </ul>
+            </li>
+            <li class="layer"  style="height: 200px" data-depth="0.60">
+                <ul class="rope depth-60">
+                    <li><img src="{{ asset('src/paralax/images/rope.png') }}" alt="Rope"></li>
+                    <li class="hanger position-3">
+                        <div class="board birds swing-5"></div>
+                    </li>
+                    <li class="hanger position-6">
+                        <div class="board cloud-2 swing-2"></div>
+                    </li>
+                    <li class="hanger position-8">
+                        <div class="board cloud-3 swing-4"></div>
+                    </li>
+                </ul>
+            </li>
         </ul>
         <div id="about" class="wrapper about hide accelerate d-none">
             <div class="cell accelerate">
@@ -75,7 +89,8 @@
                         <header>
                             <h5>Александр Грин.<em> Фантазийное видение.</em></h5>
                         </header>
-                        <p>Дорогой зритель, без твоего эмойионального восприятия эта фантазия будет не полной. Оставь, пожалуйста, свою бегущую строку по этим волнам.</p>
+                        <p class="text-left">Дорогой зритель, <br>  без твоего эмоционального восприятия эта фантазия будет не полной. Оставь, пожалуйста, свою бегущую... </p>
+                        <p class="text-right mt--10">...по этим волнам.</p>
 
                         {% if app.user %}
                             {{ form_start(form) }}
@@ -185,6 +200,9 @@
 
         // Pretty simple huh?
         $scene.parallax();
+        $('#add-comment').on('click', function () {
+            $('form').submit()
+        })
     </script>
 
 {% endblock %}
