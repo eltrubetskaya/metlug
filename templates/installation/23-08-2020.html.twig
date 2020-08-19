@@ -3,6 +3,7 @@
 {% block stylesheets %}
     {{ parent() }}
     <link href="{{ asset('build/css/23-08-2020.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('build/css/main.css') }}" rel="stylesheet" type="text/css" />
 {% endblock %}
 
 {% block content %}
@@ -15,7 +16,9 @@
             data-scalar-y="15">
             <li class="layer" data-depth="0.00"></li>
             <li class="layer" data-depth="0.10"><div class="background"></div></li>
-            <li class="layer" data-depth="0.20"><h6 class="title">Александр Грин.<em> Фантазийное видение.</em></h6></li>
+            <li class="layer" data-depth="0.20">
+                <h6 class="title">Александр Грин.<em> Фантазийное видение.</em></h6>
+            </li>
             <li class="layer" data-depth="0.10"><div class="light orange b phase-4"></div></li>
             <li class="layer" data-depth="0.10"><div class="light purple c phase-5"></div></li>
             <li class="layer" data-depth="0.10"><div class="light orange d phase-3"></div></li>
@@ -54,19 +57,65 @@
                     <img class="img-4" src="{{ asset('src/img/asol-4.png') }}" alt="">
                 </div>
             </li>
-            <li class="layer" data-depth="0.90"><div class="wave paint depth-90"></div></li>
+            <li class="layer" data-depth="0.90">
+                <div class="wave paint depth-90"></div>
 
-            <li class="layer"  style="height: 200px" data-depth="0.30">
-                <ul class="rope depth-30">
-                    <li><img src="{{ asset('src/paralax/images/rope.png') }}" alt="Rope"></li>
-                    <li class="hanger position-1">
-                        <div class="board cloud-1 swing-3"></div>
-                    </li>
-                    <li class="hanger position-5">
-                        <div class="board cloud-4 swing-1"></div>
-                    </li>
-                </ul>
+                <!-- Please typing your favorite word!-->
+                <div id="ui">
+                    <div class="text">23.08.1880-08.07.1932</div>
+                    <div class="text">23.08.1880-08.07.1932</div>
+                    <div class="text">23.08.1880-08.07.1932</div>
+                    <div class="text">23.08.1880-08.07.1932</div>
+                    <div class="text">23.08.1880-08.07.1932</div>
+                    <div class="text">23.08.1880-08.07.1932</div>
+                    <div class="text">23.08.1880-08.07.1932</div>
+                    <div class="text">23.08.1880-08.07.1932</div>
+                    <div class="text">23.08.1880-08.07.1932</div>
+                    <div class="text">23.08.1880-08.07.1932</div>
+                    <div class="text">23.08.1880-08.07.1932</div>
+                    <div class="text">23.08.1880-08.07.1932</div>
+                    <div class="text">23.08.1880-08.07.1932</div>
+                    <div class="text">23.08.1880-08.07.1932</div>
+                    <div class="text">23.08.1880-08.07.1932</div>
+                    <div class="text">23.08.1880-08.07.1932</div>
+                    <div class="text">23.08.1880-08.07.1932</div>
+                    <div class="text">23.08.1880-08.07.1932</div>
+                    <div class="text">23.08.1880-08.07.1932</div>
+                    <div class="text">23.08.1880-08.07.1932</div>
+                    <div class="text">23.08.1880-08.07.1932</div>
+                    <div class="text">23.08.1880-08.07.1932</div>
+                    <div class="text">23.08.1880-08.07.1932</div>
+                    <div class="text">23.08.1880-08.07.1932</div>
+                    <div class="text">23.08.1880-08.07.1932</div>
+                    <div class="text">23.08.1880-08.07.1932</div>
+                    <div class="text">23.08.1880-08.07.1932</div>
+                    <div class="text">23.08.1880-08.07.1932</div>
+                    <div class="text">23.08.1880-08.07.1932</div>
+                    <div class="text">23.08.1880-08.07.1932</div>
+                    <div class="text">23.08.1880-08.07.1932</div>
+                    <div class="text">23.08.1880-08.07.1932</div>
+                    <div class="text">23.08.1880-08.07.1932</div>
+                    <div class="text">23.08.1880-08.07.1932</div>
+                    <div class="text">23.08.1880-08.07.1932</div>
+                    <div class="text">23.08.1880-08.07.1932</div>
+                    <div class="text">23.08.1880-08.07.1932</div>
+                    <div class="text">23.08.1880-08.07.1932</div>
+                    <div class="text">23.08.1880-08.07.1932</div>
+                    <div class="text">23.08.1880-08.07.1932</div>
+                </div>
             </li>
+
+            {#<li class="layer"  style="height: 200px" data-depth="0.30">#}
+                {#<ul class="rope depth-30">#}
+                    {#<li><img src="{{ asset('src/paralax/images/rope.png') }}" alt="Rope"></li>#}
+                    {#<li class="hanger position-1">#}
+                        {#<div class="board cloud-1 swing-3"></div>#}
+                    {#</li>#}
+                    {#<li class="hanger position-5">#}
+                        {#<div class="board cloud-4 swing-1"></div>#}
+                    {#</li>#}
+                {#</ul>#}
+            {#</li>#}
             <li class="layer"  style="height: 200px" data-depth="0.60">
                 <ul class="rope depth-60">
                     <li><img src="{{ asset('src/paralax/images/rope.png') }}" alt="Rope"></li>
@@ -87,9 +136,9 @@
                 <div class="cables center accelerate">
                     <div class="panel accelerate">
                         <header>
-                            <h5>Александр Грин.<em> Фантазийное видение.</em></h5>
+                            <h5 class="pull-left">Дорогой зритель,</h5>
                         </header>
-                        <p class="text-left">Дорогой зритель, <br>  без твоего эмоционального восприятия эта фантазия будет не полной. Оставь, пожалуйста, свою бегущую... </p>
+                        <p class="text-left">без твоего эмоционального восприятия эта фантазия будет не полной. Оставь, пожалуйста, свою бегущую... </p>
                         <p class="text-right mt--10">...по этим волнам.</p>
 
                         {% if app.user %}
