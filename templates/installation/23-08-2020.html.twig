@@ -303,8 +303,6 @@
             <div class="cables center accelerate" style=" margin-top: 80px;">
                 <div class="panel accelerate">
                     <br>
-                    <h5>Сукачев Гарик — «Ассоль»</h5>
-                    <p>Автор текста (слов): Сукачев И. (1996г.)</p>
                     <p class="text-left">...И она вяжет носки <br>
                         Из шерсти для кошки <br>
                         А кошка проснулась <br>
@@ -314,7 +312,38 @@
                         Что эту старуху <br>
                         Что сгорбилась в кресле <br>
                         Что эту старуху <br>
-                        Когда-то звали Ассоль</p>
+                        Когда-то звали Ассоль...</p>
+
+                    <h5 class="text-right">Сукачев Гарик — «Ассоль»</h5>
+                    <p class="text-right">Автор текста (слов): Сукачев И. (1996г.)</p>
+                    <br><br>
+                    <p class="text-left">
+                        ...В глазницах хижин рыбьи голоса <br>
+                        Безмолвно шествуют к не слышащему уху. <br>
+                        Из клети, буйствуя, стекает полоса <br>
+                        Ладошки нервной – будто <br>
+                        Танцует рыба в неводе ловца. <br>
+                        Лукавый голос божьего раба <br>
+                        Сто лезвий сети на чело обрушил - <br>
+                        И разгорелась смутная алчба – <br>
+                        Зовущая из невода – на сушу. <br>
+                        Волна волну накрыла – поглотить. <br>
+                        О камень камень бьётся – чтоб согреться. <br>
+                        Лукавый голос обвивает нить <br>
+                        Вокруг разорванного сетью сердца. <br>
+                        Законы рыбьи в том, чтоб уходить <br>
+                        И пасть разинуть для добыч – не песен, <br>
+                        В толпе жестокой просит пленник пить: <br>
+                        «КАК ЭТОТ НЕВОД ТЕСЕН»! <br>
+                        Невыносимо сладостна алчба <br>
+                        Иной – не окровавленной печали. <br>
+                        И рыбы удивлённо созерцали <br>
+                        Священный крик Господнего Раба. <br>
+                    </p>
+
+                    <h5 class="text-right">Отпрывок из спектакля тетара Мэтлуг «Паруса»</h5>
+                    <p class="text-right">Автор стихов: Инна Песенка. (1995г.)</p>
+                    <br><br>
                     <header>
                         <h5 class="pull-left">Дорогой зритель,</h5>
                     </header>
@@ -328,6 +357,7 @@
                         {{ form_row(form.text) }}
                         {{ form_row(form.mediaLink) }}
                         {{ form_row(form.type) }}
+                        <button type="submit" class="d-none add-comment"></button>
                         <ul class="links">
                             <li><a>{{ app.user }}</a></li>
                             <li><a href="#" id="add-comment">ОСТАВИТЬ КОММЕНТАРИЙ</a></li>
@@ -342,6 +372,7 @@
 
                         {{ form_row(form.mediaLink) }}
                         {{ form_row(form.type) }}
+                        <button type="submit" class="d-none add-comment"></button>
                         <ul class="links">
                             <li><a href="{{ path('connect_google_start') }}"><i class="fab fa-google"></i><span style="margin-left: 15px;font-weight: bold;">Bойти в Google</span></a></li>
                             <li><a href="#" id="add-comment">ОСТАВИТЬ КОММЕНТАРИЙ</a></li>
@@ -442,7 +473,7 @@
         // Pretty simple huh?
         $scene.parallax();
         $('#add-comment').on('click', function () {
-            $('form').submit()
+            $('.add-comment').click()
         })
     </script>
 
