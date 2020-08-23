@@ -1,5 +1,5 @@
 // Please change your favorite font-size!
-$fontSize: 4rem;
+$fontSize: 3rem;
 //
 //body {
 //    background: rgba(5, 5, 20, 1);
@@ -15,8 +15,17 @@ div {
     will-change: transform;
 }
 #ui {
-  margin-left: 40%;
-  margin-top: 10%;
+  left: 10%;
+  top: 10%;
+  transform: rotate(-10deg);
+}
+#ui-2 {
+  right: 20%;
+  top: 25%;
+  transform: rotate(5deg);
+}
+#ui, #ui-2 {
+  position: absolute;
   .text {
     position: absolute;
     font-size: $fontSize;
