@@ -57,7 +57,7 @@ class MailService
     public function sendMail($sendTo, string $subject, $template, array $params = [])
     {
         try {
-            $message = (new \Swift_Message('The "METLUG" Theatre of Lugansk - ' . $subject))
+            $message = (new \Swift_Message("The «METLUG» Theatre - " . $subject))
                 ->setFrom($this->from)
                 ->setTo($sendTo)
                 ->setBody($this->renderMail($template . '.html.twig', $params), 'text/html')
