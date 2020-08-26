@@ -784,6 +784,39 @@ footer .twitter-share-button {
 .light.ship .img-4 {
     margin: -260px -65px;
 }
+.light.ship .img-5 {
+    margin: -110px -140px;
+}
+.light.ship .img-6 {
+    margin: 121px -173px;
+}
+.light.ship .img-7 {
+    margin: -285px 160px;
+}
+.light.ship .img-8 {
+    margin: -110px -140px;
+}
+.light.ship .img-9 {
+    margin: 121px -250px;
+}
+.light.ship .img-10 {
+    margin: -285px 160px;
+}
+.light.ship .img-11 {
+    margin: 165px 25px;
+}
+.light.ship .img-12 {
+    margin: 121px -250px;
+}
+.light.ship .img-13 {
+    margin: -285px 225px;
+}
+.light.ship .img-15 {
+    margin: -400px -50px;
+}
+.light.ship .img-16 {
+    margin: 290px 120px;
+}
 .light.ship-2 > img {
     margin: -85px 60px;
     width: 40% !important;
@@ -891,7 +924,7 @@ footer .twitter-share-button {
     transform-origin: 50% 0%;
     margin: 0px -140px;
     background-size: 280px 280px;
-    height: 280px;
+    height: 180px;
     width: 280px;
     background-repeat: no-repeat;
     position: absolute;
@@ -1532,7 +1565,7 @@ footer .twitter-share-button {
 
     .lighthouse {
         margin: 0px -104px;
-        background-size: 130px 240px;
+        background-size: 110px 210px;
         height: 270px;
         width: 208px;
         bottom: 128px; }
