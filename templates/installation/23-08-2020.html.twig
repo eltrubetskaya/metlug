@@ -48,57 +48,11 @@
 {#            </li>#}
             <li class="layer" data-depth="0.50"><div class="wave paint depth-50"></div></li>
             <li class="layer" data-depth="0.60"><div class="wave plain depth-60"></div></li>
-{#            <li class="layer" data-depth="0.70">#}
-{#                <div class="light ship-2 swing-5">#}
-{#                    <img src="{{ asset('src/img/longren.png') }}" alt="">#}
-{#                </div>#}
-{#            </li>#}
             <li class="layer" data-depth="0.80"><div class="wave plain depth-80"></div></li>
             <li class="layer" data-depth="0.70">
                 <div class="light ship swing-3"></div>
             </li>
 
-            {#<li class="layer"  style="height: 200px" data-depth="0.30">#}
-                {#<ul class="rope depth-30">#}
-                    {#<li><img src="{{ asset('src/paralax/images/rope.png') }}" alt="Rope"></li>#}
-                    {#<li class="hanger position-1">#}
-                        {#<div class="board cloud-1 swing-3"></div>#}
-                    {#</li>#}
-                    {#<li class="hanger position-5">#}
-                        {#<div class="board cloud-4 swing-1"></div>#}
-                    {#</li>#}
-                {#</ul>#}
-            {#</li>#}
-            <li class="layer"  style="height: 200px" data-depth="0.60">
-                <ul class="rope depth-60">
-                    <li><img src="{{ asset('src/paralax/images/rope.png') }}" alt="Rope"></li>
-                    <li class="hanger position-2">
-                        <a href="#" onclick="showDetailsCloud('#grin')">
-                            <div class="board grin swing-5"></div>
-                        </a>
-                    </li>
-                    <li class="hanger position-4">
-                        <a href="#" onclick="showDetailsCloud('#cloud-4')">
-                            <div class="board cloud-1 swing-3"></div>
-                        </a>
-                    </li>
-                    <li class="hanger position-3">
-                        <a href="#" onclick="showDetailsCloud('#cloud-1')">
-                            <div class="board birds swing-5"></div>
-                        </a>
-                    </li>
-                    <li class="hanger position-6">
-                        <a href="#" onclick="showDetailsCloud('#cloud-2')">
-                            <div class="board cloud-2 swing-2"></div>
-                        </a>
-                    </li>
-                    <li class="hanger position-8">
-                        <a href="#" onclick="showDetailsCloud('#cloud-3')">
-                            <div class="board cloud-3 swing-4"></div>
-                        </a>
-                    </li>
-                </ul>
-            </li>
             <li class="layer" data-depth="0.90">
                 <div class="wave paint depth-90">
                     <div class="light ship swing-3" touchstart="showImg()" touchend="hideImg()" onmousedown="showImg()" onmouseup="hideImg()" style="cursor:pointer;background: none">
@@ -120,6 +74,57 @@
                         <img class="img-16" src="{{ asset('src/img/a-16.png') }}" alt="">
                     </div>
                 </div>
+            </li>
+            {#<li class="layer"  style="height: 200px" data-depth="0.30">#}
+                {#<ul class="rope depth-30">#}
+                    {#<li><img src="{{ asset('src/paralax/images/rope.png') }}" alt="Rope"></li>#}
+                    {#<li class="hanger position-1">#}
+                        {#<div class="board cloud-1 swing-3"></div>#}
+                    {#</li>#}
+                    {#<li class="hanger position-5">#}
+                        {#<div class="board cloud-4 swing-1"></div>#}
+                    {#</li>#}
+                {#</ul>#}
+            {#</li>#}
+            <li class="layer"  style="height: 200px" data-depth="0.60">
+                <ul class="rope depth-60">
+                    <li><img src="{{ asset('src/paralax/images/rope.png') }}" alt="Rope"></li>
+                    <li class="hanger position-2">
+                        <a href="#" onclick="showDetailsCloud('#grin')">
+                            <div class="board grin swing-4"></div>
+                        </a>
+                    </li>
+                    <li class="hanger position-3">
+                        <a href="#" onclick="showDetailsCloud('#bird-revert')">
+                            <div class="board birds swing-5"></div>
+                        </a>
+                    </li>
+                    <li class="hanger position-4">
+                        <a href="#" onclick="showDetailsCloud('#cloud-2')">
+                            <div class="board cloud-1 swing-3"></div>
+                        </a>
+                    </li>
+                    <li class="hanger position-5">
+                        <a href="#" onclick="showDetailsCloud('#cloud-1')">
+                            <div class="board cloud-2 swing-2"></div>
+                        </a>
+                    </li>
+                    <li class="hanger position-6">
+                        <a href="#" onclick="showDetailsCloud('#cloud-4')">
+                            <div class="board cloud-3 swing-4"></div>
+                        </a>
+                    </li>
+                    <li class="hanger position-7">
+                        <a href="#" onclick="showDetailsCloud('#cloud-3')">
+                            <div class="board birds-revert swing-4"></div>
+                        </a>
+                    </li>
+                    <li class="hanger position-8">
+                        <a href="#" onclick="showDetailsCloud('#grin-revert')">
+                            <div class="board grin-revert swing-4"></div>
+                        </a>
+                    </li>
+                </ul>
             </li>
             <li data-depth="0.60" style="height: 200px; bottom: 0;">
                 <a href="{{ installation.videoLink }}" target="_blank"><div style="background: none; margin: 0 60px" class="lighthouse depth-60"></div></a>
@@ -161,6 +166,24 @@
                 </div>
             </div>
         </div>
+        <div id="grin-revert" class="wrapper about hide accelerate d-none">
+            <div class="cell accelerate">
+                <div class="cables center accelerate">
+                    <div class="panel accelerate">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/45GmCGggmbI?showinfo=1&modestbranding=1&rel=0&fs=0&iv_load_policy=3" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <ul class="links">
+                            <li style="width: 100%">
+                                <a href="#" onclick="hideDetailsCloud('#grin-revert')" title="Close">
+                                    <i class="fa fa-times"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div id="cloud-3" class="wrapper about hide accelerate d-none">
             <div class="cell accelerate">
                 <div class="cables center accelerate">
@@ -189,6 +212,24 @@
                         <ul class="links">
                             <li style="width: 100%">
                                 <a href="#" onclick="hideDetailsCloud('#cloud-4')" title="Close">
+                                    <i class="fa fa-times"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="bird-revert" class="wrapper about hide accelerate d-none">
+            <div class="cell accelerate">
+                <div class="cables center accelerate">
+                    <div class="panel accelerate">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="cloud-4 embed-responsive-item" src="https://www.youtube-nocookie.com/embed/WU0AccoQuw8?showinfo=1&modestbranding=1&rel=0&fs=0&iv_load_policy=3" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <ul class="links">
+                            <li style="width: 100%">
+                                <a href="#" onclick="hideDetailsCloud('#bird-revert')" title="Close">
                                     <i class="fa fa-times"></i>
                                 </a>
                             </li>

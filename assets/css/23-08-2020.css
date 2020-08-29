@@ -932,8 +932,12 @@ footer .twitter-share-button {
     left: 0; }
 .board.grin {
     background-image: url(../../src/paralax/images/grin-vertical.png); }
+.board.grin-revert {
+    background-image: url(../../src/paralax/images/grin-vertical-revert.png); }
 .board.birds {
     background-image: url(../../src/paralax/images/board-birds.png); }
+.board.birds-revert {
+    background-image: url(../../src/paralax/images/board-birds_2.png); }
 .board.cloud-1 {
     background-image: url(../../src/paralax/images/board-cloud-1.png); }
 .board.cloud-2 {
