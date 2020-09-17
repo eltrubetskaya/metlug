@@ -2274,3 +2274,23 @@ html.touch .links a.tap {
 .form-group {
     margin: 0 8% 1.2em;
 }
+.marquee-wrapper {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.marquee-wrapper:after {
+    position: absolute;
+    content: ' ';
+    right: 0;
+    top: 0;
+    width: 50px;
+    height: 100%;
+    background-image: linear-gradient(to right, transparent, #fff);
+}
+
+.marquee {
+    white-space: nowrap;
+    margin: 0;
+}
