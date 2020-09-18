@@ -2279,9 +2279,14 @@ html.touch .links a.tap {
 .form-group {
     margin: 0 8% 1.2em;
 }
-@media (max-width: 1370px) {
+@media (min-width: 1450px) {
     .marquee-wrapper {
-        width: 1380px;
+        width: 1450px;
+    }
+}
+@media (min-width: 1200px) {
+    .marquee-wrapper {
+        width: 1200px;
     }
 }
 @media (max-width: 1030px) {
