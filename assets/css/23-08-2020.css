@@ -2314,3 +2314,9 @@ html.touch .links a.tap {
     white-space: nowrap;
     margin: 0;
 }
+.toggle-left {
+    transform: rotateZ(-90deg);
+}
+.toggle-right {
+    transform: rotateZ(90deg);
+}
