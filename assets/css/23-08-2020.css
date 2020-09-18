@@ -2274,31 +2274,31 @@ html.touch .links a.tap {
 .form-group {
     margin: 0 8% 1.2em;
 }
-@media (min-width: 1200px) {
+@media (max-width: 1370px) {
     .marquee-wrapper {
-        width: 2000px;
+        width: 1380px;
     }
 }
-@media (max-width: 1024px) {
+@media (max-width: 1030px) {
     .marquee-wrapper {
-        width: 1200px;
+        width: 1040px;
     }
 }
-@media (max-width: 800px) {
+@media (max-width: 980px) {
     .marquee-wrapper {
-        width: 950px;
+        width: 990px;
     }
 }
-@media (max-width: 767px) {
+@media (max-width: 780px) {
     .marquee-wrapper {
-        width: 850px;
+        width: 770px;
     }
 }
 .marquee-wrapper {
     display: inline-block;
     overflow: hidden;
     position: relative;
-    margin-top: -35px;
+    margin-top: -50px;
 }
 
 .marquee-wrapper:after {
