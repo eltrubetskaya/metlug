@@ -1,11 +1,32 @@
 {% extends 'layout.html.twig' %}
-{% block title %}День памяти Сергея Курехина.{% endblock %}
+{% block title %}День памяти Сергея Курёхина.{% endblock %}
 {% block stylesheets %}
     {{ parent() }}
     <link href="{{ asset('build/css/32-05-2020.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('build/css/09-07-2020.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('build/css/slick.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('build/css/slick-theme.css') }}" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block menu %}
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container-fluid">
+            <div class="col-1 d-none d-sm-none d-md-block">
+                <a href="{{ path('installation_show', {title: '32-05-2020'}) }}" class="navbar-brand js-scroll-trigger" title="Угол плача или Угол Перед Лицом Мира">
+                    <i class="fa fa-compact-disc"></i>
+                </a>
+            </div>
+            <div class="col-md-10 col-12 pl-0">
+                <a class="navbar-brand js-scroll-trigger" href="{{ path('homepage') }}">The «METLUG» Theatre - means we're from Lugansk City</a>
+            </div>
+            <div class="col-1 d-none d-sm-none d-md-block">
+                <a href="{{ path('installation_show', {title: '25-07-2020'}) }}" class="navbar-brand js-scroll-trigger" title="Высоцкий В.С.">
+                    <i class="fa fa-compact-disc"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
 {% endblock %}
 
 {% block content %}
