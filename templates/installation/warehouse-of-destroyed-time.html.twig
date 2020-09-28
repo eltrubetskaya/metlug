@@ -39,12 +39,30 @@
 
 {% block content %}
 
-    <div id="icon-plus" data-toggle="modal" data-target="#commandModal" title="Добавить комментарий">
-        <i class="fas fa-plus fa-2x"></i>
+    <div class="container-fluid" style="text-align: center">
+        <div class="panel" style="display: inline-block">
+            <img src="{{ asset('build/img/wood_texture_fence_knothole_old_wood_texture_wooden_wooden_texture-554367.jpg') }}">
+        </div>
     </div>
 {% endblock %}
 {% block footer %}{% endblock footer %}
 
 {% block javascripts %}
-
+<script src="{{ asset('build/js/jquery.min.js') }}"></script>
+<script src="{{ asset('build/js/jquery.image-jigsaw.min.js') }}"></script>
+{#<script>#}
+{#    {% if modalShow is defined and modalShow is not null %}#}
+{#    $('#commandModal').modal('show')#}
+{#    {% endif %}#}
+{#</script>#}
+<script>
+    $(document).ready(function() {
+        $(".panel").jigsaw({freq: 2000, x: 4, y:4, margin: 2, callbacks: [{event: 'mouseover', func: function() {
+                    $(this).data('last_bg', $(this).css('background-image'));
+                    $(this).css('background-image', 'none');
+                }}, {event: 'mouseout', func: function() {
+                    $(this).css('background-image', $(this).data('last_bg'));
+                }}]});
+    });
+    </script>
 {% endblock javascripts %}
