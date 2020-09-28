@@ -1,5 +1,6 @@
 <!-- Portfolio Modals -->
 
+{% if title and (title== 'homepage' or title == 'vladimir-vusotskiy') %}
 <!-- Modal 1 -->
 <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
@@ -33,43 +34,45 @@
         </div>
     </div>
 </div>
+{% endif %}
 
 <!-- Modal 2 -->
-<div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl"></div>
-                </div>
-            </div>
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12 mx-auto">
-                        <div class="modal-body">
-                            <!-- Project Details Go Here -->
-                            <img class="img-fluid d-block mx-auto" style="margin-top: -50px" width="70" src="{{ asset('build/img/logo.png') }}" alt="">
-                            <h3 class="text-uppercase col col-11">Театр МЭТЛУГ поздравляет всех с Рождеством!</h3>
-                            <div class="embed-responsive embed-responsive-4by3">
-                                <iframe class="embed-responsive-item" src="{{ path('app_page_view', {title: '25-12-2019'})}}"></iframe>
-                            </div>
-                            <ul class="list-inline">
-                                <li>Дата: 24 Декабря 2019</li>
-                                <li class="item-intro text-muted">
-                                    <a target="_blank" title='Театр МЭТЛУГ поздравляет всех с Рождеством!' href="{{ path('app_page_view', {title: '25-12-2019'})}}">Полная версия</a>
-                                </li>
-                            </ul>
-                            <button class="btn btn-primary" data-dismiss="modal" type="button">
-                                <i class="fas fa-times"></i>
-                                Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+{#<div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">#}
+{#    <div class="modal-dialog">#}
+{#        <div class="modal-content">#}
+{#            <div class="close-modal" data-dismiss="modal">#}
+{#                <div class="lr">#}
+{#                    <div class="rl"></div>#}
+{#                </div>#}
+{#            </div>#}
+{#            <div class="container-fluid">#}
+{#                <div class="row">#}
+{#                    <div class="col-lg-12 mx-auto">#}
+{#                        <div class="modal-body">#}
+{#                            <!-- Project Details Go Here -->#}
+{#                            <img class="img-fluid d-block mx-auto" style="margin-top: -50px" width="70" src="{{ asset('build/img/logo.png') }}" alt="">#}
+{#                            <h3 class="text-uppercase col col-11">Театр МЭТЛУГ поздравляет всех с Рождеством!</h3>#}
+{#                            <div class="embed-responsive embed-responsive-4by3">#}
+{#                                <iframe class="embed-responsive-item" src="{{ path('app_page_view', {title: '25-12-2019'})}}"></iframe>#}
+{#                            </div>#}
+{#                            <ul class="list-inline">#}
+{#                                <li>Дата: 24 Декабря 2019</li>#}
+{#                                <li class="item-intro text-muted">#}
+{#                                    <a target="_blank" title='Театр МЭТЛУГ поздравляет всех с Рождеством!' href="{{ path('app_page_view', {title: '25-12-2019'})}}">Полная версия</a>#}
+{#                                </li>#}
+{#                            </ul>#}
+{#                            <button class="btn btn-primary" data-dismiss="modal" type="button">#}
+{#                                <i class="fas fa-times"></i>#}
+{#                                Close</button>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
 
+{% if title and (title== 'homepage' or title == 'vladimir-vusotskiy') %}
 <!-- Modal 3 -->
 <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
@@ -103,7 +106,9 @@
         </div>
     </div>
 </div>
+{% endif %}
 
+{% if title and (title== 'homepage' or title == '32-may') %}
 <!-- Modal 4 -->
 <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
@@ -136,110 +141,112 @@
         </div>
     </div>
 </div>
+{% endif %}
 
 <!-- Modal 5 -->
-<div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl"></div>
-                </div>
-            </div>
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12 mx-auto">
-                        <div class="modal-body">
-                            <!-- Project Details Go Here -->
-                            <img class="img-fluid d-block mx-auto" style="margin-top: -50px" width="70" src="{{ asset('build/img/logo.png') }}" alt="">
-                            <div class="embed-responsive embed-responsive-4by3">
-                                <iframe class="embed-responsive-item" src="{{ path('app_page_view', {title: '24-04-2019'})}}"></iframe>
-                            </div>
-                            <ul class="list-inline">
-                                <li>Дата: 24 Апреля 2019</li>
-                                <li class="text-muted">
-                                    <a target="_blank" title='С юбилеем Станиславвичи!' href="{{ path('app_page_view', {title: '24-04-2019'})}}">Полная версия</a>
-                                </li>
-                            </ul>
-                            <button class="btn btn-primary" data-dismiss="modal" type="button">
-                                <i class="fas fa-times"></i>
-                                Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+{#<div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">#}
+{#    <div class="modal-dialog">#}
+{#        <div class="modal-content">#}
+{#            <div class="close-modal" data-dismiss="modal">#}
+{#                <div class="lr">#}
+{#                    <div class="rl"></div>#}
+{#                </div>#}
+{#            </div>#}
+{#            <div class="container-fluid">#}
+{#                <div class="row">#}
+{#                    <div class="col-lg-12 mx-auto">#}
+{#                        <div class="modal-body">#}
+{#                            <!-- Project Details Go Here -->#}
+{#                            <img class="img-fluid d-block mx-auto" style="margin-top: -50px" width="70" src="{{ asset('build/img/logo.png') }}" alt="">#}
+{#                            <div class="embed-responsive embed-responsive-4by3">#}
+{#                                <iframe class="embed-responsive-item" src="{{ path('app_page_view', {title: '24-04-2019'})}}"></iframe>#}
+{#                            </div>#}
+{#                            <ul class="list-inline">#}
+{#                                <li>Дата: 24 Апреля 2019</li>#}
+{#                                <li class="text-muted">#}
+{#                                    <a target="_blank" title='С юбилеем Станиславвичи!' href="{{ path('app_page_view', {title: '24-04-2019'})}}">Полная версия</a>#}
+{#                                </li>#}
+{#                            </ul>#}
+{#                            <button class="btn btn-primary" data-dismiss="modal" type="button">#}
+{#                                <i class="fas fa-times"></i>#}
+{#                                Close</button>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
 
 <!-- Modal 6 -->
-<div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl"></div>
-                </div>
-            </div>
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12 mx-auto">
-                        <div class="modal-body">
-                            <!-- Project Details Go Here -->
-                            <img class="img-fluid d-block mx-auto" style="margin-top: -50px" width="70" src="{{ asset('build/img/logo.png') }}" alt="">
-                            <div class="embed-responsive embed-responsive-4by3">
-                                <iframe class="embed-responsive-item" src="{{ path('app_page_view', {title: '27-03-2019'})}}"></iframe>
-                            </div>
-                            <ul class="list-inline">
-                                <li>Дата: 27 Марта 2019</li>
-                                <li class="text-muted">
-                                    <a target="_blank" title='Театр "МЭТЛУГ" поздравляет всю мировую театральную общественность и себя с Международным днем театра!' href="{{ path('app_page_view', {title: '27-03-2019'})}}">Полная версия</a>
-                                </li>
-                            </ul>
-                            <button class="btn btn-primary" data-dismiss="modal" type="button">
-                                <i class="fas fa-times"></i>
-                                Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+{#<div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">#}
+{#    <div class="modal-dialog">#}
+{#        <div class="modal-content">#}
+{#            <div class="close-modal" data-dismiss="modal">#}
+{#                <div class="lr">#}
+{#                    <div class="rl"></div>#}
+{#                </div>#}
+{#            </div>#}
+{#            <div class="container-fluid">#}
+{#                <div class="row">#}
+{#                    <div class="col-lg-12 mx-auto">#}
+{#                        <div class="modal-body">#}
+{#                            <!-- Project Details Go Here -->#}
+{#                            <img class="img-fluid d-block mx-auto" style="margin-top: -50px" width="70" src="{{ asset('build/img/logo.png') }}" alt="">#}
+{#                            <div class="embed-responsive embed-responsive-4by3">#}
+{#                                <iframe class="embed-responsive-item" src="{{ path('app_page_view', {title: '27-03-2019'})}}"></iframe>#}
+{#                            </div>#}
+{#                            <ul class="list-inline">#}
+{#                                <li>Дата: 27 Марта 2019</li>#}
+{#                                <li class="text-muted">#}
+{#                                    <a target="_blank" title='Театр "МЭТЛУГ" поздравляет всю мировую театральную общественность и себя с Международным днем театра!' href="{{ path('app_page_view', {title: '27-03-2019'})}}">Полная версия</a>#}
+{#                                </li>#}
+{#                            </ul>#}
+{#                            <button class="btn btn-primary" data-dismiss="modal" type="button">#}
+{#                                <i class="fas fa-times"></i>#}
+{#                                Close</button>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
 <!-- Modal 7 -->
-<div class="portfolio-modal modal fade" id="portfolioModal7" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl"></div>
-                </div>
-            </div>
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12 mx-auto">
-                        <div class="modal-body">
-                            <!-- Project Details Go Here -->
-                            <img class="img-fluid d-block mx-auto" style="margin-top: -50px" width="70" src="{{ asset('build/img/logo.png') }}" alt="">
-                            <div class="embed-responsive embed-responsive-4by3">
-                                <iframe class="embed-responsive-item" src="{{ path('app_page_view', {title: '08-02-2019'})}}"></iframe>
-                            </div>
-                            <ul class="list-inline">
-                                <li>Дата: 8 Февраля 2019</li>
-                                <li class="text-muted">
-                                    <a target="_blank" title='Бенефис Ирины Савчишиной' href="{{ path('app_page_view', {title: '08-02-2019'})}}">Полная версия</a>
-                                </li>
-                            </ul>
-                            <button class="btn btn-primary" data-dismiss="modal" type="button">
-                                <i class="fas fa-times"></i>
-                                Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+{#<div class="portfolio-modal modal fade" id="portfolioModal7" tabindex="-1" role="dialog" aria-hidden="true">#}
+{#    <div class="modal-dialog">#}
+{#        <div class="modal-content">#}
+{#            <div class="close-modal" data-dismiss="modal">#}
+{#                <div class="lr">#}
+{#                    <div class="rl"></div>#}
+{#                </div>#}
+{#            </div>#}
+{#            <div class="container-fluid">#}
+{#                <div class="row">#}
+{#                    <div class="col-lg-12 mx-auto">#}
+{#                        <div class="modal-body">#}
+{#                            <!-- Project Details Go Here -->#}
+{#                            <img class="img-fluid d-block mx-auto" style="margin-top: -50px" width="70" src="{{ asset('build/img/logo.png') }}" alt="">#}
+{#                            <div class="embed-responsive embed-responsive-4by3">#}
+{#                                <iframe class="embed-responsive-item" src="{{ path('app_page_view', {title: '08-02-2019'})}}"></iframe>#}
+{#                            </div>#}
+{#                            <ul class="list-inline">#}
+{#                                <li>Дата: 8 Февраля 2019</li>#}
+{#                                <li class="text-muted">#}
+{#                                    <a target="_blank" title='Бенефис Ирины Савчишиной' href="{{ path('app_page_view', {title: '08-02-2019'})}}">Полная версия</a>#}
+{#                                </li>#}
+{#                            </ul>#}
+{#                            <button class="btn btn-primary" data-dismiss="modal" type="button">#}
+{#                                <i class="fas fa-times"></i>#}
+{#                                Close</button>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
+{% if title and (title== 'homepage' or title == 'vladimir-vusotskiy') %}
 <!-- Modal 8 -->
 <div class="portfolio-modal modal fade" id="portfolioModal8" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
@@ -341,6 +348,9 @@
         </div>
     </div>
 </div>
+{% endif %}
+
+{% if title and (title== 'homepage' or title == 'christmas-eve') %}
 <!-- Modal 9 -->
 <div class="portfolio-modal modal fade" id="portfolioModal9" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
@@ -434,6 +444,8 @@
         </div>
     </div>
 </div>
+{% endif %}
+{% if title and (title== 'homepage' or title == 'vladimir-vusotskiy') %}
 <!-- Modal 10 -->
 <div class="portfolio-modal modal fade" id="portfolioModal10" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
@@ -544,6 +556,8 @@
         </div>
     </div>
 </div>
+{% endif %}
+{% if title and (title== 'homepage' or title == '32-may') %}
 <!-- Modal 11 -->
 <div class="portfolio-modal modal fade" id="portfolioModal11" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
@@ -659,6 +673,8 @@
         </div>
     </div>
 </div>
+{% endif %}
+{% if title and (title== 'homepage' or title == 'metlug-team-mates') %}
 <!-- Modal 12 -->
 <div class="portfolio-modal modal fade" id="portfolioModal12" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
@@ -749,41 +765,45 @@
         </div>
     </div>
 </div>
-<!-- Modal 13 -->
-<div class="portfolio-modal modal fade" id="portfolioModal13" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl"></div>
+{% endif %}
+{% if title and (title== 'homepage' or title == 'aleksandr-grin' or title == 'world-theatre-day') %}
+    <!-- Modal 13 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal13" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl"></div>
+                    </div>
                 </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 mx-auto">
-                        <div class="modal-body">
-                            <!-- Project Details Go Here -->
-                            <img class="img-fluid d-block mx-auto" style="margin-top: -50px" width="70" src="{{ asset('build/img/logo.png') }}" alt="">
-                            <h3 class="text-uppercase">С международным днём театра!</h3>
-                            <p class="item-intro text-muted">
-                                С международным днём театра! Сегодня МЭТЛУГ "даёт" сценическую притчу "Паруса" (по А. Грину "Алые паруса"). Сценарий и постановка Валерия и Олега Шевцовых. Премьера 20 марта 1995 г. Первый спектакль. Первый фестиваль. "...Наше начало... останется навсегда в алом отблеске парусов, созданных глубиной сердца, знающего, что такое любовь."
-                            </p>
-                            <div class="embed-responsive embed-responsive-16by9">
-                                <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/ufZHoxSVdr4?showinfo=1&modestbranding=1&rel=0&fs=0&iv_load_policy=3" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <img class="img-fluid d-block mx-auto" style="margin-top: -50px" width="70" src="{{ asset('build/img/logo.png') }}" alt="">
+                                <h3 class="text-uppercase">С международным днём театра!</h3>
+                                <p class="item-intro text-muted">
+                                    С международным днём театра! Сегодня МЭТЛУГ "даёт" сценическую притчу "Паруса" (по А. Грину "Алые паруса"). Сценарий и постановка Валерия и Олега Шевцовых. Премьера 20 марта 1995 г. Первый спектакль. Первый фестиваль. "...Наше начало... останется навсегда в алом отблеске парусов, созданных глубиной сердца, знающего, что такое любовь."
+                                </p>
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/ufZHoxSVdr4?showinfo=1&modestbranding=1&rel=0&fs=0&iv_load_policy=3" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                                <ul class="list-inline">
+                                    <li>Дата: 27 Марта 2018</li>
+                                </ul>
+                                <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                    <i class="fas fa-times"></i>
+                                    Close</button>
                             </div>
-                            <ul class="list-inline">
-                                <li>Дата: 27 Марта 2018</li>
-                            </ul>
-                            <button class="btn btn-primary" data-dismiss="modal" type="button">
-                                <i class="fas fa-times"></i>
-                                Close</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+{% endif %}
+{% if title and (title== 'homepage' or title == 'metlug-team-mates') %}
 <!-- Modal 14 -->
 <div class="portfolio-modal modal fade" id="portfolioModal14" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
@@ -911,6 +931,8 @@
         </div>
     </div>
 </div>
+{% endif %}
+{% if title and (title== 'homepage' or title == 'vladimir-vusotskiy') %}
 <!-- Modal 15 -->
 <div class="portfolio-modal modal fade" id="portfolioModal15" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
@@ -1005,6 +1027,8 @@
         </div>
     </div>
 </div>
+{% endif %}
+{% if title and (title== 'homepage' or title == '32-may') %}
 <!-- Modal 16 -->
 <div class="portfolio-modal modal fade" id="portfolioModal16" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
@@ -1049,6 +1073,8 @@
         </div>
     </div>
 </div>
+{% endif %}
+{% if title and (title== 'homepage' or title == 'world-theatre-day') %}
 <!-- Modal 17 -->
 <div class="portfolio-modal modal fade" id="portfolioModal17" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
@@ -1082,6 +1108,9 @@
         </div>
     </div>
 </div>
+{% endif %}
+
+{% if title and (title== 'homepage' or title == 'sergey-kuryokhin') %}
 <!-- Modal 18 -->
 <div class="portfolio-modal modal fade" id="portfolioModal18" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
@@ -1130,6 +1159,8 @@
         </div>
     </div>
 </div>
+{% endif %}
+{% if title and (title== 'homepage' or title == 'metlug-team-mates') %}
 <!-- Modal 19 -->
 <div class="portfolio-modal modal fade" id="portfolioModal19" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
@@ -1148,20 +1179,20 @@
                             <h3 class="text-uppercase"></h3>
                             <p class="item-intro text-muted">В эти дни МЭТЛУГ, как и все прогрессивное человечество, отмечает день рождения Николая Васильевича Гоголя.</p>
                             <p class="item-intro text-muted">Было время - разбрасывали камни!... К творчеству Гоголя театр имел счастье приобщиться во время постановки спектакля "Вечера на хуторе!... Вечера!...", в который вошли все восемь новелл из "Вечеров на хуторе близ Диканьки".</p>
-                            <p class="item-intro text-muted">"Подземный грохот, которым начинаются "Вечера..." - невероятный образ энергии, выплескивающейся в талантливых постановках..." Сергей Проскурня, директор фестиваля "Мистецьке березілля", Киев.﻿</p>
+                            <p class="item-intro text-muted">"Подземный грохот, которым начинаются "Вечера..." - невероятный образ энергии, выплескивающейся в талантливых постановках..." Сергей Проскурня, директор фестиваля "Мистецьке березілля", Киев.</p>
                             <div class="embed-responsive embed-responsive-16by9">
                                 <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/tEazQXSS5gc?showinfo=1&modestbranding=1&rel=0&fs=0&iv_load_policy=3" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
                             <p class="item-intro text-muted">Е. Залыгина " Шабаш на подмостках"</p>
                             <p class="item-intro text-muted">"Молодежные новости" Луганск 2 августа 1996г.</p>
-                            <p class="item-intro text-muted">"Обвал камней... случился. Премьера в МЭТЛУГЕ - спектакль "Вечера на хуторе!.. Вечера!" начался именно с разбрасывания камней... и пошел своей дорогой. А дорога привела на хутор, не Диканьку, а просто на украинский загадочный и веселый хутор, где живут Солоха и Вакула, Данила и Катерина, Иван Федорович Шпонька и тетушка его.... И пошли бесовские забавы: то свитка мелькнет, то колдун пригрезится, то просто жуть обуяет. Странный хутор, чудная жизнь. .... Весь спектакль основан на принципе забвения, то есть "не верь глазам своим". И вправду, не поверишь, когда милый чертенок становится незадачливым любовником-дьяком, а хитрюга-ведьма - помещиком. Но ведь и впрямь, получился у Валерия Шевцова Гоголь на все 200%. И дело не в гопаках и песнях, просто дух сельской разудалой жизни, извечный страх перед сверхъестественным ему удалось передать очень точно. ..."﻿</p>
+                            <p class="item-intro text-muted">"Обвал камней... случился. Премьера в МЭТЛУГЕ - спектакль "Вечера на хуторе!.. Вечера!" начался именно с разбрасывания камней... и пошел своей дорогой. А дорога привела на хутор, не Диканьку, а просто на украинский загадочный и веселый хутор, где живут Солоха и Вакула, Данила и Катерина, Иван Федорович Шпонька и тетушка его.... И пошли бесовские забавы: то свитка мелькнет, то колдун пригрезится, то просто жуть обуяет. Странный хутор, чудная жизнь. .... Весь спектакль основан на принципе забвения, то есть "не верь глазам своим". И вправду, не поверишь, когда милый чертенок становится незадачливым любовником-дьяком, а хитрюга-ведьма - помещиком. Но ведь и впрямь, получился у Валерия Шевцова Гоголь на все 200%. И дело не в гопаках и песнях, просто дух сельской разудалой жизни, извечный страх перед сверхъестественным ему удалось передать очень точно. ..."</p>
                             <div class="embed-responsive embed-responsive-16by9">
                                 <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/uPeP9bB2Zc8?showinfo=1&modestbranding=1&rel=0&fs=0&iv_load_policy=3" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
                             <p class="item-intro text-muted">И. Дыченко "Гопак в стиле рок. С Солохой и Вакулой" "Киевские ведомости", 7 августа 1996 г.</p>
 
                             <p class="item-intro text-muted">"Такой пьесы у автора "Ревизора" и "Женитьбы" нет. Драматургической основой послужили "Вечера на хуторе близ Диканьки". ... Преодолев то ли робость, то ли гордость, молодой луганский режиссер Валерий Шевцов создает сценическую композицию, на полтора часа зрелища все... восемь повестей молодого Гоголя! ... Дело не в варварской "адаптации" текстов, упрощении фабулы, выдергивания отдельных эпизодов, а в поиске единого знаменателя в сценическом воплощении прозы.</p>
-                            <p class="item-intro text-muted">Условность режиссуры и сценографии Валерия Шевцова позволяет воспринимать каскад перевоплощений как сценическую версию "родового древа" гоголевских героев, а отдельные эпизоды просто поражают рискованной изобретательностью и отсутствием низкопоклонства перед этнографическими святынями бытового театра. ..."﻿</p>
+                            <p class="item-intro text-muted">Условность режиссуры и сценографии Валерия Шевцова позволяет воспринимать каскад перевоплощений как сценическую версию "родового древа" гоголевских героев, а отдельные эпизоды просто поражают рискованной изобретательностью и отсутствием низкопоклонства перед этнографическими святынями бытового театра. ..."</p>
                             <div class="embed-responsive embed-responsive-16by9">
                                 <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/W99zZ2MMZ1Q?showinfo=1&modestbranding=1&rel=0&fs=0&iv_load_policy=3" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
@@ -1174,7 +1205,7 @@
                             <p class="item-intro text-muted">Игорь Дыченко "Театр младенческой свободы умеет удивлять. Луганский МЭТЛУГ играет Гоголя", "Граффити", Киев август 1996 г.</p>
 
                             <p class="item-intro text-muted">"Жанр показанной на днях премьеры В.Шевцов определяет как театральный рок в стиле "гопак". Действие построено на эстетике взрывов: фабула гоголевских повестей претерпевает превращения - от "ледохода" к "мозаике" эпизодов, реплик, явлений. Актеры, как форель, стремятся вверх по водопаду. Разумеется, это не протокольное описание спектакля, а лишь "послевкусие" ощущений. Нет и конкретных персонажей: так, скажем, Солоха или Вакула появляются, узнаются и ... растворяются в иных масках. При этом создатели спектакля не только "галопируют", демонстрируя чудесную природу преображений (в том числе и переодевание хлопцев дивчатами, как в колядках), но и умеют держать паузу.</p>
-                            <p class="item-intro text-muted">Рокочущий гопак - отражение бурлескной стихии магической прозы Гоголя."﻿</p>
+                            <p class="item-intro text-muted">Рокочущий гопак - отражение бурлескной стихии магической прозы Гоголя."</p>
                             <div class="embed-responsive embed-responsive-16by9">
                                 <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/Qsc293-oN_Q?showinfo=1&modestbranding=1&rel=0&fs=0&iv_load_policy=3" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
@@ -1183,7 +1214,7 @@
                             <div class="embed-responsive embed-responsive-16by9">
                                 <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/GeZMIItzARo?showinfo=1&modestbranding=1&rel=0&fs=0&iv_load_policy=3" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
-                            <p class="item-intro text-muted">"Это прочтение Гоголя очень необычно, но вместе с тем, Гоголь получился по-настоящему украинский и с изрядной долей чертовщинки, так свойственной его творчеству". Игорь Дыченко, театральный критик. Киев.﻿</p>
+                            <p class="item-intro text-muted">"Это прочтение Гоголя очень необычно, но вместе с тем, Гоголь получился по-настоящему украинский и с изрядной долей чертовщинки, так свойственной его творчеству". Игорь Дыченко, театральный критик. Киев.</p>
                             <ul class="list-inline">
                                 <li>Дата: 1 Апреля 2017</li>
                             </ul>
@@ -1198,6 +1229,8 @@
         </div>
     </div>
 </div>
+{% endif %}
+{% if title and (title== 'homepage' or title == 'world-theatre-day') %}
 <!-- Modal 20 -->
 <div class="portfolio-modal modal fade" id="portfolioModal20" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
@@ -1232,6 +1265,8 @@
         </div>
     </div>
 </div>
+{% endif %}
+{% if title and (title== 'homepage' or title == 'vladimir-vusotskiy') %}
 <!-- Modal 21 -->
 <div class="portfolio-modal modal fade" id="portfolioModal21" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
@@ -1254,7 +1289,7 @@
                                 Мне за голый мой нерв, на котором кричу, <br>
                                 <br>
                                 За веселый манер, на котором шучу…»</h5>
-                            <p class="text-muted text-justify">Этими стихами Владимира Семеновича Высоцкого началась 25.01.2008 репетиция нового спектакля Молодежного Эмоционального театра Луганска «Капитаны песка» по произведению Жоржи Амаду «Генералы песчаных карьеров». ﻿</p>
+                            <p class="text-muted text-justify">Этими стихами Владимира Семеновича Высоцкого началась 25.01.2008 репетиция нового спектакля Молодежного Эмоционального театра Луганска «Капитаны песка» по произведению Жоржи Амаду «Генералы песчаных карьеров». </p>
                             <div class="col-sm-12 col-12">
                                 <div id="carouselIndicators" class="carousel slide" data-ride="carousel">
                                     <ol class="carousel-indicators">
@@ -1328,14 +1363,14 @@
 
                                     Мы шествуем гордо при нашем народе».</p>
 
-                                <p class="text-muted text-justify">Со сцены МЭТЛУГа в 1998г это выглядело так:﻿</p>
+                                <p class="text-muted text-justify">Со сцены МЭТЛУГа в 1998г это выглядело так:</p>
                                 <div class="embed-responsive embed-responsive-16by9">
                                     <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/DkRNDigjH04?showinfo=1&modestbranding=1&rel=0&fs=0&iv_load_policy=3" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 </div>
                                 <p class="text-muted text-justify">В это же время в эфире местной радиостанции – «радио Эхо» велась беседа о творческой личности Владимира Семеновича Высоцкого, его судьбе, и также освещалось происходящее в ДК Ленина. Тем самым любители творчества знаменитого актера - поэта, кто не смог присутствовать на МЭТЛУГовской репетиции с Высоцким могли частично слушать ее по радио.</p>
                                 <p class="text-muted text-justify">Это действо далеко не первое устраиваемое МЭТЛУГом посвященное творчеству Владимира Семеновича. Личность и творчество Высоцкого сыграло судьбоносную роль в жизни театра. Каждый год с момента основания театра(1995) 25 января проводятся вечера памяти Великого Поэта.</p>
 
-                                <p class="text-muted text-justify">Все это устраивается не потому, что МЭТЛУГовцы идут на поводу модных тенденций, чтобы почтить память Высоцкого, а потому, что искренне разделяют его гражданскую и творческую позицию. Поколения студийцев были воспитаны на его творчестве﻿</p>
+                                <p class="text-muted text-justify">Все это устраивается не потому, что МЭТЛУГовцы идут на поводу модных тенденций, чтобы почтить память Высоцкого, а потому, что искренне разделяют его гражданскую и творческую позицию. Поколения студийцев были воспитаны на его творчестве</p>
 
                                 <div class="embed-responsive embed-responsive-16by9">
                                     <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/YJ9mq1Vc3KM?showinfo=1&modestbranding=1&rel=0&fs=0&iv_load_policy=3" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -1448,6 +1483,8 @@
         </div>
     </div>
 </div>
+{% endif %}
+{% if title and (title== 'homepage' or title == 'marina-tsvetaeva') %}
 <!-- Modal 23 -->
 <div class="portfolio-modal modal fade" id="portfolioModal23" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
@@ -1545,6 +1582,9 @@
         </div>
     </div>
 </div>
+{% endif %}
+
+{% if title and (title== 'homepage' or title == 'metlug-team-mates') %}
 <!-- Modal 24 -->
 <div class="portfolio-modal modal fade" id="portfolioModal24" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
@@ -1587,6 +1627,7 @@
                                                 С <пятьдесяттвоюмать> летним юбилеем тебя, Дружище!!!<br>
                                                     Зустринемось!!!<br>
                                                     Твой А.Ю. <В.Ш.><br>
+
                                     </div>
                                     <div class="text-right"><p><small>2017-09-19 13:19:02</small></p></div>
                                 </div>
@@ -1608,6 +1649,7 @@
         </div>
     </div>
 </div>
+{% endif %}
 <!-- Modal 25 -->
 <div class="portfolio-modal modal fade" id="portfolioModal25" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
@@ -1633,7 +1675,7 @@
                                 <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/ue77xBhKBoI?showinfo=1&modestbranding=1&rel=0&fs=0&iv_load_policy=3" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
                             <p class="text-muted">Проект не закрыт. Он в действии...</p>
-                            <p class="text-muted">Предлагаем всем интересующимся и заинтересованным перечесть одну из частей трилогии Кэрролла "Охота на Снарка" по прилагаемой ссылке. Что весьма актуально для нынешнего времени﻿</p>
+                            <p class="text-muted">Предлагаем всем интересующимся и заинтересованным перечесть одну из частей трилогии Кэрролла "Охота на Снарка" по прилагаемой ссылке. Что весьма актуально для нынешнего времени</p>
                             <h5 class="text-center"><a href="http://www.lib.ru/CARROLL/snark2.txt" target="_blank">Льюис Кэрролл и загадки его текстов</a></h5>
                             <ul class="list-inline">
                                 <li>Дата: 27 Января 2017</li>
@@ -1648,6 +1690,7 @@
         </div>
     </div>
 </div>
+{% if title and (title== 'homepage' or title == 'metlug-team-mates') %}
 <!-- Modal 26 -->
 <div class="portfolio-modal modal fade" id="portfolioModal26" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
@@ -1736,6 +1779,8 @@
         </div>
     </div>
 </div>
+{% endif %}
+{% if title and (title== 'homepage' or title == 'vladimir-vusotskiy') %}
 <!-- Modal 27 -->
 <div class="portfolio-modal modal fade" id="portfolioModal27" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
@@ -1752,7 +1797,7 @@
                             <!-- Project Details Go Here -->
                             <img class="img-fluid d-block mx-auto" style="margin-top: -50px" width="70" src="{{ asset('build/img/logo.png') }}" alt="">
                             <h3 class="text-uppercase">Владимир Высоцкий <br> навсегда и во всем...</h3>
-                            <p class="text-muted">МЭТЛУГовцы всех поколений поздравляют с днем рождения Владимира Высоцкого всех, кто знает и помнит, "что остается от сказки потом, после того как ее рассказали"! Пусть каждый, вне зависимости от времени, места и обстоятельств найдет "в своей загадочной и сказочной стране", все, что представляется. А "маятники времени", запущенные талантливой рукой никогда не "застынут" для тех, кто помнит...﻿</p>
+                            <p class="text-muted">МЭТЛУГовцы всех поколений поздравляют с днем рождения Владимира Высоцкого всех, кто знает и помнит, "что остается от сказки потом, после того как ее рассказали"! Пусть каждый, вне зависимости от времени, места и обстоятельств найдет "в своей загадочной и сказочной стране", все, что представляется. А "маятники времени", запущенные талантливой рукой никогда не "застынут" для тех, кто помнит...</p>
                             <div class="embed-responsive embed-responsive-16by9">
                                 <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/ec5qezOqWWg?showinfo=1&modestbranding=1&rel=0&fs=0&iv_load_policy=3" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
@@ -1773,3 +1818,4 @@
         </div>
     </div>
 </div>
+{% endif %}

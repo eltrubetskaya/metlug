@@ -8,11 +8,32 @@
     <link href="{{ asset('build/css/slick-theme.css') }}" rel="stylesheet" type="text/css" />
 {% endblock %}
 
+{% block menu %}
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container-fluid">
+            <div class="col-1 d-none d-sm-none d-md-block">
+                <a href="{{ path('installation_show', {title: '09-07-2020'}) }}" class="navbar-brand js-scroll-trigger" title="День памяти Сергея Курёхина.">
+                    <i class="fa fa-music"></i>
+                </a>
+            </div>
+            <div class="col-md-10 col-12 pl-0">
+                <a class="navbar-brand js-scroll-trigger" href="{{ path('homepage') }}">The «METLUG» Theatre - means we're from Lugansk City</a>
+            </div>
+            <div class="col-1 d-none d-sm-none d-md-block">
+                <a href="{{ path('installation_show', {title: '23-08-2020'}) }}" class="navbar-brand js-scroll-trigger" title="Александр Грин. Фантазийное видение.">
+                    <i class="fa fa-music"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+{% endblock %}
+
 {% block content %}
     <img src="{{ asset('src/img/6.png') }}" id="bg" alt="">
-    <div id="icon-plus" data-toggle="modal" data-target="#commandModal" title="Добавить комментарий">
-        <i class="fas fa-plus fa-2x"></i>
-    </div>
+{#    <div id="icon-plus" data-toggle="modal" data-target="#commandModal" title="Добавить комментарий">#}
+{#        <i class="fas fa-plus fa-2x"></i>#}
+{#    </div>#}
     <div id="icon-sound" class="d-none">
         <i class="fas fa-volume-up"></i>
     </div>

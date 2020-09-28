@@ -235,6 +235,8 @@ p {
     margin: 0 0 1.4em; }
 
 em {
+    font-size: 0.7em;
+    letter-spacing: normal;
     font-style: normal;
     color: #D92400; }
 
@@ -680,6 +682,7 @@ footer .twitter-share-button {
     backface-visibility: hidden; }
 
 .title {
+    letter-spacing: 7px;
     font-size: 3em;
     text-shadow: 0 8px 6px rgba(0, 0, 0, 0.6);
     margin-top: -0.7em;
@@ -1352,7 +1355,8 @@ footer .twitter-share-button {
         bottom: 15%; }
 
     .title {
-        font-size: 3.46667em; }
+        letter-spacing: 7px;
+        font-size: 4em; }
 
     .background, .background-y {
         bottom: 96px; }
@@ -1562,7 +1566,8 @@ footer .twitter-share-button {
         bottom: 12%; }
 
     .title {
-        font-size: 3.46667em; }
+        letter-spacing: 7px;
+        font-size: 4em; }
 
     .background, .background-y {
         bottom: 160px; }
@@ -2273,4 +2278,55 @@ html.touch .links a.tap {
         background-image: url(../../graphics/awwwards_sotd_green_right2x.png); } }
 .form-group {
     margin: 0 8% 1.2em;
+}
+@media (min-width: 1450px) {
+    .marquee-wrapper {
+        width: 1900px;
+    }
+}
+@media (max-width: 1400px) {
+    .marquee-wrapper {
+        width: 1400px;
+    }
+}
+@media (max-width: 1030px) {
+    .marquee-wrapper {
+        width: 1040px;
+    }
+}
+@media (max-width: 980px) {
+    .marquee-wrapper {
+        width: 990px;
+    }
+}
+@media (max-width: 780px) {
+    .marquee-wrapper {
+        width: 770px;
+    }
+}
+.marquee-wrapper {
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    margin-top: -50px;
+}
+
+.marquee-wrapper:after {
+    position: absolute;
+    content: ' ';
+    right: 0;
+    top: 0;
+    width: 50px;
+    height: 100%;
+}
+
+.marquee {
+    white-space: nowrap;
+    margin: 0;
+}
+.toggle-left {
+    transform: rotateZ(-90deg);
+}
+.toggle-right {
+    transform: rotateZ(90deg);
 }
