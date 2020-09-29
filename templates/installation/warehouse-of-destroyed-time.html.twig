@@ -2,8 +2,8 @@
 {% block title %}{{ installation.description }}{% endblock %}
 {% block stylesheets %}
     {{ parent() }}
-    <link href="{{ asset('build/css/23-08-2020.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('build/css/main.css') }}" rel="stylesheet" type="text/css" />
+{#    <link href="{{ asset('build/css/23-08-2020.css') }}" rel="stylesheet" type="text/css" />#}
+    <link href="{{ asset('build/css/30-09-2020.css') }}" rel="stylesheet" type="text/css" />
 {% endblock %}
 
 {% block menu %}
@@ -20,7 +20,7 @@
                     </button>
                 </a>
             </div>
-            <div class="col-md-10 col-12 pl-0">
+            <div class="col-md-10 col-12 pl-0 text-center">
                 <a class="navbar-brand js-scroll-trigger" href="{{ path('homepage') }}">The «METLUG» Theatre - means we're from Lugansk City</a>
             </div>
             <div class="col-1 d-none d-sm-none d-md-block">
@@ -39,30 +39,58 @@
 
 {% block content %}
 
-    <div class="container-fluid" style="text-align: center">
-        <div class="panel" style="display: inline-block">
-            <img src="{{ asset('build/img/wood_texture_fence_knothole_old_wood_texture_wooden_wooden_texture-554367.jpg') }}">
+    <div class="container-fluid" onclick="bodyScroll()">
+            <div class="wrapper">
+                <p class="title mt-35">{{ installation.description }}</p>
+
+                <div class="clip-text clip-text_ten">Жыл был лист бумаги. И был он формата А4. Получен путем деления формата А0. Жыл он в пачке с остальными листами</div>
+            </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div id="warehouse" class="col-8" style="display: none">
+                    <div class="embed-responsive embed-responsive-16by9" style="margin-left:22%;position: absolute; opacity:0.9; margin-top: 80px">
+                        <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/ZNKmyqZ3oPI?showinfo=1&modestbranding=1&rel=0&fs=1&iv_load_policy=3" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <img id="bg" style="width: 100%" src="{{ asset('src/img/bg.jpg') }}">
+                <img id="bg-puzzle" style="display:none; width: 100%; margin-top: -10%" src="{{ asset('src/img/bg_puzzle.png') }}">
+            </div>
         </div>
     </div>
 {% endblock %}
-{% block footer %}{% endblock footer %}
+{% block footer %}
+{#    {{ render(controller('App\\Controller\\CommentController::create', {'installationId': installation.id})) }}#}
+
+    <button id="toggle" class="toggle-i toggle i" data-toggle="modal" data-target="#commandModal" title="Добавить комментарий">
+        <div class="cross">
+            <div class="x"></div>
+            <div class="y"></div>
+        </div>
+    </button>
+    {#    <div id="icon-plus" data-toggle="modal" data-target="#commandModal" title="Добавить комментарий">#}
+    {#        <i class="fas fa-plus fa-2x"></i>#}
+    {#    </div>#}
+{% endblock footer %}
 
 {% block javascripts %}
+    {{ parent() }}
 <script src="{{ asset('build/js/jquery.min.js') }}"></script>
 <script src="{{ asset('build/js/jquery.image-jigsaw.min.js') }}"></script>
-{#<script>#}
-{#    {% if modalShow is defined and modalShow is not null %}#}
-{#    $('#commandModal').modal('show')#}
-{#    {% endif %}#}
-{#</script>#}
+<script>
+    {% if modalShow is defined and modalShow is not null %}
+    $('#commandModal').modal('show')
+    {% endif %}
+</script>
 <script>
     $(document).ready(function() {
-        $(".panel").jigsaw({freq: 2000, x: 4, y:4, margin: 2, callbacks: [{event: 'mouseover', func: function() {
-                    $(this).data('last_bg', $(this).css('background-image'));
-                    $(this).css('background-image', 'none');
-                }}, {event: 'mouseout', func: function() {
-                    $(this).css('background-image', $(this).data('last_bg'));
-                }}]});
     });
+    window.addEventListener('scroll', function() {
+        bodyScroll()
+    })
+    function bodyScroll() {
+        $('#bg').fadeOut(800)
+        $('#bg-puzzle').fadeIn(6000)
+        $('#warehouse').fadeIn(8000)
+    }
     </script>
 {% endblock javascripts %}

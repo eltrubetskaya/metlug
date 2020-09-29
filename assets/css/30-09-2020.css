@@ -1,0 +1,302 @@
+/*
+  Based from this article from Divya Manian -
+  http://nimbupani.com/using-background-clip-for-text-with-css-fallback.html
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+:before,
+:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    font-family: 'Oswald', sans-serif;
+    color: #fff;
+    background-color: #000;
+}
+
+.wrapper {
+    text-align: center;
+}
+
+.title {
+    font-size: 2em;
+    position: relative;
+    margin: 0 auto 1em;
+    padding: 1em 1em .25em 1em;
+    text-align: center;
+    text-transform: uppercase;
+}
+.title:after {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 240px;
+    height: 4px;
+    margin-left: -120px;
+    content: '';
+    background-color: #fff;
+}
+
+/* Clip text element */
+.clip-text {
+    font-size: 1.5em;
+    font-weight: bold;
+    line-height: 1;
+    position: relative;
+    display: inline-block;
+    margin: 0 0 .25em;
+    padding: .5em .75em;
+    text-align: center;
+    /* Color fallback */
+    color: #fff;
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+.clip-text:before,
+.clip-text:after {
+    position: absolute;
+    content: '';
+}
+
+/* Background */
+.clip-text:before {
+    z-index: -2;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: inherit;
+}
+
+/* Text Background (black zone) */
+.clip-text:after {
+    position: absolute;
+    z-index: -1;
+    top: .125em;
+    right: .125em;
+    bottom: .125em;
+    left: .125em;
+    background-color: #000;
+}
+
+/* Change the background position to display letter when the black zone isn't here */
+.clip-text--no-textzone:before {
+    background-position: -.75em 0;
+}
+
+.clip-text--no-textzone:after {
+    content: none;
+}
+
+/* Use Background-size cover for photo background and no-repeat background */
+.clip-text--cover,
+.clip-text--cover:before {
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+/* Background image from http://thepatternlibrary.com/ and http://lorempixel.com */
+.clip-text_one {
+    background-image: url(https://picsum.photos/480/200?random);
+}
+
+.clip-text_two {
+    background-image: url(https://picsum.photos/480/200?grayscale);
+}
+
+.clip-text_tree {
+    background-image: url(https://picsum.photos/480/200?grayscale&random=2);
+}
+
+.clip-text_four {
+    background-image: url(https://picsum.photos/480/200?grayscale&blur=3);
+}
+
+.clip-text_five {
+    background-image: url(https://picsum.photos/480/200?grayscale);
+}
+
+.clip-text_six {
+    background-image: url(https://picsum.photos/480/200?random=3);
+}
+
+.clip-text_seven {
+    background-image: url(https://picsum.photos/480/200?random=4);
+}
+
+.clip-text_eight {
+    background-image: url(https://picsum.photos/480/200?random=6);
+}
+
+.clip-text_nine {
+    background-image: url(https://picsum.photos/480/200?random=5);
+}
+
+.clip-text_ten {
+    background-image: url('../../src/img/bg.jpg');
+}
+
+.clip-text_eleven {
+    background-image: url(https://picsum.photos/480/200?random=8);
+    background-size: cover;
+}
+
+.clip-text_twelve {
+    background-image: url(https://picsum.photos/480/200?random=9);
+}
+
+.clip-text_thirteen {
+    background-image: url(https://picsum.photos/480/200?random=10);
+}
+
+.clip-text_fourteen {
+    background-image: url(https://picsum.photos/480/200?random=11);
+}
+
+.clip-text_fifteen {
+    background-image: url(https://picsum.photos/480/200?random=12);
+}
+.mt-35 {
+    margin-top: 55px;
+}
+
+html.touch .toggle.tap .x, html.touch .toggle.tap .y {
+    background-color: #FFFFFF; }
+
+html.mouse .toggle:hover .x, html.mouse .toggle:hover .y {
+    background-color: #FFFFFF; }
+
+@media all and (min-width: 900px) {
+    .toggle {
+        margin: -24px;
+        bottom: 12%; }
+}
+
+@media all and (min-width: 600px) {
+
+    .toggle {
+        margin: -28px;
+        bottom: 15%; }
+}
+
+@media all and (min-width: 400px) {
+
+    .toggle {
+        bottom: 12%; }
+}
+
+
+.toggle {
+    -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+    margin: -24px;
+    position: absolute;
+    bottom: 11.6%;
+    left: 50%; }
+.toggle.i .cross {
+    -webkit-transform: rotateZ(0deg);
+    -moz-transform: rotateZ(0deg);
+    transform: rotateZ(0deg); }
+.toggle.i .cross .x {
+    margin-left: -2px;
+    width: 4px;
+    margin-top: -12px; }
+.toggle.i .cross .y {
+    margin-top: -4px;
+    height: 16px; }
+
+.cross {
+    -webkit-transform: rotateZ(45deg);
+    -moz-transform: rotateZ(45deg);
+    transform: rotateZ(45deg);
+    position: absolute;
+    left: 50%;
+    top: 50%; }
+.cross .x, .cross .y {
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding-box;
+    background-clip: padding-box;
+    background-color: #1D1F27;
+    height: 4px;
+    width: 4px;
+    margin: -2px;
+    position: absolute;
+    left: 0;
+    top: 0; }
+.cross .x {
+    margin-left: -12px;
+    margin-top: -2px;
+    width: 24px; }
+.cross .y {
+    margin-top: -12px;
+    height: 24px; }
+
+.toggle-left {
+    transform: rotateZ(-90deg);
+}
+.toggle-right {
+    transform: rotateZ(90deg);
+}
+
+button {
+    -webkit-font-smoothing: antialiased;
+    -webkit-border-radius: 24px;
+    -moz-border-radius: 24px;
+    border-radius: 24px;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding-box;
+    background-clip: padding-box;
+    font-size: 1.33333em;
+    line-height: 45.6px;
+    font-family: "Dosis", sans-serif;
+    background-color: #F2F2F2;
+    font-weight: 600;
+    height: 48px;
+    width: 48px;
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    outline: none;
+    border: none; }
+button.hide {
+    opacity: 0; }
+
+html.mouse a:hover, html.mouse button:hover {
+    -webkit-transition: color 0.2s cubic-bezier(0.165, 0.84, 0.44, 1), background-color 0.2s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+    -moz-transition: color 0.2s cubic-bezier(0.165, 0.84, 0.44, 1), background-color 0.2s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: color 0.2s cubic-bezier(0.165, 0.84, 0.44, 1), background-color 0.2s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.2s cubic-bezier(0.165, 0.84, 0.44, 1); }
+html.mouse a:hover {
+    color: #ff755a; }
+html.mouse button:hover {
+    background-color: #D92400;
+    color: #FFFFFF; }
+html.mouse .toggle:hover .x, html.mouse .toggle:hover .y {
+    background-color: #FFFFFF; }
+html.mouse .links a:hover {
+    background-color: #D92400;
+    color: #FFFFFF; }
+#toggle {
+    position: relative;
+    margin-top: -5%
+}
