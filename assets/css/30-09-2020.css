@@ -224,7 +224,12 @@ html.mouse .toggle:hover .x, html.mouse .toggle:hover .y {
         bottom: 12%; }
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (min-width: 1000px) {
+    #warehouse .embed-responsive {
+        margin-left: 50%;
+    }
+}
+@media only screen and (max-width: 1000px) {
     #bg {
         width: auto;
         height: 100%;
