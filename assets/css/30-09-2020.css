@@ -38,6 +38,7 @@ body {
     padding: 1em 1em .25em 1em;
     text-align: center;
     text-transform: uppercase;
+    text-shadow: 2px 2px #000;
 }
 .title:after {
     position: absolute;
@@ -183,6 +184,27 @@ html.touch .toggle.tap .x, html.touch .toggle.tap .y {
 html.mouse .toggle:hover .x, html.mouse .toggle:hover .y {
     background-color: #FFFFFF; }
 
+    #bg {
+        position: fixed;
+        z-index: -9;
+        opacity: 0
+    }
+    #bg-puzzle {
+        position: fixed;
+        z-index: -10;
+        opacity: 0
+    }
+
+@media only screen and (min-width: 400px) {
+    #bg {
+        width: 100%;
+        top:0;
+    }
+    #bg-puzzle {
+        width: 100%;
+        top: 0;
+    }
+}
 @media all and (min-width: 900px) {
     .toggle {
         margin: -24px;
@@ -202,6 +224,24 @@ html.mouse .toggle:hover .x, html.mouse .toggle:hover .y {
         bottom: 12%; }
 }
 
+@media only screen and (max-width: 1024px) {
+    #bg {
+        width: auto;
+        height: 100%;
+        top: 55px;
+        right: -50%;
+    }
+    #bg-puzzle {
+        width: auto;
+        height: 100%;
+        top: 0;
+        right: -50%;
+    }
+}
+#warehouse iframe {
+    padding: .2em 0.2em;
+    background-image: url(../../src/img/bg.jpg);
+}
 
 .toggle {
     -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
@@ -297,6 +337,9 @@ html.mouse .links a:hover {
     background-color: #D92400;
     color: #FFFFFF; }
 #toggle {
-    position: relative;
+    position: fixed;
     margin-top: -5%
+}
+.ml--15 {
+    margin-left: -15px;
 }

@@ -21,7 +21,7 @@
                 </a>
             </div>
             <div class="col-md-10 col-12 pl-0 text-center">
-                <a class="navbar-brand js-scroll-trigger" href="{{ path('homepage') }}">The «METLUG» Theatre - means we're from Lugansk City</a>
+                <a class="navbar-brand js-scroll-trigger" href="{{ path('homepage') }}" title="The «METLUG» Theatre - means we're from Lugansk City">The «METLUG» Theatre - means we're from Lugansk City</a>
             </div>
             <div class="col-1 d-none d-sm-none d-md-block">
                 <a href="#" title="What is next?">
@@ -46,14 +46,14 @@
                 <div class="clip-text clip-text_ten">Жыл был лист бумаги. И был он формата А4. Получен путем деления формата А0. Жыл он в пачке с остальными листами</div>
             </div>
         <div class="row">
-            <div class="col-sm-12">
-                <div id="warehouse" class="col-8" style="display: none">
-                    <div class="embed-responsive embed-responsive-16by9" style="margin-left:22%;position: absolute; opacity:0.9; margin-top: 80px">
+            <div class="col-sm-12  ml--15">
+                <div id="warehouse" class="col-6" style="display: none">
+                    <div class="embed-responsive embed-responsive-16by9" style="margin-left:50%;position: absolute; margin-top: 5%">
                         <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/ZNKmyqZ3oPI?showinfo=1&modestbranding=1&rel=0&fs=1&iv_load_policy=3" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
-                <img id="bg" style="width: 100%" src="{{ asset('src/img/bg.jpg') }}">
-                <img id="bg-puzzle" style="display:none; width: 100%; margin-top: -10%" src="{{ asset('src/img/bg_puzzle.png') }}">
+                <img id="bg" src="{{ asset('src/img/bg.jpg') }}">
+                <img id="bg-puzzle" src="{{ asset('src/img/bg_puzzle.png') }}">
             </div>
         </div>
     </div>
@@ -83,14 +83,27 @@
 </script>
 <script>
     $(document).ready(function() {
+        $('#bg').animate(
+            {
+                opacity: 1
+            }, 6000
+        )
     });
     window.addEventListener('scroll', function() {
         bodyScroll()
     })
     function bodyScroll() {
-        $('#bg').fadeOut(800)
-        $('#bg-puzzle').fadeIn(6000)
-        $('#warehouse').fadeIn(8000)
+        $('#bg').animate(
+            {
+                opacity: 0
+            }, 2000
+        )
+        $('#bg-puzzle').animate(
+            {
+                opacity: 1
+            }, 4000
+        )
+        $('#warehouse').fadeIn(6000)
     }
     </script>
 {% endblock javascripts %}
