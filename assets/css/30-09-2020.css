@@ -191,7 +191,7 @@ html.mouse .toggle:hover .x, html.mouse .toggle:hover .y {
     }
     #bg-puzzle {
         position: fixed;
-        z-index: -10;
+        z-index: -100;
         opacity: 0
     }
 
@@ -242,6 +242,9 @@ html.mouse .toggle:hover .x, html.mouse .toggle:hover .y {
         top: 0;
         right: -50%;
     }
+}
+#warehouse {
+    min-height: 400px;
 }
 #warehouse iframe {
     padding: .2em 0.2em;
