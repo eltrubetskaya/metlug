@@ -38,7 +38,7 @@
 
 {% block content %}
 
-    <div class="container-fluid" onclick="bodyScroll()">
+    <div class="container-fluid">
             <div class="wrapper">
                 <p class="title mt-35">{{ installation.description }}</p>
 
@@ -81,6 +81,23 @@
     {% endif %}
 </script>
 <script>
+    let close = true;
+    function startup() {
+        window.addEventListener('scroll', function() {
+            bodyScroll()
+        })
+        window.addEventListener('click', function() {
+            bodyScroll()
+        })
+        window.addEventListener('touchstart', function() {
+            bodyScroll()
+        })
+        window.addEventListener('touchmove', function() {
+            bodyScroll()
+        })
+    }
+
+    document.addEventListener("DOMContentLoaded", startup);
     $(document).ready(function() {
         $('#bg').animate(
             {
@@ -88,21 +105,21 @@
             }, 6000
         )
     });
-    window.addEventListener('scroll', function() {
-        bodyScroll()
-    })
     function bodyScroll() {
-        $('#bg').animate(
-            {
-                opacity: 0
-            }, 2000
-        )
-        $('#bg-puzzle').animate(
-            {
-                opacity: 1
-            }, 4000
-        )
-        $('#warehouse').fadeIn(6000)
+        if (close) {
+            $('#bg').animate(
+                {
+                    opacity: 0
+                }, 2000
+            )
+            $('#bg-puzzle').animate(
+                {
+                    opacity: 1
+                }, 4000
+            )
+            $('#warehouse').fadeIn(6000)
+            close = false
+        }
     }
     </script>
 {% endblock javascripts %}
