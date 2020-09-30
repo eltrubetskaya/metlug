@@ -12,6 +12,7 @@ class Comment
 {
     public const TYPE_AUDIO = 'audio';
     public const TYPE_VIDEO = 'video';
+    public const TYPE_IMAGE = 'image';
 
     /**
      * @ORM\Id()
@@ -61,6 +62,7 @@ class Comment
     public function __construct()
     {
         $this->setCreatedAt(new \DateTime('now'));
+        $this->setType(self::TYPE_IMAGE);
     }
 
     public function getId(): ?int
@@ -192,9 +194,10 @@ class Comment
             return [
                 ucwords(self::TYPE_AUDIO) => self::TYPE_AUDIO,
                 ucwords(self::TYPE_VIDEO) => self::TYPE_VIDEO,
+                ucwords(self::TYPE_IMAGE) => self::TYPE_IMAGE,
             ];
         }
 
-        return [self::TYPE_AUDIO, self::TYPE_VIDEO];
+        return [self::TYPE_AUDIO, self::TYPE_VIDEO, self::TYPE_IMAGE];
     }
 }

@@ -29,12 +29,12 @@ class CommentType extends AbstractType
                 ]
             ])
             ->add('mediaLink', TextType::class, [
-                'required' => false,
+                'required' => true,
                 'label' => false,
                 'attr' => [
                     'placeholder' => 'https://...'
                 ],
-                'help' => '<i class="fa fa-info-circle" aria-hidden="true"></i> Вставьте прямую ссылку на видео из youtube или на mp3 файл',
+                'help' => '<i class="fa fa-info-circle" aria-hidden="true"></i> Вставьте прямую ссылку на файл',
                 'help_html' => true
             ])
             ->add('type', ChoiceType::class, [

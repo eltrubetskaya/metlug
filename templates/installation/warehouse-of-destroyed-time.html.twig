@@ -58,7 +58,104 @@
     </div>
 {% endblock %}
 {% block footer %}
-{#    {{ render(controller('App\\Controller\\CommentController::create', {'installationId': installation.id})) }}#}
+    <!-- Modal -->
+    <div class="modal fade" id="commandModal" tabindex="-1" role="dialog" aria-labelledby="commandModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-muted">
+                    <h6 class="modal-title">Дорогой зритель, <br>
+                        <small>без твоего эмоционального восприятия эта фантазия будет не полной. Оставь, пожалуйста, свою бегущую...
+                        <br>Оставить комментарий и проследить за динамичным изменением этого фантазийного видениея можно в любой момент до следующей инсталляции в сентябре 2020.</small></h6>
+                    <a href="#" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </a>
+                </div>
+                {% if app.user %}
+                    {{ form_start(form) }}
+                    <div class="modal-header text-muted">
+                        <h5 class="modal-title" id="exampleModalLongTitle">{{ app.user }}</h5>
+                    </div>
+                    <div class="modal-body">
+                        <div class="d-none">{{ form_row(form.username) }}
+                        {{ form_row(form.text) }}</div>
+
+                        {{ form_row(form.mediaLink) }}
+                        <div class="d-none">{{ form_row(form.type) }}</div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="col-6 pr-0">
+
+                        </div>
+                        <div class="col-6 pl-0 pr-0">
+                            <button type="submit" class="col-12 btn btn-secondary" style="height: auto">Оставить Комментарий</button>
+                        </div>
+                    </div>
+                    {{ form_end(form) }}
+                {% else %}
+                    {{ form_start(form) }}
+                    <div class="modal-body">
+                        {{ form_widget(form.username) }}
+                        <hr>
+                        <div class="d-none">{{ form_row(form.text) }}</div>
+
+                        {{ form_row(form.mediaLink) }}
+                        <div class="d-none">{{ form_row(form.type) }}</div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="col-6 pr-0">
+                            <a class="btn btn-primary" href="{{ path('connect_google_start') }}"><i class="fab fa-google"></i><span style="margin-left: 15px;font-weight: bold;">Bойти в Google</span></a>
+                        </div>
+                        <div class="col-6 pl-0 pr-0">
+                            <button type="submit" class="col-12 btn btn-secondary" style="height: auto">Оставить Комментарий</button>
+                        </div>
+                    </div>
+                    {{ form_end(form) }}
+                {% endif %}
+                <div class="col-md-12 col-sm-12">
+                    <div class="comments-list">
+                        {% for comment in comments %}
+                            {% if comment.user %}
+                                {% set avatar = comment.user.avatar %}
+                                {% set user = comment.user %}
+                            {% else %}
+                                {% set avatar = asset('src/img/logo.jpg') %}
+                                {% set user = comment.username %}
+                            {% endif %}
+                            <div class="col-sm-12 text-muted">
+                                <div class="media">
+                                    <div class="media-body text-left">
+                                        <h4 class="media-heading user_name">
+                                            <img style="width: 40px" class="rounded-circle" src="{{ avatar }}" alt=""> {{ user }}
+                                        </h4>
+                                        <div class="text-left">
+                                            <h6><small>{{ comment.createdAt|date('Y-m-d H:i') }}</small></h6>
+                                        </div>
+                                        {% if comment.type == 'audio' %}
+                                            <audio  controlsList="nodownload" controls style="z-index: 150;width: 100%">
+                                                <source src="{{ comment.mediaLink }}" type="audio/mpeg">
+                                                Your browser does not support the audio element.
+                                            </audio>
+                                        {% endif %}
+                                        {% if comment.type == 'video' %}
+                                            <div class="embed-responsive embed-responsive-16by9">
+                                                <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/{{ comment.mediaLink }}?showinfo=1&modestbranding=1&rel=0&fs=1&iv_load_policy=3" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                            </div>
+                                        {% endif %}
+                                        {% if comment.type == 'image' %}
+                                            <div class="col-12" >
+                                                <img width="300px" height="300px" style="background-image: url({{ comment.mediaLink }}); background-repeat: no-repeat; background-size: 270px 270px;" src="{{ asset('src/img/puzzle_1.png') }}" alt="{{ installation.description }}">
+                                            </div>
+
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <button id="toggle" class="toggle-i toggle i" data-toggle="modal" data-target="#commandModal" title="Добавить комментарий">
         <div class="cross">
@@ -66,18 +163,13 @@
             <div class="y"></div>
         </div>
     </button>
-    {#    <div id="icon-plus" data-toggle="modal" data-target="#commandModal" title="Добавить комментарий">#}
-    {#        <i class="fas fa-plus fa-2x"></i>#}
-    {#    </div>#}
 {% endblock footer %}
 
 {% block javascripts %}
     {{ parent() }}
-<script src="{{ asset('build/js/jquery.min.js') }}"></script>
-<script src="{{ asset('build/js/jquery.image-jigsaw.min.js') }}"></script>
 <script>
     {% if modalShow is defined and modalShow is not null %}
-    $('#commandModal').modal('show')
+        $('#commandModal').modal('show')
     {% endif %}
 </script>
 <script>
@@ -99,6 +191,7 @@
 
     document.addEventListener("DOMContentLoaded", startup);
     $(document).ready(function() {
+        $('#comment_text').text('puzzle')
         $('#bg').animate(
             {
                 opacity: 1
