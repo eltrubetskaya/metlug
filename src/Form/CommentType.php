@@ -19,13 +19,13 @@ class CommentType extends AbstractType
                 'label' => false,
                 'required' => false,
                 'attr' => [
-                    'placeholder' => 'Введите ваше имя'
+                    'placeholder' => 'Введите Ваше Имя'
                 ]
             ])
             ->add('text', TextareaType::class, [
                 'label' => false,
                 'attr' => [
-                    'placeholder' => 'Оставьте комментарий'
+                    'placeholder' => 'Оставьте Комментарий'
                 ]
             ])
             ->add('mediaLink', TextType::class, [
@@ -34,7 +34,7 @@ class CommentType extends AbstractType
                 'attr' => [
                     'placeholder' => 'https://...'
                 ],
-                'help' => '<i class="fa fa-info-circle" aria-hidden="true"></i> Вставьте прямую ссылку на файл',
+                'help' => '<i class="fa fa-info-circle" aria-hidden="true"></i> Здесь можно добавить прямую ссылку на файл',
                 'help_html' => true
             ])
             ->add('type', ChoiceType::class, [
