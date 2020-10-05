@@ -6,6 +6,7 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "doctrine/doctrine-migrations-bundle": "^2.1",
+        "filestack/filestack-php": "^1.1",
         "knpuniversity/oauth2-client-bundle": "^2.1",
         "league/oauth2-google": "^3.0",
         "sensio/framework-extra-bundle": "^5.5",

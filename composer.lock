@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "791ab2fa918e69baba6a56af9e2c493f",
+    "content-hash": "cb62c3eb6ee4c38151c32193ed2abf63",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1272,6 +1272,46 @@
                 "validator"
             ],
             "time": "2020-06-16T20:11:17+00:00"
+        },
+        {
+            "name": "filestack/filestack-php",
+            "version": "1.1.12",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/filestack/filestack-php.git",
+                "reference": "5396650b246969fec929fdd2c6ab908adb5b28e2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/filestack/filestack-php/zipball/5396650b246969fec929fdd2c6ab908adb5b28e2",
+                "reference": "5396650b246969fec929fdd2c6ab908adb5b28e2",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "~6.0",
+                "php": ">=5.6"
+            },
+            "require-dev": {
+                "mockery/mockery": "dev-master",
+                "phploc/phploc": "^4.0",
+                "phpmd/phpmd": "@stable",
+                "phpunit/phpunit": "^5.7",
+                "satooshi/php-coveralls": "^1.0",
+                "theseer/phpdox": "^0.10.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Filestack\\": "filestack",
+                    "Filestack\\Mixins\\": "filestack/mixins"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "description": "A Filestack library for PHP",
+            "time": "2018-02-08T22:52:39+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
