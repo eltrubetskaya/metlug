@@ -53,7 +53,7 @@ body {
 
 /* Clip text element */
 .clip-text {
-    font-size: 1.5em;
+    font-size: 2em;
     font-weight: bold;
     line-height: 1;
     position: relative;
@@ -151,7 +151,7 @@ body {
 }
 
 .clip-text_ten {
-    background-image: url('../../src/img/bg.jpg');
+    background-image: url('../../src/img/poster1.png');
 }
 
 .clip-text_eleven {
@@ -185,26 +185,18 @@ html.mouse .toggle:hover .x, html.mouse .toggle:hover .y {
     background-color: #FFFFFF; }
 
     #bg {
-        position: fixed;
+        position: relative;
         z-index: -9;
-        opacity: 0
+        opacity: 0;
+        height: 100%;
+        width: 100%;
     }
     #bg-puzzle {
-        position: fixed;
+        position: relative;
         z-index: -100;
-        opacity: 0
-    }
-
-@media only screen and (min-width: 400px) {
-    #bg {
+        display: none;
         width: 100%;
-        top:0;
     }
-    #bg-puzzle {
-        width: 100%;
-        top: 0;
-    }
-}
 @media all and (min-width: 900px) {
     .toggle {
         margin: -24px;
@@ -216,31 +208,32 @@ html.mouse .toggle:hover .x, html.mouse .toggle:hover .y {
     .toggle {
         margin: -28px;
         bottom: 15%; }
+    .clip-text {
+        font-size: 2em;
+    }
+    .title {
+        font-size: 1.6em;
+    }
 }
 
-@media all and (min-width: 400px) {
+@media all and (min-width: 350px) {
 
     .toggle {
         bottom: 12%; }
+    .clip-text {
+        font-size: 1.5em;
+    }
+    .title {
+        font-size: 1.2em;
+    }
+    #warehouse {
+        margin-left: 15%;
+    }
 }
 
 @media only screen and (min-width: 1000px) {
     #warehouse .embed-responsive {
-        margin-left: 50%;
-    }
-}
-@media only screen and (max-width: 1000px) {
-    #bg {
-        width: auto;
-        height: 100%;
-        top: 55px;
-        right: -50%;
-    }
-    #bg-puzzle {
-        width: auto;
-        height: 100%;
-        top: 0;
-        right: -50%;
+        margin-left: 15%;
     }
 }
 #warehouse {
@@ -248,7 +241,7 @@ html.mouse .toggle:hover .x, html.mouse .toggle:hover .y {
 }
 #warehouse iframe {
     padding: .2em 0.2em;
-    background-image: url(../../src/img/bg.jpg);
+    background-image: url(../../src/img/poster1.png);
 }
 
 .toggle {

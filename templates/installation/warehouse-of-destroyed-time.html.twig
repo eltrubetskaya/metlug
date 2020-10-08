@@ -38,21 +38,23 @@
 
 {% block content %}
 
-    <div class="container-fluid">
-            <div class="wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="wrapper col-12">
                 <p class="title mt-35">{{ installation.description }}</p>
 
-                <div class="clip-text clip-text_ten"><a href="#">Жил был лист бумаги. И он был формата a четыре. Получен путем последовательного деления формата a ноль. Был он в пачке с остальными листами</a></div>
+                <div class="clip-text clip-text_ten"><a href="#">Жил был лист бумаги. И он был формата «A четыре». Получен путем последовательного деления формата «A ноль». Был он в пачке с остальными листами</a></div>
             </div>
+        </div>
         <div class="row">
-            <div class="col-sm-12  ml--15">
-                <div id="warehouse" class="col-lg-6 col-md-12" style="display: none">
-                    <div class="embed-responsive embed-responsive-16by9" style="position: absolute; margin-top: 5%;margin-bottom: 35%;">
+            <div class="col-12">
+                <div id="warehouse" class="col-lg-6 col-8" style="display: none; position: absolute;margin-top: 15%;">
+                    <div class="embed-responsive embed-responsive-16by9">
                         <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/ZNKmyqZ3oPI?showinfo=1&modestbranding=1&rel=0&fs=1&iv_load_policy=3" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
-                <img id="bg" src="{{ asset('src/img/background.png') }}">
-                <img id="bg-puzzle" src="{{ asset('src/img/bg_puzzle.png') }}">
+                <img id="bg" src="{{ asset('src/img/poster1.png') }}">
+                <img id="bg-puzzle" src="{{ asset('src/img/poster2.gif') }}">
             </div>
         </div>
     </div>
@@ -204,17 +206,11 @@
     });
     function bodyScroll() {
         if (close) {
-            $('#bg').animate(
-                {
-                    opacity: 0
-                }, 2000
-            )
-            $('#bg-puzzle').animate(
-                {
-                    opacity: 1
-                }, 4000
-            )
-            $('#warehouse').fadeIn(6000)
+            $('#bg').css('display', 'none')
+            $('#bg-puzzle').css('display', 'block')
+            setTimeout(function () {
+                $('#warehouse').fadeIn(6000)
+            }, 3000)
             close = false
         }
     }
