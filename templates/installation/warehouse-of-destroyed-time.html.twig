@@ -7,7 +7,7 @@
 
 {% block menu %}
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="opacity: 0" id="mainNav">
         <div class="container-fluid">
             <div class="col-1 d-none d-sm-none d-md-block">
                 <a href="{{ path('installation_show', {title: '23-08-2020'}) }}" title="Александр Грин. Фантазийное видение.">
@@ -40,7 +40,7 @@
 
     <div class="container">
         <div class="row">
-            <div class="wrapper col-12">
+            <div class="wrapper col-12" style="opacity: 0">
                 <p class="title mt-35">{{ installation.description }}</p>
 
                 <div class="clip-text clip-text_ten"><a href="#">Жил был лист бумаги. И он был формата «A четыре». Получен путем последовательного деления формата «A ноль». Был он в пачке с остальными листами</a></div>
@@ -163,7 +163,7 @@
         </div>
     </div>
 
-    <button id="toggle" class="toggle-i toggle i" data-toggle="modal" data-target="#commandModal" title="Добавить комментарий">
+    <button id="toggle" class="toggle-i toggle i" data-toggle="modal" data-target="#commandModal" title="Добавить комментарий" style="opacity: 0">
         <div class="cross">
             <div class="x"></div>
             <div class="y"></div>
@@ -210,6 +210,11 @@
             $('#bg-puzzle').css('display', 'block')
             setTimeout(function () {
                 $('#warehouse').fadeIn(6000)
+                $('#toggle, .wrapper, .navbar').animate(
+                    {
+                        opacity: 1
+                    }, 6000
+                )
             }, 3000)
             close = false
         }
