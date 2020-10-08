@@ -20,7 +20,9 @@
                 </a>
             </div>
             <div class="col-md-10 col-12 pl-0 text-center">
-                <a class="navbar-brand js-scroll-trigger" href="{{ path('homepage') }}" title="The «METLUG» Theatre - means we're from Lugansk City">The «METLUG» Theatre - means we're from Lugansk City</a>
+                <a class="navbar-brand js-scroll-trigger" href="{{ path('homepage') }}">
+                    <span class="notranslate" translate="no">{{ "The «METLUG» Theatre - means we're from Lugansk City"|raw }}</span>
+                </a>
             </div>
             <div class="col-1 d-none d-sm-none d-md-block">
                 <a href="{{ path('installation_show', {title: '15-10-2020'}) }}" title="Фридрих Ницше">
@@ -43,7 +45,12 @@
             <div class="wrapper col-12" style="opacity: 0">
                 <p class="title mt-35">{{ installation.description }}</p>
 
-                <div class="clip-text clip-text_ten"><a href="#">Жил был лист бумаги. И он был формата «A четыре». Получен путем последовательного деления формата «A ноль». Был он в пачке с остальными листами</a></div>
+                <div class="clip-text clip-text_ten">
+                    <a href="#">
+                        <span class="notranslate" translate="no">
+                            {{ "Жил был лист бумаги. И он был формата «A четыре». Получен путем последовательного деления формата «A ноль». Был он в пачке с остальными листами"|raw}} </span>
+                    </a>
+                </div>
             </div>
         </div>
         <div class="row">
@@ -66,13 +73,16 @@
             <div class="modal-content">
                 <div class="modal-header text-muted">
                     <h4 class="modal-title text-center">
-                        Дорогой зритель, <br>
-                        <small> Платформа МЭТЛуг открывает новый жанр.
-                        Вcе свои комментарии или ассоциации можно выслать в виде картинки.  <br>
-                        Оставь, пожалуйста, на хранение свой кусок пазла... на Складе Разрушенного Времени.. <br> <br>
-                        Изменения будут возможны для исполнителей и для зрителей по нашей заведенной традиции до следующей инсталляции.
+                        Дорогой зритель! <br>
+                        <small> Новый жанр театра «МЭТЛУГ»! <br>
+                            Комментарии, ассоциации или свой</small> <strong style="text-decoration: underline">«эмоциональный всплеск»</strong> <br>
+                            <small>на тему инсталляции жанра <br>
+                            СКЛАД РАЗРУШЕННОГО ВРЕМЕНИ <br>
+                        оставь, пожалуйста, храниться здесь. <br>
+                            Без твоего пазла этот склад конечно же будет тукслым и незаполненным.
+                        Традиционно изменения будут возможны для участников
+                            и наблюдателей по заведённой традиции до следующей инсталляции.
                         <br>
-                        Также можете просмотреть <a href="{{ path('homepage') }}">завершенные предыдущие инсталляции</a>.
                         </small>
                     </h4>
                     <a href="#" class="close" data-dismiss="modal" aria-label="Close">
@@ -208,7 +218,7 @@
                         opacity: 1
                     }, 6000
                 )
-            }, 3000)
+            }, 6000)
             close = false
         }
     }
