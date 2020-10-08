@@ -32,6 +32,9 @@ body {
     margin-bottom: -5%;
 }
 
+.custom-file-label::after {
+    content: "Выбрать файл" !important;
+}
 .title {
     font-size: 2em;
     position: relative;

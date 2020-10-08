@@ -40,3 +40,7 @@ services:
         - "@mailer"
         - "%env(MAILER_FROM)%"
         - "@twig"
+
+    App\Service\UploadService:
+        arguments:
+        - "%env(FILE_STACK_API_KEY)%"
