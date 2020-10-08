@@ -2,6 +2,7 @@
 
 namespace App\Service;
 
+use Filestack\Filelink;
 use Filestack\FilestackClient;
 use Filestack\FilestackException;
 use Psr\Log\LoggerInterface;
@@ -23,12 +24,10 @@ class UploadService
         $this->logger = $logger;
     }
 
-    public function upload($filepath)
+    public function upload($filepath): ?string
     {
         try {
-            $fileLink =  $this->client->upload($filepath);
-
-            return $fileLink;
+            return $this->client->upload($filepath)->handle;
         } catch (FilestackException $exception) {
             $this->logger->error(self::class . ': ' . $exception->getMessage());
         }

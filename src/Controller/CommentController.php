@@ -9,11 +9,14 @@ use App\Form\CommentType;
 use App\Repository\CommentRepository;
 use App\Repository\UserRepository;
 use App\Service\MailService;
+use App\Service\UploadService;
 use Doctrine\Common\Collections\Criteria;
 use Psr\Log\LoggerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -39,7 +42,14 @@ class CommentController extends AbstractController
     /**
      * @Route("/create", name="comment_create", methods={"GET","POST"})
      */
-    public function create(Request $request, Installation $installation, UserRepository $repository, MailService $mailService, LoggerInterface $logger): Response
+    public function create(
+        Request $request,
+        Installation $installation,
+        UserRepository $repository,
+        MailService $mailService,
+        LoggerInterface $logger,
+        UploadService $fileStack
+    ): Response
     {
         $comment = new Comment();
         $comment->setInstallation($installation);
@@ -50,6 +60,32 @@ class CommentController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            /** @var UploadedFile $mediaLink */
+            $mediaLink = $form->get('mediaLink')->getData();
+
+            if ($mediaLink) {
+                $originalFilename = pathinfo($mediaLink->getClientOriginalName(), PATHINFO_FILENAME);
+                // this is needed to safely include the file name as part of the URL
+                $safeFilename = transliterator_transliterate('Any-Latin; Latin-ASCII; [^A-Za-z0-9_] remove; Lower()', $originalFilename);
+                $newFilename = $safeFilename . '-' . uniqid('', true) . '.' . $mediaLink->guessExtension();
+
+                // Move the file to the directory where brochures are stored
+                try {
+                    $mediaLink->move(
+                        $this->getParameter('upload_directory'),
+                        $newFilename
+                    );
+                    $link = $fileStack->upload($this->getParameter('upload_directory'). $newFilename);
+                    if ($link) {
+                        $comment->setMediaLink('https://cdn.filestackcontent.com/resize=height:300,width:300,fit:crop/output=compress:true,quality:70,strip:true/' . $link);
+                    }
+                } catch (FileException $e) {
+                    $logger->critical($e->getMessage());
+                }
+            }
+
+
+
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($comment);
             $entityManager->flush();

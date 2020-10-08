@@ -36,7 +36,7 @@ class CommentType extends AbstractType
                 'mapped' => false,
                 'constraints' => [
                     new File([
-                        'maxSize' => '1024k',
+                        'maxSize' => '20M',
                         'mimeTypes' => [
                             'image/jpeg',
                             'image/pjpeg',
@@ -46,8 +46,8 @@ class CommentType extends AbstractType
                         'mimeTypesMessage' => 'Please upload a valid jpeg, jpg, png file',
                     ])
                 ],
-//                'help' => '<i class="fa fa-info-circle" aria-hidden="true"></i> Здесь можно добавить прямую ссылку на файл',
-//                'help_html' => true
+                'help' => '<i class="fa fa-info-circle" aria-hidden="true"></i> Поддерживаемые форматы jpeg, jpg, png',
+                'help_html' => true
             ])
             ->add('type', ChoiceType::class, [
                 'required' => false,

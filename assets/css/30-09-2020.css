@@ -68,8 +68,6 @@ body {
     /* Color fallback */
     color: #fff;
     -webkit-background-clip: text;
-
-    -webkit-text-fill-color: transparent;
 }
 
 .clip-text:before,
@@ -225,7 +223,7 @@ html.mouse .toggle:hover .x, html.mouse .toggle:hover .y {
     .toggle {
         bottom: 12%; }
     .clip-text {
-        font-size: 1.5em;
+        font-size: 1.4em;
     }
     .title {
         font-size: 1.2em;
