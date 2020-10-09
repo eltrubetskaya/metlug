@@ -45,3 +45,5 @@ services:
     App\Service\UploadService:
         arguments:
         - "%env(FILE_STACK_API_KEY)%"
+        - "%env(FILE_STACK_API_SECRET))%"
+        - "@logger"
