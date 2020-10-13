@@ -3,6 +3,9 @@
 {% block stylesheets %}
     {{ parent() }}
     <link href="{{ asset('build/css/30-09-2020.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('build/css/default.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('build/css/component.css') }}" rel="stylesheet" type="text/css" />
+    <script src="{{ asset('build/js/modernizr.custom.js') }}"></script>
 {% endblock %}
 
 {% block menu %}
@@ -47,11 +50,20 @@
                     {{ installation.description }}
                 </p>
 
-                <div class="clip-text clip-text_ten">
-                    <a href="#">
-                        <span class="notranslate" translate="no">
-                            {{ "Жил был лист бумаги. И он был формата «A четыре». Получен путем последовательного деления формата «A ноль». Был он в пачке с остальными листами"|raw}} </span>
-                    </a>
+                <div style="cursor: pointer" class="clip-text clip-text_ten md-trigger" data-modal="modal-8">
+                        <div class="notranslate" translate="no">
+                            {{ "Жил был лист бумаги. И он был формата «A четыре». Получен путем последовательного деления формата «A ноль». Был он в пачке с остальными листами"|raw}} </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="md-modal md-effect-8" id="modal-8" style="margin-top: -15%">
+            <div class="md-content">
+                <button class="md-close">Close</button>
+                <div id="warehouse-prev" class="col-12">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/kmuE0xplo9g?showinfo=1&modestbranding=1&rel=0&fs=1&iv_load_policy=3" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
                 </div>
             </div>
         </div>
@@ -60,11 +72,6 @@
                 <div id="warehouse" class="col-lg-6 col-8" style="display: none; position: absolute;margin-top: 15%;">
                     <div class="embed-responsive embed-responsive-16by9">
                         <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/ayO_GQpSejk?showinfo=1&modestbranding=1&rel=0&fs=1&iv_load_policy=3" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div id="warehouse-prev" class="col-lg-6 col-8" style="display: none; position: absolute;margin-top: 15%;">
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/kmuE0xplo9g?showinfo=1&modestbranding=1&rel=0&fs=1&iv_load_policy=3" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
                 <img id="bg" src="{{ asset('src/img/poster1.png') }}">
@@ -113,6 +120,14 @@
            Давайте попробуем...
                         </pre>
                 </div>
+
+                <div class="modal-footer">
+                    <div class="col-12 pr-0 text-center">
+                        <a href="#" class="close" style="display: contents" data-dismiss="modal" aria-label="Close">
+                            <i class="fa fa-times" style="color: red"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -138,9 +153,6 @@
                         <br>
                         </small>
                     </h4>
-                    <a href="#" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </a>
                 </div>
                 {% if app.user %}
                     {{ form_start(form) }}
@@ -214,6 +226,14 @@
                             </div>
                         {% endfor %}
                     </div>
+                    <div class="modal-footer">
+                        <div class="col-12 pr-0 text-center">
+                            <a href="#" class="close" style="display: contents" data-dismiss="modal" aria-label="Close">
+                                <i class="fa fa-times" style="color: red"></i>
+                            </a>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -225,6 +245,7 @@
             <div class="y"></div>
         </div>
     </button>
+    <div class="md-overlay"></div><!-- the overlay element -->
 {% endblock footer %}
 
 {% block javascripts %}
@@ -250,6 +271,10 @@
             bodyScroll()
         })
     }
+    $('.md-close').on('click', function () {
+        $iframe = $('iframe.embed-responsive-item');
+        $iframe.attr("src", $iframe.attr("src"));
+    })
 
     document.addEventListener("DOMContentLoaded", startup);
     $(document).ready(function() {
@@ -281,4 +306,16 @@
         $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
     });
     </script>
+    <!-- classie.js by @desandro: https://github.com/desandro/classie -->
+    <script src="{{ asset('build/js/classie.js') }}"></script>
+    <script src="{{ asset('build/js/modalEffects.js') }}"></script>
+
+    <!-- for the blur effect -->
+    <!-- by @derSchepp https://github.com/Schepp/CSS-Filters-Polyfill -->
+    <script>
+        // this is important for IEs
+        var polyfilter_scriptpath = '/js/';
+    </script>
+    <script src="{{ asset('build/js/cssParser.js') }}"></script>
+    <script src="{{ asset('build/js/css-filters-polyfill.js') }}"></script>
 {% endblock javascripts %}
