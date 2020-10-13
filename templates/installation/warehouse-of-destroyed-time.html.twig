@@ -43,7 +43,9 @@
     <div class="container">
         <div class="row">
             <div class="wrapper col-12" style="opacity: 0">
-                <p class="title mt-35">{{ installation.description }}</p>
+                <p class="title mt-35"  data-toggle="modal" data-target="#titleModal" style="cursor: pointer">
+                    {{ installation.description }}
+                </p>
 
                 <div class="clip-text clip-text_ten">
                     <a href="#">
@@ -57,7 +59,12 @@
             <div class="col-12">
                 <div id="warehouse" class="col-lg-6 col-8" style="display: none; position: absolute;margin-top: 15%;">
                     <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/ZNKmyqZ3oPI?showinfo=1&modestbranding=1&rel=0&fs=1&iv_load_policy=3" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/ayO_GQpSejk?showinfo=1&modestbranding=1&rel=0&fs=1&iv_load_policy=3" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div id="warehouse-prev" class="col-lg-6 col-8" style="display: none; position: absolute;margin-top: 15%;">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/kmuE0xplo9g?showinfo=1&modestbranding=1&rel=0&fs=1&iv_load_policy=3" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
                 <img id="bg" src="{{ asset('src/img/poster1.png') }}">
@@ -67,6 +74,48 @@
     </div>
 {% endblock %}
 {% block footer %}
+    <!-- Modal -->
+    <div class="modal fade" id="titleModal" tabindex="-1" role="dialog" aria-labelledby="commandModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-muted">
+                        <pre class="text-left">
+Время...     время не лечит.     Время
+меняет...Меняет жизнь,мир и меняется
+вместе ...    «...всё на свете портится
+от времени...и тогда обиделось время
+и застыли маятники времени»-...-«но не
+хочу знать,что время лечит... не
+исцеляет,а калечит - ведь всё проходит
+вместе » .      Всё проходит?     А
+что -то же остаётся?...     Может
+быть склад разрушенного временем?
+Пожалуй, вернее -
+       Склад Разрушенного Времени...
+Нельзя вернуться в прошлое и изменить
+старт.    Но можно стартовать сейчас
+и изменить финиш.   Друзья,
+современники, единомышленники!
+Призываем вас стать соучастниками,
+соавторами данной инсталляции. Вы
+можете извлечь из своего склада
+разрушенного времени фрагмент,
+который явится новым пазлом в
+предлагаемой инсталляции. Это может
+быть  картинка-ваши ассоциации,
+визуализации важного   Упущенного
+временем фрагмента возможностей...
+а может и стартонуть в данном
+временном отрезке и принять участие
+в осуществлении нового жанра,
+создаваемого театром «МЭТЛУГ»по воле
+времени и обстоятельств ...
+           Давайте попробуем...
+                        </pre>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Modal -->
     <div class="modal fade" id="commandModal" tabindex="-1" role="dialog" aria-labelledby="commandModalTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">

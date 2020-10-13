@@ -244,10 +244,10 @@ html.mouse .toggle:hover .x, html.mouse .toggle:hover .y {
         font-size: 1.75em;
     }
 }
-#warehouse {
+#warehouse, #warehouse-prev {
     min-height: 400px;
 }
-#warehouse iframe {
+#warehouse iframe, #warehouse-prev iframe{
     padding: .2em 0.2em;
     background-image: url(../../src/img/poster1.png);
 }
