@@ -9,7 +9,11 @@ body {
     line-height: 1.7;
     color: gray;
     font-weight: 300;
-    font-size: 1.1rem; }
+    font-size: 1.1rem;
+    /*background-image: url("../../src/img/zaratustra.jpg");*/
+    /*background-size: contain;*/
+    /*background-repeat: no-repeat;*/
+}
 
 ::-moz-selection {
     background: #000;
