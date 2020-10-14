@@ -245,7 +245,7 @@ html.mouse .toggle:hover .x, html.mouse .toggle:hover .y {
     }
 }
 #warehouse, #warehouse-prev {
-    min-height: 400px;
+    min-height: 300px;
 }
 #warehouse iframe, #warehouse-prev iframe{
     padding: .2em 0.2em;
@@ -347,8 +347,54 @@ html.mouse .links a:hover {
     color: #FFFFFF; }
 #toggle {
     position: fixed;
-    margin-top: -5%
+    bottom: 17%
 }
 .ml--15 {
     margin-left: -15px;
+}
+#puzzle-left-top {
+    opacity: 0;
+    position: absolute;
+    height: 23%;
+    width: 15%;
+    margin-left: 5%;
+    margin-top: 3%;
+    cursor: pointer;
+    z-index: 100000;
+    background: none;
+}
+#puzzle-left-bottom {
+    opacity: 0;
+    position: absolute;
+    height: 23%;
+    width: 15%;
+    margin-left: 5%;
+    margin-top: 30%;
+    cursor: pointer;
+    z-index: 100000;
+    background: none;
+}
+
+#puzzle-right-bottom {
+    opacity: 0;
+    position: absolute;
+    height: 23%;
+    width: 15%;
+    margin-left: 58%;
+    margin-top: 25%;
+    cursor: pointer;
+    z-index: 100000;
+    background: none;
+}
+
+#puzzle-right-top {
+    opacity: 0;
+    position: absolute;
+    height: 23%;
+    width: 15%;
+    margin-left: 58%;
+    margin-top: 3%;
+    cursor: pointer;
+    z-index: 100000;
+    background: none;
 }
