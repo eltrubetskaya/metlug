@@ -246,6 +246,28 @@
         </div>
     </button>
     <div class="md-overlay"></div><!-- the overlay element -->
+    <!-- Footer -->
+    <footer class="footer" style="z-index: 200;position: relative;opacity: 0">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-1 col-sm-1">
+                    <ul class="list-inline social-buttons">
+                        <li class="list-inline-item">
+                            <a href="https://www.youtube.com/channel/UCiq3o9MMI6CsE7Tug1AY5Ew/videos" title="Youtube Театр МЭТЛУГ" target="_blank">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-sm-8">
+                    <span class="copyright"> &copy; МЭТЛУГ 1995-{{"now"|date("Y")}}</span>
+                </div>
+                <div class="col-md-8 col-sm-12">
+                    <p class="text-center" style="color: white;font-size: 7px;position: absolute;">* Нецензурные, экстремистские и несоответствующие общечеловеческой морали высказывания будут немедленно удалены.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 {% endblock footer %}
 
 {% block javascripts %}
@@ -291,7 +313,7 @@
             $('#bg-puzzle').css('display', 'block')
             setTimeout(function () {
                 $('#warehouse').fadeIn(6000)
-                $('#toggle, .wrapper, .navbar').animate(
+                $('#toggle, .wrapper, .navbar, .footer').animate(
                     {
                         opacity: 1
                     }, 6000
