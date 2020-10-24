@@ -3,12 +3,9 @@
 {% block stylesheets %}
     {{ parent() }}
     <link href="https://fonts.googleapis.com/css?family=Oswald:400,700|Muli:300,400,700,900" rel="stylesheet">
-{#    <link href="{{ asset('build/css/30-09-2020.css') }}" rel="stylesheet" type="text/css" />#}
     <link rel="stylesheet" href="{{ asset('build/css/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ asset('build/css/owl.theme.default.min.css') }}">
     <link rel="stylesheet" href="{{ asset('build/css/jquery.fancybox.min.css') }}">
-{#    <link rel="stylesheet" href="{{ asset('build/css/bootstrap-datepicker.css') }}">#}
-{#    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">#}
     <link rel="stylesheet" href="{{ asset('build/css/aos.css') }}">
     <link rel="stylesheet" href="{{ asset('build/css/15-10-2020.css') }}">
 {% endblock %}
@@ -57,9 +54,9 @@
 
 
 <div class="site-wrap">
-    <div class="section-bg">
-        <img src="{{ asset('src/img/zaratustra.jpg') }}" alt="">
-    </div>
+{#    <div class="section-bg">#}
+{#        <img src="{{ asset('src/img/zaratustra.jpg') }}" alt="">#}
+{#    </div>#}
 
 {#    <div class="custom-owl-carousel" id="home-section">#}
 {#        <div class="container">#}
@@ -132,7 +129,11 @@
 {#                            <h3>Ницше - величайшее явление</h3>#}
 {#                            <p>В 1889г. Фридрих Ницше спас лошадь от человека, защитил от кнута. Это был последний сознательний жест великого философа. За этим последовало 11 лет безумия и смерть ровно в 1900 г.<a href="https://www.youtube-nocookie.com/embed/PsR7u4Nk-Ps?start=5&end=1650&showinfo=1&modestbranding=1&rel=0&fs=1&iv_load_policy=3" class="video-img-bg" data-fancybox data-ratio="2">Фридрих Ницше особая фигура в истории человеческой философской мысли...</a></p>#}
 {#                        </div>#}
-                        <a href="https://www.youtube-nocookie.com/embed/7fFFz-PDrxM?showinfo=1&modestbranding=1&rel=0&fs=1&iv_load_policy=3" class="video-img-bg" data-fancybox data-ratio="2"><img src="{{ asset('src/img/nietzsche-04.jpg') }}" alt="Image" class="img-fluid">
+                        <a href="https://www.youtube-nocookie.com/embed/7fFFz-PDrxM?showinfo=1&modestbranding=1&rel=0&fs=1&iv_load_policy=3" class="video-img-bg" data-fancybox data-ratio="2">
+
+                            <div data-relative-input="true" id="scene">
+                                <div data-depth="0.6"><img src="{{ asset('src/img/nietzsche-04.png') }}" alt="Image" class="img-fluid"></div>
+                            </div>
                         </a>
                     </div>
                 </div>
@@ -368,4 +369,5 @@
     <script src="{{ asset('build/js/jquery.animateNumber.min.js') }}"></script>
     <script src="{{ asset('build/js/jquery.sticky.js') }}"></script>
     <script src="{{ asset('build/js/main.js') }}"></script>
+
 {% endblock %}
