@@ -1,0 +1,301 @@
+/* === CSS RESET === */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* === End of CSS RESET === */
+
+body {
+	background: url(../../src/img/books-4.jpg) center;
+	color: white;
+	font-size: 20px;
+	font-family: "Terminal Dosis", sans-serif;
+	text-shadow: 
+		1px 1px 0 transparent,
+		2px 2px 0 #101010;
+	overflow: hidden;
+	background-size: cover;
+}
+h1 {
+	font-size: 75px;
+	font-weight: bold;
+	line-height: 1.5em;
+	text-shadow: 
+		2px 2px 0 transparent,
+		4px 4px 0 #101010;
+}
+
+a, a:visited {
+	color: white;
+	text-decoration: none;
+	border-bottom: 2px dotted;
+	transition: color 0.2s;
+}
+
+a:hover {
+	color: #AAA;
+}
+
+a:active {
+	color: lightblue;
+}
+
+.big {
+	display: block;
+	font-size: 30px;
+	font-weight: bold;
+	line-height: 1.3em;
+	margin-bottom: 100px;
+	text-shadow: 
+		2px 2px 0 transparent,
+		4px 4px 0 #101010;
+}
+
+.wrapper div {
+	position: absolute;
+}
+
+.settings, nav {
+	position: fixed;
+	z-index: 9999999;
+	bottom: 0;
+	background: rgba(10,10,10, 0.5);
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: normal;
+	font-size: 20px;
+}
+.overlay {
+	background: rgba(10,10,10, 0.5);
+	height: 100vh;
+	position: absolute;
+	width: 100%;
+}
+.settings {
+	right: 0;
+	padding: 10px 20px;
+	border-radius: 10px 0 0 0;
+}
+
+.settings a {
+	border: none;
+}
+
+nav {
+	left: 0;
+	border-radius: 0 10px 0 0;
+}
+
+nav li {
+	float: left;
+}
+
+nav a {
+	display: block;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	border: none;
+	text-align: center;
+	transition: 0.25s;
+}
+
+nav li:last-child a {
+	border-radius: 0 10px 0 0;
+}
+
+nav a:hover {
+	background: rgba(15,15,15, 0.5);
+}
+
+.sp-canvas {
+	display: none;
+}
+
+.arrow {
+	position: relative;
+	display: inline-block;
+}
+
+.demo { 
+	width: 800px;
+	font-size: 30px;
+	text-align: center;
+	font-weight: bold;
+}
+
+.demo .arrow {
+	font-size: 20px;
+	animation: point-down 0.5s alternate infinite;
+}
+
+.description {
+	top: 740px;
+	left: 180px;
+	width: 440px;
+}
+
+.syntax {
+	top: 1510px;
+	left: 430px;
+	width: 400px;
+}
+
+.scrollbar {
+	top: 1540px;
+	left: 1600px;
+	width: 400px;
+}
+
+.rotations {
+	left: 2185px;
+	top: 660px;
+	width: 460px;
+	transform: rotate(-90deg) translateY(2.5em);
+}
+
+.rotations .upside-down {
+	font-size: 30px;
+	text-align: right;
+	transform: rotate(180deg) translateY(3em);
+}
+
+.source {
+	left: 2200px;
+	top: -800px;
+	width: 400px;
+	transform: rotate(90deg) translateX(50px);
+}
+
+.follow {
+	width: 475px;
+	left: 1100px;
+	top: -950px;
+	transform: rotate(90deg) translateX(50px);
+}
+
+.follow .big {
+	font-size: 30px;
+}
+
+.highlight {
+	animation: highlight 0.2s alternate 6 ;
+}
+
+@keyframes point-down {
+	from {
+		top: 0;
+	}
+	to {
+		top: 5px;
+	}
+}
+
+@keyframes highlight {
+	to {
+		background: lightblue;
+	}
+}
+
+
+.toggle {
+	-webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+	-moz-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+	margin: -24px;
+	position: absolute;
+	bottom: 11.6%;
+	left: 50%; }
+.toggle.i .cross {
+	-webkit-transform: rotateZ(0deg);
+	-moz-transform: rotateZ(0deg);
+	transform: rotateZ(0deg); }
+.toggle.i .cross .x {
+	margin-left: -2px;
+	width: 4px;
+	margin-top: -12px; }
+.toggle.i .cross .y {
+	margin-top: -4px;
+	height: 16px; }
+
+.cross {
+	-webkit-transform: rotateZ(45deg);
+	-moz-transform: rotateZ(45deg);
+	transform: rotateZ(45deg);
+	position: absolute;
+	left: 50%;
+	top: 50%; }
+.cross .x, .cross .y {
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	-webkit-background-clip: padding-box;
+	-moz-background-clip: padding-box;
+	background-clip: padding-box;
+	background-color: #1D1F27;
+	height: 4px;
+	width: 4px;
+	margin: -2px;
+	position: absolute;
+	left: 0;
+	top: 0; }
+.cross .x {
+	margin-left: -12px;
+	margin-top: -2px;
+	width: 24px; }
+.cross .y {
+	margin-top: -12px;
+	height: 24px; }
+
+.toggle-left {
+	transform: rotateZ(-90deg);
+}
+.toggle-right {
+	transform: rotateZ(90deg);
+}
+button {
+	-webkit-font-smoothing: antialiased;
+	-webkit-border-radius: 24px;
+	-moz-border-radius: 24px;
+	border-radius: 24px;
+	-webkit-background-clip: padding-box;
+	-moz-background-clip: padding-box;
+	background-clip: padding-box;
+	font-size: 1.33333em;
+	line-height: 45.6px;
+	font-family: "Dosis", sans-serif;
+	background-color: #F2F2F2;
+	font-weight: 600;
+	height: 48px;
+	width: 48px;
+	position: relative;
+	display: block;
+	margin: 0 auto;
+	outline: none;
+	border: none; }
+button.hide {
+	opacity: 0; }
