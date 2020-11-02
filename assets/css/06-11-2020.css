@@ -33,12 +33,13 @@ table {
 body {
 	background: url(../../src/img/books-4.jpg) center;
 	color: white;
-	font-size: 20px;
+	font-size: 2rem;
 	font-family: "Terminal Dosis", sans-serif;
 	text-shadow: 
 		1px 1px 0 transparent,
 		2px 2px 0 #101010;
 	overflow: hidden;
+	-webkit-overflow-scrolling: touch;
 	background-size: cover;
 }
 h1 {
@@ -67,7 +68,7 @@ a:active {
 
 .big {
 	display: block;
-	font-size: 30px;
+	font-size: 1.8rem;
 	font-weight: bold;
 	line-height: 1.3em;
 	margin-bottom: 100px;
@@ -179,7 +180,7 @@ nav a:hover {
 }
 
 .rotations .upside-down {
-	font-size: 30px;
+	font-size: 1.8rem;
 	text-align: right;
 	transform: rotate(180deg) translateY(3em);
 }

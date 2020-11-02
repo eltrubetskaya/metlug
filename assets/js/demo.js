@@ -77,14 +77,7 @@ function init() {
 		open(this.href, "", "width=550, height=450");
 		e.preventDefault();
 	});
-
-	$.getJSON("http://cdn.api.twitter.com/1/urls/count.json?callback=?&url=http%3A%2F%2Fjoelb.me%2Fscrollpath",
-			function(data) {
-				if(data && data.count !== undefined) {
-					$(".follow .count").html("the " + ordinal(data.count + 1) + " kind person to");
-				}
-			});
-	}
+}
 
 
 function highlight(element) {
