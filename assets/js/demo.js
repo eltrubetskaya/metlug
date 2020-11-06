@@ -51,7 +51,7 @@ function init() {
 	$(".wrapper").scrollPath({drawPath: true, wrapAround: true});
 
 	// Add scrollTo on click on the navigation anchors
-	$("nav").find("a").each(function() {
+	$(".nav-footer").find("a").each(function() {
 		var target = $(this).attr("href").replace("#", "");
 		$(this).click(function(e) {
 			e.preventDefault();
@@ -60,22 +60,6 @@ function init() {
 			// for extra easing functions like the one below
 			$.fn.scrollPath("scrollTo", target, 1000, "easeInOutSine");
 		});
-	});
-
-	/* ===================================================================== */
-
-	$(".settings .show-path").click(function(e) {
-		e.preventDefault();
-		$(".sp-canvas").toggle();
-	}).toggle(function() {
-		$(this).text("Hide Path");
-	}, function() {
-		$(this).text("Show Path");
-	});
-
-	$(".tweet").click(function(e) {
-		open(this.href, "", "width=550, height=450");
-		e.preventDefault();
 	});
 }
 

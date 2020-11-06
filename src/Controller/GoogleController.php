@@ -42,6 +42,6 @@ class GoogleController extends AbstractController
      */
     public function connectCheck(Request $request, ClientRegistry $clientRegistry)
     {
-        return $this->redirectToRoute('installation_show', ['title' => 'warehouse-of-destroyed-time', 'modalShow' => true]);
+        return $this->redirectToRoute('installation_show', ['title' => '06-11-2020', 'modalShow' => true]);
     }
 }

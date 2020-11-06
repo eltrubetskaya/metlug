@@ -300,3 +300,11 @@ button {
 	border: none; }
 button.hide {
 	opacity: 0; }
+.modal-dialog {
+	max-width: 800px;
+	text-shadow: none;
+	font-size: 27px;
+}
+nav a:hover {
+	background: none;
+}

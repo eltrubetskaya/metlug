@@ -31,7 +31,7 @@ class CommentType extends AbstractType
                 ]
             ])
             ->add('mediaLink', FileType::class, [
-                'required' => true,
+                'required' => false,
                 'label' => false,
                 'mapped' => false,
                 'constraints' => [

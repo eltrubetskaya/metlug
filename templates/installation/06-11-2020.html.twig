@@ -6,6 +6,7 @@
     <script type="text/javascript" src="{{ asset('build/js/prefixfree.min.js') }}"></script>
     {{ parent() }}
     <link rel="stylesheet" type="text/css" href="{{ asset('build/css/06-11-2020.css') }}" />
+    <link rel="stylesheet" href="{{ asset('build/css/jquery.fancybox.min.css') }}">
 {% endblock %}
 
 
@@ -53,7 +54,7 @@
 {#            </div>#}
 {#        </div>#}
 {#    </div>#}
-    <nav>
+    <nav class="nav-footer">
         <ul>
             <li><a href="#start">1</a></li>
             <li><a href="#description">2</a></li>
@@ -68,7 +69,11 @@
     <div class="wrapper">
         <div class="demo">
             <h1>Саша Соколов</h1>
-            <span class="arrow">&darr;</span> Школа для дураков <span class="arrow">&darr;</span>
+            <span class="arrow">&darr;</span>
+            <a href="https://www.youtube-nocookie.com/embed/nbR1jEf3E24?showinfo=1&modestbranding=1&rel=0&fs=1&iv_load_policy=3" class="video-img-bg" data-fancybox data-ratio="2">
+                Школа для дураков
+            </a>
+            <span class="arrow">&darr;</span>
         </div>
 
         <div class="description">
@@ -98,10 +103,170 @@
             <span class="big">Хитер. Хитер и робок народ мой перед сыном его.</span>
         </div>
     </div>
+    <button id="toggle" class="toggle-i toggle i" data-toggle="modal" data-target="#commandModal" title="Добавить комментарий">
+        <div class="cross">
+            <div class="x"></div>
+            <div class="y"></div>
+        </div>
+    </button>
+    <!-- Modal -->
+    <div class="modal fade" id="commandModal" tabindex="-1" role="dialog" aria-labelledby="commandModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-muted">
+                    <p>
+                        <br>В Ленинграде-городе, у пяти углов,
+                        <br>Получил по морде Саня Соколов.
+                        <br>Пел не музыкально, скандалил.
+                        <br>Ну и значит правильно, что дали.
+                        <br>
+                        <br>В Ленинграде-городе тишь и благодать.
+                        <br>Где шпана и ворог где, - их просто не видать.
+                        <br>Правда - не сравнить с Афинами, прохладно.
+                        <br>Правда шведы с финами, ну ладно.
+                        <br>
+                        <br>В Ленинграде-городе, как везде такси;
+                        <br>Но не остановят - гады, даже не проси.
+                        <br>Если водку сильно пьешь, по пьянке -
+                        <br>Не захочешь, а дойдешь к стоянке.
+                        <br>
+                        <br>В Ленинграде-городе, у пяти углов,
+                        <br>Получил по морде наш Санька Соколов.
+                        <br>Пел не музыкально, говорят: скандалил.
+                        <br>Ну и значит правильно, что дали
+                        <br>
+                    <span class="text-right" style="display: block">B. Высоцкий</span>
+                    <br><br><br>
+                        ...Что тра кто там
+                        <br>та где там
+                        <br>там там Вета ветла ветлы
+                        <br>ветка там за окном в доме том
+                        <br>тра та том о  ком  о  чем
+                        <br>о Ветке ветлы о ветре
+                        <br>тарарам трамваи т р а м в а и аи
+                        <br>вечер добрый билеты би леты
+                        <br>чего нет Леты
+                        <br>реки Леты ее нету
+                        <br>вам аи цвета ц Вета  ц Альфа  Вета  Гамма
+                        <br>и так далее чего никто не знает
+                        <br>потому что никто не хотел учить нас греческому
+                        <br>было непростительной ошибкой с их стороны
+                        <br>не  то  не  та  нетто брутто  Италия
+                        <br>итальянский  человек  Данте
+                        <br>человек  Бруно человек Леонардо
+                        <br>... хочу стрекоз ... <a href="/lib/shkola.txt" class="text-muted" target="_blank" > читать полностью</a>
+                        <br>
+                        <span class="text-right" style="display: block">C. Соколов</span>
+                    </p>
+                </div>
+                                {% if app.user %}
+                                    {{ form_start(form) }}
+                                    <div class="modal-header text-muted">
+                                        <h5 class="modal-title" id="exampleModalLongTitle">{{ app.user }}</h5>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="d-none">{{ form_row(form.username) }}</div>
+                                        {{ form_row(form.text) }}
+
+                                        <div class="d-none">{{ form_row(form.mediaLink) }}</div>
+                                        <div class="d-none">{{ form_row(form.type) }}</div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <div class="col-6 pr-0">
+
+                                        </div>
+                                        <div class="col-6 pl-0 pr-0">
+                                            <button type="submit" class="col-12 btn btn-secondary" style="height: auto">Оставить Комментарий</button>
+                                        </div>
+                                    </div>
+                                    {{ form_end(form) }}
+                                {% else %}
+                                    {{ form_start(form) }}
+                                    <div class="modal-body">
+                                        {{ form_widget(form.username) }}
+                                        <hr>
+                                        <div class="">{{ form_row(form.text) }}</div>
+                                        <div class="custom-file d-none">
+                                            {{ form_row(form.mediaLink) }}
+                                        </div>
+                                        <div class="d-none">{{ form_row(form.type) }}</div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <div class="col-6 pr-0">
+                                            <a class="btn btn-primary" href="{{ path('connect_google_start') }}"><i class="fab fa-google"></i><span style="margin-left: 15px;font-weight: bold;">Bойти в Google</span></a>
+                                        </div>
+                                        <div class="col-6 pl-0 pr-0">
+                                            <button type="submit" class="col-12 btn btn-secondary" style="height: auto">Оставить Комментарий</button>
+                                        </div>
+                                    </div>
+                                    {{ form_end(form) }}
+                                {% endif %}
+                <div class="col-md-12 col-sm-12">
+                    <div class="comments-list">
+                        {% for comment in comments %}
+                            {% if comment.user %}
+                                {% set avatar = comment.user.avatar %}
+                                {% set user = comment.user %}
+                            {% else %}
+                                {% set avatar = asset('src/img/logo.jpg') %}
+                                {% set user = comment.username %}
+                            {% endif %}
+                            <div class="col-sm-12 text-muted">
+                                <div class="media">
+                                    <div class="media-body text-left">
+                                        <h4 class="media-heading user_name"><img style="width: 40px" class="rounded-circle" src="{{ avatar }}" alt=""> {{ user }}</h4>
+                                            {{ comment.text|raw }}
+                                    </div>
+                                    <div class="text-right">
+                                        <p><small>{{ comment.createdAt|date('Y-m-d H:i') }}</small></p>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class="modal-footer">
+                        <div class="col-12 pr-0 text-center">
+                            <a href="#" class="close" style="display: contents" data-dismiss="modal" aria-label="Close">
+                                <i class="fa fa-times" style="color: red"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
 
 {% endblock %}
 {% block footer %}
-    
+    <!-- Footer -->
+    <nav class="footer" style="    position: fixed;
+    z-index: 9999999;
+    bottom: 0;
+    background: rgba(10,10,10, 0.5);
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    right: 0;
+    font-size: 20px;
+    float: right;
+    left: 60%;
+    padding: 25px 36px 5px 10px;
+    border-radius: 5px;">
+                    <ul class="list-inline social-buttons">
+                        <li class="list-inline-item">
+                            <a href="https://www.youtube.com/channel/UCiq3o9MMI6CsE7Tug1AY5Ew/videos" title="Youtube Театр МЭТЛУГ" target="_blank">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <span class="copyright"> &copy; МЭТЛУГ 1995-{{"now"|date("Y")}}</span>
+                        </li>
+                        <li>
+                            <p class="text-center" style="color: white;font-size: 7px;position: absolute;">* Нецензурные, экстремистские и несоответствующие общечеловеческой морали высказывания будут немедленно удалены.</p>
+                        </li>
+                    </ul>
+
+                        </nav>
 {% endblock %}
 
 {% block javascripts %}
@@ -115,4 +280,5 @@
     <script type="text/javascript" src="{{ asset('build/js/jquery.easing.1.3.js') }}"></script>
     <script type="text/javascript" src="{{ asset('build/js/jquery.scrollpath.js') }}"></script>
     <script type="text/javascript" src="{{ asset('build/js/demo.js') }}"></script>
+    <script src="{{ asset('build/js/jquery.fancybox.min.js') }}"></script>
 {% endblock %}
