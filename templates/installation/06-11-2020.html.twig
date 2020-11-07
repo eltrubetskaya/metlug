@@ -54,7 +54,7 @@
 {#            </div>#}
 {#        </div>#}
 {#    </div>#}
-    <nav class="nav-footer">
+    <nav class="nav-footer" style="z-index: 1">
         <ul>
             <li><a href="#start">1</a></li>
             <li><a href="#description">2</a></li>
@@ -244,8 +244,8 @@
 {% endblock %}
 {% block footer %}
     <!-- Footer -->
-    <nav class="footer" style="    position: fixed;
-    z-index: 9999999;
+    <nav class="footer d-none d-sm-none d-md-block" style="position: fixed;
+    z-index: 1;
     bottom: 0;
     background: rgba(10,10,10, 0.5);
     font-family: Helvetica, Arial, sans-serif;
