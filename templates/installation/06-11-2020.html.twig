@@ -222,6 +222,12 @@
                                     <div class="media-body text-left">
                                         <h4 class="media-heading user_name"><img style="width: 40px" class="rounded-circle" src="{{ avatar }}" alt=""> {{ user }}</h4>
                                             {{ comment.text|raw }}
+
+                                        {% if comment.type == 'image' and comment.mediaLink %}
+                                            <div class="col-12" >
+                                                <img width="300px" height="300px" src="{{ comment.mediaLink }}" alt="{{ installation.description }}">
+                                            </div>
+                                        {% endif %}
                                     </div>
                                     <div class="text-right">
                                         <p><small>{{ comment.createdAt|date('Y-m-d H:i') }}</small></p>
