@@ -42,11 +42,15 @@ class CommentType extends AbstractType
                             'image/pjpeg',
                             'image/png',
                             'image/webp',
+                            'audio/mpeg3',
+                            'audio/x-mpeg-3',
+                            'audio/mpeg',
+                            'audio/x-mpeg'
                         ],
-                        'mimeTypesMessage' => 'Please upload a valid jpeg, jpg, png file',
+                        'mimeTypesMessage' => 'Please upload a valid jpeg, jpg, png, mp3 file',
                     ])
                 ],
-                'help' => '<i class="fa fa-info-circle" aria-hidden="true"></i> Поддерживаемые форматы jpeg, jpg, png',
+                'help' => '<i class="fa fa-info-circle" aria-hidden="true"></i> Поддерживаемые форматы jpeg, jpg, png, mp3',
                 'help_html' => true
             ])
             ->add('type', ChoiceType::class, [

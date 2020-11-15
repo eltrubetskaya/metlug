@@ -161,6 +161,8 @@
                         <br>... хочу стрекоз ... <a href="{{ path('lib_read', {title: 'shkola'}) }}" class="text-muted" target="_blank" > читать полностью</a>
                         <br>
                         <span class="text-right" style="display: block">C. Соколов</span>
+                        <br><br><br>
+                        <small style="font-size: 20px">Если у Вас есть что сказать, можете сказать здесь. Приветствуеться любое высказывание на тему "Саша Соколов". Традиционно любые изменения будут возможны для участников и наблюдателей только до следующей инсталляции, которая начнется 24 декабря 2020года "....."!</small>
                     </p>
                 </div>
                                 {% if app.user %}
@@ -172,8 +174,8 @@
                                         <div class="d-none">{{ form_row(form.username) }}</div>
                                         {{ form_row(form.text) }}
 
-                                        <div class="d-none">{{ form_row(form.mediaLink) }}</div>
-                                        <div class="d-none">{{ form_row(form.type) }}</div>
+                                        <div style="font-size: 20px">{{ form_row(form.mediaLink) }}</div>
+                                        <div>{{ form_row(form.type) }}</div>
                                     </div>
                                     <div class="modal-footer">
                                         <div class="col-6 pr-0">
@@ -186,14 +188,14 @@
                                     {{ form_end(form) }}
                                 {% else %}
                                     {{ form_start(form) }}
-                                    <div class="modal-body">
+                                    <div class="modal-body" >
                                         {{ form_widget(form.username) }}
                                         <hr>
                                         <div class="">{{ form_row(form.text) }}</div>
-                                        <div class="custom-file d-none">
+                                        <div class="custom-file">
                                             {{ form_row(form.mediaLink) }}
                                         </div>
-                                        <div class="d-none">{{ form_row(form.type) }}</div>
+                                        <div  style="font-size: 20px">{{ form_row(form.type) }}</div>
                                     </div>
                                     <div class="modal-footer">
                                         <div class="col-6 pr-0">
@@ -297,6 +299,11 @@
         {% if modalShow is defined and modalShow is not null %}
         $('#commandModal').modal('show')
         {% endif %}
+        // Add the following code if you want the name of the file appear on select
+        $(".custom-file-input").on("change", function() {
+            var fileName = $(this).val().split("\\").pop();
+            $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+        });
     </script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-latest.pack.js"></script>
     <script type="text/javascript" src="{{ asset('build/js/jquery.easing.1.3.js') }}"></script>
