@@ -1,0 +1,345 @@
+{% extends 'layout.html.twig' %}
+{% block title %}{{ installation.description }}{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="https://fonts.googleapis.com/css?family=Oswald:400,700|Muli:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('build/css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/css/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/css/jquery.fancybox.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/css/aos.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/css/15-10-2020.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('build/css/24-12-2020.css') }}" />
+{% endblock %}
+
+
+{% block menu %}
+    <div class="overlay"></div>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark pb-0" id="mainNav">
+        <div class="container-fluid">
+            <div class="col-1 d-none d-sm-none d-md-block">
+                <a href="{{ path('installation_show', {title: '06-11-2020'}) }}" title="Саша Соколов">
+                    <button class="toggle-i toggle i toggle-left">
+                        <div class="cross">
+                            <div class="x"></div>
+                            <div class="y"></div>
+                        </div>
+                    </button>
+                </a>
+            </div>
+            <div class="col-md-10 col-12">
+                <a class="navbar-brand js-scroll-trigger" href="{{ path('homepage') }}">
+                    <span class="notranslate" translate="no">{{ "The «METLUG» Theatre - means we're from Lugansk City"|raw }}</span>
+                </a>
+            </div>
+            <div class="col-1 d-none d-sm-none d-md-block">
+                <button class="toggle i" style="font-size: 16px; cursor: pointer" data-toggle="modal" data-target="#modal-2020">
+                        2020
+                    </button>
+            </div>
+        </div>
+    </nav>
+{% endblock %}
+
+{% block content %}
+        <div class="site-section section-2" id="work-section" data-aos="fade" style="padding-top: 20px">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 mb-5 text-center">
+                        <h2 class="section-title" style="max-width: initial">Сочельник у МЭТЁлки</h2>
+                        <p>Дорогой Друг, <br>
+                            приглашаем тебя на Рождественский Сочельник у Мэтёлки. Онлайн инсталляция состоится 24 декабря 2020 года в 20:00 по луганскому времени.
+                            Ждем Вас за праздничным столом при наличии новогодней атрибутики со своим подарком. Каждый участник будет находиться в организованном им самим пространстве, при условии что в кадре есть стол или его часть и плюс какой-нибудь еще новогодний атрибут(мишура, шары, игрушки, еловые ветки...). Инсталляция будет создаваться в течении 33 минут в реальном времени. На сольный выход каждого участника отводится время от 11 до 1 минуты в зависимости от количества пришедших. Для этого просим подтвердить своё присутствие заполнив форму.
+                            Уже подтвердили свое участие:
+                            -
+
+                            как обычно в театре будет три звонка:
+                            20:00 - первый звонок
+                            20:01 - второй звонок
+                            20:05 - третий звонок
+                            после третьего колокольчика вход на перформанс будет невозможен. С этого момента через 33 минуты можно будет посмотреть его в записи.
+                            С верой и любовью,
+                            вечно Ваш МЭТЛУГ
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    <button id="toggle" class="toggle-i toggle i" data-toggle="modal" data-target="#commandModal" title="Добавить комментарий">
+        <div class="cross">
+            <div class="x"></div>
+            <div class="y"></div>
+        </div>
+    </button>
+    <!-- Modal -->
+    <div class="modal fade" id="commandModal" tabindex="-1" role="dialog" aria-labelledby="commandModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-muted text-center">
+                    <p>Оставьте, пожалуйста, свои поздравления и пожелания до конца текущего года, <br>т.е. до 31.12.2020 23:59:59</p>
+                </div>
+                                {% if app.user %}
+                                    {{ form_start(form) }}
+                                    <div class="modal-header text-muted">
+                                        <h5 class="modal-title" id="exampleModalLongTitle">{{ app.user }}</h5>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="d-none">{{ form_row(form.username) }}</div>
+                                        {{ form_row(form.text) }}
+
+                                        <div style="font-size: 20px">{{ form_row(form.mediaLink) }}</div>
+                                        <div>{{ form_row(form.type) }}</div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <div class="col-6 pr-0">
+
+                                        </div>
+                                        <div class="col-6 pl-0 pr-0">
+                                            <button type="submit" class="col-12 btn btn-secondary" style="height: auto">Оставить Комментарий</button>
+                                        </div>
+                                    </div>
+                                    {{ form_end(form) }}
+                                {% else %}
+                                    {{ form_start(form) }}
+                                    <div class="modal-body" >
+                                        {{ form_widget(form.username) }}
+                                        <hr>
+                                        <div class="">{{ form_row(form.text) }}</div>
+                                        <div class="custom-file">
+                                            {{ form_row(form.mediaLink) }}
+                                        </div>
+                                        <div  style="font-size: 20px">{{ form_row(form.type) }}</div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <div class="col-6 pr-0">
+                                            <a class="btn btn-primary" href="{{ path('connect_google_start') }}"><i class="fab fa-google"></i><span style="margin-left: 15px;font-weight: bold;">Bойти в Google</span></a>
+                                        </div>
+                                        <div class="col-6 pl-0 pr-0">
+                                            <button type="submit" class="col-12 btn btn-secondary" style="height: auto">Оставить Комментарий</button>
+                                        </div>
+                                    </div>
+                                    {{ form_end(form) }}
+                                {% endif %}
+                <div class="col-md-12 col-sm-12">
+                    <div class="comments-list">
+                        {% for comment in comments %}
+                            {% if comment.user %}
+                                {% set avatar = comment.user.avatar %}
+                                {% set user = comment.user %}
+                            {% else %}
+                                {% set avatar = asset('src/img/logo.jpg') %}
+                                {% set user = comment.username %}
+                            {% endif %}
+                            <div class="col-sm-12 text-muted">
+                                <div class="media">
+                                    <div class="media-body text-left">
+                                        <h4 class="media-heading user_name"><img style="width: 40px" class="rounded-circle" src="{{ avatar }}" alt=""> {{ user }}</h4>
+                                            {{ comment.text|raw }}
+
+                                        {% if comment.type == 'image' and comment.mediaLink %}
+                                            <div class="col-12" >
+                                                <img width="300px" height="300px" src="{{ comment.mediaLink }}" alt="{{ installation.description }}">
+                                            </div>
+                                        {% endif %}
+                                    </div>
+                                    <div class="text-right">
+                                        <p><small>{{ comment.createdAt|date('Y-m-d H:i') }}</small></p>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class="modal-footer">
+                        <div class="col-12 pr-0 text-center">
+                            <a href="#" class="close" style="display: contents" data-dismiss="modal" aria-label="Close">
+                                <i class="fa fa-times" style="color: red"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="modal-2020" tabindex="-1" role="dialog" aria-labelledby="commandModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-muted">
+                    <div class="row text-center">
+
+                        <div class="col-md-12 col-sm-12 portfolio-item">
+                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+                                <img class="port-img img-fluid" src="{{ asset('build/img/clock.gif') }}" alt="">
+                            </a>
+                            <div class="portfolio-caption">
+                                <h4>82 года В.Высоцкому.</h4>
+                                <p class="text-muted">Мы поздравляем: "Что остаётся... потом.. после того, как."</p>
+                                <p class="text-muted">25.01.2020</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 col-sm-12 portfolio-item">
+                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal17">
+                                <img class="port-img img-fluid" src="{{ asset('build/img/IMG-20200326-WA0007-COLLAGE.jpg') }}" alt="">
+                            </a>
+                            <div class="portfolio-caption">
+                                <h4>Молодёжный Эмоциональный Театр Луганска 25 лет, как уже здесь!..</h4>
+                                <p class="text-muted"></p>
+                                <p class="text-muted">27.03.2020</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 col-sm-12 portfolio-item">
+                            <a class="portfolio-link" href="{{ path('app_page_view', {title: '08-05-2020'})}}">
+                                <img class="port-img img-fluid" src="{{ asset('build/img/Larisa.png') }}" alt="">
+                            </a>
+                            <div class="portfolio-caption">
+                                <h4>Объявление</h4>
+                                <p class="text-muted">Что тебе дала Лариса ?</p>
+                                <p class="text-muted">08.05.2020</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 col-sm-12 portfolio-item">
+                            <a class="portfolio-link" href="{{ path('installation_show', {title: '32-05-2020'}) }}">
+                                <img class="port-img img-fluid" src="{{ asset('build/img/bucket.jpg') }}" alt="">
+                            </a>
+                            <div class="portfolio-caption">
+                                <h4>Угол плача или Угол Перед Лицом Мира</h4>
+                                <p class="text-muted"></p>
+                                <p class="text-muted">01.06.2020</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 col-sm-12 portfolio-item">
+                            <a class="portfolio-link" href="{{ path('installation_show', {title: '09-07-2020'}) }}">
+                                <img class="port-img img-fluid" src="{{ asset('build/img/kyrehin_sergei.jpg') }}" alt="">
+                            </a>
+                            <div class="portfolio-caption">
+                                <h4>День памяти Сергея Курёхина.</h4>
+                                <p class="text-muted"></p>
+                                <p class="text-muted">09.07.2020</p>
+                            </div>
+                        </div>
+                    <div class="col-md-12 col-sm-12 portfolio-item">
+                        <a class="portfolio-link" href="{{ path('installation_show', {title: '25-07-2020'}) }}">
+                            <img class="port-img img-fluid" src="{{ asset('src/img/7.jpg') }}" alt="">
+                        </a>
+                        <div class="portfolio-caption">
+                            <h4>Высоцкий В. С.</h4>
+                            <p class="text-muted">" Вспоминая, поминая, читая, почитая..."</p>
+                            <p class="text-muted">25.07.2020</p>
+                        </div>
+                    </div>
+                        <div class="col-md-12 col-sm-12 portfolio-item">
+                            <a class="portfolio-link" href="{{ path('installation_show', {title: '23-08-2020'}) }}">
+                                <img class="port-img img-fluid" src="{{ asset('src/img/grin-vertical.jpg') }}" alt="">
+                            </a>
+                            <div class="portfolio-caption">
+                                <h4>Александр Грин.</h4>
+                                <p class="text-muted">Фантазийное видение.</p>
+                                <p class="text-muted">23.08.2020</p>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12 portfolio-item">
+                            <a class="portfolio-link" href="{{ path('installation_show', {title: 'warehouse-of-destroyed-time'}) }}">
+                                <img class="port-img img-fluid" src="{{ asset('src/img/wh.jpg') }}" alt="">
+                            </a>
+                            <div class="portfolio-caption">
+                                <h4>Склад разрушенного времени</h4>
+                                <p class="text-muted"></p>
+                                <p class="text-muted">30.09.2020
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12 portfolio-item">
+                            <a class="portfolio-link" href="{{ path('installation_show', {title: '15-10-2020'}) }}">
+                                <img class="port-img img-fluid" src="{{ asset('src/img/nietzsche-04.jpg') }}" alt="">
+                            </a>
+                            <div class="portfolio-caption">
+                                <h4>Фридрих Ницше</h4>
+                                <p class="text-muted"></p>
+                                <p class="text-muted">15.10.2020
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12 portfolio-item">
+                            <a class="portfolio-link" href="{{ path('installation_show', {title: '06-11-2020'}) }}">
+                                <img class="port-img img-fluid" src="{{ asset('src/img/books-4.jpg') }}" alt="">
+                            </a>
+                            <div class="portfolio-caption">
+                                <h4>Саша Соколов</h4>
+                                <p class="text-muted"></p>
+                                <p class="text-muted">06.11.2020
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 col-sm-12 portfolio-item">
+                            <a class="portfolio-link" href="{{ path('installation_show', {title: '24-12-2020'}) }}">
+                                <img class="port-img img-fluid" src="{{ asset('src/img/вихрь 9 (1).jpg') }}" alt="">
+                            </a>
+                            <div class="portfolio-caption">
+                                <h4>Сочельник у МЭТЁлки</h4>
+                                <p class="text-muted"></p>
+                                <p class="text-muted">24.12.2020
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <div class="modal-footer">
+                        <div class="col-12 text-center">
+                            <a href="#" class="close" style="display: contents" data-dismiss="modal" aria-label="Close">
+                                <i class="fa fa-times" style="color: red"></i>
+                            </a>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+            {% block footer %}
+                <footer class="footer" style="z-index: 200;position: fixed;/* max-width: 100%; */width: 100%;bottom: 0;">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-md-1 col-sm-1">
+                                <ul class="list-inline social-buttons">
+                                    <li class="list-inline-item">
+                                        <a href="https://www.youtube.com/channel/UCiq3o9MMI6CsE7Tug1AY5Ew/videos" title="Youtube Театр МЭТЛУГ" target="_blank">
+                                            <i class="fab fa-youtube"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-3 col-sm-8">
+                                <span class="copyright"> © МЭТЛУГ 1995-2020</span>
+                            </div>
+                            <div class="col-md-8 col-sm-12">
+                                <p class="text-center" style="color: black;font-size: 7px;position: absolute;">* Нецензурные, экстремистские и несоответствующие общечеловеческой морали высказывания будут немедленно удалены.</p>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            {% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        {% if modalShow is defined and modalShow is not null %}
+        $('#commandModal').modal('show')
+        {% endif %}
+        // Add the following code if you want the name of the file appear on select
+        $(".custom-file-input").on("change", function() {
+            var fileName = $(this).val().split("\\").pop();
+            $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+        });
+    </script>
+    <script src="{{ asset('build/js/popper.min.js') }}"></script>
+    <script src="{{ asset('build/js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('build/js/aos.js') }}"></script>
+    <script src="{{ asset('build/js/jquery.fancybox.min.js') }}"></script>
+    <script src="{{ asset('build/js/jquery.waypoints.min.js') }}"></script>
+    <script src="{{ asset('build/js/jquery.animateNumber.min.js') }}"></script>
+    <script src="{{ asset('build/js/jquery.sticky.js') }}"></script>
+    <script src="{{ asset('build/js/main.js') }}"></script>
+{% endblock %}
