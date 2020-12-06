@@ -1,19 +1,47 @@
+html {
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%; }
+
+html,
+button,
+input,
+select,
+textarea {
+    font-family: sans-serif; }
 
 body {
-    background: url('../../src/img/вихрь 9 (1).jpg') center;
-    background-size: cover;
+    background: url(../../src/img/вихрь.jpg) center;
     color: white;
-    text-shadow:
-            1px 1px 0 transparent,
-            2px 2px 0 #725e70;
-    font-size: 1.15em;
-    font-weight: bold;
-
+    font-family: "Terminal Dosis", sans-serif;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    background-size: cover;
+    margin: 0;
+    opacity: 0.9;
 }
-
-.overlay {
-    background: rgba(255,255,255, 0.15);
-    height: 100vh;
-    position: absolute;
+.scene,
+.layer {
+    display: block;
+    height: 100%;
     width: 100%;
-}
+    padding: 0;
+    margin: 0; }
+
+.scene {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden; }
+
+.layer {
+    position: absolute; }
+.layer div {
+    -webkit-transform: translate3d(0,0,0);
+    -moz-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden; }

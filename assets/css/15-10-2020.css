@@ -1215,7 +1215,7 @@ h1, h2, h3, h4, h5,
     position: absolute;
     bottom: 11.6%;
     left: 50%;
-    z-index: 10000;
+    z-index: 1045;
 }
 .toggle.i .cross {
     -webkit-transform: rotateZ(0deg);

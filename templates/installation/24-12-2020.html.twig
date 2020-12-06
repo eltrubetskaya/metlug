@@ -2,20 +2,14 @@
 {% block title %}{{ installation.description }}{% endblock %}
 {% block stylesheets %}
     {{ parent() }}
-    <link href="https://fonts.googleapis.com/css?family=Oswald:400,700|Muli:300,400,700,900" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('build/css/owl.carousel.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('build/css/owl.theme.default.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('build/css/jquery.fancybox.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('build/css/aos.css') }}">
     <link rel="stylesheet" href="{{ asset('build/css/15-10-2020.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('build/css/24-12-2020.css') }}" />
 {% endblock %}
 
 
 {% block menu %}
-    <div class="overlay"></div>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark pb-0" id="mainNav">
+    <nav class="navbar navbar-expand-lg navbar-dark pb-0" id="mainNav" style="background-color: white">
         <div class="container-fluid">
             <div class="col-1 d-none d-sm-none d-md-block">
                 <a href="{{ path('installation_show', {title: '06-11-2020'}) }}" title="Саша Соколов">
@@ -27,7 +21,7 @@
                     </button>
                 </a>
             </div>
-            <div class="col-md-10 col-12">
+            <div class="col-md-10 col-12 text-center">
                 <a class="navbar-brand js-scroll-trigger" href="{{ path('homepage') }}">
                     <span class="notranslate" translate="no">{{ "The «METLUG» Theatre - means we're from Lugansk City"|raw }}</span>
                 </a>
@@ -42,32 +36,11 @@
 {% endblock %}
 
 {% block content %}
-        <div class="site-section section-2" id="work-section" data-aos="fade" style="padding-top: 20px">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 mb-5 text-center">
-                        <h2 class="section-title" style="max-width: initial">Сочельник у МЭТЁлки</h2>
-                        <p>Дорогой Друг, <br>
-                            приглашаем тебя на Рождественский Сочельник у Мэтёлки. Онлайн инсталляция состоится 24 декабря 2020 года в 20:00 по луганскому времени.
-                            Ждем Вас за праздничным столом при наличии новогодней атрибутики со своим подарком. Каждый участник будет находиться в организованном им самим пространстве, при условии что в кадре есть стол или его часть и плюс какой-нибудь еще новогодний атрибут(мишура, шары, игрушки, еловые ветки...). Инсталляция будет создаваться в течении 33 минут в реальном времени. На сольный выход каждого участника отводится время от 11 до 1 минуты в зависимости от количества пришедших. Для этого просим подтвердить своё присутствие заполнив форму.
-                            Уже подтвердили свое участие:
-                            -
 
-                            как обычно в театре будет три звонка:
-                            20:00 - первый звонок
-                            20:01 - второй звонок
-                            20:05 - третий звонок
-                            после третьего колокольчика вход на перформанс будет невозможен. С этого момента через 33 минуты можно будет посмотреть его в записи.
-                            С верой и любовью,
-                            вечно Ваш МЭТЛУГ
-                        </p>
-                    </div>
-                </div>
+    <!-- Services Section -->
+    {% include('services.html.twig') %}
 
-            </div>
-        </div>
-
-    <button id="toggle" class="toggle-i toggle i" data-toggle="modal" data-target="#commandModal" title="Добавить комментарий">
+    <button style="position: fixed" id="toggle" class="toggle-i toggle i" data-toggle="modal" data-target="#commandModal" title="Добавить комментарий">
         <div class="cross">
             <div class="x"></div>
             <div class="y"></div>
@@ -76,7 +49,7 @@
     <!-- Modal -->
     <div class="modal fade" id="commandModal" tabindex="-1" role="dialog" aria-labelledby="commandModalTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
+            <div class="modal-content" style="text-shadow: none">
                 <div class="modal-header text-muted text-center">
                     <p>Оставьте, пожалуйста, свои поздравления и пожелания до конца текущего года, <br>т.е. до 31.12.2020 23:59:59</p>
                 </div>
@@ -166,7 +139,7 @@
     <!-- Modal -->
     <div class="modal fade" id="modal-2020" tabindex="-1" role="dialog" aria-labelledby="commandModalTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
+            <div class="modal-content" style="text-shadow: none">
                 <div class="modal-header text-muted">
                     <div class="row text-center">
 
@@ -277,7 +250,7 @@
 
                         <div class="col-md-12 col-sm-12 portfolio-item">
                             <a class="portfolio-link" href="{{ path('installation_show', {title: '24-12-2020'}) }}">
-                                <img class="port-img img-fluid" src="{{ asset('src/img/вихрь 9 (1).jpg') }}" alt="">
+                                <img class="port-img img-fluid" src="{{ asset('src/img/вихрь.jpg') }}" alt="">
                             </a>
                             <div class="portfolio-caption">
                                 <h4>Сочельник у МЭТЁлки</h4>
@@ -299,7 +272,7 @@
     </div>
 {% endblock %}
             {% block footer %}
-                <footer class="footer" style="z-index: 200;position: fixed;/* max-width: 100%; */width: 100%;bottom: 0;">
+                <footer class="footer" style="color: white;z-index: 200;position: fixed;/* max-width: 100%; */width: 100%;bottom: 0;">
                     <div class="container">
                         <div class="row align-items-center">
                             <div class="col-md-1 col-sm-1">
@@ -315,7 +288,7 @@
                                 <span class="copyright"> © МЭТЛУГ 1995-2020</span>
                             </div>
                             <div class="col-md-8 col-sm-12">
-                                <p class="text-center" style="color: black;font-size: 7px;position: absolute;">* Нецензурные, экстремистские и несоответствующие общечеловеческой морали высказывания будут немедленно удалены.</p>
+                                <p class="text-center" style="color: white;font-size: 7px;position: absolute;">* Нецензурные, экстремистские и несоответствующие общечеловеческой морали высказывания будут немедленно удалены.</p>
                             </div>
                         </div>
                     </div>
@@ -333,13 +306,40 @@
             var fileName = $(this).val().split("\\").pop();
             $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
         });
+        // jQuery Selections
+        var $html = $('html'),
+            $container = $('#container'),
+            $scene = $('#scene');
+
+        // Hide browser menu.
+        (function() {
+            setTimeout(function(){window.scrollTo(0,0);},0);
+        })();
+
+        // Setup FastClick.
+        FastClick.attach(document.body);
+
+        // Add touch functionality.
+        if (Hammer.HAS_TOUCHEVENTS) {
+            $container.hammer({drag_lock_to_axis: true});
+            _.tap($html, 'a,button,[data-tap]');
+        }
+
+        // Add touch or mouse class to html element.
+        $html.addClass(Hammer.HAS_TOUCHEVENTS ? 'touch' : 'mouse');
+
+        // Resize handler.
+        (resize = function() {
+            $scene[0].style.width = window.innerWidth + 'px';
+            $scene[0].style.height = window.innerHeight + 'px';
+        })();
+
+        // Attach window listeners.
+        window.onresize = _.debounce(resize, 200);
+        window.onscroll = _.debounce(resize, 200);
+
+        // Pretty simple huh?
+        $scene.parallax();
     </script>
-    <script src="{{ asset('build/js/popper.min.js') }}"></script>
-    <script src="{{ asset('build/js/owl.carousel.min.js') }}"></script>
-    <script src="{{ asset('build/js/aos.js') }}"></script>
-    <script src="{{ asset('build/js/jquery.fancybox.min.js') }}"></script>
-    <script src="{{ asset('build/js/jquery.waypoints.min.js') }}"></script>
-    <script src="{{ asset('build/js/jquery.animateNumber.min.js') }}"></script>
-    <script src="{{ asset('build/js/jquery.sticky.js') }}"></script>
     <script src="{{ asset('build/js/main.js') }}"></script>
 {% endblock %}
