@@ -38,7 +38,10 @@
 {% endblock %}
 
 {% block content %}
-
+    <audio preload="metadata" title="Новогодняя музыка" id="ny" autoplay>
+        <source src="{{ asset('audio/ny.mp3') }}" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
     <!-- Services Section -->
     {% include('services.html.twig') %}
 
@@ -323,6 +326,7 @@
         var $html = $('html'),
             $container = $('#container'),
             $scene = $('#scene');
+            $scene2 = $('#scene2');
 
         // Hide browser menu.
         (function() {
@@ -345,6 +349,8 @@
         (resize = function() {
             $scene[0].style.width = window.innerWidth + 'px';
             $scene[0].style.height = window.innerHeight + 'px';
+            $scene2[0].style.width = window.innerWidth + 'px';
+            $scene2[0].style.height = window.innerHeight + 'px';
         })();
 
         // Attach window listeners.
@@ -353,6 +359,12 @@
 
         // Pretty simple huh?
         $scene.parallax();
+        // Pretty simple huh?
+        $scene2.parallax();
+
+        let element = document.getElementById("ny")
+
+        document.getElementById("playAudio").volume = 0.1;
     </script>
     <script src="{{ asset('build/js/main.js') }}"></script>
 {% endblock %}
