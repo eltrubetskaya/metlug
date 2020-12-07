@@ -4,6 +4,8 @@
     {{ parent() }}
     <link rel="stylesheet" href="{{ asset('build/css/15-10-2020.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('build/css/24-12-2020.css') }}" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@1,700&family=Pangolin&display=swap" rel="stylesheet">
 {% endblock %}
 
 
@@ -50,8 +52,17 @@
     <div class="modal fade" id="commandModal" tabindex="-1" role="dialog" aria-labelledby="commandModalTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content" style="text-shadow: none">
-                <div class="modal-header text-muted text-center">
-                    <p>Оставьте, пожалуйста, свои поздравления и пожелания до конца текущего года, <br>т.е. до 31.12.2020 23:59:59</p>
+                <div class="modal-header text-muted text-left">
+                    <p>На Сочельник у МЭТЁлки <br>
+                        Приглашаем с личной ёлкой! <br>
+                        <br>
+                        Необходимо прикрепить своё видео в комментариях до полуночи 24 декабря. В своем эмоциональном порыве, творчески подготовившись, надев карнавальный костюм, и имея в душе максимальное количество экспрессии произнеси свой тост с бокалом в руках … и стать на мгновение наивным и непосредственным ребенком без всякой прагматики. И да будет у тебя в следующем году все настолько же возвышенно и настолько же восторженно!!!
+                        Не унывай! У тебя есть виртуальная сцена. Посмотри на нее, выходи, и ничего не бойся!
+                        <br>
+                        За что ты предлагаешь поднять тост? <br>
+                        <br>
+                        Ваш выход... <br>
+                    </p>
                 </div>
                                 {% if app.user %}
                                     {{ form_start(form) }}
@@ -142,7 +153,9 @@
             <div class="modal-content" style="text-shadow: none">
                 <div class="modal-header text-muted">
                     <div class="row text-center">
-
+                        <div class="col-md-12 col-sm-12 portfolio-item">
+                            <h3 class="text-primary">Инсталляции 2020</h3>
+                        </div>
                         <div class="col-md-12 col-sm-12 portfolio-item">
                             <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
                                 <img class="port-img img-fluid" src="{{ asset('build/img/clock.gif') }}" alt="">
@@ -250,7 +263,7 @@
 
                         <div class="col-md-12 col-sm-12 portfolio-item">
                             <a class="portfolio-link" href="{{ path('installation_show', {title: '24-12-2020'}) }}">
-                                <img class="port-img img-fluid" src="{{ asset('src/img/вихрь.jpg') }}" alt="">
+                                <img class="port-img img-fluid" src="{{ asset('src/img/2020-12-03.png') }}" alt="">
                             </a>
                             <div class="portfolio-caption">
                                 <h4>Сочельник у МЭТЁлки</h4>
