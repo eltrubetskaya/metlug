@@ -60,7 +60,7 @@ class MailService
             $message = (new \Swift_Message("The «METLUG» Theatre - " . $subject))
                 ->setFrom($this->from)
                 ->setTo($sendTo)
-                ->setBody($this->renderMail($template . '.html.twig', $params), 'text/html')
+                ->setBody($this->renderMail($template . '.html.twig', $params), 'text/plain')
             ;
 
             return $this->mailer->send($message);
