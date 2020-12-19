@@ -38,12 +38,6 @@
 {% endblock %}
 
 {% block content %}
-    <div class="col-12 text-center">
-        <audio preload="metadata" title="Новогодняя музыка" id="ny" autoplay controls controlsList="nodownload" >
-            <source src="{{ asset('audio/ny.mp3') }}" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-    </div>
     <!-- Services Section -->
     {% include('services.html.twig') %}
 
@@ -326,49 +320,22 @@
             var fileName = $(this).val().split("\\").pop();
             $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
         });
-        // jQuery Selections
-        var $html = $('html'),
-            $container = $('#container'),
-            $scene = $('#scene');
-            $scene2 = $('#scene2');
 
         // Hide browser menu.
         (function() {
             setTimeout(function(){window.scrollTo(0,0);},0);
         })();
 
-        // Setup FastClick.
-        FastClick.attach(document.body);
+        var x = document.getElementById("ny_l");
 
-        // Add touch functionality.
-        if (Hammer.HAS_TOUCHEVENTS) {
-            $container.hammer({drag_lock_to_axis: true});
-            _.tap($html, 'a,button,[data-tap]');
-        }
+        $('#leftAudio').on('click', function () {
+            x.play()
+        })
 
-        // Add touch or mouse class to html element.
-        $html.addClass(Hammer.HAS_TOUCHEVENTS ? 'touch' : 'mouse');
+        var y = document.getElementById("ny_r");
 
-        // Resize handler.
-        (resize = function() {
-            $scene[0].style.width = window.innerWidth + 'px';
-            $scene[0].style.height = window.innerHeight + 'px';
-            $scene2[0].style.width = window.innerWidth + 'px';
-            $scene2[0].style.height = window.innerHeight + 'px';
-        })();
-
-        // Attach window listeners.
-        window.onresize = _.debounce(resize, 200);
-        window.onscroll = _.debounce(resize, 200);
-
-        // Pretty simple huh?
-        $scene.parallax();
-        // Pretty simple huh?
-        $scene2.parallax();
-
-        let element = document.getElementById("ny")
-
-        document.getElementById("playAudio").volume = 0.1;
+        $('#rightAudio').on('click', function () {
+            y.play()
+        })
     </script>
-    <script src="{{ asset('build/js/main.js') }}"></script>
 {% endblock %}

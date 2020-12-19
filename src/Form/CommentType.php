@@ -45,7 +45,8 @@ class CommentType extends AbstractType
                             'audio/mpeg3',
                             'audio/x-mpeg-3',
                             'audio/mpeg',
-                            'audio/x-mpeg'
+                            'audio/x-mpeg',
+
                         ],
                         'mimeTypesMessage' => 'Please upload a valid jpeg, jpg, png, mp3 file',
                     ])
