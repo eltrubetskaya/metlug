@@ -122,7 +122,11 @@
                                     <div class="media-body text-left">
                                         <h4 class="media-heading user_name"><img style="width: 40px" class="rounded-circle" src="{{ avatar }}" alt=""> {{ user }}</h4>
                                             {{ comment.text|raw }}
-
+                                        {% if comment.type == 'video' %}
+                                            <div class="embed-responsive embed-responsive-16by9">
+                                                <iframe class="embed-responsive-item" src="{{ comment.mediaLink }}" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                            </div>
+                                        {% endif %}
                                         {% if comment.type == 'image' and comment.mediaLink %}
                                             <div class="col-12" >
                                                 <img width="300px" height="300px" src="{{ comment.mediaLink }}" alt="{{ installation.description }}">

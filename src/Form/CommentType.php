@@ -46,9 +46,10 @@ class CommentType extends AbstractType
                             'audio/x-mpeg-3',
                             'audio/mpeg',
                             'audio/x-mpeg',
+                            'video/mp4',
 
                         ],
-                        'mimeTypesMessage' => 'Please upload a valid jpeg, jpg, png, mp3 file',
+                        'mimeTypesMessage' => 'Please upload a valid jpeg, jpg, png, mp3, mp4 file',
                     ])
                 ],
                 'help' => '<i class="fa fa-info-circle" aria-hidden="true"></i> Поддерживаемые форматы jpeg, jpg, png, mp3',
