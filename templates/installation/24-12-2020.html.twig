@@ -127,6 +127,12 @@
                                                 <iframe class="embed-responsive-item" src="{{ comment.mediaLink }}" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                             </div>
                                         {% endif %}
+                                        {% if comment.type == 'audio' %}
+                                            <audio  controlsList="nodownload" controls style="z-index: 150;width: 100%">
+                                                <source src="{{ comment.mediaLink }}" type="audio/mpeg">
+                                                Your browser does not support the audio element.
+                                            </audio>
+                                        {% endif %}
                                         {% if comment.type == 'image' and comment.mediaLink %}
                                             <div class="col-12" >
                                                 <img width="300px" height="300px" src="{{ comment.mediaLink }}" alt="{{ installation.description }}">
