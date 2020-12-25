@@ -8,22 +8,42 @@
         <source src="{{ asset('audio/novogodniy-zvuk-bubency.mp3') }}" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
+    <audio preload="metadata" title="Новогодняя музыка" id="ny_c" >
+        <source src="{{ asset('audio/novogodniy-zvuk-bubency.mp3') }}" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
 </div>
-<section class="page-section" id="services" style="padding: 30px">
+<section class="page-section" id="services" style="padding: 30px; padding-top: 100px">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12" style="    background: url(../../src/img/вихрь.jpg) 15% 15%;
+            <div class="col-lg-12" style="    background: url(../../src/img/вихрь.jpg) 77% 19%;
     height: 15px;
-    width: 65%;
+    width: 55%;
     margin-left: 10%;
     position: absolute;
     margin-top: 15px;"></div>
-                <div class="col-lg-2"></div>
-                <h2 class=" col-lg-8 text-center section-heading text-uppercase" style="font-family: 'Balsamiq Sans', cursive;
+                <div class="col-sm-2 col-12"></div>
+                <h2 class=" col-sm-8 col-12 text-center section-heading text-uppercase" style="font-family: 'Balsamiq Sans', cursive;
 font-family: 'Pangolin', cursive;text-shadow: 3px 3px #000;
     ">Сочельник у МЭТЁлки
                 </h2>
-                <div class="col-lg-2"></div>
+                <div class="col-sm-2 col-12"></div>
+            <div class="col-sm-1 col-12"></div>
+            <div class="col-sm-10 col-12">
+                    <h6 class="text-center h_b" style="
+                        background-color: white;
+                        padding: 5px;
+                        border-radius: 5px;
+                        color: green;
+                        opacity: 0;
+                        z-index: 1;
+                        font-size: 0.80rem;
+                    ">
+                        Рождественская игра в бубны от МЭТЛуг <br>
+                        Чтобы услышать оригинальную мелодию бубенцов необходимо кликать по всем бубнам. Победой может считаться синхронное звучание одновременно.
+                    </h6>
+            </div>
+            <div class="col-sm-1 col-12"></div>
                 <div class="col-lg-12 text-center">
                 <table border=0 CELLPADDING=0 CELLSPACING=0 align="center">
                     <tr>
@@ -33,7 +53,12 @@ font-family: 'Pangolin', cursive;text-shadow: 3px 3px #000;
                             </a>
                             <img SRC="{{ asset('build/img/sc_01.gif') }}" WIDTH=137 HEIGHT=76>
                         </td>
-                        <td width="328"> <img SRC="{{ asset('build/img/sc_02.gif') }}" WIDTH=328 HEIGHT=76></td>
+                        <td width="328">
+                            <a href="#">
+                                <img id="centerAudio" class="coleb" src="{{ asset('src/img/2020-12-03 (1).png') }}" style="position: absolute;height: 30px;margin-top: 25px;margin-left: 140px;" alt="">
+                            </a>
+                            <img SRC="{{ asset('build/img/sc_02.gif') }}" WIDTH=328 HEIGHT=76>
+                        </td>
                         <td width="135">
                             <IMG SRC="{{ asset('build/img/sc_03.gif') }}" WIDTH=135 HEIGHT=76>
                             <a href="#" id="rightAudio">
@@ -56,10 +81,10 @@ font-family: 'Pangolin', cursive;text-shadow: 3px 3px #000;
                                 Приглашаем всех на Сочельник у МЭТЁлки 2020 с личной ёлкой и новогодним тостом.</h5>
                             <img SRC="{{ asset('build/img/sc_05.gif') }}" WIDTH=328 HEIGHT=149>
                             <a href="#">
-                                <img src="{{ asset('src/img/2020-12-03-2.png') }}" style="position: absolute;
+                                <img id="elka" src="{{ asset('src/img/2020-12-03-2.png') }}" style="position: absolute;
     height: 150px;
     margin-left: -215px;
-    margin-top: 40px;    filter: drop-shadow(10px 1px 10px rgba(100,0,0,0.5));" alt="">
+    margin-top: 40px;" alt="">
                             </a>
 
 

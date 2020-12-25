@@ -337,15 +337,60 @@
         })();
 
         var x = document.getElementById("ny_l");
+        var z = document.getElementById("ny_c");
+        let isXPlay = 0;
+        let isYPlay = 0;
+        let isZPlay = 0;
+        $('#leftAudio, #rightAudio, #centerAudio').hover(function () {
+            $('.h_b').animate(
+                {
+                    opacity: 0.85
+                }, 1000
+            )
+        }, function () {
+            $('.h_b').animate(
+                {
+                    opacity: 0
+                }, 1000
+            )
+        })
 
         $('#leftAudio').on('click', function () {
-            x.play()
+            if (isXPlay) {
+                x.pause()
+                isXPlay = 0
+            } else {
+                x.play()
+                isXPlay = 1
+            }
+        })
+
+        $('#centerAudio').on('click', function () {
+            if (isZPlay) {
+                z.pause()
+                isZPlay = 0
+            } else {
+                z.play()
+                isZPlay = 1
+            }
         })
 
         var y = document.getElementById("ny_r");
 
         $('#rightAudio').on('click', function () {
-            y.play()
+            if (isYPlay) {
+                y.pause()
+                isYPlay = 0
+            } else {
+                y.play()
+                isYPlay = 1
+            }
+        })
+        $('#elka').hover(function () {
+            $(this).css('filter', 'drop-shadow(10px 1px 10px rgba(100,0,0,0.5))')
+        }, function () {
+
+            $(this).css('filter', 'none')
         })
     </script>
 {% endblock %}
