@@ -4,6 +4,9 @@
     {{ parent() }}
     <link rel="stylesheet" href="{{ asset('build/css/15-10-2020.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('build/css/24-12-2020.css') }}" />
+    <link href="{{ asset('build/css/default.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('build/css/component.css') }}" rel="stylesheet" type="text/css" />
+    <script src="{{ asset('build/js/modernizr.custom.js') }}"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@1,700&family=Pangolin&display=swap" rel="stylesheet">
 {% endblock %}
@@ -386,11 +389,23 @@
                 isYPlay = 1
             }
         })
-        $('#elka').hover(function () {
+        $('#elka, .md-trigger').hover(function () {
             $(this).css('filter', 'drop-shadow(10px 1px 10px rgba(100,0,0,0.5))')
         }, function () {
 
             $(this).css('filter', 'none')
         })
     </script>
+    <!-- classie.js by @desandro: https://github.com/desandro/classie -->
+    <script src="{{ asset('build/js/classie.js') }}"></script>
+    <script src="{{ asset('build/js/modalEffects.js') }}"></script>
+
+    <!-- for the blur effect -->
+    <!-- by @derSchepp https://github.com/Schepp/CSS-Filters-Polyfill -->
+    <script>
+        // this is important for IEs
+        var polyfilter_scriptpath = '/js/';
+    </script>
+    <script src="{{ asset('build/js/cssParser.js') }}"></script>
+    <script src="{{ asset('build/js/css-filters-polyfill.js') }}"></script>
 {% endblock %}
