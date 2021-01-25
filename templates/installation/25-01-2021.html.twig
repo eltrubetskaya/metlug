@@ -46,7 +46,7 @@
             <div class="col-2"></div>
             <div class="col-8">
                 <div style="margin-bottom: 15px; margin-top: 7%; opacity: 0.85" class="embed-responsive embed-responsive-21by9">
-                    <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/E0xE4scQGqA?showinfo=1&amp;modestbranding=1&amp;rel=0&amp;fs=1&amp;iv_load_policy=3" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+                    <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/9FBLFW_3kg0?showinfo=1&amp;modestbranding=1&amp;rel=0&amp;fs=1&amp;iv_load_policy=3" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
                 </div>
             </div>
         </div>
@@ -62,7 +62,12 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content" style="text-shadow: none">
                 <div class="modal-header text-muted text-left">
-                    <p></p>
+                    <p>Как всегда, приглашаем вас, дорогие друзья, к участию в нашей инсталляции. Xотелось бы увидеть вашего В. Высоцкого.
+                        <br>
+                        Передайте координаты фрагментов самой впечатляющей роли в избранном фильме. И мы их опубликуем.
+                        <br><br>
+                        С Днём Рождения, <br>
+                        Владимир Семёнович!</p>
                 </div>
                                 {% if app.user %}
                                     {{ form_start(form) }}
@@ -73,8 +78,8 @@
                                         <div class="d-none">{{ form_row(form.username) }}</div>
                                         {{ form_row(form.text) }}
 
-                                        <div style="font-size: 20px">{{ form_row(form.mediaLink) }}</div>
-                                        <div>{{ form_row(form.type) }}</div>
+                                        <div class="d-none" style="font-size: 20px">{{ form_row(form.mediaLink) }}</div>
+                                        <div class="d-none">{{ form_row(form.type) }}</div>
                                     </div>
                                     <div class="modal-footer">
                                         <div class="col-6 pr-0">
@@ -91,10 +96,10 @@
                                         {{ form_widget(form.username) }}
                                         <hr>
                                         <div class="">{{ form_row(form.text) }}</div>
-                                        <div class="custom-file">
+                                        <div class="custom-file d-none">
                                             {{ form_row(form.mediaLink) }}
                                         </div>
-                                        <div  style="font-size: 20px">{{ form_row(form.type) }}</div>
+                                        <div   class="d-none" style="font-size: 20px">{{ form_row(form.type) }}</div>
                                     </div>
                                     <div class="modal-footer">
                                         <div class="col-6 pr-0">
