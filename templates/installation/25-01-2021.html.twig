@@ -53,9 +53,26 @@
         </div>
         <div class="row">
             <div class="col-12 text-center" style="margin-top: 5%;">
-                <a style="color: white" href="{{ asset('src/img/Screenshot from 2021-01-25 19-50-34.png') }}" class="video-img-bg" data-fancybox data-ratio="2">
+                <a style="color: white" href="{{ asset('src/img/Screenshot from 2021-01-25 19-50-34.png') }}" data-fancybox>
                     <h3>А он играл - не доиграл. Киноактёр Владимир Семёнович Высоцкий.</h3>
                 </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6"></div>
+            <div class="col-3 text-right">
+                <a href="https://www.youtube-nocookie.com/embed/qdAkLgo-q1Y?start=2682&end=2684&showinfo=1&modestbranding=1&rel=0&fs=1&iv_load_policy=3" class="video-img-bg" data-fancybox="images">
+                    <img style="position: absolute;width: 250px" src="{{ asset('src/img/cinema.png') }}" alt="">
+                </a>
+                <div class="imglist d-none">
+                    <a href="https://www.youtube-nocookie.com/embed/e7P3QbcI91U?start=5083&end=5171&showinfo=1&modestbranding=1&rel=0&fs=1&iv_load_policy=3" class="video-img-bg" data-fancybox="images">
+                    </a>
+                </div>
+                <div class="imglist d-none">
+                    <a href="https://www.youtube-nocookie.com/embed/aePYhB1VHfY?start=1470&end=1509&showinfo=1&modestbranding=1&rel=0&fs=1&iv_load_policy=3" class="video-img-bg" data-fancybox="images">
+                    </a>
+                </div>
+
             </div>
         </div>
     </div>
@@ -330,6 +347,51 @@
 
             $(this).css('filter', 'none')
         })
+        // Template for custom "info" button
+        $.fancybox.defaults.btnTpl.info = '<button data-fancybox-info class="fancybox-button fancybox-button--info" title="Show caption">&#x25cf;&#x25cf;&#x25cf;</button>';
+
+        // Initialise fancybox with custom settings
+        $('[data-fancybox="images"]').fancybox({
+            preventCaptionOverlap : false,
+            infobar: false,
+
+            // Disable idle
+            idleTime : 0,
+
+            // Display only these two buttons
+            buttons : [
+                'info', 'close'
+            ],
+
+            // Custom caption content
+            caption : function( instance, obj ) {
+                return '<div><p class="fancy-nav"><a data-fancybox-prev title="Previous" tabindex="1">&lsaquo;</a> <a data-fancybox-next title="Next" tabindex="2">&rsaquo;</a> &nbsp; <span data-fancybox-index></span> of <span data-fancybox-count></span> images</p>' + $(this).find('.caption').html() + '</div>';
+            },
+
+            onInit: function(instance) {
+
+                // Toggle caption on tap
+                instance.$refs.container.on('touchstart', '[data-fancybox-info]', function(e) {
+                    e.stopPropagation();
+                    e.preventDefault();
+
+                    instance.$refs.container.toggleClass('fancybox-vertical-caption');
+                });
+
+                // Display caption on button hover
+                instance.$refs.container.on('mouseenter', '[data-fancybox-info]', function(e) {
+                    instance.$refs.container.addClass('fancybox-vertical-caption');
+
+                    // Hide caption when mouse leaves caption area
+                    instance.$refs.caption.one('mouseleave', function(e) {
+                        instance.$refs.container.removeClass('fancybox-vertical-caption');
+                    });
+
+                });
+
+            }
+
+        });
     </script>
     <!-- classie.js by @desandro: https://github.com/desandro/classie -->
     <script src="{{ asset('build/js/classie.js') }}"></script>
