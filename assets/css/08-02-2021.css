@@ -1,0 +1,61 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+body {
+    text-align: center;
+}
+.row {
+    display: flex;
+    /*background: #ccc;*/
+}
+.row:first-child .brick {
+    margin-top: 4px;
+}
+.row:last-child .brick {
+    margin-bottom: 4px;
+}
+.row:nth-child(even) .brick:first-child {
+    display: none;
+}
+.row:nth-child(even) .brick:last-child {
+    margin-right: 2px;
+}
+.row:nth-child(even)::before,
+.row:nth-child(even)::after {
+    position: relative;
+    content: "";
+    background: deepskyblue;
+    width: calc(7.5%);
+    height: 3vw;
+    border-radius: 2px;
+    margin: 2px;
+    box-shadow: 0 0 19px 1px dodgerblue inset;
+    opacity: 0.75;
+}
+.row:nth-child(even)::before {
+    margin-left: 4px;
+}
+.row:nth-child(even)::after {
+    margin-right: 4px;
+}
+.brick {
+    background: deepskyblue;
+    width: 15%;
+    height: 3vw;
+    border-radius: 2px;
+    margin: 2px;
+    box-shadow: 0 0 19px 1px dodgerblue inset;
+    opacity: 0.75;
+    text-align: center;
+}
+.brick img {
+    height: 100%;
+}
+.brick:last-child {
+    margin-right: 4px;
+}
+.brick:first-child {
+    margin-left: 4px;
+}

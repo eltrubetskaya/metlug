@@ -1,0 +1,925 @@
+{% extends 'layout.html.twig' %}
+{% block title %}{{ installation.description }}{% endblock %}
+{% block stylesheets %}
+    <!-- Custom fonts for this template -->
+    <link href="{{ asset('build/css/all.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.12.0/css/all.css" integrity="sha384-ekOryaXPbeCpWQNxMwSWVvQ0+1VrStoPJq54shlYhR8HzQgig1v5fas6YgOqLoKz" crossorigin="anonymous">
+    <!-- Custom styles for this template -->
+    <link href="{{ asset('build/css/agency.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('build/css/15-10-2020.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('build/css/08-02-2021.css') }}" />
+    <script src="{{ asset('build/js/modernizr.custom.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('build/css/jquery.fancybox.min.css') }}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@1,700&family=Pangolin&display=swap" rel="stylesheet">
+{% endblock %}
+
+
+{% block menu %}
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark pb-0" id="mainNav" style="padding-top: 0">
+        <div class="container-fluid">
+            <div class="col-1 d-none d-sm-none d-md-block">
+{#                <a href="{{ path('installation_show', {title: '06-11-2020'}) }}" title="Саша Соколов">#}
+{#                    <button class="toggle-i toggle i toggle-left">#}
+{#                        <div class="cross">#}
+{#                            <div class="x"></div>#}
+{#                            <div class="y"></div>#}
+{#                        </div>#}
+{#                    </button>#}
+{#                </a>#}
+            </div>
+            <div class="col-md-10 col-12 text-center">
+                <a class="navbar-brand js-scroll-trigger" href="{{ path('homepage') }}">
+                    <span class="notranslate" translate="no">{{ "The «METLUG» Theatre - means we're from Lugansk City"|raw }}</span>
+                </a>
+            </div>
+            <div class="col-1 d-none d-sm-none d-md-block">
+{#                <button class="toggle i" style="font-size: 16px; cursor: pointer" data-toggle="modal" data-target="#modal-2020">#}
+{#                        2020#}
+{#                    </button>#}
+            </div>
+        </div>
+    </nav>
+{% endblock %}
+
+{% block content %}
+    <h1>С Днём Рождения, "МЭТЛУГ"!</h1>
+    <!-- .container>.row*50>.brick*9 -->
+    <div class="container" style="margin: -8px;background-image: url('https://p0.pikist.com/photos/898/38/the-background-texture-wall-old-plaster-white-cracks-lake-dusia.jpg')">
+        <div class="row">
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+        </div>
+        <div class="row">
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+        </div>
+        <div class="row">
+            <div class="brick">
+                <img src="{{ asset('src/img/8-02-2021/1.jpeg') }}" alt="">
+            </div>
+            <div class="brick">
+                <img src="{{ asset('src/img/8-02-2021/2.jpeg') }}" alt="">
+            </div>
+            <div class="brick">
+                <img src="{{ asset('src/img/8-02-2021/3.jpeg') }}" alt="">
+            </div>
+            <div class="brick">
+                <img src="{{ asset('src/img/8-02-2021/4.jpeg') }}" alt="">
+            </div>
+            <div class="brick">
+                <img src="{{ asset('src/img/8-02-2021/5.jpeg') }}" alt="">
+            </div>
+            <div class="brick">
+                <img src="{{ asset('src/img/8-02-2021/6.jpeg') }}" alt="">
+            </div>
+            <div class="brick">
+                <img src="{{ asset('src/img/8-02-2021/7.jpeg') }}" alt=""></div>
+            <div class="brick">
+                <img src="{{ asset('src/img/8-02-2021/39.jpeg') }}" alt=""></div>
+            <div class="brick">
+                <img src="{{ asset('src/img/8-02-2021/9.jpeg') }}" alt=""></div>
+        </div>
+        <div class="row">
+            <div class="brick"></div>
+            <div class="brick">
+                <img src="{{ asset('src/img/8-02-2021/10.jpeg') }}" alt=""></div>
+            <div class="brick">
+                <img src="{{ asset('src/img/8-02-2021/11.jpeg') }}" alt=""></div>
+            <div class="brick">
+                <img src="{{ asset('src/img/8-02-2021/12.jpeg') }}" alt=""></div>
+            <div class="brick">
+                <img src="{{ asset('src/img/8-02-2021/13.jpeg') }}" alt=""></div>
+            <div class="brick">
+                <img src="{{ asset('src/img/8-02-2021/14.jpeg') }}" alt=""></div>
+            <div class="brick">
+                <img src="{{ asset('src/img/8-02-2021/15.jpeg') }}" alt=""></div>
+            <div class="brick">
+                <img src="{{ asset('src/img/8-02-2021/16.jpeg') }}" alt=""></div>
+            <div class="brick">
+                <img src="{{ asset('src/img/8-02-2021/17.jpeg') }}" alt=""></div>
+        </div>
+        <div class="row">
+            <div class="brick">
+                <img src="{{ asset('src/img/8-02-2021/30.jpeg') }}" alt=""></div>
+            <div class="brick">
+                <img src="{{ asset('src/img/8-02-2021/19.jpeg') }}" alt=""></div>
+            <div class="brick">
+                <img src="{{ asset('src/img/8-02-2021/20.jpeg') }}" alt=""></div>
+            <div class="brick">
+                <img src="{{ asset('src/img/8-02-2021/21.jpeg') }}" alt=""></div>
+            <div class="brick">
+                <img src="{{ asset('src/img/8-02-2021/22.jpeg') }}" alt=""></div>
+            <div class="brick">
+                <img src="{{ asset('src/img/8-02-2021/23.jpeg') }}" alt=""></div>
+            <div class="brick">
+                <img src="{{ asset('src/img/8-02-2021/24.jpeg') }}" alt=""></div>
+            <div class="brick">
+                <img src="{{ asset('src/img/8-02-2021/25.jpeg') }}" alt=""></div>
+            <div class="brick">
+                <img src="{{ asset('src/img/8-02-2021/26.jpeg') }}" alt=""></div>
+        </div>
+        <div class="row">
+            <div class="brick"></div>
+            <div class="brick">
+                <img src="{{ asset('src/img/8-02-2021/27.jpeg') }}" alt=""></div>
+            <div class="brick">
+                <img src="{{ asset('src/img/8-02-2021/28.jpeg') }}" alt=""></div>
+            <div class="brick">
+                <img src="{{ asset('src/img/8-02-2021/29.jpeg') }}" alt=""></div>
+            <div class="brick">
+                <img src="{{ asset('src/img/8-02-2021/18.jpeg') }}" alt=""></div>
+            <div class="brick">
+                <img src="{{ asset('src/img/8-02-2021/31.jpeg') }}" alt=""></div>
+            <div class="brick">
+                <img src="{{ asset('src/img/8-02-2021/32.jpeg') }}" alt=""></div>
+            <div class="brick">
+                <img src="{{ asset('src/img/8-02-2021/33.jpeg') }}" alt=""></div>
+            <div class="brick">
+                <img src="{{ asset('src/img/8-02-2021/34.jpeg') }}" alt="">     </div>
+        </div>
+        <div class="row">
+            <div class="brick">
+                <img src="{{ asset('src/img/8-02-2021/35.jpeg') }}" alt="">  </div>
+            <div class="brick">
+                <img src="{{ asset('src/img/8-02-2021/36.jpeg') }}" alt="">  </div>
+            <div class="brick">
+                <img src="{{ asset('src/img/8-02-2021/37.jpeg') }}" alt="">  </div>
+            <div class="brick">
+                <img src="{{ asset('src/img/8-02-2021/38.jpeg') }}" alt="">  </div>
+            <div class="brick">
+                <img src="{{ asset('src/img/8-02-2021/8.jpeg') }}" alt="">  </div>
+            <div class="brick">
+                <img src="{{ asset('src/img/8-02-2021/40.jpeg') }}" alt="">  </div>
+            <div class="brick">
+                <img src="{{ asset('src/img/8-02-2021/41.jpeg') }}" alt=""> </div>
+            <div class="brick">
+                <img src="{{ asset('src/img/8-02-2021/42.jpeg') }}" alt=""> </div>
+            <div class="brick">
+                <img src="{{ asset('src/img/8-02-2021/43.jpeg') }}" alt=""> </div>
+        </div>
+        <div class="row">
+            <div class="brick"></div>
+            <div class="brick">
+                <img src="{{ asset('src/img/8-02-2021/44.jpeg') }}" alt=""> </div>
+            <div class="brick">
+                <img src="{{ asset('src/img/8-02-2021/45.jpeg') }}" alt=""> </div>
+            <div class="brick">
+                <img src="{{ asset('src/img/8-02-2021/46.jpeg') }}" alt=""> </div>
+            <div class="brick">
+                <img src="{{ asset('src/img/8-02-2021/47.jpeg') }}" alt=""> </div>
+            <div class="brick">
+                <img src="{{ asset('src/img/inna_pesenka.jpg') }}" alt=""> </div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+        </div>
+        <div class="row">
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+        </div>
+        <div class="row">
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+        </div>
+        <div class="row">
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+        </div>
+        <div class="row">
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+        </div>
+        <div class="row">
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+        </div>
+        <div class="row">
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+        </div>
+        <div class="row">
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+        </div>
+        <div class="row">
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+        </div>
+        <div class="row">
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+        </div>
+        <div class="row">
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+        </div>
+        <div class="row">
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+        </div>
+        <div class="row">
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+        </div>
+        <div class="row">
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+        </div>
+        <div class="row">
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+        </div>
+        <div class="row">
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+        </div>
+        <div class="row">
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+        </div>
+        <div class="row">
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+        </div>
+        <div class="row">
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+        </div>
+        <div class="row">
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+        </div>
+        <div class="row">
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+        </div>
+        <div class="row">
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+        </div>
+        <div class="row">
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+        </div>
+        <div class="row">
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+        </div>
+        <div class="row">
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+        </div>
+        <div class="row">
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+        </div>
+        <div class="row">
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+        </div>
+        <div class="row">
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+        </div>
+        <div class="row">
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+        </div>
+        <div class="row">
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+        </div>
+        <div class="row">
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+        </div>
+        <div class="row">
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+        </div>
+        <div class="row">
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+        </div>
+        <div class="row">
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+        </div>
+        <div class="row">
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+        </div>
+        <div class="row">
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+        </div>
+        <div class="row">
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+        </div>
+        <div class="row">
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+        </div>
+        <div class="row">
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+        </div>
+        <div class="row">
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+        </div>
+        <div class="row">
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+        </div>
+        <div class="row">
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+        </div>
+        <div class="row">
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+        </div>
+        <div class="row">
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+        </div>
+        <div class="row">
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+        </div>
+    </div>
+
+{#    <button style="position: fixed" id="toggle" class="toggle-i toggle i" data-toggle="modal" data-target="#commandModal" title="Добавить комментарий">#}
+{#        <div class="cross">#}
+{#            <div class="x"></div>#}
+{#            <div class="y"></div>#}
+{#        </div>#}
+{#    </button>#}
+{#    <!-- Modal -->#}
+{#    <div class="modal fade" id="commandModal" tabindex="-1" role="dialog" aria-labelledby="commandModalTitle" aria-hidden="true">#}
+{#        <div class="modal-dialog modal-dialog-centered" role="document">#}
+{#            <div class="modal-content" style="text-shadow: none">#}
+{#                <div class="modal-header text-muted text-left">#}
+{#                    <p></p>#}
+{#                </div>#}
+{#                                {% if app.user %}#}
+{#                                    {{ form_start(form) }}#}
+{#                                    <div class="modal-header text-muted">#}
+{#                                        <h5 class="modal-title" id="exampleModalLongTitle">{{ app.user }}</h5>#}
+{#                                    </div>#}
+{#                                    <div class="modal-body">#}
+{#                                        <div class="d-none">{{ form_row(form.username) }}</div>#}
+{#                                        {{ form_row(form.text) }}#}
+
+{#                                        <div class="d-none" style="font-size: 20px">{{ form_row(form.mediaLink) }}</div>#}
+{#                                        <div class="d-none">{{ form_row(form.type) }}</div>#}
+{#                                    </div>#}
+{#                                    <div class="modal-footer">#}
+{#                                        <div class="col-6 pr-0">#}
+
+{#                                        </div>#}
+{#                                        <div class="col-6 pl-0 pr-0">#}
+{#                                            <button type="submit" class="col-12 btn btn-secondary" style="height: auto">Оставить Комментарий</button>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                    {{ form_end(form) }}#}
+{#                                {% else %}#}
+{#                                    {{ form_start(form) }}#}
+{#                                    <div class="modal-body" >#}
+{#                                        {{ form_widget(form.username) }}#}
+{#                                        <hr>#}
+{#                                        <div class="">{{ form_row(form.text) }}</div>#}
+{#                                        <div class="custom-file d-none">#}
+{#                                            {{ form_row(form.mediaLink) }}#}
+{#                                        </div>#}
+{#                                        <div   class="d-none" style="font-size: 20px">{{ form_row(form.type) }}</div>#}
+{#                                    </div>#}
+{#                                    <div class="modal-footer">#}
+{#                                        <div class="col-6 pr-0">#}
+{#                                            <a class="btn btn-primary" href="{{ path('connect_google_start') }}"><i class="fab fa-google"></i><span style="margin-left: 15px;font-weight: bold;">Bойти в Google</span></a>#}
+{#                                        </div>#}
+{#                                        <div class="col-6 pl-0 pr-0">#}
+{#                                            <button type="submit" class="col-12 btn btn-secondary" style="height: auto">Оставить Комментарий</button>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                    {{ form_end(form) }}#}
+{#                                {% endif %}#}
+{#                <div class="col-md-12 col-sm-12">#}
+{#                    <div class="comments-list">#}
+{#                        {% for comment in comments %}#}
+{#                            {% if comment.user %}#}
+{#                                {% set avatar = comment.user.avatar %}#}
+{#                                {% set user = comment.user %}#}
+{#                            {% else %}#}
+{#                                {% set avatar = asset('src/img/logo.jpg') %}#}
+{#                                {% set user = comment.username %}#}
+{#                            {% endif %}#}
+{#                            <div class="col-sm-12 text-muted">#}
+{#                                <div class="media">#}
+{#                                    <div class="media-body text-left">#}
+{#                                        <h4 class="media-heading user_name"><img style="width: 40px" class="rounded-circle" src="{{ avatar }}" alt=""> {{ user }}</h4>#}
+{#                                            {{ comment.text|raw }}#}
+{#                                        {% if comment.type == 'video' %}#}
+{#                                            <div class="embed-responsive embed-responsive-16by9">#}
+{#                                                <iframe class="embed-responsive-item" src="{{ comment.mediaLink }}" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>#}
+{#                                            </div>#}
+{#                                        {% endif %}#}
+{#                                        {% if comment.type == 'audio' %}#}
+{#                                            <audio  controlsList="nodownload" controls style="z-index: 150;width: 100%">#}
+{#                                                <source src="{{ comment.mediaLink }}" type="audio/mpeg">#}
+{#                                                Your browser does not support the audio element.#}
+{#                                            </audio>#}
+{#                                        {% endif %}#}
+{#                                        {% if comment.type == 'image' and comment.mediaLink %}#}
+{#                                            <div class="col-12" >#}
+{#                                                <img width="300px" height="300px" src="{{ comment.mediaLink }}" alt="{{ installation.description }}">#}
+{#                                            </div>#}
+{#                                        {% endif %}#}
+{#                                    </div>#}
+{#                                    <div class="text-right">#}
+{#                                        <p><small>{{ comment.createdAt|date('Y-m-d H:i') }}</small></p>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        {% endfor %}#}
+{#                    </div>#}
+{#                    <div class="modal-footer">#}
+{#                        <div class="col-12 pr-0 text-center">#}
+{#                            <a href="#" class="close" style="display: contents" data-dismiss="modal" aria-label="Close">#}
+{#                                <i class="fa fa-times" style="color: red"></i>#}
+{#                            </a>#}
+{#                        </div>#}
+{#                    </div>#}
+
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{% endblock %}
+{% block footer %}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        {% if modalShow is defined and modalShow is not null %}
+        $('#commandModal').modal('show')
+        {% endif %}
+        // Add the following code if you want the name of the file appear on select
+        $(".custom-file-input").on("change", function() {
+            var fileName = $(this).val().split("\\").pop();
+            $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+        });
+
+        // Hide browser menu.
+        (function() {
+            setTimeout(function(){window.scrollTo(0,0);},0);
+        })();
+
+        var x = document.getElementById("ny_l");
+        var z = document.getElementById("ny_c");
+        let isXPlay = 0;
+        let isYPlay = 0;
+        let isZPlay = 0;
+        $('#leftAudio, #rightAudio, #centerAudio').hover(function () {
+            $('.h_b').animate(
+                {
+                    opacity: 0.85
+                }, 1000
+            )
+        }, function () {
+            $('.h_b').animate(
+                {
+                    opacity: 0
+                }, 1000
+            )
+        })
+
+        $('#leftAudio').on('click', function () {
+            if (isXPlay) {
+                x.pause()
+                isXPlay = 0
+            } else {
+                x.play()
+                isXPlay = 1
+            }
+        })
+
+        $('#centerAudio').on('click', function () {
+            if (isZPlay) {
+                z.pause()
+                isZPlay = 0
+            } else {
+                z.play()
+                isZPlay = 1
+            }
+        })
+
+        var y = document.getElementById("ny_r");
+
+        $('#rightAudio').on('click', function () {
+            if (isYPlay) {
+                y.pause()
+                isYPlay = 0
+            } else {
+                y.play()
+                isYPlay = 1
+            }
+        })
+        $('#elka, .md-trigger').hover(function () {
+            $(this).css('filter', 'drop-shadow(10px 1px 10px rgba(100,0,0,0.5))')
+        }, function () {
+
+            $(this).css('filter', 'none')
+        })
+        // Template for custom "info" button
+        $.fancybox.defaults.btnTpl.info = '<button data-fancybox-info class="fancybox-button fancybox-button--info" title="Show caption">&#x25cf;&#x25cf;&#x25cf;</button>';
+
+        // Initialise fancybox with custom settings
+        $('[data-fancybox="images"]').fancybox({
+            preventCaptionOverlap : false,
+            infobar: false,
+
+            // Disable idle
+            idleTime : 0,
+
+            // Display only these two buttons
+            buttons : [
+                'info', 'close'
+            ],
+
+            // Custom caption content
+            caption : function( instance, obj ) {
+                return '<div><p class="fancy-nav"><a data-fancybox-prev title="Previous" tabindex="1">&lsaquo;</a> <a data-fancybox-next title="Next" tabindex="2">&rsaquo;</a> &nbsp; <span data-fancybox-index></span> of <span data-fancybox-count></span> images</p>' + $(this).find('.caption').html() + '</div>';
+            },
+
+            onInit: function(instance) {
+
+                // Toggle caption on tap
+                instance.$refs.container.on('touchstart', '[data-fancybox-info]', function(e) {
+                    e.stopPropagation();
+                    e.preventDefault();
+
+                    instance.$refs.container.toggleClass('fancybox-vertical-caption');
+                });
+
+                // Display caption on button hover
+                instance.$refs.container.on('mouseenter', '[data-fancybox-info]', function(e) {
+                    instance.$refs.container.addClass('fancybox-vertical-caption');
+
+                    // Hide caption when mouse leaves caption area
+                    instance.$refs.caption.one('mouseleave', function(e) {
+                        instance.$refs.container.removeClass('fancybox-vertical-caption');
+                    });
+
+                });
+
+            }
+
+        });
+    </script>
+    <!-- classie.js by @desandro: https://github.com/desandro/classie -->
+    <script src="{{ asset('build/js/classie.js') }}"></script>
+    <script src="{{ asset('build/js/modalEffects.js') }}"></script>
+
+    <!-- for the blur effect -->
+    <!-- by @derSchepp https://github.com/Schepp/CSS-Filters-Polyfill -->
+    <script>
+        // this is important for IEs
+        var polyfilter_scriptpath = '/js/';
+    </script>
+    <script src="{{ asset('build/js/cssParser.js') }}"></script>
+    <script src="{{ asset('build/js/css-filters-polyfill.js') }}"></script>
+    <script src="{{ asset('build/js/jquery.fancybox.min.js') }}"></script>
+{% endblock %}
