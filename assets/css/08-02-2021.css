@@ -8,6 +8,7 @@ body {
 }
 .row {
     display: flex;
+    flex-wrap: nowrap;
     /*background: #ccc;*/
 }
 .row:first-child .brick {
@@ -27,8 +28,8 @@ body {
     position: relative;
     content: "";
     background: deepskyblue;
-    width: calc(7.5%);
-    height: 3vw;
+    width: calc(9%);
+    height: 6vw;
     border-radius: 2px;
     margin: 2px;
     box-shadow: 0 0 19px 1px dodgerblue inset;
@@ -42,8 +43,8 @@ body {
 }
 .brick {
     background: deepskyblue;
-    width: 15%;
-    height: 3vw;
+    width: 20%;
+    height: 6vw;
     border-radius: 2px;
     margin: 2px;
     box-shadow: 0 0 19px 1px dodgerblue inset;
