@@ -1,0 +1,165 @@
+{% extends 'layout.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('build/css/slick.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('build/css/slick-theme.css') }}" rel="stylesheet" type="text/css" />
+{% endblock %}
+{% block content %}
+
+    <!-- About -->
+    <section class="page-section" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading text-uppercase">Артур Юнк (В. Ш.)</h2>
+                    <h3 class="section-subheading text-muted">Режиссёр - постановщик Театра "МЭТЛУГ"</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-2" style="min-height: 300px">
+                    <img style="position: fixed" src="{{ asset('src/img/artur.jpg') }}" alt="">
+                </div>
+                <div class="col-lg-10">
+                    <ul class="timeline">
+                        <li class="timeline-inverted">
+                            <div class="timeline-image">
+                                <h4></h4>
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4>1989 г.</h4>
+                                    <h4 class="subheading"></h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">окончил Российскую Государственную Академию физической культуры. (cпециализация фехтование - кафедра Д. Тышлера, мастерская А. Мовшовича)</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-inverted">
+                            <div class="timeline-image">
+                                <h4></h4>
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4>С 1985 по 1988 г.г. </h4>
+                                    <h4 class="subheading"></h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">участник и один из создателей бригады каскадёров "7-&-7"</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-inverted">
+                            <div class="timeline-image">
+                                <h4></h4>
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4>1988 г. </h4>
+                                    <h4 class="subheading"></h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">педагог-режиссёр школы каскадёров в г. Зеленограде
+                                        <br>Театр- студия Киноактёра при киностудии "Мрсфильм" (управление, педагогика)</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-inverted">
+                            <div class="timeline-image">
+                                <h4></h4>
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4>C 1989 по 1995 г.г. </h4>
+                                    <h4 class="subheading"></h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">актёр, режиссёр и педагог детской студии Московского театра под руководством Вячеслава Спесивцева</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-inverted">
+                            <div class="timeline-image">
+                                <h4></h4>
+                            </div>
+                            <div class="timeline-panel">
+                            <div class="timeline-heading">
+                            <h4>1995г.</h4>
+                            <h4 class="subheading"></h4>
+                            </div>
+                            <div class="timeline-body">
+                            <p class="text-muted">участие в создании кафедры спортивной режиссуры и театрализации спорта при Академии Спорта России. (режиссер и актер спортивного театра)</p>
+                            </div>
+                            </div>
+                        </li>
+                        <li class="timeline-inverted">
+                            <div class="timeline-image">
+                                <h4></h4>
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4>1997г.</h4>
+                                    <h4 class="subheading"></h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">Екатеринбургский Гос. Театральный институт. (актёр театра и кино - курс Вячеслава Спесивцева, мастерская нар. арт. России Валентина Воронина)</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="timeline-image">
+                                <h4>Be Part
+                                    <br>Of Our
+                                    <br>Story!</h4>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4"></div>
+                <div class="col-lg-8">
+                    <h4 class="service-heading text-center">Спектакли поставленные в "МЭТЛУГ" <br> Валерием Шевцовым</h4>
+                    <h3 class="section-subheading text-muted toggle-left">О. Пройслер "Маленькая Баба-Яга" <br>
+                        б. Гримм "Храбрый Портняжка" <br>
+                        Э.Т.А. Гофман "Щелкунчик" <br>
+                        А. Грин "Паруса" <br>
+                        М. Протасов "Дорога на мельницу" <br>
+                        Ш. Перро "Скотина" <br>
+                        Н.В. Гоголь "Вечера не хуторе.. Вечера!"
+                    </h3>
+
+                    <h4 class="service-heading text-center">и которые поставил уже Артур Юнк</h4>
+                    <h3 class="section-subheading text-muted toggle-left">Ф. Ницше "Н. З. и К (Заратустра)" <br>
+                        Л. Керрол "Алиса в Странне" <br>
+                        С. Соколов "Школа для Дураков" <br>
+                        В. Розанов "Люди Солнца и Луны"</h3>
+
+                    <h4 class="service-heading text-center">постановки в других театрах</h4>
+                    <h3 class="section-subheading text-muted toggle-left">В. Шекспир "Трагедия о власти" <br>
+                        Дни Украины в Касабланке "Достоверность сценической лжи" <br>
+                        Постановочный тренинг в г. Евпатории <br>
+                        В гимназии при аппарате президента России - "Храбрый Портной"</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock content %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('build/js/slick.min.js') }}"></script>
+
+    <script>
+        $('.slider-center').slick({
+            dots: true,
+            infinite: true,
+            speed: 300,
+            slidesToShow: 1,
+            centerMode: true,
+            variableWidth: true,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+        });
+    </script>
+{% endblock javascripts %}
