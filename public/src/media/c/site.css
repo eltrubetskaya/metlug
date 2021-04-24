@@ -1,0 +1,256 @@
+body.loading {
+    /*
+    background-image: url(../i/loader.gif);
+    background-position: center 100px;
+    background-repeat: no-repeat;
+    */
+    overflow: hidden;
+    padding-right: 16px;
+    color: black;
+}
+
+#wrap {
+    overflow: hidden;
+    width: 100%;
+    min-width: 960px;
+}
+
+#header {
+    width: 960px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+#header h1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 118px 0 0;
+    padding: 0;
+    height: 181px;
+    line-height: 91px;
+    width: 211px;
+    background: url(../../../build/img/logo_2.png) center center no-repeat;
+    background-size: cover;
+    text-indent: -5000px;
+    font-size: 1px;
+}
+#header h2 {
+    padding: 360px 0 0 300px;
+}
+#header h3 {
+    padding: 20px 0 0 270px;
+}
+#header h4 {
+    padding: 5px 0 0 270px;
+}
+#header .content {
+    display: none;
+}
+#header .loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#parts {
+    width: 960px;
+    margin: 0 auto 80px;
+    position: relative;
+    height: 1150px;
+    z-index: 1;
+    opacity: 0;
+}
+#parts img {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+body.edit #parts {
+    background: url(../i/outline.png);
+}
+
+#footer {
+    width: 960px;
+    margin: 0 auto;
+    position: relative;
+}
+#footer .form,
+#footer .social {
+    position: relative;
+    float: right;
+    display: inline;
+    width: 350px;
+    padding: 0 20px 20px;
+    transform: translateZ(0);
+}
+#footer .form {
+    padding: 0 10px 20px 20px;
+}
+#footer .form .border,
+#footer .social .border {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 1px;
+    height: 38px;
+    background: #ccc;
+}
+#footer .social {
+    width: 180px;
+}
+#footer h6,
+#footer a {
+    color: #888;
+    font-weight: 400;
+    margin: 0 0 10px;
+    font-size: 14px;
+    text-decoration: none;
+}
+#footer .form input,
+#footer .social a {
+    height: 36px;
+    line-height: 36px;
+    border: none;
+    float: left;
+    margin: 0 5px 0 0;
+    padding: 0;
+}
+#footer .form input {
+    color: #888;
+    background: #fff;
+    padding: 0 8px;
+}
+#footer a {
+    -webkit-transition: 300ms all;
+}
+#footer .form input.submit {
+    margin-right: 0;
+}
+#footer .form input.submit,
+#footer .social a {
+    width: 36px;
+    background: #282624;
+    opacity: 0.9;
+    color: #deddd8;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 16px;
+    text-decoration: none;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    -webkit-appearance: none;
+}
+#footer .form input.text {
+    padding: 9px 8px;
+    height: 18px;
+    line-height: 18px;
+    font-size: 18px;
+    color: #4b4b4b;
+    width: 270px;
+    border-radius: 0;
+}
+#footer .form input.submit:hover,
+#footer .social a:hover {
+    opacity: 1;
+    color: #fff;
+    cursor: pointer;
+}
+#footer .social a:hover {
+    -webkit-border-radius: 18px;
+    -moz-border-radius: 18px;
+    border-radius: 18px;
+}
+#footer .form input.submit {
+    width: 50px;
+    padding: 0;
+}
+#footer .tweeter {
+    display: block;
+    margin: 10px 0 25px 760px;
+}
+#footer .logo {
+    float: right;
+    margin: 20px 0;
+}
+#footer a:hover {
+    color: #222;
+}
+
+#footer hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    height: 0;
+    margin: 0;
+}
+
+.save {
+    position: fixed;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+.save a {
+    display: block;
+}
+
+body.thanks #header h1 {
+    position: relative;
+}
+#thanks {
+    width: 960px;
+    margin: 0 auto;
+    color: #888;
+    font-size: 14px;
+    padding: 90px 0;
+    border-top: 1px solid #ccc;
+    margin-top: 12px;
+}
+#thanks h3 {
+    text-transform: none;
+    color: #fff;
+    font-size: 28px;
+    font-weight: 400;
+}
+#thanks p {
+    margin: 10px 0;
+}
+
+.touch #wrap {
+    margin: 0 auto;
+    width: 640px;
+    min-width: 640px;
+}
+.touch #header,
+.touch #footer,
+.touch #parts,
+.touch #thanks {
+    width: 640px;
+}
+.touch #header {
+    padding: 20px 0 0;
+}
+.touch #header h1,
+.touch #header h2,
+.touch #header h3 {
+    position: relative;
+    padding: 0;
+    margin: 20px 0 20px 50px;
+}
+.touch #parts {
+    background: url(../i/iphone.png);
+    height: 2364px;
+}
+.touch #parts img {
+    display: none;
+}
+.touch #footer {
+    margin-bottom: 100px;
+}
+.touch #footer .logo {
+    margin-right: 20px;
+}
+.home {
+    margin-top: 15px;
+}
