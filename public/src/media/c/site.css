@@ -239,8 +239,8 @@ body.thanks #header h1 {
     margin: 20px 0 20px 50px;
 }
 .touch #parts {
-    background: url(../i/iphone.png);
-    height: 2364px;
+    background: url(../i/parts/back.jpg) no-repeat;
+    height: 1757px;
 }
 .touch #parts img {
     display: none;
