@@ -67,7 +67,7 @@
             <h1 class="cursive">41 год без В.Высоцкого…</h1>
 {#            <h4>A free landing page theme with video background</h4>#}
 {#            <hr>#}
-{#            <a id="playVideo" class="btn btn-primary btn-xl">Play Video</a>#}
+            <a id="playVideo" class="btn btn-primary btn-xl">Play Video</a>
         </div>
     </div>
     <video  controls autoplay controlsList="nodownload" preload="metadata" class="fillWidth fadeIn wow collapse in" data-wow-delay="0.5s" id="video-background">
@@ -271,6 +271,8 @@
 <script>
     let videoPlayer = document.getElementById("playVideo")
     let background = document.getElementById("video-background")
+
+    document.getElementById("video-background").volume = 0.1;
     videoPlayer.addEventListener('click', function () {
         background.play()
     })
