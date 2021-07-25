@@ -67,10 +67,10 @@
             <h1 class="cursive">41 год без В.Высоцкого…</h1>
 {#            <h4>A free landing page theme with video background</h4>#}
 {#            <hr>#}
-            <a id="playVideo" class="btn btn-primary btn-xl">Play Video</a>
+{#            <a id="playVideo" class="btn btn-primary btn-xl">Play Video</a>#}
         </div>
     </div>
-    <video class="fillWidth fadeIn wow collapse in" data-wow-delay="0.5s" id="video-background">
+    <video  controls autoplay controlsList="nodownload" preload="metadata" class="fillWidth fadeIn wow collapse in" data-wow-delay="0.5s" id="video-background">
         <source src="{{ asset('video/25-07-2021.mp4') }}" type="video/mp4">Your browser does not support the video tag. I suggest you upgrade your browser.
         <source src="{{ asset('video/25-07-2021.ogg') }}" type="video/ogg">Your browser does not support the video tag. I suggest you upgrade your browser.
     </video>
@@ -269,11 +269,11 @@
 <!-- Core theme JS-->
 {#<script src="{{ asset('build/js/32-05-2021.js') }}"></script>#}
 <script>
-
+    let videoPlayer = document.getElementById("playVideo")
     let background = document.getElementById("video-background")
-    $('#playVideo').on('click',
+    videoPlayer.addEventListener('click', function () {
         background.play()
-    )
+    })
     (function($) {
         "use strict";
 
