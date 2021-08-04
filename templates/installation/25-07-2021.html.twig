@@ -65,15 +65,12 @@
     <div class="header-content">
         <div class="inner">
             <h1 class="cursive">41 год без В.Высоцкого…</h1>
-{#            <h4>A free landing page theme with video background</h4>#}
-{#            <hr>#}
-            <a id="playVideo" class="btn btn-primary btn-xl">Play Video</a>
+{#            <a id="playVideo" class="btn btn-primary btn-xl">Play Video</a>#}
         </div>
     </div>
-    <video  controls autoplay controlsList="nodownload" preload="metadata" class="fillWidth fadeIn wow collapse in" data-wow-delay="0.5s" id="video-background">
-        <source src="{{ asset('video/25-07-2021.mp4') }}" type="video/mp4">Your browser does not support the video tag. I suggest you upgrade your browser.
-        <source src="{{ asset('video/25-07-2021.ogg') }}" type="video/ogg">Your browser does not support the video tag. I suggest you upgrade your browser.
-    </video>
+    <div class="embed-responsive embed-responsive-16by9 fillWidth fadeIn wow collapse in" id="video-background">
+        <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/fBjdUBSLzXI?showinfo=1&modestbranding=1&rel=0&fs=1&iv_load_policy=3" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
 </header>
 <section class="container-fluid" id="four">
     <div class="row">
