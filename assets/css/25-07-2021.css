@@ -243,7 +243,7 @@ header {
 header .header-content {
   position: relative;
   width: 100%;
-  padding: 100px 15px;
+  padding: 200px 15px;
   text-align: center;
   z-index: 2;
 }
@@ -268,7 +268,7 @@ header .header-content .inner p {
   min-height: 100%;
   width: auto;
   height: auto;
-  z-index: 1;
+  z-index: 3;
 }
 
 #video-background.collapsing {
@@ -290,7 +290,7 @@ footer {
 
   header .header-content {
     position: absolute;
-    top: 50%;
+    top: 65%;
     padding: 0 50px;
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
@@ -520,4 +520,56 @@ img::selection {
 img::-moz-selection {
   color: #fff;
   background: 0 0;
+}
+.splitText{
+  width: 600px;
+  float: left;
+  margin-top: 90px;
+  margin-left: 20px;
+  font-size:20px;
+}
+
+.splitText>div{
+  white-space:pre-line;
+  float:left;
+  margin-right:5px;
+}
+
+#menu{
+  width:100%;
+  background-color:#222222;
+  height:60px;
+  /*position: fixed;*/
+  /*top:0px;*/
+  /*left:0px;*/
+  margin-bottom:20px;
+}
+
+.menuItem{
+  background-color:#105CB6;
+  color:#000000;
+  text-align:center;
+  float:left;
+  position:relative;
+  margin-right:10px;
+  height:40px;
+  line-height:40px;
+  font-size:20px;
+  cursor: pointer;
+  top:10px;
+  padding-left:10px;
+  padding-right:10px;
+}
+
+.split-lines{
+
+}
+
+.letter-measure{
+  margin-right:0 !important;
+}
+
+.blank{
+  margin-right:0px !important;
+  white-space: pre !important;
 }
