@@ -1,8 +1,8 @@
 {% extends 'layout.html.twig' %}
 {% block stylesheets %}
     {{ parent() }}
-    <link href="{{ asset('build/css/slick.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('build/css/slick-theme.css') }}" rel="stylesheet" type="text/css" />
+{#    <link href="{{ asset('build/css/slick.css') }}" rel="stylesheet" type="text/css" />#}
+{#    <link href="{{ asset('build/css/slick-theme.css') }}" rel="stylesheet" type="text/css" />#}
 {% endblock %}
 {% block content %}
 <!-- Header -->
@@ -755,19 +755,19 @@
 {% endblock content %}
 {% block javascripts %}
     {{ parent() }}
-<script src="{{ asset('build/js/slick.min.js') }}"></script>
+{#<script src="{{ asset('build/js/slick.min.js') }}"></script>#}
 
-<script>
-    $('.slider-center').slick({
-        dots: true,
-        infinite: true,
-        speed: 300,
-        slidesToShow: 1,
-        centerMode: true,
-        variableWidth: true,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 2000,
-    });
-    </script>
+{#<script>#}
+{#    $('.slider-center').slick({#}
+{#        dots: true,#}
+{#        infinite: true,#}
+{#        speed: 300,#}
+{#        slidesToShow: 1,#}
+{#        centerMode: true,#}
+{#        variableWidth: true,#}
+{#        slidesToScroll: 1,#}
+{#        autoplay: true,#}
+{#        autoplaySpeed: 2000,#}
+{#    });#}
+{#    </script>#}
 {% endblock javascripts %}
