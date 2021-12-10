@@ -67,6 +67,7 @@
         <img  style="transform: scale(1, -1); position: relative; left: -25px" class="text-center" src="{{ asset('src/img/train2.png') }}" alt="">
 
         <img id="train2" src="{{ asset('src/img/train.png') }}" alt="" style="
+        right: -500px;
         position: relative;
        -moz-transform: scale(-1, -1);
     -o-transform: scale(-1, -1);
@@ -80,8 +81,9 @@
         </div>
     </div>
     <div class="col-xs-12">
-        <img id="train" style="position: relative" src="{{ asset('src/img/train.png') }}" alt="">
-        <img  class="text-center" src="{{ asset('src/img/train2.png') }}" alt="" style="position: relative;left: -25px">
+        <img id="train" style="position: relative;" src="{{ asset('src/img/train.png') }}" alt="">
+        <img  class="text-center" src="{{ asset('src/img/train2.png') }}" alt="" style="
+        position: relative;left: -25px">
     </div>
 </section>
 <!-- Footer-->
@@ -223,11 +225,11 @@
 <script>
     let start = Date.now(); // remember start time
 
-    let timer = setInterval(function() {
+    let timer = setInterval(function () {
         // how much time passed from the start?
         let timePassed = Date.now() - start;
 
-        if (timePassed >= 7000) {
+        if (timePassed >= 9000) {
             clearInterval(timer); // finish the animation after 2 seconds
             return;
         }
@@ -241,11 +243,8 @@
     // left gets values from 0px to 400px
     function draw(timePassed) {
         train.style.left = timePassed / 5 + 'px';
-        console.log(timePassed/5);
         train2.style.right = timePassed / 5 + 'px';
     }
-    (function($) {
-    })(jQuery);
 </script>
 </body>
 </html>

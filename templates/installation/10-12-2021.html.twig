@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Молодёжный эмоциональный театр">
+    <meta name="author" content="">
+    <title>{% block title %}The "METLUG" Theatre - means we're from Lugansk City{% endblock %}</title>
+
+    <meta property="og:site_name" content="The «METLUG» Theatre"/>
+    <meta property="og:title" content="The «METLUG» Theatre - means we're from Lugansk City"/>
+    <meta property="og:url" content="https://theatre-metlug.org/"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:description" content="Молодёжный эмоциональный театр"/>
+    <link rel="shortcut icon" href="{{ asset('build/img/logo_2.png') }}" type="image/x-icon">
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
+    <link rel="stylesheet" href="{{ asset('build/css/15-10-2020.css') }}">
+    <link href="{{ asset('build/css/10-12-2021.css') }}" rel="stylesheet" />
+</head>
+<body id="page-top" style="color: #fff; overflow-x: hidden ">
+<!-- Navigation-->
+<nav id="topNav" class="navbar navbar-default navbar-fixed-top" style="padding-top: 10px">
+    <div class="container">
+        <ul class="nav navbar-nav navbar-left col-md-1 hidden-xs hidden-sm d-md-block">
+            <li>
+            <a href="{{ path('installation_show', {title: '25-07-2021'}) }}" title="32 Мая">
+                <button class="toggle-i toggle i toggle-left" style="position: inherit">
+                    <div class="cross">
+                        <div class="x"></div>
+                        <div class="y"></div>
+                    </div>
+                </button>
+            </a>
+            </li>
+        </ul>
+        <div class="col-md-10 col-12 text-center">
+                    <a class="navbar-brand js-scroll-trigger" href="{{ path('homepage') }}" style="font-size: 22px">
+                        <span class="notranslate" translate="no">{{ "The «METLUG» Theatre - means we're from Lugansk City"|raw }}</span>
+                    </a>
+        </div>
+            <ul class="nav navbar-nav navbar-right  col-md-1 hidden-xs hidden-sm d-md-block">
+                <li>
+                    <a href="#" title="">
+                        <button class="toggle-i toggle i toggle-right" style="position: inherit">
+                            <div class="cross">
+                                <div class="x"></div>
+                                <div class="y"></div>
+                            </div>
+                        </button>
+                    </a>
+                </li>
+            </ul>
+    </div>
+</nav>
+<section class="container-fluid">
+    <header style="margin-top: 100px;"><h1>Location: 13/1 Nekrasov Street, Metlug Beach, UA 33068</h1></header>
+    <div class="placeholder"></div>
+</section>
+<section class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <h4>«В детстве заложено всё то, что в течении всей своей творческой жизни художник будет использовать…»</h4>
+            <h4>А.А.Тарковский</h4>
+            <br>
+            <h4>«Нет! в юности моей, мятежной и суровой,
+                Отрадного душе воспоминанья нет;…»</h4>
+            <h4>Н.А.Некрасов.</h4>
+            <br>
+        </div>
+        <div class="col-xs-12">
+
+            <p>Николай Некрасов родился 10 декабря 1821 года в Немирове Винницкого уезда Подольской губернии и спустя 26 лет после раздела территории Польши между Австрией, Пруссией и Россией, и переставшей существовать, как государство на протяжении 123 лет.</p>
+            <p>Он был третьим законнорожденным ребёнком из четырнадцати детей отца, рожденных в том числе и  дворовыми девками.</p>
+               <p>Его отец и мать обвенчались в 1817 году без благословения своих родителей.</p>
+            <p>Николаю исполнилось 11 лет, и он поступил в гимназию, где проучился до пятого класса. Учеба давалась тяжело, прогуливал, был не аттестован, с начальством не ладилось — и прежде всего, из-за сатирических стихов, которые Николай начал сочинять в 16 лет, и в результате был отчислен. Итак, в 16ти летнем возрасте он отправился в Петербург, где должен был поступить на военную службу.</p>
+        </div>
+
+        <div class="col-xs-12" id="photo">
+
+            <img id="main-img" height="750" src="{{ asset('src/img/n_3.jpeg') }}"/>
+            <div id="zoom">
+                <img id="zoom-img" />
+            </div>
+        </div>
+
+        <div class="col-xs-12">
+            <p>Однако, в Петербурге вопреки требованиям и угрозам Николай в знак протеста поступал на восточные языки, позорно провалился, стал - вольнослушателем университета, и остался без средств к существованию. И в результате: оказался безработный, голодный, бездомный - попал в приют для нищих. Возможно именно там Николай Алексеевич Некрасов впервые нашел заработок - писать прошения и жалобы для нищих и инвалидов за деньги..
+        </p>
+        <p>Финансовые проблемы его быстро закончились. И в 20ти летнем возрасте он зарабатывал. А даже еще и более того, Николай Алексеевич Некрасов стал сочинять лубочные произведения  -  публиковать их в популярной газете «Русский инвалид», издававшейся около 100 лет начиная с 1813 года, ради денег также давал частные уроки и сочинял пьесы для театра и даже пристроился гувернером в пансионе для мальчиков известного военного инженера и математика Григория Францевича Бенецкого (якобы преподавал правописание, историю и арифметику).
+        </p>
+        <p>Итак, в неполные 20 лет, на добытые таким образом деньги к своему стыду Николай Алексеевич выпускает свой первый поэтический сборник «Мечты и звуки», состоящий из подражаний уже известным в то время поэтам. К его большому огорчению, и безуспешно.
+            Мечется, пишет авторские тексты: прозу, сатиру, безумные водевили.</p>
+        <p>(его многие критиковали)</p>
+        <p>К 25 годам ему удается сблизиться с известными литераторами и критиками, даже пытается завести дружбу и интимные отношения. А совместно с литератором Панаевым Николай Алексеевич Некрасов вкладывает деньги в убыточный журнал, созданный уже покойным в то время А.С. Пушкиным. При этом развивая романтические отношения с женой своего коммерческого партнера Панаева,  владелицей литературного салона, в который вхожи все известные литераторы и критики современности. Владелица салона, живя на двух мужчин несколько десятилетий, рожает именно от Николая Алексеевича Некрасова троих сыновей, что характерно все трое умерли во младенческом возрасте. И закономерно, Николай и Авдотья расстались после смерти Ивана Ивановича Панаева, умершего от разрыва сердца на руках у своей жены 49 лет отроду.</p>
+        <p>В 30 ти летнем возрасте коммерческую составляющую Николая Алексеевича поддерживает его способность к карточным играм, заложенная в детстве, как наследие рода Некрасовых, в чем он практически не имел проигрышей.
+        </p>
+        <p>А дальше так: <br>
+            кашельОслаблениеГолосаРезкоеПохудениеДостоевскийПсоваяОхотаТургеневТолстойАктрисаФранцузскогоТеатраСофияЛефренПарижОтыгралВКартыРодовоеИмениеПроигранноеДедомМорозКрасныйНосКомуНаРусиЖитьХорошоУКупцаВыигралФеклуПереименовалЕЕВЗинаидуПрожилСНей8ЛетОбвенчалсяУмер56ЛетОтродуОтОнкологии.
+        </p>
+        <br>
+        <p>Это было раненое в самом начале жизни сердце; и эта-та, никогда не заживавшая, рана его и была началом и источником.</p>
+            <br><h4>«..Но всё, что, жизнь мою опутав с детских лет,
+        Проклятьем на меня легло неотразимым, -
+        Всему начало здесь, в краю моем родимом!..»
+    </h4><h4>    Н.А.Некрасов.
+    </h4> <br>
+        <h4>«..человек, который не имел того детства, которое бы он мог запомнить на всю жизнь, врядли сможет по настоящему творить»
+        </h4><h4>   А.А. Тарковский
+        </h4>
+
+        </div>
+    </div>
+
+</section>
+<section>
+</section>
+<!-- Footer-->
+{#<footer class="footer bg-black small text-center text-white-50">#}
+{#    <div class="container px-4 px-lg-5"> &copy; МЭТЛУГ 1995-{{"now"|date("Y")}}</div>#}
+{#</footer>#}
+
+<button style="position: fixed" id="toggle" class="toggle-i toggle i" data-toggle="modal" data-target="#commandModal" title="Добавить комментарий">
+    <div class="cross">
+        <div class="x"></div>
+        <div class="y"></div>
+    </div>
+</button>
+<!-- Modal -->
+<div class="modal fade" id="commandModal" tabindex="-1" role="dialog" aria-labelledby="commandModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content" style="text-shadow: none">
+            <div class="modal-header text-muted text-left">
+{#                <h4 style="font-size: 17px; color: #fff">Станьте участником этой инсталляции! <br>В качестве комментария оставьте пожалуйста строчку из Высоцкого - первую что прийдет в голову.</h4>#}
+            </div>
+            {% if app.user %}
+                {{ form_start(form) }}
+                <div class="modal-header text-muted">
+                    <h5 class="modal-title" id="exampleModalLongTitle">{{ app.user }}</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="hidden">{{ form_row(form.username) }}</div>
+                    {{ form_row(form.text) }}
+
+                    <div class="hidden" style="font-size: 20px">{{ form_row(form.mediaLink) }}</div>
+                    <div class="hidden">{{ form_row(form.type) }}</div>
+                </div>
+                <div class="modal-footer">
+                    <div class="col-xs-6 pr-0">
+
+                    </div>
+                    <div class="col-xs-6 pl-0 pr-0">
+                        <button type="submit" class="col-xs-12 btn btn-primary" style="height: auto">Оставить Комментарий</button>
+                    </div>
+                </div>
+                {{ form_end(form) }}
+            {% else %}
+                {{ form_start(form) }}
+                <div class="modal-body" >
+                    {{ form_widget(form.username) }}
+                    <hr>
+                    <div class="">{{ form_row(form.text) }}</div>
+                    <div class="custom-file hidden">
+                        {{ form_row(form.mediaLink) }}
+                    </div>
+                    <div   class="hidden" style="font-size: 20px">{{ form_row(form.type) }}</div>
+                </div>
+                <div class="modal-footer">
+                    <div class="col-xs-6 pr-0 text-center">
+                        <a class="btn btn-primary" href="{{ path('connect_google_start') }}"><i class="fab fa-google"></i><span style="margin-left: 15px;font-weight: bold;">Bойти в Google</span></a>
+                    </div>
+                    <div class="col-xs-6 pl-0 pr-0">
+                        <button type="submit" class="col-xs-12 btn btn-primary" style="height: auto">Оставить Комментарий</button>
+                    </div>
+                </div>
+                {{ form_end(form) }}
+            {% endif %}
+            <div class="col-md-12 col-sm-12">
+                <div class="comments-list">
+                    {% for comment in comments %}
+                        {% if comment.user %}
+                            {% set avatar = comment.user.avatar %}
+                            {% set user = comment.user %}
+                        {% else %}
+                            {% set avatar = asset('src/img/logo.jpg') %}
+                            {% set user = comment.username %}
+                        {% endif %}
+                        <div class="col-sm-12 text-muted">
+                            <div class="media">
+                                <div class="media-body text-left" style="color: #fff;font-size: 17px;">
+                                    <h4 class="media-heading user_name"><img style="width: 40px" class="rounded-circle" src="{{ avatar }}" alt=""> {{ user }}</h4>
+                                    {{ comment.text|raw }}
+                                    {% if comment.type == 'video' %}
+                                        <div class="embed-responsive embed-responsive-16by9">
+                                            <iframe class="embed-responsive-item" src="{{ comment.mediaLink }}" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                        </div>
+                                    {% endif %}
+                                    {% if comment.type == 'audio' %}
+                                        <audio  controlsList="nodownload" controls style="z-index: 150;width: 100%">
+                                            <source src="{{ comment.mediaLink }}" type="audio/mpeg">
+                                            Your browser does not support the audio element.
+                                        </audio>
+                                    {% endif %}
+                                    {% if comment.type == 'image' and comment.mediaLink %}
+                                        <div class="col-xs-12" >
+                                            <img width="300px" height="300px" src="{{ comment.mediaLink }}" alt="{{ installation.description }}">
+                                        </div>
+                                    {% endif %}
+                                </div>
+                                <div class="text-right">
+                                    <p><small>{{ comment.createdAt|date('Y-m-d H:i') }}</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <div class="col-xs-12 pr-0 text-center">
+                    <a href="#" class="close" style="display: contents" data-dismiss="modal" aria-label="Close">
+                        <i class="fa fa-times" style="color: red"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer style="height: 100px"></footer>
+
+<!-- Bootstrap core JavaScript -->
+{#<script src="{{ asset('build/js/node-libs.js') }}"></script>#}
+
+{#<!-- Contact form JavaScript -->#}
+{#<script src="{{ asset('build/js/jqBootstrapValidation.js') }}"></script>#}
+{#<script src="{{ asset('build/js/contact_me.js') }}"></script>#}
+
+<!-- Custom scripts for this template -->
+{#<script src="{{ asset('build/js/agency.min.js') }}"></script>#}
+<script>
+    {% if modalShow is defined and modalShow is not null %}
+    $('#commandModal').modal('show')
+    {% endif %}
+</script>
+<!--scripts loaded here from cdn for performance -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+{#<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TimelineLite.min.js"></script>#}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+<script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-8216c69d01441f36c0ea791ae2d4469f0f8ff5326f00ae2d00e4bb7d20e24edb.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.8.2/TweenMax.min.js"></script>
+<!-- Core theme JS-->
+<script>
+    var options = {
+        imgSrc1:"{{ asset('src/img/n_2.jpg') }}",
+        imgSrc2:"{{ asset('src/img/n_1.jpg') }}",
+        containerName : "placeholder",
+        columns:16,
+        margin:3
+    }
+
+
+    function VenetianBlinds(defaults)
+    {
+        var cols = defaults.columns;
+        var margin = defaults.margin;
+        var img1 = defaults.imgSrc1;
+        var img2 = defaults.imgSrc2;
+        var placeholder = document.getElementsByClassName(defaults.containerName)[0];
+        var directionX, directionY;
+
+        var column, blind, blindImg;
+        var bgImg, rot;
+        var colL;
+        var colW = (placeholder.offsetWidth / cols) - margin;
+        for (var i=0; i < cols; i++)
+        {
+            colL = ((colW + margin) * i);
+
+            column = document.createElement('div');
+            column.className = "column";
+            column.style.width = colW + "px";
+            column.style.left = colL + "px";
+            placeholder.appendChild(column);
+
+            for (var j=0; j<4; j++)
+            {
+                blind = document.createElement('div');
+                blind.className = "blind";
+                blind.style.width = colW + "px";
+                blindImg = document.createElement('div');
+                blindImg.className = "blindImg";
+
+                switch (j){
+                    case 0:
+                        TweenMax.set(blind, {rotationY: "0"});
+                        bgImg = img1;
+                        break;
+                    case 1:
+                        TweenMax.set(blind, {rotationY: "90"});
+                        bgImg = img2;
+                        break;
+                    case 2:
+                        TweenMax.set(blind, {rotationY: "180"});
+                        bgImg = img1;
+                        break;
+                    case 3:
+                        TweenMax.set(blind, {rotationY: "270"});
+                        bgImg = img2;
+                        break;
+                }
+                blindImg.style.width = placeholder.offsetWidth + "px";
+                blindImg.style.backgroundImage = "url("+bgImg+")";
+                blindImg.style.left = -colL + "px";
+
+                column.appendChild(blind);
+                blind.appendChild(blindImg);
+
+                TweenMax.set(blind, { transformOrigin:"50% 50% " + -colW/2, transformStyle: "preserve-3d"});
+            }
+
+            TweenMax.set(column, {transformStyle:"preserve-3d", transformPerspective:1000, rotationY:0});
+
+            column.addEventListener("mouseenter", function(event){
+                var elem = event.currentTarget;
+                var rotY = elem._gsTransform.rotationY;
+
+                if(directionX > 0){
+                    TweenMax.to(elem, 1, {rotationY:Math.floor(rotY/90)*90+90, transformOrigin:"50% 50% -" + colW/2, ease:Back.easeOut});
+                }else{
+                    TweenMax.to(elem, 1, {rotationY:Math.floor(rotY/90)*90-90, transformOrigin:"50% 50% -" + colW/2, ease:Back.easeOut});
+                }
+            })
+        }
+        document.addEventListener('mousemove', function (event) {
+            directionX = event.movementX || event.mozMovementX || event.webkitMovementX || 0;
+            directionY = event.movementY || event.mozMovementY || event.webkitMovementY || 0;
+        });
+    }
+
+    VenetianBlinds(options);
+    var zoom    = document.querySelector("#zoom");
+    var zoomImg = document.querySelector("#zoom-img");
+    var mainImg = document.querySelector("#main-img");
+    var enterTL = new TimelineMax({ paused: true });
+    var timer   = TweenLite.delayedCall(1, () => enterTL.reverse()).pause();
+
+    var cx, cy, ratio;
+
+    window.addEventListener("load", init);
+
+    function init() {
+
+        zoomImg.src = mainImg.src;
+        ratio = mainImg.naturalWidth / mainImg.width;
+        resize();
+
+        TweenLite.set([zoom, zoomImg], { xPercent: -50, yPercent: -50 });
+        TweenLite.set(zoom, { autoAlpha: 0, scale: 0 });
+
+        enterTL
+            .to(mainImg, 0.5, { filter: "grayscale(1)", "-webkit-filter": "grayscale(1)" }, 0)
+            .to(zoom, 0.5, { autoAlpha: 1, scale: 1 }, 0)
+
+        window.addEventListener("resize", resize);
+        mainImg.addEventListener("mouseleave", leaveAction);
+        mainImg.addEventListener("mousemove", moveAction);
+    }
+
+    function leaveAction() {
+        enterTL.reverse();
+    }
+
+    function moveAction(e) {
+        enterTL.play();
+        timer.restart(true);
+        TweenLite.set(zoom, { x: e.x, y: e.y });
+        TweenLite.set(zoomImg, { x: (cx - e.x) * ratio, y: (cy - e.y) * ratio });
+    }
+
+    function resize() {
+        var rect = mainImg.getBoundingClientRect();
+        cx = rect.left + rect.width  / 2;
+        cy = rect.top  + rect.height / 2;
+    }
+
+
+</script>
+</body>
+</html>
