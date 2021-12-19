@@ -15,7 +15,6 @@ h4 {
   min-height: 90px;
 }
 p {
-  text-indent: 1.5em; /* Отступ первой строки */
   text-align: justify;
   font-size: 18px;
   line-height: 1.5em;
