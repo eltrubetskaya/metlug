@@ -160,6 +160,39 @@
 
 </section>
 <section>
+    <div class="tileContainer">
+
+    </div>
+</section>
+<section class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <p class="pr">Жил-был заяц. Жил он не один, а у человека. И работа у него была - выполнять невыполнимые задания.
+                Вот и сегодня так. На рассвете, посылает его хозяин в плавание - говорит: отправляйся на лодке, по реке,
+                в Ту сторону. Весло в камышах ищи, лодка на берегу спрятана. К закату возвращайся. Плывешь? -
+                Плыву, - ответил заяц. И пошел искать весло. Нашел и весло, и лодку. Оттолкнулся от берега и поплыл.
+                Видит, что не один он плывет. Другие зайцы вокруг куда не глянь. И все гребут.. гребуться.
+                Каждый со своей скоростью. И мой заяц плывет. И по течению и против, преодолевая пороги и препятствия.
+                И веслом грести у него получается, и путь уже почти преодолел он. Как вдруг - подлетает к ним сорока.
+                на вертолете. и говорит: меня послали сделать все красиво. Вы не вписываетесь в картину реки и леса. - Забрала
+                лодки и весла, и кинула каждому зайцу по бревну и что-то похожее на.. вилку?!. Мой заяц возмутился, мол
+                ЭТИМ грести неудобно, что он не сможет доплыть в срок. И остальные зайцы дружно закивали головами.
+                А сорока ответила, что заяц не готов  быть модным и современным. И может к этим атрибутам он просто
+                не подходит? Она отвечает за красоту и видит это так. И улетела.
+                Еще немного повозмущались и другие зайцы, пошумели, делать нечего - надо как-то грести. Конечно же
+                к вечеру они не успели. Устали и вымотались. Добарахтались до берега и легли отдыхать. И тут опять
+                к ним прилетает сорока. Уже не одна, а с орлом. Сорока стрекочет и заискивает перед орлом.
+                Но тот обернулся к зайцам и спросил - всем ли они довольны? Мой заяц вскинул голову. - Нет не всем.
+                Ни на бревне плыть, ни вилкой грести я не буду. - И все другие зайцы восторженно закивали. -
+                Не будем грести вилками!! - И тут сорока начала пятиться. А орел сказал, что все будет как они хотят!
+                И что они важны. И важна их работа!
+                Все зайцы снова восторженно закивали! И сорока стрекоча улетела в лес.
+                Мой заяц оттолкнул свое бревно от берега, чтобы оно поплыло вниз по реке. В лучах заходящего солнца на
+                бревне виднелась надпись: - Мы больше не зайцы!
+            </p>
+            <h4 class="text-right pr">O. Прозайко</h4>
+        </div>
+    </div>
 </section>
 <!-- Footer-->
 {#<footer class="footer bg-black small text-center text-white-50">#}
@@ -299,6 +332,225 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.8.2/TweenMax.min.js"></script>
 <!-- Core theme JS-->
 <script>
+    // options
+    var optionsB = {
+        imgSrc : "{{ asset('src/img/map.jpeg') }}",
+        containerName : "tileContainer",
+        grid : false,
+        tileWidth : 80,
+        tileHeight : 80,
+        mouseTrail:true
+    }
+
+    // ----------------------------------------------------------
+    var tileWidth, tileHeight, numTiles, tileHolder, tileContainer;
+    var directionX, directionY;
+    var imgOriginalWidth, imgOriginalHeight;
+    var imgCoverWidth, imgCoverHeight;
+    var imageLoaded = false;
+
+    numTiles=0;
+    tileWidth = optionsB.tileWidth;
+    tileHeight = optionsB.tileHeight;
+
+    tileContainer = document.getElementsByClassName(optionsB.containerName)[0];
+
+    function init(){
+        if(optionsB.grid == false)tileContainer.className += " noGrid";
+
+        //preload image and get original image size, then create tiles
+        var image = new Image();
+        image.src = optionsB.imgSrc;
+        image.onload = function(e){
+            imageLoaded = true;
+            imgOriginalWidth = e.currentTarget.width;
+            imgOriginalHeight = e.currentTarget.height;
+
+            createTileHolder();
+            checkTileNumber();
+            positionImage();
+            addListeners();
+        };
+    }
+
+    function resizeHandler()
+    {
+        if(imageLoaded == false)return;
+
+        //not working yet
+
+        checkTileNumber();
+        positionImage();
+    }
+
+    function createTileHolder(){
+        tileHolder = document.createElement('div');
+        tileHolder.className = "tileHolder";
+        tileHolder.style.position = "absolute";
+        tileHolder.style.top = "50%";
+        tileHolder.style.left = "50%";
+        tileHolder.style.transform = "translate(-50%, -50%)";
+        tileContainer.appendChild(tileHolder);
+    }
+
+    function checkTileNumber()
+    {
+        tileHolder.style.width = Math.ceil(tileContainer.offsetWidth / tileWidth) * tileWidth + "px";
+        tileHolder.style.height = Math.ceil(tileContainer.offsetHeight / tileHeight) * tileHeight + "px";
+
+        var tilesFitInWindow = Math.ceil(tileContainer.offsetWidth / tileWidth) * Math.ceil(tileContainer.offsetHeight / tileHeight);
+        if(numTiles < tilesFitInWindow){
+            for (var i=0, l=tilesFitInWindow-numTiles; i < l; i++){
+                addTiles();
+            }
+        }else if(numTiles > tilesFitInWindow){
+            for (var i=0, l=numTiles-tilesFitInWindow; i < l; i++){
+                removeTiles();
+            }
+        }
+    }
+
+
+    function addTiles()
+    {
+        var tile = document.createElement('div');
+        tile.className = "tile";
+
+        //maintain aspect ratio
+        imgCoverWidth = tileContainer.offsetWidth;
+        imgCoverHeight = tileContainer.offsetHeight;
+
+        if(imgOriginalWidth > imgOriginalHeight){
+            imgCoverHeight = imgOriginalHeight / imgOriginalWidth * imgCoverWidth;
+        }else{
+            imgCoverWidth = imgOriginalWidth / imgOriginalHeight * imgCoverHeight;
+        }
+
+
+        tile.style.background = 'url("'+optionsB.imgSrc+'") no-repeat';
+        tile.style.backgroundSize  = imgCoverWidth + "px " +  imgCoverHeight + "px";
+        tile.style.width = tileWidth + "px";
+        tile.style.height = tileHeight + "px";
+        document.querySelectorAll(".tileHolder")[0].appendChild(tile);
+
+        tile.addEventListener("mouseover", moveImage);
+
+        numTiles++;
+    }
+
+    function removeTiles()
+    {
+        var tileToRemove = document.querySelectorAll(".tile")[0];
+        tileToRemove.removeEventListener("mouseover", moveImage);
+
+        TweenMax.killTweensOf(tileToRemove);
+        tileToRemove.parentNode.removeChild(tileToRemove);
+
+        numTiles--;
+    }
+
+    function addListeners(){
+        if(optionsB.mouseTrail){
+            document.addEventListener('mousemove', function (event) {
+                directionX = event.movementX || event.mozMovementX || event.webkitMovementX || 0;
+                directionY = event.movementY || event.mozMovementY || event.webkitMovementY || 0;
+            });
+        }
+    }
+
+    function positionImage(){
+        for(var t=0, l=numTiles; t < l; t++)
+        {
+            var nowTile = document.querySelectorAll(".tile")[t];
+
+            var left = (-nowTile.offsetLeft - (tileHolder.offsetLeft - (tileHolder.offsetWidth/2)));
+            var top = (-nowTile.offsetTop - (tileHolder.offsetTop - (tileHolder.offsetHeight/2)));
+
+            nowTile.style.backgroundPosition = left + "px " + top + "px";
+        }
+    }
+
+    function resetImage(nowTile){
+        var left = (-nowTile.offsetLeft - (tileHolder.offsetLeft - (tileHolder.offsetWidth/2)));
+        var top = (-nowTile.offsetTop - (tileHolder.offsetTop - (tileHolder.offsetHeight/2)));
+
+
+        TweenMax.to(nowTile, 1, {backgroundPosition:left + "px " + top + "px", ease:Power1.easeInOut});
+    }
+
+
+    function moveImage(e){
+        var nowTile = e.currentTarget
+        var minWidth = -tileContainer.offsetWidth+nowTile.offsetWidth;
+        var minHeight = -tileContainer.offsetHeight+nowTile.offsetHeight;
+        var nowLeftPos = (-nowTile.offsetLeft - (tileHolder.offsetLeft - (tileHolder.offsetWidth/2)));
+        var nowTopPos = (-nowTile.offsetTop - (tileHolder.offsetTop - (tileHolder.offsetHeight/2)))
+        var offset = 60;
+        var left = nowLeftPos;
+        var top = nowTopPos;
+
+        if(optionsB.mouseTrail){
+            //direction-aware movement
+            if(directionX > 0){
+                left = nowLeftPos + offset;
+            }else if(directionX < 0){
+                left = nowLeftPos - offset;
+            }
+
+            if(directionY > 0){
+                top = nowTopPos + offset;
+            }else if(directionY < 0){
+                top = nowTopPos - offset;
+            }
+        }else{
+            //random movement
+            left = getRandomInt(nowLeftPos - offset , nowLeftPos + offset);
+            top = getRandomInt(nowTopPos - offset, nowTopPos + offset);
+        }
+
+        // bounds
+        if(left < minWidth)left=minWidth;
+        if(left > 0)left=0;
+        if(top < minHeight)top=minHeight;
+        if(top > 0)top=0;
+
+        //tween
+        TweenMax.to(nowTile, 1.5, {backgroundPosition:left + "px " + top + "px", ease:Power1.easeOut, onComplete:resetImage, onCompleteParams:[nowTile]});
+    }
+
+    ///////////////////////////////////////////////////////////////////
+
+    init();
+    // handle event
+    //window.addEventListener("optimizedResize", resizeHandler);
+
+    ////////////////////////UTILS//////////////////////////////////////
+    //////////////////////////////////////////////////////////////////
+
+    function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    (function() {
+        var throttle = function(type, name, obj) {
+            obj = obj || window;
+            var running = false;
+            var func = function() {
+                if (running) { return; }
+                running = true;
+                requestAnimationFrame(function() {
+                    obj.dispatchEvent(new CustomEvent(name));
+                    running = false;
+                });
+            };
+            obj.addEventListener(type, func);
+        };
+
+        /* init - you can init any event */
+        throttle("resize", "optimizedResize");
+    })();
+</script>
+<script>
     var options = {
         imgSrc1:"{{ asset('src/img/n_2.jpg') }}",
         imgSrc2:"{{ asset('src/img/n_1.jpg') }}",
@@ -431,8 +683,6 @@
         cx = rect.left + rect.width  / 2;
         cy = rect.top  + rect.height / 2;
     }
-
-
 </script>
 </body>
 </html>
