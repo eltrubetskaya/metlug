@@ -4,7 +4,7 @@ body{
   background: url(../../src/img/green_paper.jpeg);
   color: white;
   font-size: 2rem;
-  font-family: "Terminal Dosis", sans-serif;
+  font-family: 'Caveat', cursive;
   overflow: hidden;
   -webkit-overflow-scrolling: touch;
   background-size: cover;
@@ -16,4 +16,19 @@ body{
 
 .navbar {
   min-height: 90px;
+}
+#text {
+  top: 150px !important;
+  text-shadow: 1px 1px black;
+  font-weight: 700;
+}
+h1 {
+  font-family: 'Caveat', cursive;
+  font-size: 5em;
+}
+@media(max-width:768px) {
+  h1 {
+    font-size: 2em;
+  }
+
 }
