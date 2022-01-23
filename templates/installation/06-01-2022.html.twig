@@ -111,25 +111,11 @@
                 </div>
                 {{ form_end(form) }}
             {% else %}
-                {{ form_start(form) }}
-                <div class="modal-body" >
-                    {{ form_widget(form.username) }}
-                    <hr>
-                    <div class="">{{ form_row(form.text) }}</div>
-                    <div class="custom-file hidden">
-                        {{ form_row(form.mediaLink) }}
-                    </div>
-                    <div   class="hidden" style="font-size: 20px">{{ form_row(form.type) }}</div>
-                </div>
                 <div class="modal-footer">
-                    <div class="col-xs-6 pr-0 text-center">
+                    <div class="col-xs-12 pr-0 text-center">
                         <a class="btn btn-primary" href="{{ path('connect_google_start') }}"><i class="fab fa-google"></i><span style="margin-left: 15px;font-weight: bold;">Bойти в Google</span></a>
                     </div>
-                    <div class="col-xs-6 pl-0 pr-0">
-                        <button type="submit" class="col-xs-12 btn btn-primary" style="height: auto">Оставить Комментарий</button>
-                    </div>
                 </div>
-                {{ form_end(form) }}
             {% endif %}
             <div class="col-md-12 col-sm-12">
                 <div class="comments-list">

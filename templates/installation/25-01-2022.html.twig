@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Молодёжный эмоциональный театр">
+    <meta name="author" content="">
+    <title>{% block title %}The "METLUG" Theatre - means we're from Lugansk City{% endblock %}</title>
+
+    <meta property="og:site_name" content="The «METLUG» Theatre"/>
+    <meta property="og:title" content="The «METLUG» Theatre - means we're from Lugansk City"/>
+    <meta property="og:url" content="https://theatre-metlug.org/"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:description" content="Молодёжный эмоциональный театр"/>
+    <link rel="shortcut icon" href="{{ asset('build/img/logo_2.png') }}" type="image/x-icon">
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+{#    <script src="{{ asset('build/js/modernizr.custom.js') }}"></script>#}
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
+    <link rel="stylesheet" href="{{ asset('build/css/15-10-2020.css') }}">
+    <link href="{{ asset('build/css/25-01-2022.css') }}" rel="stylesheet" />
+</head>
+<body id="page-top" style="color: #fff; overflow-x: hidden ">
+<!-- Navigation-->
+<nav id="topNav" class="navbar navbar-default navbar-fixed-top" style="padding-top: 10px">
+    <div class="container">
+        <ul class="nav navbar-nav navbar-left col-md-1 hidden-xs hidden-sm d-md-block">
+            <li>
+                <a href="{{ path('installation_show', {title: '06-01-2022'}) }}" title="Сочельник у МЭТЁлки 2021-2022!">
+                    <button class="toggle-i toggle i toggle-left" style="position: inherit">
+                        <div class="cross">
+                            <div class="x"></div>
+                            <div class="y"></div>
+                        </div>
+                    </button>
+                </a>
+            </li>
+        </ul>
+        <div class="col-md-10 col-12 text-center">
+            <a class="navbar-brand js-scroll-trigger" href="{{ path('homepage') }}" style="font-size: 22px">
+                <span class="notranslate" translate="no">{{ "The «METLUG» Theatre - means we're from Lugansk City"|raw }}</span>
+            </a>
+        </div>
+        <ul class="nav navbar-nav navbar-right  col-md-1 hidden-xs hidden-sm d-md-block">
+            <li>
+                <a href="#" title="">
+                    <button class="toggle-i toggle i toggle-right" style="position: inherit">
+                        <div class="cross">
+                            <div class="x"></div>
+                            <div class="y"></div>
+                        </div>
+                    </button>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<section class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <div id="green">
+                <div data-depth="0.2" id="tree"><a href="#" class="md-trigger" data-modal="modal-8"> <img src="{{ asset('src/img/lamp.png') }}" alt=""></a></div>
+{#                <div data-depth="0.6" id="text"><h1>Сочельник у МЭТЁлки 2021-2022!</h1></div>#}
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Footer-->
+{#<footer class="footer bg-black small text-center text-white-50">#}
+{#    <div class="container px-4 px-lg-5"> &copy; МЭТЛУГ 1995-{{"now"|date("Y")}}</div>#}
+{#</footer>#}
+
+<button style="position: fixed" id="toggle" class="toggle-i toggle i" data-toggle="modal" data-target="#commandModal" title="Добавить комментарий">
+    <div class="cross">
+        <div class="x"></div>
+        <div class="y"></div>
+    </div>
+</button>
+<!-- Modal -->
+<div class="modal fade" id="commandModal" tabindex="-1" role="dialog" aria-labelledby="commandModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content" style="text-shadow: none">
+            <div class="modal-header text-muted text-left">
+                {#                <h4 style="font-size: 17px; color: #fff">Станьте участником этой инсталляции! <br>В качестве комментария оставьте пожалуйста строчку из Высоцкого - первую что прийдет в голову.</h4>#}
+            </div>
+            {% if app.user %}
+                {{ form_start(form) }}
+                <div class="modal-header text-muted">
+                    <h5 class="modal-title" id="exampleModalLongTitle">{{ app.user }}</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="hidden">{{ form_row(form.username) }}</div>
+                    {{ form_row(form.text) }}
+
+                    <div class="hidden" style="font-size: 20px">{{ form_row(form.mediaLink) }}</div>
+                    <div class="hidden">{{ form_row(form.type) }}</div>
+                </div>
+                <div class="modal-footer">
+                    <div class="col-xs-6 pr-0">
+
+                    </div>
+                    <div class="col-xs-6 pl-0 pr-0">
+                        <button type="submit" class="col-xs-12 btn btn-primary" style="height: auto">Оставить Комментарий</button>
+                    </div>
+                </div>
+                {{ form_end(form) }}
+            {% else %}
+                <div class="modal-footer">
+                    <div class="col-xs-12 pr-0 text-center">
+                        <a class="btn btn-primary" href="{{ path('connect_google_start') }}"><i class="fab fa-google"></i><span style="margin-left: 15px;font-weight: bold;">Bойти в Google</span></a>
+                    </div>
+                </div>
+            {% endif %}
+            <div class="col-md-12 col-sm-12">
+                <div class="comments-list">
+                    {% for comment in comments %}
+                        {% if comment.user %}
+                            {% set avatar = comment.user.avatar %}
+                            {% set user = comment.user %}
+                        {% else %}
+                            {% set avatar = asset('src/img/logo.jpg') %}
+                            {% set user = comment.username %}
+                        {% endif %}
+                        <div class="col-sm-12 text-muted">
+                            <div class="media">
+                                <div class="media-body text-left" style="color: #000;font-size: 17px;">
+                                    <h4 class="media-heading user_name"><img style="width: 40px" class="rounded-circle" src="{{ avatar }}" alt=""> {{ user }}</h4>
+                                    {{ comment.text|raw }}
+                                    {% if comment.type == 'video' %}
+                                        <div class="embed-responsive embed-responsive-16by9">
+                                            <iframe class="embed-responsive-item" src="{{ comment.mediaLink }}" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                        </div>
+                                    {% endif %}
+                                    {% if comment.type == 'audio' %}
+                                        <audio  controlsList="nodownload" controls style="z-index: 150;width: 100%">
+                                            <source src="{{ comment.mediaLink }}" type="audio/mpeg">
+                                            Your browser does not support the audio element.
+                                        </audio>
+                                    {% endif %}
+                                    {% if comment.type == 'image' and comment.mediaLink %}
+                                        <div class="col-xs-12" >
+                                            <img width="300px" height="300px" src="{{ comment.mediaLink }}" alt="{{ installation.description }}">
+                                        </div>
+                                    {% endif %}
+                                </div>
+                                <div class="text-right">
+                                    <p><small>{{ comment.createdAt|date('Y-m-d H:i') }}</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <div class="col-xs-12 pr-0 text-center">
+                    <a href="#" class="close" style="display: contents" data-dismiss="modal" aria-label="Close">
+                        <i class="fa fa-times" style="color: red"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{#<div class="md-modal md-effect-8" id="modal-8">#}
+{#    <div class="md-content">#}
+{#        <h3 class="media-heading user_name">#}
+{#            ARTHUR YUNK#}
+{#        </h3>#}
+{#        <div>#}
+{#            <div style="margin-bottom: 15px" class="embed-responsive embed-responsive-16by9">#}
+{#                <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/KB-YhHqTkGs?showinfo=1&amp;modestbranding=1&amp;rel=0&amp;fs=1&amp;iv_load_policy=3" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>#}
+{#            </div>#}
+{#            <button class="md-close">Close</button>#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
+<footer style="height: 100px"></footer>
+<script>
+    {% if modalShow is defined and modalShow is not null %}
+    $('#commandModal').modal('show')
+    {% endif %}
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+<script>
+  var scene = document.getElementById('green');
+  var parallaxInstance = new Parallax(scene, {
+    relativeInput: true,
+    clipRelativeInput: true
+  });
+  parallaxInstance.friction(0.2, 0.2);
+</script>
+<!--scripts loaded here from cdn for performance -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<!-- classie.js by @desandro: https://github.com/desandro/classie -->
+{#<script src="{{ asset('build/js/classie.js') }}"></script>#}
+{#<script src="{{ asset('build/js/modalEffects.js') }}"></script>#}
+</body>
+</html>

@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@1,600;1,700&family=Cormorant+Infant:ital,wght@1,600&family=Bellota:ital,wght@1,700&family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ruslan+Display&family=Caveat:wght@400;700&family=Marck+Script&family=Neucha&display=swap');
+
+body{
+  background: url(../../src/img/Stol-Vysotskogo.jpg);
+  color: white;
+  font-size: 2rem;
+  font-family: 'Caveat', cursive;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+  background-size: cover;
+}
+#tree > img {
+  margin-top: 2%;
+  margin-left: -3%;
+  width: 180px;
+}
+
+.navbar {
+  min-height: 90px;
+}
+#text {
+  top: 150px !important;
+  text-shadow: 1px 1px black;
+  font-weight: 700;
+}
+h1 {
+  font-family: 'Caveat', cursive;
+  font-size: 5em;
+}
+@media(max-width:768px) {
+  h1 {
+    font-size: 2em;
+  }
+
+}

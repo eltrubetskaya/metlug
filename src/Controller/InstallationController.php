@@ -25,7 +25,7 @@ class InstallationController extends AbstractController
         $comment = new Comment();
         $comment->setInstallation($installation);
         $form = $this->createForm(CommentType::class, $comment, [
-            'action' => $this->generateUrl('comment_create', ['installationId' => $installation->getId()]),
+            'action' => $this->generateUrl('comment_new', ['installationId' => $installation->getId()]),
             'method' => Request::METHOD_POST
         ]);
 

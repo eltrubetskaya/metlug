@@ -17,6 +17,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -51,82 +52,84 @@ class CommentController extends AbstractController
         UploadService $fileStack
     ): Response
     {
-        $comment = new Comment();
-        $comment->setInstallation($installation);
-        $form = $this->createForm(CommentType::class, $comment, [
-            'action' => $this->generateUrl('comment_create', ['installationId' => $installation->getId()]),
-            'method' => Request::METHOD_POST
-        ]);
-        $form->handleRequest($request);
+        return new JsonResponse(null, Response::HTTP_NOT_FOUND);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            /** @var UploadedFile $mediaLink */
-            $mediaLink = $form->get('mediaLink')->getData();
-
-            if ($mediaLink) {
-                $originalFilename = pathinfo($mediaLink->getClientOriginalName(), PATHINFO_FILENAME);
-                // this is needed to safely include the file name as part of the URL
-                $safeFilename = transliterator_transliterate('Any-Latin; Latin-ASCII; [^A-Za-z0-9_] remove; Lower()', $originalFilename);
-                $newFilename = $safeFilename . '-' . uniqid('', true) . '.' . $mediaLink->guessExtension();
-
-                // Move the file to the directory where brochures are stored
-                try {
-                    $mediaLink->move(
-                        $this->getParameter('upload_directory'),
-                        $newFilename
-                    );
-                    $link = $fileStack->upload($this->getParameter('upload_directory'). $newFilename);
-                    if ($link) {
-                        $comment->setMediaLink('https://cdn.filestackcontent.com/resize=height:300,width:300,fit:crop/output=compress:true,quality:70,strip:true/' . $link);
-                    }
-                } catch (FileException $e) {
-                    $logger->critical($e->getMessage());
-                }
-            }
-
-
-
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($comment);
-            $entityManager->flush();
-            if ($comment->getType() === Comment::TYPE_VIDEO) {
-                $link = $comment->getMediaLink();
-                parse_str( parse_url( $link, PHP_URL_QUERY ), $vars );
-                preg_match('/(http(s|):|)\/\/(www\.|)yout(.*?)\/(embed\/|watch.*?v=|)([a-z_A-Z0-9\-]{11})/i', $link, $results);
-                $comment->setMediaLink($results[6]);
-            }
-            /** @var User $logged */
-            $logged = $this->getUser();
-            if ($logged) {
-                $comment
-                    ->setUser($logged)
-                    ->setUsername($logged->getFirstName() . ' ' . $logged->getLastName())
-                ;
-            }
-            $entityManager->flush();
-            try {
-                $users = $repository->findBy(['subscribed' => true]);
-                foreach ($users as $user) {
-                    $mailService->sendMail($user->getEmail(),$installation->getDescription(), MailService::CREATE_COMMENT_TEMPLATE, [
-                        'title' => $installation->getDescription(),
-                        'link' => $this->generateUrl('installation_show', [
-                            'title' => $installation->getTitle()
-                        ]),
-                        'user' => $comment->getUsername()
-                    ]);
-                    $logger->info('Email success sent to ' . $user->getEmail());
-                }
-            } catch (\Exception $e) {
-                $logger->info('Emails error: ' . $e->getMessage());
-            }
-
-            return $this->redirectToRoute('installation_show', ['title' => $installation->getTitle()]);
-        }
-
-        return $this->render('comment/new.html.twig', [
-            'comment' => $comment,
-            'form' => $form->createView(),
-        ]);
+//        $comment = new Comment();
+//        $comment->setInstallation($installation);
+//        $form = $this->createForm(CommentType::class, $comment, [
+//            'action' => $this->generateUrl('comment_create', ['installationId' => $installation->getId()]),
+//            'method' => Request::METHOD_POST
+//        ]);
+//        $form->handleRequest($request);
+//
+//        if ($form->isSubmitted() && $form->isValid()) {
+//            /** @var UploadedFile $mediaLink */
+//            $mediaLink = $form->get('mediaLink')->getData();
+//
+//            if ($mediaLink) {
+//                $originalFilename = pathinfo($mediaLink->getClientOriginalName(), PATHINFO_FILENAME);
+//                // this is needed to safely include the file name as part of the URL
+//                $safeFilename = transliterator_transliterate('Any-Latin; Latin-ASCII; [^A-Za-z0-9_] remove; Lower()', $originalFilename);
+//                $newFilename = $safeFilename . '-' . uniqid('', true) . '.' . $mediaLink->guessExtension();
+//
+//                // Move the file to the directory where brochures are stored
+//                try {
+//                    $mediaLink->move(
+//                        $this->getParameter('upload_directory'),
+//                        $newFilename
+//                    );
+//                    $link = $fileStack->upload($this->getParameter('upload_directory'). $newFilename);
+//                    if ($link) {
+//                        $comment->setMediaLink('https://cdn.filestackcontent.com/resize=height:300,width:300,fit:crop/output=compress:true,quality:70,strip:true/' . $link);
+//                    }
+//                } catch (FileException $e) {
+//                    $logger->critical($e->getMessage());
+//                }
+//            }
+//
+//
+//
+//            $entityManager = $this->getDoctrine()->getManager();
+//            $entityManager->persist($comment);
+//            $entityManager->flush();
+//            if ($comment->getType() === Comment::TYPE_VIDEO) {
+//                $link = $comment->getMediaLink();
+//                parse_str( parse_url( $link, PHP_URL_QUERY ), $vars );
+//                preg_match('/(http(s|):|)\/\/(www\.|)yout(.*?)\/(embed\/|watch.*?v=|)([a-z_A-Z0-9\-]{11})/i', $link, $results);
+//                $comment->setMediaLink($results[6]);
+//            }
+//            /** @var User $logged */
+//            $logged = $this->getUser();
+//            if ($logged) {
+//                $comment
+//                    ->setUser($logged)
+//                    ->setUsername($logged->getFirstName() . ' ' . $logged->getLastName())
+//                ;
+//            }
+//            $entityManager->flush();
+//            try {
+//                $users = $repository->findBy(['subscribed' => true]);
+//                foreach ($users as $user) {
+//                    $mailService->sendMail($user->getEmail(),$installation->getDescription(), MailService::CREATE_COMMENT_TEMPLATE, [
+//                        'title' => $installation->getDescription(),
+//                        'link' => $this->generateUrl('installation_show', [
+//                            'title' => $installation->getTitle()
+//                        ]),
+//                        'user' => $comment->getUsername()
+//                    ]);
+//                    $logger->info('Email success sent to ' . $user->getEmail());
+//                }
+//            } catch (\Exception $e) {
+//                $logger->info('Emails error: ' . $e->getMessage());
+//            }
+//
+//            return $this->redirectToRoute('installation_show', ['title' => $installation->getTitle()]);
+//        }
+//
+//        return $this->render('comment/new.html.twig', [
+//            'comment' => $comment,
+//            'form' => $form->createView(),
+//        ]);
     }
 
     /**

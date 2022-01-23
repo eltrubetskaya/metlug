@@ -153,48 +153,48 @@
             <div class="modal-header text-muted text-left">
                 <p></p>
             </div>
-            {% if app.user %}
-                {{ form_start(form) }}
-                <div class="modal-header text-muted">
-                    <h5 class="modal-title" id="exampleModalLongTitle">{{ app.user }}</h5>
-                </div>
-                <div class="modal-body">
-                    <div class="d-none">{{ form_row(form.username) }}</div>
-                    {{ form_row(form.text) }}
+{#            {% if app.user %}#}
+{#                {{ form_start(form) }}#}
+{#                <div class="modal-header text-muted">#}
+{#                    <h5 class="modal-title" id="exampleModalLongTitle">{{ app.user }}</h5>#}
+{#                </div>#}
+{#                <div class="modal-body">#}
+{#                    <div class="d-none">{{ form_row(form.username) }}</div>#}
+{#                    {{ form_row(form.text) }}#}
 
-                    <div class="d-none" style="font-size: 20px">{{ form_row(form.mediaLink) }}</div>
-                    <div class="d-none">{{ form_row(form.type) }}</div>
-                </div>
-                <div class="modal-footer">
-                    <div class="col-6 pr-0">
+{#                    <div class="d-none" style="font-size: 20px">{{ form_row(form.mediaLink) }}</div>#}
+{#                    <div class="d-none">{{ form_row(form.type) }}</div>#}
+{#                </div>#}
+{#                <div class="modal-footer">#}
+{#                    <div class="col-6 pr-0">#}
 
-                    </div>
-                    <div class="col-6 pl-0 pr-0">
-                        <button type="submit" class="col-12 btn btn-secondary" style="height: auto">Оставить Комментарий</button>
-                    </div>
-                </div>
-                {{ form_end(form) }}
-            {% else %}
-                {{ form_start(form) }}
-                <div class="modal-body" >
-                    {{ form_widget(form.username) }}
-                    <hr>
-                    <div class="">{{ form_row(form.text) }}</div>
-                    <div class="custom-file d-none">
-                        {{ form_row(form.mediaLink) }}
-                    </div>
-                    <div   class="d-none" style="font-size: 20px">{{ form_row(form.type) }}</div>
-                </div>
-                <div class="modal-footer">
-                    <div class="col-6 pr-0">
-                        <a class="btn btn-primary" href="{{ path('connect_google_start') }}"><i class="fab fa-google"></i><span style="margin-left: 15px;font-weight: bold;">Bойти в Google</span></a>
-                    </div>
-                    <div class="col-6 pl-0 pr-0">
-                        <button type="submit" class="col-12 btn btn-secondary" style="height: auto">Оставить Комментарий</button>
-                    </div>
-                </div>
-                {{ form_end(form) }}
-            {% endif %}
+{#                    </div>#}
+{#                    <div class="col-6 pl-0 pr-0">#}
+{#                        <button type="submit" class="col-12 btn btn-secondary" style="height: auto">Оставить Комментарий</button>#}
+{#                    </div>#}
+{#                </div>#}
+{#                {{ form_end(form) }}#}
+{#            {% else %}#}
+{#                {{ form_start(form) }}#}
+{#                <div class="modal-body" >#}
+{#                    {{ form_widget(form.username) }}#}
+{#                    <hr>#}
+{#                    <div class="">{{ form_row(form.text) }}</div>#}
+{#                    <div class="custom-file d-none">#}
+{#                        {{ form_row(form.mediaLink) }}#}
+{#                    </div>#}
+{#                    <div   class="d-none" style="font-size: 20px">{{ form_row(form.type) }}</div>#}
+{#                </div>#}
+{#                <div class="modal-footer">#}
+{#                    <div class="col-6 pr-0">#}
+{#                        <a class="btn btn-primary" href="{{ path('connect_google_start') }}"><i class="fab fa-google"></i><span style="margin-left: 15px;font-weight: bold;">Bойти в Google</span></a>#}
+{#                    </div>#}
+{#                    <div class="col-6 pl-0 pr-0">#}
+{#                        <button type="submit" class="col-12 btn btn-secondary" style="height: auto">Оставить Комментарий</button>#}
+{#                    </div>#}
+{#                </div>#}
+{#                {{ form_end(form) }}#}
+{#            {% endif %}#}
             <div class="col-md-12 col-sm-12">
                 <div class="comments-list">
                     {% for comment in comments %}
