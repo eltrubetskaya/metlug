@@ -67,10 +67,18 @@
     <div class="row text-center">
         <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12"></div>
         <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 text-center">
-            <h2 style="margin-top: 110px; text-shadow: 2px 2px #000;">"Я каждый раз хочу отсюда сбежать куда-нибудь туда..."</h2>
+            <h2 style="margin-top: 110px; text-shadow: 2px 2px #000;">"...Я каждый раз хочу отсюда <br> Сбежать куда-нибудь туда..."</h2>
             <h4 style="text-shadow: 2px 2px #000;">Виртуальный театр МЭТЛУГ представляет все свои инсталляции посвященные В.С. Высоцкому</h4>
         </div>
         <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12"></div>
+    </div>
+    <div class="row text-center">
+        <div class="col-xs-12 text-center">
+            <audio controls autoplay id="playAudio" style="z-index: 10;opacity: 0.75;">
+                <source src="{{ asset('src/media/liri.mp3') }}" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
     </div>
     <div class="row text-center">
         <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12"></div>
@@ -392,6 +400,7 @@
     {% if modalShow is defined and modalShow is not null %}
     $('#commandModal').modal('show')
     {% endif %}
+    document.getElementById("playAudio").volume = 0.2;
 </script>
 <!--scripts loaded here from cdn for performance -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
