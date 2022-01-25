@@ -67,14 +67,16 @@
     <div class="row text-center">
         <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12"></div>
         <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 text-center">
-            <h2 style="margin-top: 110px; text-shadow: 2px 2px #000;">"...Я каждый раз хочу отсюда <br> Сбежать куда-нибудь туда..."</h2>
-            <h4 style="text-shadow: 2px 2px #000;">Виртуальный театр МЭТЛУГ представляет все свои инсталляции посвященные В.С. Высоцкому</h4>
+            <h2 style="margin-top: 110px; text-shadow: 2px 2px #000; margin-bottom: 20px;">"...Я каждый раз хочу отсюда <br> Сбежать куда-нибудь туда..."</h2>
+            <h4 style="text-shadow: 2px 2px #000;">В 84-й день рождения В.С. Высоцкого, представляем все 11 виртуальных постановок МЭТЛУГ посаящённые Ему.
+                <br> …и плюс один бонус от самого В.С.
+                <br> Найди их на рабочем столе.</h4>
         </div>
         <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12"></div>
     </div>
     <div class="row text-center">
         <div class="col-xs-12 text-center">
-            <audio controls autoplay id="playAudio" style="z-index: 10;opacity: 0.75;">
+            <audio id="play" style="z-index: 10;opacity: 0.75;">
                 <source src="{{ asset('src/media/liri.mp3') }}" type="audio/mpeg">
                 Your browser does not support the audio element.
             </audio>
@@ -90,6 +92,10 @@
     transform: rotate(
 -25deg
 );" src="{{ asset('src/img/calendar.png') }}" alt="">
+
+            <a style="cursor: pointer" onClick="playAudio()" title="Высоцкий В. С.">
+                <img style="position: absolute;width: 216px;margin-top: 30px; margin-left: 115px; height: 230px; z-index: 1000;" src="{{ asset('src/img/bg.png') }}" alt="">
+            </a>
         <a href="#" class="md-trigger" data-modal="modal-1" title="Высоцкий В. С. «Сэр, возьмите Алису с собой!»">
             <img style="position: absolute;width: 70px;margin-top: 170px; margin-left: 400px; height: 30px; z-index: 1000;" src="{{ asset('src/img/bg.png') }}" alt="">
         </a>
@@ -395,12 +401,19 @@
         </div>
     </div>
 </div>
+<div class="col-xs-12 text-center" style="margin-top: 40px; font-size: 20px;">
+    Для максимального эмоционального восприятия рекомендуем смотреть на компьютере https://theatre-metlug.org/
+</div>
 <footer style="height: 100px"></footer>
 <script>
     {% if modalShow is defined and modalShow is not null %}
     $('#commandModal').modal('show')
     {% endif %}
-    document.getElementById("playAudio").volume = 0.2;
+    document.getElementById("play").volume = 0.2;
+    let audio = document.getElementById("play")
+    function playAudio() {
+        audio.play()
+    }
 </script>
 <!--scripts loaded here from cdn for performance -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
