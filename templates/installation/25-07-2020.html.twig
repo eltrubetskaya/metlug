@@ -227,7 +227,7 @@
 
 {% block javascripts %}
     {{ parent() }}
-    <script src="{{ asset('build/js/slick.min.js') }}"></script>
+{#    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>#}
     <script>
         {% if modalShow is defined and modalShow is not null %}
         $('#commandModal').modal('show')

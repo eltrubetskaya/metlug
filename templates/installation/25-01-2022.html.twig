@@ -16,7 +16,6 @@
     <link rel="shortcut icon" href="{{ asset('build/img/logo_2.png') }}" type="image/x-icon">
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
-{#    <script src="{{ asset('build/js/modernizr.custom.js') }}"></script>#}
     <!-- Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
@@ -25,6 +24,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
     <link rel="stylesheet" href="{{ asset('build/css/15-10-2020.css') }}">
+    <link href="{{ asset('build/css/component.css') }}" rel="stylesheet" type="text/css" />
+    <script src="{{ asset('build/js/modernizr.custom.js') }}"></script>
     <link href="{{ asset('build/css/25-01-2022.css') }}" rel="stylesheet" />
 </head>
 <body id="page-top" style="color: #fff; overflow-x: hidden ">
@@ -62,20 +63,50 @@
         </ul>
     </div>
 </nav>
-<section class="container-fluid">
-    <div class="row">
-        <div class="col-lg-12 text-center">
-            <div id="green">
-                <div data-depth="0.2" id="tree"><a href="#" class="md-trigger" data-modal="modal-8"> <img src="{{ asset('src/img/lamp.png') }}" alt=""></a></div>
-{#                <div data-depth="0.6" id="text"><h1>Сочельник у МЭТЁлки 2021-2022!</h1></div>#}
-            </div>
-        </div>
+<section class="container">
+    <div class="row text-center">
+        <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12"></div>
+        <a href="#" class="md-trigger" data-modal="modal-1">
+            <img style="position: absolute;width: 170px;margin-top: 219px; margin-left: -250px; height: 190px; z-index: 1000;" src="{{ asset('src/img/bg.png') }}" alt="">
+        </a>
+        <a href="#" class="md-trigger" data-modal="modal-2">
+            <img style="position: absolute;width: 170px;margin-top: 219px; margin-left: -250px; height: 190px; z-index: 1000;" src="{{ asset('src/img/bg.png') }}" alt="">
+        </a>
+        <a href="#" class="md-trigger" data-modal="modal-3">
+            <img style="position: absolute;width: 170px;margin-top: 219px; margin-left: -250px; height: 190px; z-index: 1000;" src="{{ asset('src/img/bg.png') }}" alt="">
+        </a>
+        <a href="#" class="md-trigger" data-modal="modal-4">
+            <img style="position: absolute;width: 200px;margin-top: 417px; margin-left: -463px; height: 40px; z-index: 1000;" src="{{ asset('src/img/bg.png') }}" alt="">
+        </a>
+        <a href="#" class="md-trigger" data-modal="modal-5">
+            <img style="position: absolute;width: 160px;margin-top: 455px; margin-left: -525px; height: 110px; z-index: 1000;" src="{{ asset('src/img/bg.png') }}" alt="">
+        </a>
+        <a href="#" class="md-trigger" data-modal="modal-6">
+            <img style="position: absolute;width: 97px;margin-top: 490px; margin-left: -340px; height: 90px; z-index: 1000;" src="{{ asset('src/img/bg.png') }}" alt="">
+        </a>
+        <a href="#" class="md-trigger" data-modal="modal-7">
+            <img style="position: absolute;width: 75px;margin-top: 525px; margin-left: -240px; height: 65px; z-index: 1000;" src="{{ asset('src/img/bg.png') }}" alt="">
+        </a>
+        <a href="#" class="md-trigger" data-modal="modal-8">
+            <img style="position: absolute;width: 60px;margin-top: 510px; margin-left: -165px; height: 65px; z-index: 1000;" src="{{ asset('src/img/bg.png') }}" alt="">
+        </a>
+        <a href="#" class="md-trigger" data-modal="modal-9">
+            <img style="position: absolute;width: 60px;margin-top: 510px; margin-left: -165px; height: 65px; z-index: 1000;" src="{{ asset('src/img/bg.png') }}" alt="">
+        </a>
+        <a href="#" class="md-trigger" data-modal="modal-10">
+            <img style="position: absolute;width: 60px;margin-top: 510px; margin-left: -165px; height: 65px; z-index: 1000;" src="{{ asset('src/img/bg.png') }}" alt="">
+        </a>
+        <a href="#" class="md-trigger" data-modal="modal-11">
+            <img style="position: absolute;width: 60px;margin-top: 510px; margin-left: -165px; height: 65px; z-index: 1000;" src="{{ asset('src/img/bg.png') }}" alt="">
+        </a>
+        <img class="col-lg-8 col-md-8 col-sm-12 col-xs-12" style="width: 720px !important; height: 420px !important;" src="{{ asset('src/img/animation.gif') }}" alt="">
+        <div class="col-lg-2 col-md-2"></div>
     </div>
 </section>
 <!-- Footer-->
-{#<footer class="footer bg-black small text-center text-white-50">#}
-{#    <div class="container px-4 px-lg-5"> &copy; МЭТЛУГ 1995-{{"now"|date("Y")}}</div>#}
-{#</footer>#}
+<footer class="footer bg-black small text-center text-white-50">
+    <div class="container px-4 px-lg-5"> &copy; МЭТЛУГ 1995-{{"now"|date("Y")}}</div>
+</footer>
 
 <button style="position: fixed" id="toggle" class="toggle-i toggle i" data-toggle="modal" data-target="#commandModal" title="Добавить комментарий">
     <div class="cross">
@@ -169,39 +200,194 @@
         </div>
     </div>
 </div>
-{#<div class="md-modal md-effect-8" id="modal-8">#}
-{#    <div class="md-content">#}
-{#        <h3 class="media-heading user_name">#}
-{#            ARTHUR YUNK#}
-{#        </h3>#}
-{#        <div>#}
-{#            <div style="margin-bottom: 15px" class="embed-responsive embed-responsive-16by9">#}
-{#                <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/KB-YhHqTkGs?showinfo=1&amp;modestbranding=1&amp;rel=0&amp;fs=1&amp;iv_load_policy=3" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>#}
-{#            </div>#}
-{#            <button class="md-close">Close</button>#}
-{#        </div>#}
-{#    </div>#}
-{#</div>#}
+
+<div class="md-modal md-effect-8" id="modal-11" style="background-color: #222">
+    <div class="md-content">
+        <h3 class="media-heading user_name">
+            В. С. Высоцкий
+        </h3>
+        <h5 class="text-center">Свеча Владимиру Высоцкому. Репетиция с Высоцким<br>
+            25.07.2016</h5>
+        <div>
+            <div style="margin-bottom: 15px" class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="{{ path('installation_show', {title: '25-07-2016'}) }}" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+            </div>
+            <button class="md-close">Close</button>
+        </div>
+    </div>
+</div>
+<div class="md-modal md-effect-8" id="modal-10" style="background-color: #222">
+    <div class="md-content">
+        <h3 class="media-heading user_name">
+            Владимир Высоцкий
+        </h3>
+        <h5 class="text-center">навсегда и во всем...<br>
+            25.01.2017</h5>
+        <div>
+            <div style="margin-bottom: 15px" class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="{{ path('installation_show', {title: '25-01-2017'}) }}" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+            </div>
+            <button class="md-close">Close</button>
+        </div>
+    </div>
+</div>
+<div class="md-modal md-effect-8" id="modal-9" style="background-color: #222">
+    <div class="md-content">
+        <h3 class="media-heading user_name">
+            Высоцкий В. С.
+        </h3>
+        <h5 class="text-center">Вспоминая, поминая, читая и почитая.... В день памяти Владимира Высоцкого <br>
+            25.07.2017</h5>
+        <div>
+            <div style="margin-bottom: 15px" class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="{{ path('installation_show', {title: '25-07-2017'}) }}" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+            </div>
+            <button class="md-close">Close</button>
+        </div>
+    </div>
+</div>
+<div class="md-modal md-effect-8" id="modal-8" style="background-color: #222">
+    <div class="md-content">
+        <h3 class="media-heading user_name">
+            Пусть.. Я это никогда не полюблю.
+        </h3>
+        <h5 class="text-center">Традиционно, 25 января театр "МЭТЛУГ" шлёт поздравления <br>
+            25.01.2019</h5>
+        <div>
+            <div style="margin-bottom: 15px" class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="{{ path('installation_show', {title: '25-01-2019'}) }}" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+            </div>
+            <button class="md-close">Close</button>
+        </div>
+    </div>
+</div>
+<div class="md-modal md-effect-8" id="modal-7" style="background-color: #222">
+    <div class="md-content">
+        <h3 class="media-heading user_name">
+            А он играл - не доиграл.
+            Киноактёр Владимир Семёнович Высоцкий.
+        </h3>
+        <h5 class="text-center">
+            25.01.2021</h5>
+        <div>
+            <div style="margin-bottom: 15px" class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="{{ path('installation_show', {title: '25-01-2021'}) }}" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+            </div>
+            <button class="md-close">Close</button>
+        </div>
+    </div>
+</div>
+<div class="md-modal md-effect-8" id="modal-6" style="background-color: #222">
+    <div class="md-content">
+        <h3 class="media-heading user_name">
+            Высоцкий В. С.
+        </h3>
+        <h5 class="text-center">" Вспоминая, поминая, читая, почитая..." <br>
+            25.07.2020</h5>
+        <div>
+            <div style="margin-bottom: 15px" class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="{{ path('installation_show', {title: '25-07-2020'}) }}" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+            </div>
+            <button class="md-close">Close</button>
+        </div>
+    </div>
+</div>
+<div class="md-modal md-effect-8" id="modal-5" style="background-color: #222">
+    <div class="md-content">
+        <h3 class="media-heading user_name">
+            82 года В.Высоцкому.
+        </h3>
+        <h5 class="text-center">Мы поздравляем: "Что остаётся... потом.. после того, как." <br>
+            25.01.2020</h5>
+        <div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="modal-body">
+                            <p class="item-intro text-muted">Мы поздравляем: Что остаётся... потом.. после того, как.</p>
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/9wGi8jZTllA?showinfo=1&modestbranding=1&rel=0&fs=0&iv_load_policy=3" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="md-close">Close</button>
+        </div>
+    </div>
+</div>
+<div class="md-modal md-effect-8" id="modal-4" style="background-color: #222">
+    <div class="md-content">
+        <h3 class="media-heading user_name">
+            Свеча Памяти. Свеча Почитания.
+        </h3>
+        <h5 class="text-center">
+            25.07.2019</h5>
+        <div>
+
+            <div style="margin-bottom: 15px" class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="{{ path('installation_show', {title: '25-07-2019'}) }}" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+            </div>
+            <button class="md-close">Close</button>
+        </div>
+    </div>
+</div>
+<div class="md-modal md-effect-8" id="modal-3" style="background-color: #222">
+    <div class="md-content">
+        <h3 class="media-heading user_name">
+            41 без Высоцкого
+        </h3>
+        <h5 class="text-center">
+            25.07.2021</h5>
+        <div>
+            <div style="margin-bottom: 15px" class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="{{ path('installation_show', {title: '25-07-2021'}) }}" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+            </div>
+            <button class="md-close">Close</button>
+        </div>
+    </div>
+</div>
+<div class="md-modal md-effect-8" id="modal-2" style="background-color: #222">
+    <div class="md-content">
+        <h3 class="media-heading user_name">
+            Свеча Владимиру Высоцкому
+        </h3>
+        <h5 class="text-center">И вот уже считаем десятки лет, как нет на этой Земле Владимира Высоцкого <br>
+            25.07.2018</h5>
+        <div>
+            <div style="margin-bottom: 15px" class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="{{ path('installation_show', {title: '25-07-2018'}) }}" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+            </div>
+            <button class="md-close">Close</button>
+        </div>
+    </div>
+</div>
+<div class="md-modal md-effect-8" id="modal-1" style="background-color: #222">
+    <div class="md-content">
+        <h3 class="media-heading user_name">
+            Высоцкий В. С. «Сэр, возьмите Алису с собой!»
+        </h3>
+        <h5 class="text-center">
+            25.01.2018</h5>
+        <div>
+            <div style="margin-bottom: 15px" class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="{{ path('installation_show', {title: '25-01-2018'}) }}" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+            </div>
+            <button class="md-close">Close</button>
+        </div>
+    </div>
+</div>
 <footer style="height: 100px"></footer>
 <script>
     {% if modalShow is defined and modalShow is not null %}
     $('#commandModal').modal('show')
     {% endif %}
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
-<script>
-  var scene = document.getElementById('green');
-  var parallaxInstance = new Parallax(scene, {
-    relativeInput: true,
-    clipRelativeInput: true
-  });
-  parallaxInstance.friction(0.2, 0.2);
-</script>
 <!--scripts loaded here from cdn for performance -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <!-- classie.js by @desandro: https://github.com/desandro/classie -->
-{#<script src="{{ asset('build/js/classie.js') }}"></script>#}
-{#<script src="{{ asset('build/js/modalEffects.js') }}"></script>#}
+<script src="{{ asset('build/js/classie.js') }}"></script>
+<script src="{{ asset('build/js/modalEffects.js') }}"></script>
 </body>
 </html>

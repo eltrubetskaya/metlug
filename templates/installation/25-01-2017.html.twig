@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Молодёжный эмоциональный театр">
+    <meta name="author" content="">
+    <title>{% block title %}The "METLUG" Theatre - means we're from Lugansk City{% endblock %}</title>
+
+    <meta property="og:site_name" content="The «METLUG» Theatre"/>
+    <meta property="og:title" content="The «METLUG» Theatre - means we're from Lugansk City"/>
+    <meta property="og:url" content="https://theatre-metlug.org/"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:description" content="Молодёжный эмоциональный театр"/>
+    <link rel="shortcut icon" href="{{ asset('build/img/logo_2.png') }}" type="image/x-icon">
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+</head>
+<body id="page-top" style="color: #fff; background-color: #222; ">
+
+<section class="container">
+    <div class="row text-center">
+        <div class="col-xs-12">
+{#            <h3 class="text-uppercase">Владимир Высоцкий <br> навсегда и во всем...</h3>#}
+            <p>МЭТЛУГовцы всех поколений поздравляют с днем рождения Владимира Высоцкого всех, кто знает и помнит, "что остается от сказки потом, после того как ее рассказали"! Пусть каждый, вне зависимости от времени, места и обстоятельств найдет "в своей загадочной и сказочной стране", все, что представляется. А "маятники времени", запущенные талантливой рукой никогда не "застынут" для тех, кто помнит...</p>
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/ec5qezOqWWg?showinfo=1&modestbranding=1&rel=0&fs=0&iv_load_policy=3" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <p></p>
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/jmbE8VYW03A?showinfo=1&modestbranding=1&rel=0&fs=0&iv_load_policy=3" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Footer-->
+<footer class="footer bg-black small text-center text-white-50">
+    <div class="container px-4 px-lg-5"> &copy; МЭТЛУГ 1995-{{"now"|date("Y")}}</div>
+</footer>
+{#<footer style="height: 100px"></footer>#}
+{#<script>#}
+{#    {% if modalShow is defined and modalShow is not null %}#}
+{#    $('#commandModal').modal('show')#}
+{#    {% endif %}#}
+{#</script>#}
+<!--scripts loaded here from cdn for performance -->
+{#<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>#}
+{#<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>#}
+{#<!-- classie.js by @desandro: https://github.com/desandro/classie -->#}
+{#<script src="{{ asset('build/js/classie.js') }}"></script>#}
+{#<script src="{{ asset('build/js/modalEffects.js') }}"></script>#}
+</body>
+</html>
