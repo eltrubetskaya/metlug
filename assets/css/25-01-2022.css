@@ -31,6 +31,10 @@ h1 {
   color: #222;
   font-size: 12px !important;
 }
+.md-modal {
+  max-width: 830px !important;
+  min-width: 420px !important;
+}
 .md-content h3 {
   font-size: 1.1em;
 }
