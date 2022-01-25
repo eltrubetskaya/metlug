@@ -23,7 +23,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/{installationId}/comment")
+ * @Route("/comment/{installationId}")
  * @ParamConverter("installation", options={"id" = "installationId"})
  */
 class CommentController extends AbstractController
