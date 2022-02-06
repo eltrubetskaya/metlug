@@ -9,6 +9,9 @@ body{
   /*-webkit-overflow-scrolling: touch;*/
   background-size: cover;
 }
+.content, #photo_VVS {
+  opacity: 0;
+}
 #tree > img {
   margin-top: 2%;
   margin-left: -3%;
