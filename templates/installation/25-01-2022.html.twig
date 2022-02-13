@@ -64,13 +64,6 @@
     </div>
 </nav>
 <section class="container">
-    <div class="row text-center" id="cal">
-        <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12"></div>
-        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 text-center" style="position: absolute">
-            <img style="z-index:20000; width: 620px !important; position: relative;" src="{{ asset('src/img/DropVV.gif') }}" alt="">
-        </div>
-        <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12"></div>
-    </div>
     <div class="row text-center content">
         <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12"></div>
         <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 text-center">
@@ -89,13 +82,13 @@
             </audio>
         </div>
     </div>
-    <div class="row text-center content">
+    <div class="row text-center">
         <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12"></div>
         <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-            <img style="    width: 100px;
-    position: absolute;
-    margin-top: -25px;
-    margin-left: 620px;" src="{{ asset('src/img/calendar_List.png') }}" alt="">
+{#            <img style="    width: 100px;#}
+{#    position: absolute;#}
+{#    margin-top: -25px;#}
+{#    margin-left: 620px;" src="{{ asset('src/img/calendar_List.png') }}" alt="">#}
 
             <a style="cursor: pointer" onClick="playAudio()" title="Высоцкий В. С.">
                 <img style="position: absolute;width: 160px;margin-top: 30px; margin-left: 175px; height: 200px; z-index: 1000;" src="{{ asset('src/img/bg.png') }}" alt="">
@@ -133,7 +126,9 @@
         <a href="#" class="md-trigger" data-modal="modal-11" title="1. В. С. Высоцкий">
             <img style="position: absolute;width: 95px;margin-top: 235px; margin-left: 400px; height: 25px; z-index: 1000;" src="{{ asset('src/img/bg.png') }}" alt="">
         </a>
-        <img style="width: 720px !important; height: 420px !important;" src="{{ asset('src/img/animation.gif') }}" alt="">
+            <img id="cal" style="margin-top: -140px; z-index:20000; width: 720px !important; margin-bottom: -550px; height: 520px; position: relative;" src="{{ asset('src/img/Final_DropVV.gif') }}" alt="">
+
+            <img class="content" style="margin-top: -70px; width: 720px !important; height: 520px !important;" src="{{ asset('src/img/Final_DropVV_1.gif') }}" alt="">
         </div>
         <div class="col-lg-2 col-md-2"></div>
     </div>
@@ -236,190 +231,190 @@
     </div>
 </div>
 
-{#<div class="md-modal md-effect-8" id="modal-11" style="background-color: #222">#}
-{#    <div class="md-content">#}
-{#        <h3 class="media-heading user_name">#}
-{#            В. С. Высоцкий#}
-{#        </h3>#}
-{#        <h5 class="text-center">Свеча Владимиру Высоцкому. Репетиция с Высоцким<br>#}
-{#            25.07.2016</h5>#}
-{#        <div>#}
-{#            <div style="margin-bottom: 15px" class="embed-responsive embed-responsive-16by9">#}
-{#                <iframe class="embed-responsive-item" src="{{ path('installation_show', {title: '25-07-2016'}) }}" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>#}
-{#            </div>#}
-{#            <button class="md-close">Close</button>#}
-{#        </div>#}
-{#    </div>#}
-{#</div>#}
-{#<div class="md-modal md-effect-8" id="modal-10" style="background-color: #222">#}
-{#    <div class="md-content">#}
-{#        <h3 class="media-heading user_name">#}
-{#            Владимир Высоцкий#}
-{#        </h3>#}
-{#        <h5 class="text-center">навсегда и во всем...<br>#}
-{#            25.01.2017</h5>#}
-{#        <div>#}
-{#            <div style="margin-bottom: 15px" class="embed-responsive embed-responsive-16by9">#}
-{#                <iframe class="embed-responsive-item" src="{{ path('installation_show', {title: '25-01-2017'}) }}" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>#}
-{#            </div>#}
-{#            <button class="md-close">Close</button>#}
-{#        </div>#}
-{#    </div>#}
-{#</div>#}
-{#<div class="md-modal md-effect-8" id="modal-9" style="background-color: #222">#}
-{#    <div class="md-content">#}
-{#        <h3 class="media-heading user_name">#}
-{#            Высоцкий В. С.#}
-{#        </h3>#}
-{#        <h5 class="text-center">Вспоминая, поминая, читая и почитая.... В день памяти Владимира Высоцкого <br>#}
-{#            25.07.2017</h5>#}
-{#        <div>#}
-{#            <div style="margin-bottom: 15px" class="embed-responsive embed-responsive-16by9">#}
-{#                <iframe class="embed-responsive-item" src="{{ path('installation_show', {title: '25-07-2017'}) }}" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>#}
-{#            </div>#}
-{#            <button class="md-close">Close</button>#}
-{#        </div>#}
-{#    </div>#}
-{#</div>#}
-{#<div class="md-modal md-effect-8" id="modal-8" style="background-color: #222">#}
-{#    <div class="md-content">#}
-{#        <h3 class="media-heading user_name">#}
-{#            Пусть.. Я это никогда не полюблю.#}
-{#        </h3>#}
-{#        <h5 class="text-center">Традиционно, 25 января театр "МЭТЛУГ" шлёт поздравления <br>#}
-{#            25.01.2019</h5>#}
-{#        <div>#}
-{#            <div style="margin-bottom: 15px" class="embed-responsive embed-responsive-16by9">#}
-{#                <iframe class="embed-responsive-item" src="{{ path('installation_show', {title: '25-01-2019'}) }}" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>#}
-{#            </div>#}
-{#            <button class="md-close">Close</button>#}
-{#        </div>#}
-{#    </div>#}
-{#</div>#}
-{#<div class="md-modal md-effect-8" id="modal-7" style="background-color: #222">#}
-{#    <div class="md-content">#}
-{#        <h3 class="media-heading user_name">#}
-{#            <a target="_blank" href="{{ path('installation_show', {title: '25-01-2021'}) }}" title="А он играл - не доиграл. Киноактёр Владимир Семёнович Высоцкий.">#}
-{#                А он играл - не доиграл. Киноактёр Владимир Семёнович Высоцкий.#}
-{#            </a>#}
-{#        </h3>#}
-{#        <h5 class="text-center">#}
-{#            25.01.2021</h5>#}
-{#        <div>#}
-{#            <div style="margin-bottom: 15px" class="embed-responsive embed-responsive-16by9">#}
-{#                <iframe class="embed-responsive-item" src="{{ path('installation_show', {title: '25-01-2021'}) }}" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>#}
-{#            </div>#}
-{#            <button class="md-close">Close</button>#}
-{#        </div>#}
-{#    </div>#}
-{#</div>#}
-{#<div class="md-modal md-effect-8" id="modal-6" style="background-color: #222">#}
-{#    <div class="md-content">#}
-{#        <h3 class="media-heading user_name">#}
-{#            Высоцкий В. С.#}
-{#        </h3>#}
-{#        <h5 class="text-center">" Вспоминая, поминая, читая, почитая..." <br>#}
-{#            25.07.2020</h5>#}
-{#        <div>#}
-{#            <div style="margin-bottom: 15px" class="embed-responsive embed-responsive-16by9">#}
-{#                <iframe class="embed-responsive-item" src="{{ path('installation_show', {title: '25-07-2020'}) }}" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>#}
-{#            </div>#}
-{#            <button class="md-close">Close</button>#}
-{#        </div>#}
-{#    </div>#}
-{#</div>#}
-{#<div class="md-modal md-effect-8" id="modal-5" style="background-color: #222">#}
-{#    <div class="md-content">#}
-{#        <h3 class="media-heading user_name">#}
-{#            82 года В.Высоцкому.#}
-{#        </h3>#}
-{#        <h5 class="text-center">Мы поздравляем: "Что остаётся... потом.. после того, как." <br>#}
-{#            25.01.2020</h5>#}
-{#        <div>#}
+<div class="md-modal md-effect-8" id="modal-11" style="background-color: #222">
+    <div class="md-content">
+        <h3 class="media-heading user_name">
+            В. С. Высоцкий
+        </h3>
+        <h5 class="text-center">Свеча Владимиру Высоцкому. Репетиция с Высоцким<br>
+            25.07.2016</h5>
+        <div>
+            <div style="margin-bottom: 15px" class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="{{ path('installation_show', {title: '25-07-2016'}) }}" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+            </div>
+            <button class="md-close">Close</button>
+        </div>
+    </div>
+</div>
+<div class="md-modal md-effect-8" id="modal-10" style="background-color: #222">
+    <div class="md-content">
+        <h3 class="media-heading user_name">
+            Владимир Высоцкий
+        </h3>
+        <h5 class="text-center">навсегда и во всем...<br>
+            25.01.2017</h5>
+        <div>
+            <div style="margin-bottom: 15px" class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="{{ path('installation_show', {title: '25-01-2017'}) }}" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+            </div>
+            <button class="md-close">Close</button>
+        </div>
+    </div>
+</div>
+<div class="md-modal md-effect-8" id="modal-9" style="background-color: #222">
+    <div class="md-content">
+        <h3 class="media-heading user_name">
+            Высоцкий В. С.
+        </h3>
+        <h5 class="text-center">Вспоминая, поминая, читая и почитая.... В день памяти Владимира Высоцкого <br>
+            25.07.2017</h5>
+        <div>
+            <div style="margin-bottom: 15px" class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="{{ path('installation_show', {title: '25-07-2017'}) }}" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+            </div>
+            <button class="md-close">Close</button>
+        </div>
+    </div>
+</div>
+<div class="md-modal md-effect-8" id="modal-8" style="background-color: #222">
+    <div class="md-content">
+        <h3 class="media-heading user_name">
+            Пусть.. Я это никогда не полюблю.
+        </h3>
+        <h5 class="text-center">Традиционно, 25 января театр "МЭТЛУГ" шлёт поздравления <br>
+            25.01.2019</h5>
+        <div>
+            <div style="margin-bottom: 15px" class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="{{ path('installation_show', {title: '25-01-2019'}) }}" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+            </div>
+            <button class="md-close">Close</button>
+        </div>
+    </div>
+</div>
+<div class="md-modal md-effect-8" id="modal-7" style="background-color: #222">
+    <div class="md-content">
+        <h3 class="media-heading user_name">
+            <a target="_blank" href="{{ path('installation_show', {title: '25-01-2021'}) }}" title="А он играл - не доиграл. Киноактёр Владимир Семёнович Высоцкий.">
+                А он играл - не доиграл. Киноактёр Владимир Семёнович Высоцкий.
+            </a>
+        </h3>
+        <h5 class="text-center">
+            25.01.2021</h5>
+        <div>
+            <div style="margin-bottom: 15px" class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="{{ path('installation_show', {title: '25-01-2021'}) }}" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+            </div>
+            <button class="md-close">Close</button>
+        </div>
+    </div>
+</div>
+<div class="md-modal md-effect-8" id="modal-6" style="background-color: #222">
+    <div class="md-content">
+        <h3 class="media-heading user_name">
+            Высоцкий В. С.
+        </h3>
+        <h5 class="text-center">" Вспоминая, поминая, читая, почитая..." <br>
+            25.07.2020</h5>
+        <div>
+            <div style="margin-bottom: 15px" class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="{{ path('installation_show', {title: '25-07-2020'}) }}" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+            </div>
+            <button class="md-close">Close</button>
+        </div>
+    </div>
+</div>
+<div class="md-modal md-effect-8" id="modal-5" style="background-color: #222">
+    <div class="md-content">
+        <h3 class="media-heading user_name">
+            82 года В.Высоцкому.
+        </h3>
+        <h5 class="text-center">Мы поздравляем: "Что остаётся... потом.. после того, как." <br>
+            25.01.2020</h5>
+        <div>
 
-{#            <div style="margin-bottom: 15px" class="embed-responsive embed-responsive-16by9">#}
-{#                <iframe class="embed-responsive-item" src="{{ path('installation_show', {title: '25-01-2020'}) }}" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>#}
-{#            </div>#}
-{#            <button class="md-close">Close</button>#}
-{#        </div>#}
-{#    </div>#}
-{#</div>#}
-{#<div class="md-modal md-effect-8" id="modal-4" style="background-color: #222">#}
-{#    <div class="md-content">#}
-{#        <h3 class="media-heading user_name">#}
-{#            Свеча Памяти. Свеча Почитания.#}
-{#        </h3>#}
-{#        <h5 class="text-center">#}
-{#            25.07.2019</h5>#}
-{#        <div>#}
+            <div style="margin-bottom: 15px" class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="{{ path('installation_show', {title: '25-01-2020'}) }}" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+            </div>
+            <button class="md-close">Close</button>
+        </div>
+    </div>
+</div>
+<div class="md-modal md-effect-8" id="modal-4" style="background-color: #222">
+    <div class="md-content">
+        <h3 class="media-heading user_name">
+            Свеча Памяти. Свеча Почитания.
+        </h3>
+        <h5 class="text-center">
+            25.07.2019</h5>
+        <div>
 
-{#            <div style="margin-bottom: 15px" class="embed-responsive embed-responsive-16by9">#}
-{#                <iframe class="embed-responsive-item" src="{{ path('installation_show', {title: '25-07-2019'}) }}" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>#}
-{#            </div>#}
-{#            <button class="md-close">Close</button>#}
-{#        </div>#}
-{#    </div>#}
-{#</div>#}
-{#<div class="md-modal md-effect-8" id="modal-3" style="background-color: #222">#}
-{#    <div class="md-content">#}
-{#        <h3 class="media-heading user_name">#}
-{#            <a target="_blank" href="{{ path('installation_show', {title: '25-07-2021'}) }}">41 без Высоцкого</a>#}
-{#        </h3>#}
-{#        <h5 class="text-center">#}
-{#            25.07.2021</h5>#}
-{#        <div>#}
-{#            <div style="margin-bottom: 15px" class="embed-responsive embed-responsive-16by9">#}
-{#                <iframe class="embed-responsive-item" src="{{ path('installation_show', {title: '25-07-2021'}) }}" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>#}
-{#            </div>#}
-{#            <button class="md-close">Close</button>#}
-{#        </div>#}
-{#    </div>#}
-{#</div>#}
-{#<div class="md-modal md-effect-8" id="modal-2" style="background-color: #222">#}
-{#    <div class="md-content">#}
-{#        <h3 class="media-heading user_name">#}
-{#            Свеча Владимиру Высоцкому#}
-{#        </h3>#}
-{#        <h5 class="text-center">И вот уже считаем десятки лет, как нет на этой Земле Владимира Высоцкого <br>#}
-{#            25.07.2018</h5>#}
-{#        <div>#}
-{#            <div style="margin-bottom: 15px" class="embed-responsive embed-responsive-16by9">#}
-{#                <iframe class="embed-responsive-item" src="{{ path('installation_show', {title: '25-07-2018'}) }}" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>#}
-{#            </div>#}
-{#            <button class="md-close">Close</button>#}
-{#        </div>#}
-{#    </div>#}
-{#</div>#}
-{#<div class="md-modal md-effect-8" id="modal-1" style="background-color: #222">#}
-{#    <div class="md-content">#}
-{#        <h3 class="media-heading user_name">#}
-{#            Высоцкий В. С. «Сэр, возьмите Алису с собой!»#}
-{#        </h3>#}
-{#        <h5 class="text-center">#}
-{#            25.01.2018</h5>#}
-{#        <div>#}
-{#            <div style="margin-bottom: 15px" class="embed-responsive embed-responsive-16by9">#}
-{#                <iframe class="embed-responsive-item" src="{{ path('installation_show', {title: '25-01-2018'}) }}" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>#}
-{#            </div>#}
-{#            <button class="md-close">Close</button>#}
-{#        </div>#}
-{#    </div>#}
-{#</div>#}
+            <div style="margin-bottom: 15px" class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="{{ path('installation_show', {title: '25-07-2019'}) }}" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+            </div>
+            <button class="md-close">Close</button>
+        </div>
+    </div>
+</div>
+<div class="md-modal md-effect-8" id="modal-3" style="background-color: #222">
+    <div class="md-content">
+        <h3 class="media-heading user_name">
+            <a target="_blank" href="{{ path('installation_show', {title: '25-07-2021'}) }}">41 без Высоцкого</a>
+        </h3>
+        <h5 class="text-center">
+            25.07.2021</h5>
+        <div>
+            <div style="margin-bottom: 15px" class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="{{ path('installation_show', {title: '25-07-2021'}) }}" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+            </div>
+            <button class="md-close">Close</button>
+        </div>
+    </div>
+</div>
+<div class="md-modal md-effect-8" id="modal-2" style="background-color: #222">
+    <div class="md-content">
+        <h3 class="media-heading user_name">
+            Свеча Владимиру Высоцкому
+        </h3>
+        <h5 class="text-center">И вот уже считаем десятки лет, как нет на этой Земле Владимира Высоцкого <br>
+            25.07.2018</h5>
+        <div>
+            <div style="margin-bottom: 15px" class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="{{ path('installation_show', {title: '25-07-2018'}) }}" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+            </div>
+            <button class="md-close">Close</button>
+        </div>
+    </div>
+</div>
+<div class="md-modal md-effect-8" id="modal-1" style="background-color: #222">
+    <div class="md-content">
+        <h3 class="media-heading user_name">
+            Высоцкий В. С. «Сэр, возьмите Алису с собой!»
+        </h3>
+        <h5 class="text-center">
+            25.01.2018</h5>
+        <div>
+            <div style="margin-bottom: 15px" class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="{{ path('installation_show', {title: '25-01-2018'}) }}" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+            </div>
+            <button class="md-close">Close</button>
+        </div>
+    </div>
+</div>
 <div class="col-xs-12 text-center" style="margin-top: 40px; font-size: 20px;">
     Для максимального эмоционального восприятия рекомендуем смотреть на компьютере https://theatre-metlug.org/
 </div>
 <footer style="height: 100px"></footer>
 <script>
     setTimeout(function () {
-        $( "#cal" ).animate({
-            opacity: 0,
-        }, 2000, function() {});
-    }, 3000)
+        $( "#cal" ).css({
+            display: "none"
+        });
+    }, 5000)
     setTimeout(function () {
         $( ".content" ).animate({
             opacity: 1,
-        }, 2000, function() {});
-    }, 3000)
+        }, 100, function() {});
+    }, 5000)
     {% if modalShow is defined and modalShow is not null %}
     $('#commandModal').modal('show')
     {% endif %}
