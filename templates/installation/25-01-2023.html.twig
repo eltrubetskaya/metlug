@@ -15,8 +15,8 @@
 
         header.masthead {
             text-align: center;
-            color: yellow;
-            background-image: url("{{ asset('src/img/blue.png')}}");
+            color: dodgerblue;
+            background-image: url("{{ asset('src/img/yellow.png')}}");
             background-repeat: no-repeat;
             background-attachment: scroll;
             background-position: center center;
@@ -35,7 +35,7 @@
             background-size: cover;
             padding-top: 5.5rem;
             padding-bottom: 8rem;
-            border: 6px solid rgba(141, 1, 1, 0.9);
+            border: 5px solid rgba(141, 1, 1, 0.9);
         }
         #icon-sound {
             position: fixed;
@@ -60,9 +60,12 @@
 {% endblock %}
 
 {% block content %}
-{#    <div id="icon-sound" class="d-none">#}
-{#        <i class="fas fa-volume-up"></i>#}
-{#    </div>#}
+    <div id="icon-sound" class="d-none">
+        <audio id="play">
+            <source src="{{ asset('src/media/br.mp3') }}" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
     <!-- Header -->
     <header class="masthead">
         <div class="container">
