@@ -16,25 +16,26 @@
         header.masthead {
             text-align: center;
             color: yellow;
-            background-image: url("{{ asset('src/img/blue.png')}}");
+            background-image: url("{{ asset('src/img/zhovto-blakitnii.jpeg')}}");
             background-repeat: no-repeat;
             background-attachment: scroll;
             background-position: center center;
             background-size: cover;
             padding-top: 8rem;
-            padding-bottom: 5.5rem;
+            padding-bottom: 11rem;
             margin-top: 25px;
         }
         header.masthead2 {
             text-align: center;
-            color: dodgerblue;
-            background-image: url("{{ asset('src/img/yellow.png')}}");
+            color: black;
+            {#background-image: url("{{ asset('src/img/yellow.png')}}");#}
             background-repeat: no-repeat;
             background-attachment: scroll;
             background-position: center center;
             background-size: cover;
             padding-top: 5.5rem;
             padding-bottom: 8rem;
+            border: 6px solid rgba(141, 1, 1, 0.9);
         }
         #icon-sound {
             position: fixed;
@@ -62,8 +63,6 @@
 {#    <div id="icon-sound" class="d-none">#}
 {#        <i class="fas fa-volume-up"></i>#}
 {#    </div>#}
-
-    <img src="{{ asset('src/img/hart.gif') }}" alt="" style="margin-top: 100px; width: 400px">
     <!-- Header -->
     <header class="masthead">
         <div class="container">
@@ -75,13 +74,15 @@
         </div>
     </header>
     <!-- Header -->
+    <img src="{{ asset('src/img/herz.gif') }}" alt="" style="margin-top: 100px; width: 400px; margin-bottom: -35px">
     <header class="masthead2">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 col-12">
-                    <h3>Двадцать пятое января две тысячи двадцать третьего года</h3>
+                    <h3>Двадцать пятое января <br>две тысячи двадцать третьего года</h3>
                 </div>
-                <div class="col-1">
+                <div class="col-8"></div>
+                <div class="col-2">
                     <img src="{{ asset('build/img/logo_2.png') }}" alt="" style="width: 90px; position: absolute; margin-top: 1rem">
                 </div>
             </div>
