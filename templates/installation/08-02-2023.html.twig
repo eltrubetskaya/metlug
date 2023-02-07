@@ -2,7 +2,7 @@
 {% block title %}ЮНЫЙ БАРАБАНЩИК{% endblock %}
 {% block stylesheets %}
     {{ parent() }}
-    <link href="{{ asset('build/css/32-05-2021.css') }}" rel="stylesheet" />
+    <link href="{{ asset('build/css/32-05-2020.css') }}" rel="stylesheet" type="text/css" />
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
     <style>
@@ -27,6 +27,63 @@
             text-shadow: 1px 1px darkblue;
             color: dodgerblue;
          }
+        .toggle {
+            -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+            -moz-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+            margin: -24px;
+            position: absolute;
+            bottom: 11.6%;
+            left: 50%;
+            z-index: 1045;
+        }
+        .toggle.i .cross {
+            -webkit-transform: rotateZ(0deg);
+            -moz-transform: rotateZ(0deg);
+            transform: rotateZ(0deg); }
+        .toggle.i .cross .x {
+            margin-left: -2px;
+            width: 4px;
+            margin-top: -12px; }
+        .toggle.i .cross .y {
+            margin-top: -4px;
+            height: 16px; }
+
+        .cross {
+            -webkit-transform: rotateZ(45deg);
+            -moz-transform: rotateZ(45deg);
+            transform: rotateZ(45deg);
+            position: absolute;
+            left: 50%;
+            top: 50%; }
+        .cross .x, .cross .y {
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+            border-radius: 2px;
+            -webkit-background-clip: padding-box;
+            -moz-background-clip: padding-box;
+            background-clip: padding-box;
+            background-color: #1D1F27;
+            height: 4px;
+            width: 4px;
+            margin: -2px;
+            position: absolute;
+            left: 0;
+            top: 0; }
+        .cross .x {
+            margin-left: -12px;
+            margin-top: -2px;
+            width: 24px; }
+        .cross .y {
+            margin-top: -12px;
+            height: 24px; }
+
+        .toggle-left {
+            transform: rotateZ(-90deg);
+        }
+        .toggle-right {
+            transform: rotateZ(90deg);
+        }
     </style>
 {% endblock %}
 
