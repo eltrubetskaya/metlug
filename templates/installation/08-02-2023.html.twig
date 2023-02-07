@@ -1,4 +1,4 @@
-{% extends '../layout.html.twig' %}
+{% extends 'layout.html.twig' %}
 {% block title %}ЮНЫЙ БАРАБАНЩИК{% endblock %}
 {% block stylesheets %}
     {{ parent() }}
@@ -61,7 +61,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    {% include '../esse.html.twig' %}
+                    {% include 'esse.html.twig' %}
                 </div>
                 <div class="modal-footer">
                     <div class="col-md-12 col-sm-12">
