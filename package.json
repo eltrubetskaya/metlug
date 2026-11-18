@@ -11,7 +11,7 @@
     "bootstrap-select": "^1.13.12",
     "bootstrap-validator": "^0.11.9",
     "feather-icons": "^4.26.0",
-    "gulp": "^3.9.1",
+    "gulp": "^5.0.1",
     "gulp-babel": "^7.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-imagemin": "^4.1.0",
